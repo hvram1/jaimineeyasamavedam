@@ -6,45 +6,51 @@
 </head>
 <body>
     
-    Jaimini Sama Vedam 
-This project converts the Sama Vedam text present in the pdf file S1.pdf into Unicode text. The document was created using a propreitary font called Krishna Vedic.  These are the steps done to convert the document
+<div style="max-width: 800px; margin: 40px auto; font-family: 'Segoe UI', Arial, sans-serif; background: #fff; padding: 32px 40px 40px 40px; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+    <h1 style="color: #2d3a4a; margin-top: 0;">Jaiminiya Samavedam</h1>
+    <p style="font-size: 1.1em; color: #444;">
+        This project converts the Sama Vedam text present in the PDF file <strong>S1.pdf</strong> into Unicode text. The document was created using a proprietary font called <strong>Krishna Vedic</strong>. Below are the steps followed to convert the document:
+    </p>
+    <ol style="line-height: 1.7; color: #333;">
+        <li>Extract the embedded fonts from the Adobe PDF document using an online tool. These fonts are stored in the <code>fonts</code> directory. The majority of the texts use the Krishna Vedic font.</li>
+        <li>Create a set of unique ASCII characters present in the PDF file and print the characters using that font.</li>
+        <li>Use a tool like <strong>FontBook</strong> (on Mac) to find the corresponding Unicode values.</li>
+        <li>Create the mapping in the file <code>char_map.py</code>.</li>
+        <li>Handle certain idiosyncrasies (e.g., some characters need to be reversed, or require a different ordering).</li>
+        <li>The mapping is present in the file <a href="output_text/mapping.html">output_text/mapping.html</a>.</li>
+        <li>The generated text file is available at <a href="output_text/output_grantha.txt">output_text/output_grantha.txt</a>.</li>
+        <li>
+            This can be converted into other Unicode languages like Devanagari using converters such as
+            <a href="https://www.aksharamukha.com/converter" target="_blank" rel="noopener">Aksharamukha</a>.
+        </li>
+    </ol>
 
-  Extract the embedded fonts from the Adobe PDF document using an online tool. These fonts are stored in the directory fonts. The majority of the texts are using the Krishna Vedic font
-  
-  Create a set of unique ascii characters present in the PDF file and print the characters using that font. 
-  
-  Use a tool like FontBook (in Mac) to find the corresponding Unicode values. 
-  
-  Create the mapping in the file char_map.py 
-    
-  Take care of certain idiosynchorancies (e.g.) some characters needs to be reversed . Some need a different ordering
+    <h2 style="color: #2d3a4a; margin-top: 2em;">How to Run the Code</h2>
+    <ol style="line-height: 1.7; color: #333;">
+        <li>Clone or download the repository.</li>
+        <li>Create a Python environment and install dependencies:
+            <pre style="background: #f6f8fa; padding: 10px; border-radius: 6px; margin: 8px 0;">pip install PyPDF2</pre>
+        </li>
+        <li>
+            <strong>Where to modify:</strong> If you find mistakes in the character mapping, edit the <code>char_map.py</code> file.
+            The mapping can be viewed in <a href="output_text/mapping.html">output_text/mapping.html</a>.
+        </li>
+        <li>
+            <strong>How to generate the text file:</strong>
+            <pre style="background: #f6f8fa; padding: 10px; border-radius: 6px; margin: 8px 0;">python3 extract_pdf_text.py</pre>
+            This will generate the output file.
+        </li>
+    </ol>
 
-  The mapping is present in the file <a href="output_text/mapping.html">output_text/mapping.html</a>
+    <hr style="margin: 32px 0; border: none; border-top: 1px solid #eee;">
 
-  The generated text file is present in <a href="output_text/output_grantha.txt">output_text/output_grantha.txt</a>
-
-  This can be converted into other Unicode languages like Devanagari etc. using converters like <a href="https://www.aksharamukha.com/converter">Aksharamuka</a>.
-
-# How to run the code 
-
-Check out the repository. Create an environment and 
-<pre>
-pip install PyPDF2
-</pre>
-
-<p>Where to modify</p>
-
-There would be mistakes in the character mapping . The file to modify is the char_map.py file. The mapping can be viewed in the file [output_text/mapping.html](mapping.html)
-
-<p> How to generate the text file</p>
-<pre>
-python3 extract_pdf_text.py 
-</pre>
-
-will generate the file 
-
-    <p>This is a project dedicated to the conversion of Jaiminiya Samaveda to Unicode.</p>
-    <p>For more information on the mapping, please visit our <a href="output_text/mapping.html">mapping page</a>.</p>
-    <p>For the latest updates, please check our <a href="output_text/output_grantha.html">Grantha</a>.</p>
+    <p style="font-size: 1.1em;">
+        This is a project dedicated to the conversion of Jaiminiya Samaveda to Unicode.
+    </p>
+    <p>
+        For more information on the mapping, please visit our <a href="output_text/mapping.html">mapping page</a>.<br>
+        For the latest updates, please check our <a href="output_text/output_grantha.html">Grantha</a>.
+    </p>
+</div>
 </body>
 </html>
