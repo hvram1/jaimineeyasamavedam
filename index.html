@@ -5,7 +5,44 @@
     <title>Jaimineeya Samavedam</title>
 </head>
 <body>
-    <h1>Welcome to Jaimineeya Samavedam</h1>
+    
+    Jaimini Sama Vedam 
+This project converts the Sama Vedam text present in the pdf file S1.pdf into Unicode text. The document was created using a propreitary font called Krishna Vedic.  These are the steps done to convert the document
+
+  Extract the embedded fonts from the Adobe PDF document using an online tool. These fonts are stored in the directory fonts. The majority of the texts are using the Krishna Vedic font
+  
+  Create a set of unique ascii characters present in the PDF file and print the characters using that font. 
+  
+  Use a tool like FontBook (in Mac) to find the corresponding Unicode values. 
+  
+  Create the mapping in the file char_map.py 
+    
+  Take care of certain idiosynchorancies (e.g.) some characters needs to be reversed . Some need a different ordering
+
+  The mapping is present in the file <a href="output_text/mapping.html">output_text/mapping.html</a>
+
+  The generated text file is present in <a href="output_text/output_grantha.txt">output_text/output_grantha.txt</a>
+
+  This can be converted into other Unicode languages like Devanagari etc. using converters like <a href="https://www.aksharamukha.com/converter">Aksharamuka</a>.
+
+# How to run the code 
+
+Check out the repository. Create an environment and 
+<pre>
+pip install PyPDF2
+</pre>
+
+<p>Where to modify</p>
+
+There would be mistakes in the character mapping . The file to modify is the char_map.py file. The mapping can be viewed in the file [output_text/mapping.html](mapping.html)
+
+<p> How to generate the text file</p>
+<pre>
+python3 extract_pdf_text.py 
+</pre>
+
+will generate the file 
+
     <p>This is a project dedicated to the conversion of Jaiminiya Samaveda to Unicode.</p>
     <p>For more information on the mapping, please visit our <a href="output_text/mapping.html">mapping page</a>.</p>
     <p>For the latest updates, please check our <a href="output_text/output_grantha.html">Grantha</a>.</p>
