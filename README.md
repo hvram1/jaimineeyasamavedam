@@ -35,3 +35,4 @@ python3 extract_pdf_text.py
 ```
 
 will generate the file [output_text/grantha_output.txt](output_text/grantha_output.txt)
+

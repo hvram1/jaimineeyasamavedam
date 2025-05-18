@@ -1,14 +1,16 @@
 import PyPDF2
 import re
 virama="\U0001134D"
-
-def write_html_table(outfile, uniq_chars,char_map):
-    prefix_html="""
+prefix_html_head="""
+    
     <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8" />
     <title>Unique Character Mapping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Grantha&family=Noto+Serif+Grantha&display=swap" rel="stylesheet">
 </head>
 <style>
 .k1 {
@@ -23,7 +25,11 @@ def write_html_table(outfile, uniq_chars,char_map):
     font-family: "Noto Serif Grantha", serif;
     font-size: 14pt; font-color: "red";
 }
-</style>
+</style>"""
+
+def write_html_table(outfile, uniq_chars,char_map):
+
+    prefix_html_body="""
 <body>
     <p> Some chracters are better in Noto Sans Grantha while some others are better in Noto Serif Grantha. 
     Take a look at the row where ASCII value is 297 
@@ -33,12 +39,12 @@ def write_html_table(outfile, uniq_chars,char_map):
             <th>Krishna Vedic</th>
             <th>Noto Sans Grantha</th>
             <th>Noto Serif Grantha</th>
-            <th>ASCII Value</th>
+            <th>ASCII Val   ue</th>
             <th>Unicode Value</th>
             <th>Unicode Name</th>
         </tr>
     """
-    suffix_html="""
+    suffix_html_body="""
     </table>
 </body>
 </html>
@@ -64,9 +70,10 @@ def write_html_table(outfile, uniq_chars,char_map):
         content_html+=row
     
     with open(outfile,"w",encoding="utf-8") as f:
-        f.write(prefix_html)
+        f.write(prefix_html_head)
+        f.write(prefix_html_body)
         f.write(content_html)
-        f.write(suffix_html)
+        f.write(suffix_html_body)
         
 def extract_text_from_pdf(pdf_path, output_dir):
     # Open the PDF file
@@ -396,7 +403,28 @@ def process_text(texts):
             f.write(recreated_output)
     print(f"Text extracted and saved to {output_file}")
     
-
+    output_file = f"{output_dir}/output_grantha.html"
+    additional_body="""
+    <style>
+        body,pre {
+      font-family: "Noto Sans Grantha", sans-serif; /* Use the defined font name */
+    }
+    </style>
+    <body>
+    <pre>
+    """
+    
+    additional_body_suffix="""
+    </pre>
+    </body>
+    </html>
+    """
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(prefix_html_head)
+        
+        f.write(additional_body)
+        f.write(recreated_output)
+        f.write(additional_body_suffix)
 
 def read_file_to_list(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
