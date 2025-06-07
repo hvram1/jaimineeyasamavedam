@@ -1,0 +1,11 @@
+grapheme
+joblib
+numpy
+opencv-python
+packaging
+pdf2image
+pillow
+pypdf
+PyPDF2
+regex
+threadpoolctl
