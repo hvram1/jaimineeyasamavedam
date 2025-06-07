@@ -14,7 +14,7 @@ This project converts the Sama Vedam text present in the pdf file S1.pdf into Un
     
   The mapping is present in the file [output_text/mapping.html](output_text/mapping.html) 
   
-  The generated text file is present in [output_text/output_grantha.txt](output_text/output_grantha.txt)
+  The generated text file is present in [output_text/pages/rendor-finaljson.html](output_text/pages/rendor-finaljson.html)
   
   This can be converted into other Unicode languages like Devanagari etc. using converters like [Aksharamuka]( https://www.aksharamukha.com/converter  ). 
 
@@ -22,7 +22,7 @@ This project converts the Sama Vedam text present in the pdf file S1.pdf into Un
 
 Check out the repository. Create an environment and 
 ```
-pip install PyPDF2
+pip -r requirements.txt
 ```
 
 # Where to modify 
@@ -34,5 +34,5 @@ There would be mistakes in the character mapping . The file to modify is the cha
 python3 extract_pdf_text.py 
 ```
 
-will generate the file [output_text/grantha_output.txt](output_text/grantha_output.txt)
+will generate the file [output_text/pages/rendor-finaljson.html](output_text/pages/rendor-finaljson.html)
 

@@ -9,7 +9,7 @@ html = '''
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Final JSON Render</title>
+    <title>𑌜𑍈𑌮𑌿𑌨𑍀𑌯  𑌸𑌾𑌮  𑌪𑍍𑌰𑌕𑍃𑌤𑌿  𑌗𑌾𑌨𑌮𑍍</title>
     <style>
         body { font-family: "Noto Sans Grantha", sans-serif; margin: 20px; }
         
@@ -83,7 +83,9 @@ html = '''
     
 </head>
 <body>
-    <h1>Final JSON Render</h1>
+    <h1>𑌜𑍈𑌮𑌿𑌨𑍀𑌯  𑌸𑌾𑌮  𑌪𑍍𑌰𑌕𑍃𑌤𑌿  𑌗𑌾𑌨𑌮𑍍</h1>
+    <p> Click on the titles to expand or collapse sections. Click on subsection titles to load content.</p>
+    <p> Click on the mantra to see the actual images of the mantras. This can be used for proof reading.</p>
     <div><table class="table-class"><tr class="table-row"><td class="table-cell-1">
 '''
 supersections = data.get('supersection', {})
@@ -197,7 +199,7 @@ for i, supersection in enumerate(supersections):
             page_html +=(
             f'<div id="img-preview-{k}" style="display:none; margin-bottom:8px;">'
 
-            f'<img src="{url_protocol}../{header_image}" alt="Header Mantra Image" style="max-width:100%; border:1px solid #ccc;">'
+            f'<img src="{url_protocol}../{header_image}" onclick="toggleImageVisibility(\'img-preview-{k}\')" alt="Header Mantra Image" style="max-width:100%; border:1px solid #ccc;">'
             f'</div>'
             f'<h2 onclick="toggleImageVisibility(\'img-preview-{k}\')" style="cursor:pointer;">{header_number} {header}</h2>'
             )
@@ -206,7 +208,7 @@ for i, supersection in enumerate(supersections):
                 page_html +=(
                 f'<div id="img-preview-{k}-{l}" style="display:none; margin-bottom:8px;">'
 
-                f'<img src="{url_protocol}../{img_src}" alt="Mantra Image" style="max-width:100%; border:1px solid #ccc;">'
+                f'<img src="{url_protocol}../{img_src}" onclick="toggleImageVisibility(\'img-preview-{k}-{l}\')" alt="Mantra Image" style="max-width:100%; border:1px solid #ccc;">'
                 f'</div>'
                 
                 )
