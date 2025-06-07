@@ -86,6 +86,7 @@ html = '''
     <h1>𑌜𑍈𑌮𑌿𑌨𑍀𑌯  𑌸𑌾𑌮  𑌪𑍍𑌰𑌕𑍃𑌤𑌿  𑌗𑌾𑌨𑌮𑍍</h1>
     <p> Click on the titles to expand or collapse sections. Click on subsection titles to load content.</p>
     <p> Click on the mantra to see the actual images of the mantras. This can be used for proof reading.</p>
+    <p> The swara positions are shown below the mantra words. The swara positions are not correct. This is work in process and will be fixed.</p>
     <div><table class="table-class"><tr class="table-row"><td class="table-cell-1">
 '''
 supersections = data.get('supersection', {})
