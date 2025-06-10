@@ -332,12 +332,12 @@ for key in supersections.keys():
                 #mantra_sets.append(mantra_set)
 
                 mantra_grapheme_length=grapheme.length(mantra)
-                path=f"output_text/lines/page_{mantra_line['page']}/combined_{mantra_line['line_number_in_page']:02d}_{swara_line['line_number_in_page']:02d}.png"
+                path=f"lines/page_{mantra_line['page']}/combined_{mantra_line['line_number_in_page']:02d}_{swara_line['line_number_in_page']:02d}.png"
                 mantra_set["image-ref"]=path
                 if instance!=0:
                     mantra_set["instance"]=instance
                 mantra_sets.append(mantra_set)
-                if os.path.exists(path):
+                if os.path.exists(os.path.join("output_text", path)):
                     #print(f"File exists: {path}")
                     pass
                 else:
