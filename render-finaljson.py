@@ -1,9 +1,15 @@
 import json
+import sys
 url_protocol = 'file://'
 url_protocol ='' # Use this for local file system access, or set to '' for web URLs
-with open('output_text/final.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
+if len(sys.argv) < 2:
+    print("Usage: python render-finaljson.py <input_json_file>")
+    sys.exit(1)
 
+input_json_file = sys.argv[1]
+with open(input_json_file, 'r', encoding='utf-8') as f:
+    data = json.load(f)
+    
 html = '''
 <!DOCTYPE html>
 <html>
@@ -11,7 +17,7 @@ html = '''
     <meta charset="UTF-8">
     <title>𑌜𑍈𑌮𑌿𑌨𑍀𑌯  𑌸𑌾𑌮  𑌪𑍍𑌰𑌕𑍃𑌤𑌿  𑌗𑌾𑌨𑌮𑍍</title>
     <style>
-        body { font-family: "Noto Sans Grantha", sans-serif; margin: 20px; }
+        body { font-family: FONT-TO-BE-USED; margin: 20px; }
         
         .supersection, .section, .subsection { margin: 8px 0; }
         .supersection-title, .section-title {
@@ -22,7 +28,7 @@ html = '''
             margin-bottom: 4px;
             font-weight: bold;
             display: inline-block;
-            font-family: "Noto Sans Grantha", sans-serif;
+            font-family: FONT-TO-BE-USED;
         }
         .section-content, .subsection-content {
             display: none;
@@ -136,7 +142,19 @@ html += '''
 </html>
 '''
 
-with open('output_text/pages/render-finaljson.html', 'w', encoding='utf-8') as f:
+if input_json_file.endswith('final-Grantha.json'):
+    html = html.replace('FONT-TO-BE-USED', '"Noto Sans Grantha", sans-serif')
+    filename='output_text/pages-Grantha/render-finaljson.html'
+elif input_json_file.endswith('final-Devanagari.json'):
+    html = html.replace('FONT-TO-BE-USED', '"Noto Sans Devanagari", sans-serif')
+    filename='output_text/pages-Devanagari/render-finaljson.html'
+elif input_json_file.endswith('final-Tamil.json'):
+    html = html.replace('FONT-TO-BE-USED', '"Noto Sans Tamil", sans-serif')
+    filename='output_text/pages-Tamil/render-finaljson.html'
+elif input_json_file.endswith('final-Malayalam.json'):
+    html = html.replace('FONT-TO-BE-USED', '"Noto Sans Malayalam", sans-serif')
+    filename='output_text/pages-Malayalam/render-finaljson.html'
+with open(filename, 'w', encoding='utf-8') as f:
     f.write(html)
     
 page_html_init = '''
@@ -160,13 +178,13 @@ page_html_init = '''
         white-space: pre;
     }
     .swara-cell {
-        font-family: 'Noto Sans Devanagari', sans-serif;
+        font-family: FONT-TO-BE-USED;
         color: #00796b;
         font-size: 0.9em;
         text-align: center;
     }
     .mantra-cell {
-        font-family: 'Noto Sans Devanagari', sans-serif;
+        font-family: FONT-TO-BE-USED;
         text-align: center;
     }
 </style>
@@ -238,7 +256,21 @@ for i, supersection in enumerate(supersections):
             </body>
             </html>
             ''' 
-            file_name = f"output_text/pages/subsection-{i+1:01d}-{j+1:02d}-{k+1:03d}.html"
+            if input_json_file.endswith('final-Grantha.json'):
+                page_html = page_html.replace('FONT-TO-BE-USED', '"Noto Sans Grantha", sans-serif')
+                #filename='output_text/pages-grantha/render-finaljson.html'
+                file_name = f"output_text/pages-Grantha/subsection-{i+1:01d}-{j+1:02d}-{k+1:03d}.html"
+            elif input_json_file.endswith('final-Devanagari.json'):
+                page_html = page_html.replace('FONT-TO-BE-USED', '"Noto Sans Devanagari", sans-serif')
+                file_name = f"output_text/pages-Devanagari/subsection-{i+1:01d}-{j+1:02d}-{k+1:03d}.html"
+            elif input_json_file.endswith('final-Tamil.json'):
+                page_html = page_html.replace('FONT-TO-BE-USED', '"Noto Sans Tamil", sans-serif')
+                file_name = f"output_text/pages-Tamil/subsection-{i+1:01d}-{j+1:02d}-{k+1:03d}.html"
+            elif input_json_file.endswith('final-Malayalam.json'):
+                page_html = page_html.replace('FONT-TO-BE-USED', '"Noto Sans Malayalam", sans-serif')
+                file_name = f"output_text/pages-Malayalam/subsection-{i+1:01d}-{j+1:02d}-{k+1:03d}.html"
+            else:
+                file_name = f"output_text/pages/subsection-{i+1:01d}-{j+1:02d}-{k+1:03d}.html"
 
             with open(file_name, 'w', encoding='utf-8') as f:
                 f.write(page_html)

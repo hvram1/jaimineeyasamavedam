@@ -332,7 +332,7 @@ for key in supersections.keys():
                 #mantra_sets.append(mantra_set)
 
                 mantra_grapheme_length=grapheme.length(mantra)
-                path=f"lines/page_{mantra_line['page']}/combined_{mantra_line['line_number_in_page']:02d}_{swara_line['line_number_in_page']:02d}.png"
+                path=f"output_text/lines/page_{mantra_line['page']}/combined_{mantra_line['line_number_in_page']:02d}_{swara_line['line_number_in_page']:02d}.png"
                 mantra_set["image-ref"]=path
                 if instance!=0:
                     mantra_set["instance"]=instance
@@ -342,19 +342,19 @@ for key in supersections.keys():
                     pass
                 else:
                     #print(f"File does not exist: {path}")
-                    if os.path.exists(f"lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png") and os.path.exists(f"lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"):
-                        combine_images([f"lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png", f"lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"])
+                    if os.path.exists(f"output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png") and os.path.exists(f"output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"):
+                        combine_images([f"output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png", f"output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"])
                     else:
-                        if os.path.exists(f"lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png"):
+                        if os.path.exists(f"output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png"):
                             #print(f"File exists: lines/page_{mantra['page']}/line_{mantra['line_number_in_page']:02d}.png")
                             pass
                         else:
-                            print(f"File of line does not exist: lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png")
-                        if os.path.exists(f"lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"):
+                            print(f"1 File of line does not exist: output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png")
+                        if os.path.exists(f"output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"):
                             #print(f"File exists: lines/page_{swara['page']}/line_{swara['line_number_in_page']:02d}.png")
                             pass
                         else:
-                            print(f"File of line does not exist: lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png")
+                            print(f"2 File of line does not exist: output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png")
                             pass
                     pass
                 i += 2
@@ -384,10 +384,9 @@ output_file = f"{output_dir}/sections.json"
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(supersections, f, ensure_ascii=False, indent=2)
     
-output_file = f"{output_dir}/final.json"
+output_file = f"{output_dir}/final-Grantha.json"
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(final_json, f, ensure_ascii=False, indent=2)
     
-with open('output_text/final.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
+
 
