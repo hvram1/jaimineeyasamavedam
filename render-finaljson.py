@@ -1,7 +1,10 @@
 import json
 import sys
+import re
+import grapheme
 url_protocol = 'file://'
 url_protocol ='' # Use this for local file system access, or set to '' for web URLs
+
 if len(sys.argv) < 2:
     print("Usage: python render-finaljson.py <input_json_file>")
     sys.exit(1)
@@ -68,6 +71,7 @@ html = '''
             width:70%;
             height: 1600px;
         }
+        
     </style>
 
     <script>
@@ -218,16 +222,16 @@ for i, supersection in enumerate(supersections):
             page_html +=(
             f'<div id="img-preview-{k}" style="display:none; margin-bottom:8px;">'
 
-            f'<img src="{url_protocol}../{header_image}" onclick="toggleImageVisibility(\'img-preview-{k}\')" alt="Header Mantra Image" style="max-width:100%; border:1px solid #ccc;">'
+            f'<img src="{url_protocol}../{header_image}" alt="Header Mantra Image" style="max-width:100%; border:1px solid #ccc;">'
             f'</div>'
             f'<h2 onclick="toggleImageVisibility(\'img-preview-{k}\')" style="cursor:pointer;">{header_number} {header}</h2>'
             )
             for l, mantra_set in enumerate(mantra_sets):
                 img_src=mantra_set.get('image-ref', '')
                 page_html +=(
-                f'<div id="img-preview-{k}-{l}" style="display:none; margin-bottom:8px;">'
+                f'<div onclick="toggleImageVisibility(\'img-preview-{k}-{l}\')" id="img-preview-{k}-{l}" style="display:none; margin-bottom:8px; cursor:pointer;">'
 
-                f'<img src="{url_protocol}../{img_src}" onclick="toggleImageVisibility(\'img-preview-{k}-{l}\')" alt="Mantra Image" style="max-width:100%; border:1px solid #ccc;">'
+                f'<img src="{url_protocol}../{img_src}" alt="Mantra Image" style="max-width:100%; border:1px solid #ccc;">'
                 f'</div>'
                 
                 )
@@ -237,20 +241,43 @@ for i, supersection in enumerate(supersections):
                 )
                 mantra_words=mantra_set.get("mantra-words", "")
                 number_of_columns = len(mantra_words)
-                for mantra_word in mantra_words:
-                    page_html += f'<td class="mantra-cell">{mantra_word.get("word", "")}</td>'
-                f'</tr>'
+                #for mantra_word in mantra_words:
+                #    page_html += f'<td class="mantra-cell">{mantra_word.get("word", "")}</td>'
+                #f'</tr>'
                 swara_list = mantra_set.get("swara", []).split()
-                page_html += f'<tr>'
+                #page_html += f'<tr>'
                 m=0
-                while m < number_of_columns:
-
-                    if m < len(swara_list):
-                        page_html += f'<td class="swara-cell">{swara_list[m]}</td>'
+                # This regex pattern matches a string with an optional prefix, a parenthesis group, and a suffix:
+                # ([^\(]*)   : Group 1 - matches any characters except '(' (the prefix before the first '(')
+                # (\()       : Group 2 - matches the literal '('
+                # ([^\)]*)   : Group 3 - matches any characters except ')' (the content inside the parentheses)
+                # (\))       : Group 4 - matches the literal ')'
+                # (.*)       : Group 5 - matches any remaining characters after the closing ')' (the suffix)
+                pattern1 = r'([^\(]*)(\()([^\)]*)(\))(.*)'
+                
+                swara_line="<tr>"
+                mantra_line=""
+                for mantra_word in mantra_words:
+                    
+                    match1=re.search(pattern1, mantra_word.get("word", ""))
+                    #print(f"Match is {match1} {match2} for {mantra_word.get("word")}")
+                    
+                    if match1:
+                        match_group_len=len(match1.groups())
+                        mantra_word_prefix=match1.group(1)
+                        empty_space_len=grapheme.length(mantra_word_prefix)
+                        empty_spaces='&nbsp;' * (empty_space_len)
+                        
+                        swara_word=match1.group(3)
+                        mantra_word_suffix=match1.group(5)
+                        mantra_line += f'<td class="mantra-cell">{mantra_word_prefix}{mantra_word_suffix}</td>'
+                        swara_line += f'<td class="swara-cell">{empty_spaces}{swara_word}</td>'
                     else:
-                        page_html += f'<td class="swara-cell"></td>'
-                    m += 1
-
+                        mantra_line += f'<td class="mantra-cell">{mantra_word.get("word", "")}</td>'
+                        swara_line += f'<td class="swara-cell"></td>'
+                swara_line+=f'</tr>'
+                page_html +=mantra_line
+                page_html +=swara_line
                 page_html += f'</tr></table>'
             page_html+= '''
             </body>

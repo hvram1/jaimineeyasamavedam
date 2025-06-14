@@ -13,7 +13,7 @@ def transliterate_text(text, src_script, target_script):
         print(f"Error occurred during transliteration: {e}")
         return None
 
-with open('output_text/final-Grantha.json', 'r', encoding='utf-8') as f:
+with open('output_text/rewritten_final-Grantha.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
         
 src_script="Grantha"
