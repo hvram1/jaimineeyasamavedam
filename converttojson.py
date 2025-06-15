@@ -60,20 +60,53 @@ def read_text_file_to_dict(file_path):
         
     return page_dict
 
-header_pattern_1=r'^(\d+)[^=]+$'
-header_pattern_2=r'[^=]+(=)[^=]+$'
-header_pattern_2_1="19 𑌸𑌾𑌮𑌮𑍍।"
-#header_pattern_2='='
-header_pattern_3='……'
-#header_pattern_2 = r'^।।[.।…—\-0-9\s]*\d+[.।…—\-0-9\s]*।।[.।…—\-0-9\s]*$'
-#header_pattern_math = r'^\d+\s*\+\s*\d+\s*=\s*\d+\s+[𑌀-𑍿]+$'
-#header_pattern_3=r'[^.]*(\.)*(\d+)[.]*'
-page_number_pattern=r'^\d+$'
+header_pattern_1=r'^(\d+)[^=]+$' # A section header begins with this
+section_end_pattern_1=r'[^=]+(=)[^=]+$'
+section_end_pattern_2="19 𑌸𑌾𑌮𑌮𑍍।"  # All sections have an ending of x+y=z . But the first section just has x
 
+header_pattern_3='……'
+
+page_number_pattern=r'^\d+$'
+# Removed a character 1 from line 10671 10620 10653 in output_grantha.txt
+# Joined the separate 4(145) into previous line
+# Joined (179) into previous line 
+# Joined 17 ।।  (1043)
+# Joined 8 (1090)
 pattern_to_ignore=[ # These lines need not be merged 
         "𑌜𑍈𑌮𑌿𑌨𑍀𑌯  𑌸𑌾𑌮  𑌪𑍍𑌰𑌕𑍃𑌤𑌿  𑌗𑌾𑌨𑌮𑍍",
         "।।𑌆𑌗𑍍𑌨𑍇𑌯 𑌪𑌾𑌂:।।",
         "𑌹𑌰𑌿: ஓ𑌮𑍍",
+        "𑌮𑍁𑌦𑍍𑌗𑌸𑍍𑌯𑌵𑌾𑌂 𑌗𑍀𑌰𑌸𑌸𑍍𑌯 𑌦𑍇𑌵𑌾𑌨𑌾𑌂𑌵𑌾",
+        "𑌅𑌗𑍍𑌨𑍇𑌜𑌰𑌿𑌤𑌰𑍍𑌵𑌿𑌸𑍍𑌖𑌤𑌿𑌰𑍗𑌹𑍋𑌵𑌾𑌏𑌹𑌿 𑌯𑌾",
+        "𑌪𑍍𑌰𑌜𑌾𑌪𑌤𑍇𑌰𑍍𑌵𑌾𑌵𑌰𑍁𑌣𑌸𑍍𑌯𑌚𑍇",
+        "𑌵𑌿𑌰𑍍𑌧𑌾𑌨𑍇 𑌉𑌤𑍍𑌤𑌰𑍇।।",
+        "𑌬𑍈𑌲𑍍𑌵𑌸𑍍𑌯।।",
+        "𑌪𑍍𑌰𑌸𑌮𑍍𑌮𑌰𑌾𑌜𑌞𑍍𑌚𑍍𑌜𑌰𑍍𑌷𑌣𑍀𑌨𑌾𑌮𑌿𑌨𑍍𑌦𑌰𑌂𑌸𑍍𑌤𑍋𑌤𑌾𑌨𑌵𑍍𑌯𑌂",
+        "𑌕𑌕𑍍𑌷𑌾𑌣𑌿𑌵𑌾 ।",
+        "𑌔𑌡𑍍𑌵𑌸𑌦𑍍𑌮𑌨𑌾𑌨𑌿𑌵𑌾 ।।",
+        "𑌔𑌦𑌲𑍇 𑌇𑌤𑌿𑌵𑌾 ।",
+        "𑌆𑌙𑍍𑌗𑌿𑌰𑌸𑌾𑌨𑌿𑌵𑌾 ।",
+        "𑌵𑌾𑌤𑍃𑌤𑍀𑌯𑌂 ।",
+        "𑌇𑌨𑍍𑌦𑍇𑌰𑌾𑌦𑌧𑍀𑌚𑍋𑌅𑌸𑍍𑌥𑌭𑌿𑌰𑍀 𑌯𑌾 𑌈 𑌯𑌾 । 𑌵𑍃𑌤𑍍𑌰𑌾𑌣𑍍𑌯",
+        "𑌮𑌨𑌾𑌯𑍇𑌰 ।",
+        "𑌇𑌤𑌿 𑌵𑌾𑌰𑍍𑌯𑌾𑌨𑌾𑌂 𑌸𑌾𑌮𑌾𑌨𑌿 𑌚𑌤𑍍𑌵𑌾𑌰𑌿 𑌸𑌾𑌂𑌶𑌾𑌨𑌾𑌨𑌿𑌵𑌾।।",
+        "𑌵𑌜𑍍𑌰𑌸𑍍𑌯𑌵𑌾𑌂𑌗𑍀𑌰𑌸𑌸𑍍𑌯।",
+        "𑌕𑌶𑍍𑌯𑌪𑌸𑍍𑌯𑌵𑌾𑌨𑍀𑌤𑍗𑌚𑍗 ।",
+        "𑌪𑍍𑌰𑌿𑌯𑌾𑌣𑌿।",
+        "𑌆𑌕𑍂𑌪𑌾𑌰𑌾𑌣𑌿𑌵𑌾।",
+        "𑌦𑍇𑌵𑌪𑍁𑌰𑍇।",
+        "𑌸𑌾𑌮𑌮𑍈𑌧𑌾𑌤𑌿𑌥𑌂𑌵𑌾 ।",
+        "𑌸𑌾𑌮𑌵𑌾",
+        "𑌮𑌹𑍋𑌵𑌿𑌶𑍀𑌯𑍇 ।",
+        "𑌗𑍗𑌤𑌮𑌸𑍍𑌯𑌵𑌾𑌪𑍍𑌰𑌤𑍋𑌦𑍗 ।",
+        "𑌵𑌾𑌰𑌾𑌹𑌾𑌣𑌿𑌵𑌾…",
+        "𑌸𑍁𑌰𑌸𑍇𑌚𑍇।।",
+        "𑌸𑌂𑌪𑌚𑌾  𑌤𑍃𑌤𑍀𑌯𑌂 ।",
+        "𑌸𑌾𑌮𑌾𑌨𑌿 𑌤𑍍𑌰𑍀𑌣𑌿  𑌶𑌾𑌰𑍍𑌙𑍍𑌗𑌾𑌣𑌿𑌵𑌾 ।",
+        "𑌨𑌿𑌧 𑌨𑌾𑌨𑌿𑌵𑌾 𑌤𑍍𑌵𑌾𑌷𑍍𑌟𑍍𑌰𑍀𑌸𑌾𑌮𑌾𑌨𑍀 ।",
+        "𑌤𑍃𑌤𑍀𑌯𑍇𑌤𑌰𑌾𑌣𑌿𑌪 𑌤𑍍𑌯𑌰𑍍𑌥𑌃 ।",
+        "𑌹𑌾𑌬𑍁𑌜𑌨  𑌡𑌾𑌬𑍁𑌜𑌨  𑌡𑌾𑌬𑍁𑌜𑌨 𑌜𑍍𑌜𑌨  𑌡𑌾𑌬𑍁𑌜𑌨"
+       
         
 ]
 
@@ -139,12 +172,12 @@ for page in text_dict.keys():
             myLine_list.append(line_json)
             #continue
         
-        elif re.match(header_pattern_2, line) or (line==header_pattern_2_1):
+        elif re.match(section_end_pattern_1, line) or (line==section_end_pattern_2):
             #print(f"Count  Appending {line} to myLine_list of length {len(myLine_list)}")
             #print(f" Matched a new ending ${line}")
             line_json["category"]="count"
-            if line == header_pattern_2_1:
-                print(f" Matched a new ending again ${line}")
+            if line == section_end_pattern_2:
+                print(f" Matched an end of section without '+' {line}")
                 line_json['text']="0+19=19"
             myLine_list.append(line_json)
             if in_section == True:
@@ -163,6 +196,7 @@ for page in text_dict.keys():
                     section_number+=1
                     subsection_number+=1
                     subsections={}
+                    
             
             in_section=False
         
@@ -180,7 +214,7 @@ for page in text_dict.keys():
                     try:
                         my_json = subsection_markers["subsection_"+str(subsection_number)]
                     except KeyError:
-                        print(f" Key error for subsection {subsection_number}")
+                        print(f" Key error for subsection {subsection_number} in page {page} encountered {line}")
                         my_json = {}
                     my_json["page_end"]=page
                     my_json["line_end"]=line_number-1
@@ -194,8 +228,19 @@ for page in text_dict.keys():
                     subsection_lineslist=[]
                     subsection_number+=1
                 in_section = True
-                
-                
+            else:
+                print(f" current header is None for {page} encountering {line}")
+                current_subsection_text = []
+                myLine_list = []
+                subsection_lineslist=[]
+                in_section = True
+
+            # Replace the "||" and the "|" for header    
+            head_text=line_json['text']
+            head_text=head_text.replace("।।"," ") 
+            head_text=head_text.replace("।"," ")
+            line_json['text']=head_text 
+
             line_category="mantra" # This is for the next line
             current_header = line
             
@@ -206,6 +251,7 @@ for page in text_dict.keys():
             #subsection_lineslist.append(line_json)
             #print(f"header  Appending {line} to myLine_list of length {len(myLine_list)}")
             #continue
+        
         else:
             #print(f"{line_category}  Appending {line} to myLine_list of length {len(myLine_list)}")
             in_section=True
@@ -252,6 +298,11 @@ output_dir = "output_text"
 print(f" Number of sections: {len(subsections)} {len(subsection_markers)}")
 final_json={"supersection":{}}
 for key in supersections.keys():
+    temp_x=supersections[key]['supersection_title']
+    temp_x=temp_x.replace("_","")
+    supersections[key]['supersection_title']=temp_x
+    # The above hack has to be done since the super section and start were the same
+    # and hence introduced a _ to differentiate. Removing it here to make sure the final copy is fine
     print(f" Supersection: {supersections[key]['supersection_title']} contains {len(supersections[key]['sections'])} sections")
     final_json["supersection"][key]={}
     final_json["supersection"][key]['supersection_title']=supersections[key]['supersection_title']
@@ -283,7 +334,7 @@ for key in supersections.keys():
             category=""
             i=0
             if len(lines) %2 !=0:
-                print(f" Skipping this subsection since odd number of lines and swaras")
+                print(f" Skipping this subsection since odd number of lines and swaras \n {lines} ")
                 continue
             mantra_sets=[]
             while (i < len(lines)):
