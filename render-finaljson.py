@@ -2,8 +2,20 @@ import json
 import sys
 import re
 import grapheme
+import urllib.parse
+from requests.models import PreparedRequest
 url_protocol = 'file://'
 url_protocol ='' # Use this for local file system access, or set to '' for web URLs
+issue_url='https://github.com/hvram1/jaimineeyasamavedam/issues/new'
+def my_encodeURL(url,param1,value1,param2,value2):
+    #x=urllib.parse.quote(URL)
+    #print("URL is ",url, "param1 is ",param1,"value1 is ",value1,"param2 is ",param2,"value2 is ",value2)
+    #x=urllib.parse.quote(url+"?"+param1+"="+value1+"&"+param2+"="+value2)
+    req = PreparedRequest()
+    params = {param1:value1,param2:value2}
+    req.prepare_url(url, params)
+    #print(req.url)
+    return req.url
 
 if len(sys.argv) < 2:
     print("Usage: python render-finaljson.py <input_json_file>")
@@ -240,7 +252,9 @@ for i, supersection in enumerate(supersections):
                 f'<tr onclick="toggleImageVisibility(\'img-preview-{k}-{l}\')" style="cursor:pointer;">'
                 )
                 mantra_words=mantra_set.get("mantra-words", "")
+                count_instance=mantra_set.get("instance", 0)
                 number_of_columns = len(mantra_words)
+                issue_title=f'Issue in Swara for section {i+1}-{j+1}-{k+1}-{l+1}'
                 #for mantra_word in mantra_words:
                 #    page_html += f'<td class="mantra-cell">{mantra_word.get("word", "")}</td>'
                 #f'</tr>'
@@ -257,11 +271,12 @@ for i, supersection in enumerate(supersections):
                 
                 swara_line="<tr>"
                 mantra_line=""
+                mantra_for_issue=""
                 for mantra_word in mantra_words:
                     
                     match1=re.search(pattern1, mantra_word.get("word", ""))
                     #print(f"Match is {match1} {match2} for {mantra_word.get("word")}")
-                    
+                    mantra_for_issue+=mantra_word.get("word", "")
                     if match1:
                         match_group_len=len(match1.groups())
                         mantra_word_prefix=match1.group(1)
@@ -275,8 +290,19 @@ for i, supersection in enumerate(supersections):
                     else:
                         mantra_line += f'<td class="mantra-cell">{mantra_word.get("word", "")}</td>'
                         swara_line += f'<td class="swara-cell"></td>'
-                swara_line+=f'</tr>'
+                        
+                if (count_instance !=0):
+                    mantra_line += f'<td></td><td>{count_instance}</td>'
+                    
+                
                 page_html +=mantra_line
+                issue_body=(
+                    f' This is the current swara position . {mantra_for_issue}. \n\n'
+                    f'Please enter the new swara in the same format (i.e.) mantra(swara)mantramantra(swara) and log a correction'
+                )
+                issue_link=my_encodeURL(issue_url,"title",issue_title,"body",issue_body)
+                swara_line += f'<td><a href="{issue_link}" target="_blank">Raise a correction</a></td>'
+                swara_line+=f'</tr>'
                 page_html +=swara_line
                 page_html += f'</tr></table>'
             page_html+= '''
