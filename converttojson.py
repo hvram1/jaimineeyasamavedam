@@ -76,6 +76,8 @@ pattern_to_ignore=[ # These lines need not be merged
         "𑌜𑍈𑌮𑌿𑌨𑍀𑌯  𑌸𑌾𑌮  𑌪𑍍𑌰𑌕𑍃𑌤𑌿  𑌗𑌾𑌨𑌮𑍍",
         "।।𑌆𑌗𑍍𑌨𑍇𑌯 𑌪𑌾𑌂:।।",
         "𑌹𑌰𑌿: ஓ𑌮𑍍",
+]
+pattern_to_retrofit=[
         "𑌮𑍁𑌦𑍍𑌗𑌸𑍍𑌯𑌵𑌾𑌂 𑌗𑍀𑌰𑌸𑌸𑍍𑌯 𑌦𑍇𑌵𑌾𑌨𑌾𑌂𑌵𑌾",
         "𑌅𑌗𑍍𑌨𑍇𑌜𑌰𑌿𑌤𑌰𑍍𑌵𑌿𑌸𑍍𑌖𑌤𑌿𑌰𑍗𑌹𑍋𑌵𑌾𑌏𑌹𑌿 𑌯𑌾",
         "𑌪𑍍𑌰𑌜𑌾𑌪𑌤𑍇𑌰𑍍𑌵𑌾𑌵𑌰𑍁𑌣𑌸𑍍𑌯𑌚𑍇",
@@ -105,7 +107,7 @@ pattern_to_ignore=[ # These lines need not be merged
         "𑌸𑌾𑌮𑌾𑌨𑌿 𑌤𑍍𑌰𑍀𑌣𑌿  𑌶𑌾𑌰𑍍𑌙𑍍𑌗𑌾𑌣𑌿𑌵𑌾 ।",
         "𑌨𑌿𑌧 𑌨𑌾𑌨𑌿𑌵𑌾 𑌤𑍍𑌵𑌾𑌷𑍍𑌟𑍍𑌰𑍀𑌸𑌾𑌮𑌾𑌨𑍀 ।",
         "𑌤𑍃𑌤𑍀𑌯𑍇𑌤𑌰𑌾𑌣𑌿𑌪 𑌤𑍍𑌯𑌰𑍍𑌥𑌃 ।",
-        "𑌹𑌾𑌬𑍁𑌜𑌨  𑌡𑌾𑌬𑍁𑌜𑌨  𑌡𑌾𑌬𑍁𑌜𑌨 𑌜𑍍𑌜𑌨  𑌡𑌾𑌬𑍁𑌜𑌨"
+        "𑌹𑌾𑌬𑍁𑌜𑌨  𑌡𑌾𑌬𑍁𑌜𑌨  𑌡𑌾𑌬𑍁𑌜𑌨 𑌜𑍍𑌜𑌨  𑌡𑌾𑌬𑍁𑌜𑌨",
        
         
 ]
@@ -165,13 +167,16 @@ for page in text_dict.keys():
             line_json["category"]="page_number"
             myLine_list.append(line_json)
             #continue
-        elif line in pattern_to_ignore:
+        elif line in pattern_to_ignore :
             #print(f"Generic  Appending {line} to myLine_list of length {len(myLine_list)}")
             
             line_json["category"]="generic"
             myLine_list.append(line_json)
             #continue
-        
+        elif line in pattern_to_retrofit :
+            line_json["category"]="toBeAddedLater"
+            myLine_list.append(line_json)
+
         elif re.match(section_end_pattern_1, line) or (line==section_end_pattern_2):
             #print(f"Count  Appending {line} to myLine_list of length {len(myLine_list)}")
             #print(f" Matched a new ending ${line}")
@@ -270,8 +275,28 @@ for page in text_dict.keys():
                 for sub_string in super_section_titles_end:
                     if  sub_string in line:
                         line_json["category"]="super-section-end"
+                        current_header = None
                         #print(f" End of super section {line_json} with supersection_title {supersection_title}")
                         #sections[section_number] = {"subsections": subsections, "count": line_json}
+                        # Because we found a supersection it means the previous subsection should be completed
+                        #my_json["page_end"]=page
+                        #my_json["line_end"]=line_number-1
+                        #subsection_markers["subsection_"+str(subsection_number)]=my_json
+                        #subsections[subsection_number] = subsection_lineslist
+                        #subsections["subsection_"+str(subsection_number)] = {"header":my_json_header, "lines":subsection_lineslist}
+                        #page_json["subsection_"+str(subsection_number)] = myLine_list
+                        #print(f" Creating page_json of {section_number} with myLine_list of length {len(myLine_list)}")
+                        
+                        #sections["section_"+str(section_number)] = {"subsections": subsections, "count": line_json}
+                    #page_json[section_number] = sections
+                        current_subsection_text = []
+                        myLine_list = []
+                        subsection_lineslist=[]
+                        subsection_number+=1
+                        section_number+=1
+                        
+                        
+                        subsections={}
                         supersections["supersection_"+str(supersection_number)] = {"supersection_title":supersection_title, "sections":sections}
                         sections={}
                         
