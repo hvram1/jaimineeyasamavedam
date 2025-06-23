@@ -78,8 +78,8 @@ pattern_to_ignore=[ # These lines need not be merged
         "𑌹𑌰𑌿: ஓ𑌮𑍍",
 ]
 pattern_to_retrofit=[
-        "𑌮𑍁𑌦𑍍𑌗𑌸𑍍𑌯𑌵𑌾𑌂 𑌗𑍀𑌰𑌸𑌸𑍍𑌯 𑌦𑍇𑌵𑌾𑌨𑌾𑌂𑌵𑌾",
-        "𑌅𑌗𑍍𑌨𑍇𑌜𑌰𑌿𑌤𑌰𑍍𑌵𑌿𑌸𑍍𑌖𑌤𑌿𑌰𑍗𑌹𑍋𑌵𑌾𑌏𑌹𑌿 𑌯𑌾",
+        "𑌮𑍁𑌦𑍍𑌗𑌸𑍍𑌯𑌵𑌾𑌂 𑌗𑍀𑌰𑌸𑌸𑍍𑌯 𑌦𑍇𑌵𑌾𑌨𑌾𑌂𑌵𑌾 ।।",
+        #"𑌅𑌗𑍍𑌨𑍇𑌜𑌰𑌿𑌤𑌰𑍍𑌵𑌿𑌸𑍍𑌖𑌤𑌿𑌰𑍗𑌹𑍋𑌵𑌾𑌏𑌹𑌿 𑌯𑌾",
         "𑌪𑍍𑌰𑌜𑌾𑌪𑌤𑍇𑌰𑍍𑌵𑌾𑌵𑌰𑍁𑌣𑌸𑍍𑌯𑌚𑍇",
         "𑌵𑌿𑌰𑍍𑌧𑌾𑌨𑍇 𑌉𑌤𑍍𑌤𑌰𑍇।।",
         "𑌬𑍈𑌲𑍍𑌵𑌸𑍍𑌯।।",
@@ -173,9 +173,9 @@ for page in text_dict.keys():
             line_json["category"]="generic"
             myLine_list.append(line_json)
             #continue
-        elif line in pattern_to_retrofit :
-            line_json["category"]="toBeAddedLater"
-            myLine_list.append(line_json)
+        #elif line in pattern_to_retrofit :
+        #    line_json["category"]="toBeAddedLater"
+        #    myLine_list.append(line_json)
 
         elif re.match(section_end_pattern_1, line) or (line==section_end_pattern_2):
             #print(f"Count  Appending {line} to myLine_list of length {len(myLine_list)}")
@@ -305,7 +305,11 @@ for page in text_dict.keys():
             if found_super_section_end == False and found_super_section_start == False:   
                 line_json["category"]=line_category
             if line_category == "mantra" and current_header !=None:
-                line_category = "swara"
+                if line in pattern_to_retrofit:
+                    print(f" Matching {line} in pattern_to_retrofit")
+                    line_category = "mantra"  # Making the next line also as mantra
+                else:
+                    line_category = "swara"
             elif line_category == "swara":
                 line_category = "mantra"
             myLine_list.append(line_json)
@@ -358,82 +362,119 @@ for key in supersections.keys():
             lines= supersections[key]['sections'][key1]['subsections'][key2]['lines']
             category=""
             i=0
-            if len(lines) %2 !=0:
-                print(f" Skipping this subsection since odd number of lines and swaras \n {lines} ")
-                continue
+            #if len(lines) %2 !=0:
+            #    print(f" Skipping this subsection since odd number of lines and swaras \n {lines} ")
+            #    continue
             mantra_sets=[]
+            print(f" length of lines {len(lines)}")
             while (i < len(lines)):
                 mantra_line = lines[i]
-                swara_line = lines[i+1]
-                if mantra_line["category"] == swara_line["category"]:
-                    print(f" This is an error ")
-                if mantra_line["page"] != swara_line["page"]:
-                    print(f" Mantra and Swara are in 2 different pages {mantra_line['page']} line {mantra_line['line_number_in_page']:02d} and {swara_line['page']} line {swara_line['line_number_in_page']:02d}")
-                    #combine_images([f"lines/page_{mantra['page']}/line_{mantra['line_number_in_page']:02d}.png", f"lines/page_{swara['page']}/line_{swara['line_number_in_page']:02d}.png"])
-                mantra=mantra_line["text"]
-                swara=swara_line["text"]
-                swara_grapheme_length=grapheme.length(swara)
-                mantra_words=mantra.split()
-                # need to divide swara_grapheme_length swaras equally among mantra_words
-                mantra_set={}
-                instance=0
-                mantra_set["mantra-words"]=[]
-                for word in mantra_words:
-                    word_grapheme_length=grapheme.length(word)
-                    mantra_word={}
-                    pattern=r'\((\d+)\)'
-                    pattern1=r'।।(\d+)।।'  #।।2।।
-                    match=re.search(pattern,word)
+                try:
+                    swara_line = lines[i+1]
+                    print(f" line {i} {mantra_line['category']} line {i+1} {swara_line['category']}")
+                except IndexError:
+                    print(f"line {i} {mantra_line['category']}")
+                    swara_line=None
+                
+                if swara_line==None or mantra_line["category"] == swara_line["category"]:
+                    print(f" This is NOT an error. Accomodating mantras without swaras ")
+                    mantra=mantra_line["text"]
+                    mantra_words=mantra.split()
+                    mantra_set={}
+                    instance=0
+                    mantra_set["mantra-words"]=[]
+                    for word in mantra_words:
+                        word_grapheme_length=grapheme.length(word)
+                        mantra_word={}
+                        pattern=r'\((\d+)\)'
+                        pattern1=r'।।(\d+)।।'  #।।2।।
+                        match=re.search(pattern,word)
+                        if match:
+                            instance=match.group(1)
+                            word=re.sub(pattern,"",word)
+                        
+                        match1=re.search(pattern1,word)
+                        if match1:
+                            #instance=match.group(1)
+                            word=re.sub(pattern1,"",word)
+                        mantra_word["word"]=word
+                        mantra_word["swara_positions"]=[{"position":1}]
+                        mantra_set["mantra-words"].append(mantra_word)
+                    path=f"lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png"
+                    mantra_set["image-ref"]=path
+                    if instance!=0:
+                        mantra_set["instance"]=instance
+                    mantra_sets.append(mantra_set)
+                    i=i+1
+                else:
+                    
+                    if mantra_line["page"] != swara_line["page"]:
+                        print(f" Mantra and Swara are in 2 different pages {mantra_line['page']} line {mantra_line['line_number_in_page']:02d} and {swara_line['page']} line {swara_line['line_number_in_page']:02d}")
+                        #combine_images([f"lines/page_{mantra['page']}/line_{mantra['line_number_in_page']:02d}.png", f"lines/page_{swara['page']}/line_{swara['line_number_in_page']:02d}.png"])
+                    mantra=mantra_line["text"]
+                    swara=swara_line["text"]
+                    swara_grapheme_length=grapheme.length(swara)
+                    mantra_words=mantra.split()
+                    # need to divide swara_grapheme_length swaras equally among mantra_words
+                    mantra_set={}
+                    instance=0
+                    mantra_set["mantra-words"]=[]
+                    for word in mantra_words:
+                        word_grapheme_length=grapheme.length(word)
+                        mantra_word={}
+                        pattern=r'\((\d+)\)'
+                        pattern1=r'।।(\d+)।।'  #।।2।।
+                        match=re.search(pattern,word)
+                        if match:
+                            instance=match.group(1)
+                            word=re.sub(pattern,"",word)
+                        
+                        match1=re.search(pattern1,word)
+                        if match1:
+                            #instance=match.group(1)
+                            word=re.sub(pattern1,"",word)
+                        mantra_word["word"]=word
+                        mantra_word["swara_positions"]=[{"position":1}]
+                        mantra_set["mantra-words"].append(mantra_word)
+                    match=re.search(pattern,swara)
                     if match:
                         instance=match.group(1)
-                        word=re.sub(pattern,"",word)
-                    
-                    match1=re.search(pattern1,word)
+                        swara=re.sub(pattern,"",swara)
+                    match1=re.search(pattern1,swara)
                     if match1:
                         #instance=match.group(1)
-                        word=re.sub(pattern1,"",word)
-                    mantra_word["word"]=word
-                    mantra_word["swara_positions"]=[{"position":1}]
-                    mantra_set["mantra-words"].append(mantra_word)
-                match=re.search(pattern,swara)
-                if match:
-                    instance=match.group(1)
-                    swara=re.sub(pattern,"",swara)
-                match1=re.search(pattern1,swara)
-                if match1:
-                    #instance=match.group(1)
-                    swara=re.sub(pattern1,"",swara)
-                swara_graphemes=swara.split()
-                mantra_set["swara"] = " ".join(c for c in swara_graphemes)
-                #mantra_sets.append(mantra_set)
+                        swara=re.sub(pattern1,"",swara)
+                    swara_graphemes=swara.split()
+                    mantra_set["swara"] = " ".join(c for c in swara_graphemes)
+                    #mantra_sets.append(mantra_set)
 
-                mantra_grapheme_length=grapheme.length(mantra)
-                path=f"lines/page_{mantra_line['page']}/combined_{mantra_line['line_number_in_page']:02d}_{swara_line['line_number_in_page']:02d}.png"
-                mantra_set["image-ref"]=path
-                if instance!=0:
-                    mantra_set["instance"]=instance
-                mantra_sets.append(mantra_set)
-                if os.path.exists(os.path.join("output_text", path)):
-                    #print(f"File exists: {path}")
-                    pass
-                else:
-                    #print(f"File does not exist: {path}")
-                    if os.path.exists(f"output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png") and os.path.exists(f"output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"):
-                        combine_images([f"output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png", f"output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"])
+                    mantra_grapheme_length=grapheme.length(mantra)
+                    path=f"lines/page_{mantra_line['page']}/combined_{mantra_line['line_number_in_page']:02d}_{swara_line['line_number_in_page']:02d}.png"
+                    mantra_set["image-ref"]=path
+                    if instance!=0:
+                        mantra_set["instance"]=instance
+                    mantra_sets.append(mantra_set)
+                    if os.path.exists(os.path.join("output_text", path)):
+                        #print(f"File exists: {path}")
+                        pass
                     else:
-                        if os.path.exists(f"output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png"):
-                            #print(f"File exists: lines/page_{mantra['page']}/line_{mantra['line_number_in_page']:02d}.png")
-                            pass
+                        #print(f"File does not exist: {path}")
+                        if os.path.exists(f"output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png") and os.path.exists(f"output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"):
+                            combine_images([f"output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png", f"output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"])
                         else:
-                            print(f"1 File of line does not exist: output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png")
-                        if os.path.exists(f"output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"):
-                            #print(f"File exists: lines/page_{swara['page']}/line_{swara['line_number_in_page']:02d}.png")
-                            pass
-                        else:
-                            print(f"2 File of line does not exist: output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png")
-                            pass
-                    pass
-                i += 2
+                            if os.path.exists(f"output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png"):
+                                #print(f"File exists: lines/page_{mantra['page']}/line_{mantra['line_number_in_page']:02d}.png")
+                                pass
+                            else:
+                                print(f"1 File of line does not exist: output_text/lines/page_{mantra_line['page']}/line_{mantra_line['line_number_in_page']:02d}.png")
+                            if os.path.exists(f"output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png"):
+                                #print(f"File exists: lines/page_{swara['page']}/line_{swara['line_number_in_page']:02d}.png")
+                                pass
+                            else:
+                                print(f"2 File of line does not exist: output_text/lines/page_{swara_line['page']}/line_{swara_line['line_number_in_page']:02d}.png")
+                                pass
+                        pass
+                    i += 2
             header_json=supersections[key]['sections'][key1]['subsections'][key2]['header']
             new_header_json={}
             final_json["supersection"][key]['sections'][key1]['subsections'][key2]['mantra_sets']=mantra_sets

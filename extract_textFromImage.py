@@ -8,6 +8,9 @@ import grapheme
 def natural_sort_key(s):
         # Split string into list of strings and integers for natural sorting
         return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]
+def get_grantha_character_positions(word):
+    # just returning the unicode characters does not work 
+    return 
 
 def get_char_position(word_img, box, word_position,word, num_chars,image_path):
     cx, cy, cw, ch = box
@@ -24,13 +27,15 @@ def get_char_position(word_img, box, word_position,word, num_chars,image_path):
     contours, _ = cv2.findContours(dilated_line, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     char_boxes = [cv2.boundingRect(c) for c in contours]
     sorted_chars = sorted(char_boxes, key=lambda b: b[0])  # left-to-right
+      
     for (x, y, w, h) in sorted_chars:
-        #cv2.rectangle(word_img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        cv2.rectangle(word_img, (x, y), (x + w, y + h), (0, 255, 0), 2)
         pass
+    print(f" There are {len(sorted_chars)} characters in the word image at position {word_position} with box {box}")
     #cv2.imshow("Characters", word_img)
     #cv2.waitKey(0)
     #cv2.destroyAllWindows()
-    #print(f" There are {len(sorted_chars)} characters in the word image at position {word_position} with box {box}")
+    
     for i, (x, y, w, h) in enumerate(sorted_chars):
         if  ( x+w > cx and x+w < cx + cw) or (x >cx and x < cx + cw) :
             #print(f" Character {i} at position x={x}, y={y}, w={w}, h={h} intersects with the word box {box}")
@@ -93,50 +98,54 @@ def extract_words_from_image(image_path, output_dir, mantra_word_lengths=[], swa
 
     # Find contours for words (external contours)
     gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-    _, thresh = cv2.threshold(gray1, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5,5))
-    dilated = cv2.dilate(thresh, kernel, iterations=20)
-    contours, _ = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    _, thresh1 = cv2.threshold(gray1, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    kernel1 = cv2.getStructuringElement(cv2.MORPH_RECT, (5,5))
+    dilated1 = cv2.dilate(thresh1, kernel1, iterations=20)
+    contours, _ = cv2.findContours(dilated1, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     boxes1 = [cv2.boundingRect(c) for c in contours]
     # Sort by y (top to bottom), then x (left to right)
-    boxes1 = sorted(boxes1, key=lambda b: (b[0], b[1]))
+    boxes1 = sorted(boxes1, key=lambda b: (b[0]))
     #print(f"Found {len(boxes1)} mantra words in the image.{first_image}")
     if (len(mantra_word_lengths) !=0 ):
         if len(boxes1) == len(mantra_word_lengths):
             pass
         else:
             print(f"Mantra word lengths differ: Text {len(mantra_word_lengths)} Image {len(boxes1)}")
+            return []
+
     gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
-    _, thresh = cv2.threshold(gray2, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5,5))
-    dilated = cv2.dilate(thresh, kernel, iterations=15)
-    contours, _ = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    boxes2 = [cv2.boundingRect(c) for c in contours]
+    _, thresh2 = cv2.threshold(gray2, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    kernel2 = cv2.getStructuringElement(cv2.MORPH_RECT, (5,5))
+    dilated2 = cv2.dilate(thresh2, kernel2, iterations=15)
+    contours2, _ = cv2.findContours(dilated2, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    boxes2 = [cv2.boundingRect(c) for c in contours2]
     # Sort by y (top to bottom), then x (left to right)
-    boxes2 = sorted(boxes2, key=lambda b: (b[0], b[1]))
+    boxes2 = sorted(boxes2, key=lambda b: (b[0]))
     if (len(swara_word_lengths) !=0 ):
         if len(boxes2) == len(swara_word_lengths):
             pass
         else:
             print(f"Swara word lengths differ: Text {len(swara_word_lengths)} Image {len(boxes2)}")
+            return[]
     #print(f"Found {len(boxes2)} swara words in the image.{second_image}")
 
     #print(f"Line 1 has {len(line1)} words and Line 2 has {len(line2)} words.")
     # For each word in line1, find the horizontally overlapping words in line2
+    # newboxes is the boxes in line2 extending to line1
     newboxes = []
     for (x1,y1,w1,h1) in boxes2:
         newbox=[x1,y1,x1+w1,img.shape[0]]
         newboxes.append(newbox)
     #print(f"New boxes created: {newboxes} and boxes1 {boxes1}")
-    
+        
     line1_height = img1.shape[0]
     line1 = [b for b in boxes if b[1] < line1_height]
 
     #print(f"line1 boxes created are {line1}")
     intersecting_indices = []
-    # Find intersecting indices: for each box in newboxes, find index of boxes2 that intersects horizontally
+    # Find intersecting indices: for each box in newboxes, find index of boxes1 that intersects horizontally
     for i, (x1, y1, x2, y2) in enumerate(newboxes):
-        cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2)
+        #cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2)
         #cv2.imshow("Word Image",img)
         #cv2.waitKey(0)
         #cv2.destroyAllWindows()
@@ -172,7 +181,7 @@ def extract_words_from_image(image_path, output_dir, mantra_word_lengths=[], swa
                     #cv2.waitKey(0)
                     #cv2.destroyAllWindows()
                     ## The original image is used to get the character position
-                    pos = get_char_position(img, (bx, by, bw, bh), word_position, word, num_chars,image_path)
+                    pos = get_char_position(img1, (bx, by, bw, bh), word_position, word, num_chars,image_path)
                     tup_le = (word_position, pos)
                     intersecting_indices.append(tup_le)
                 break  # Only take the first intersecting box for each newbox
@@ -277,9 +286,12 @@ def process_line_images(image_path,output_dir,text_lines):
     images_to_combine=[]
     for line_image in line_paths:
         base_name = os.path.basename(line_image)
-        # print(f"Image name is {base_name}")
+        print(f"Image name is {base_name}")
         line_num = base_name.split('_')[1].split('.')[0]
         line_index=int(line_num)-1
+        if line_index >= len(translated_lines):
+            print(f" This is an error . So not processing")
+            continue
         text_line=translated_lines[line_index]
         match1=re.search(header_pattern,text_line)
         match2=text_line.isnumeric()
@@ -287,17 +299,18 @@ def process_line_images(image_path,output_dir,text_lines):
             print(f" Ignoring line {line_num} since these are generic and no swaras")
             continue
         elif match1:
-            print(f" Ignoring line {line_num} since these are headers and so swaras ")
+            print(f" Ignoring line {line_num} since these are headers and no swaras ")
             continue
         if match2 == True:
             print(f" Matching page number {line_num} ")
             continue
         images_to_combine.append(line_image)
         #print(f" Line number is {line_num} Text is {translated_lines[line_index]}")
+    print(f" Images to combine are {images_to_combine}")
     combine_images(image_path,output_dir,text_lines,images_to_combine)
     return 
 
-def extract_lines_from_image(image_path, output_dir, text_lines):
+def extract_lines_from_image(image_path, output_dir, text_lines,num_terations=10):
     # Read image
     img = cv2.imread(image_path)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -309,7 +322,7 @@ def extract_lines_from_image(image_path, output_dir, text_lines):
     #print(f" The structuring element size is {img.shape[1]//30} and 5")
     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (img.shape[1]//30, 5))
     height_image,width_image = gray.shape
-    dilated = cv2.dilate(thresh, kernel, iterations=10)
+    dilated = cv2.dilate(thresh, kernel, iterations=num_iterations) #8 iterations works for some
     bounding_boxes=[]
     # Find contours (lines)
     contours, _ = cv2.findContours(dilated, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -323,7 +336,7 @@ def extract_lines_from_image(image_path, output_dir, text_lines):
     # Get bounding box
         x, y, w, h = cv2.boundingRect(contour)
         aspect_ratio = float(w) / h if h != 0 else float('inf')
-        print(f" bounding box at x={x} y={y} w={w} h={h} aspect_ratio={aspect_ratio} length={length}")
+        #print(f" bounding box at x={x} y={y} w={w} h={h} aspect_ratio={aspect_ratio} length={length}")
 
 
     # Check if it's a line based on length and aspect ratio
@@ -411,84 +424,127 @@ def read_text_file_to_dict(file_path):
         
     return page_dict
 if __name__ == "__main__":
-    #images_dir = "images"
+    images_dir = "images"
     output_base_dir = "output_text"
-    images_dir = f"{output_base_dir}/lines/*/"
-    #textfile="output_text/output-layout.txt"
+    #images_dir = f"{output_base_dir}/lines/*/"
+    
+    textfile="output_text/output-layout.txt"
+    #textfile="output_text/output_grantha.txt"
     # Find all images matching the pattern page_xxx.png
-    #text_dict= read_text_file_to_dict(textfile)
+    text_dict= read_text_file_to_dict(textfile)
     
     image_paths = sorted(
-        glob.glob(os.path.join(images_dir, "combined*.png")),
+        #glob.glob(os.path.join(images_dir, "combined*.png")),
+        glob.glob(os.path.join(images_dir, "page_*.png")),
         key=natural_sort_key
     )
+    #image_paths=["images/page_155.png","images/page_211.png","images/page_422.png"]
     
     exclude_list = [
         "images/page_1.png",
+        "images/page_62.png",#:10,# Not working
+        "images/page_66.png",#:16,# Not working
+        "images/page_73.png",#:10,#Not working
+        "images/page_89.png",#:10 #Not working
+        "images/page_144.png",#:9,  # Not working
+        "images/page_148.png",#:3, # Not working
+        "images/page_149.png",#:14, # Not working 
+        "images/page_156.png",#:7, # Not working
+        "images/page_227.png",#:6, #Not working
+        "images/page_249.png",#:16, #Not workng
+        "images/page_274.png",#:9, #Not working
+        "images/page_381.png",#:9, #Not working
+        "images/page_402.png",#:10 #not working
+        
         
     ]
-
-    for i, image_path in enumerate(image_paths):
+    combine_images_dict = {
+        "images/page_62.png":[(2,3),(4,5),(8,9),(10,11),(12,13),(15,16),(17,18),(19,20),(22,23)],
+        "images/page_66.png":[(3,4),(7,8),(9,10),(11,12),(13,14),(15,16),(17,18),(19,20),(21,22)],
+        "images/page_73.png":[(4,5),(6,7),(8,9),(11,12),(13,14),(15,16),(19,20),(21,22)],
+        "images/page_89.png":[(3,4),(5,6),(7,8),(11,12),(13,14),(15,16),(20,21)],
+        "images/page_144.png":[(4,5),(6,7),(8,9),(10,11),(12,13),(14,15),(16,17),(18,19),(20,21),(23,24),(25,26)],
+        "images/page_148.png":[(2,3),(5,6),(7,8),(9,10),(12,13),(14,15),(16,17),(18,19),(21,22),(23,24)],
+        "images/page_149.png":[(2,3),(4,5),(7,8),(9,10),(11,12),(13,14),(15,16),(17,18),(20,21),(22,23)],
+        "images/page_156.png":[(2,3),(5,6),(7,8),(9,10),(11,12),(13,14),(15,16),(17,18),(19,20),(21,22),(23,24)],
+        "images/page_227.png":[(2,3),(6,7),(8,9),(10,11),(12,13),(14,15),(16,17),(18,19),(20,21),(22,23)],
+        "images/page_249.png":[(2,3),(4,5),(7,8),(9,10),(11,12),(13,14),(15,16),(17,18),(19,20),(22,23),(24,25)],
+        "images/page_274.png":[(2,3),(4,5),(6,7),(8,9),(10,11),(12,13),(14,15),(16,17),(20,21),(22,23),(24,25)],
+        "images/page_381.png":[(2,3),(4,5),(6,7),(8,9),(11,12),(13,14),(15,16),(17,18),(19,20),(21,22)],
+        "images/page_402.png":[(2,3),(4,5),(6,7),(8,9),(11,12),(13,14),(15,16),(18,19),(20,21),(22,23)]
+    }
+    page_hash_map_and_iterations={
+"images/page_5.png":8,
+"images/page_11.png":15,
+"images/page_12.png":12,
+"images/page_37.png":16,
+"images/page_58.png":16, 
+"images/page_75.png":2,  
+"images/page_119.png":5,
+"images/page_129.png":6, 
+"images/page_142.png":9,
+"images/page_145.png":9,
+"images/page_150.png":8,
+"images/page_154.png":9,
+"images/page_155.png":9,
+"images/page_157.png":9,
+"images/page_163.png":4,
+"images/page_173.png":8,
+"images/page_176.png":8,
+"images/page_180.png":2,
+"images/page_185.png":2,
+"images/page_186.png":8,
+"images/page_187.png":7,
+"images/page_188.png":8,
+"images/page_211.png":7,
+"images/page_220.png":8,
+"images/page_225.png":12,
+"images/page_240.png":15,
+"images/page_264.png":12,
+"images/page_375.png":8,
+"images/page_413.png":9, 
+"images/page_422.png":15,   
+    }
+    
+    '''for i, image_path in enumerate(image_paths):
         print(f"Processing image {i}: {image_path}")
         extract_words_from_image(image_path, output_base_dir)
         if i>9:
             break
-        
-
-    '''for image_path in image_paths:
+        '''
+    
+    for image_path in image_paths:
         # Extract page number from filename
         base_name = os.path.basename(image_path)
-        # print(f"Image name is {base_name}")
+        print(f"Image name is {base_name}")
         page_num = base_name.split('_')[1].split('.')[0]
-        output_dir = os.path.join(output_base_dir, f"page_{page_num}")
+        output_dir = os.path.join(output_base_dir, "lines",f"page_{page_num}")
         if text_dict.get(page_num) is None:
             print(f"Skipping page {page_num} as it has no text in the layout file.")
             continue
         else:
-            print(f"Processing page {page_num} with number of text lines : {len(text_dict[page_num])}")
-            extract_lines_from_image(image_path, output_dir, text_dict[page_num])
-         ''' 
-    ''' 
-    for image_path in image_paths:
-        if image_path in exclude_list:
-            print(f" Found {image_path} in exclude list")
-            pass
-        else:
-            base_name = os.path.basename(image_path)
-            # print(f"Image name is {base_name}")
-            page_num = base_name.split('_')[1].split('.')[0]
-            output_dir = os.path.join(output_base_dir, f"page_{page_num}")
-            if text_dict.get(page_num) is None:
-                print(f"Skipping page {page_num} as it has no text in the layout file.")
+            if image_path in exclude_list:
                 continue
-            else:
-                print(f"Processing page {page_num} with number of text lines : {len(text_dict[page_num])}")
-                process_line_images(image_path, output_dir, text_dict[page_num])
-                
-    '''
-    #test_combined_image=["lines/page_2/combined_09_10.png"]
-    #draw_box_around_second_line_char(test_combined_image[0])            
-    '''# Split each extracted line into individual characters
-    chars_base_dir = "chars"
-    for image_path in image_paths:
-        page_num = os.path.basename(image_path).split('_')[1].split('.')[0]
-        lines_dir = os.path.join(output_base_dir, f"page_{page_num}")
-        line_images = sorted(glob.glob(os.path.join(lines_dir, "line_*.png")))
-        for line_idx, line_img_path in enumerate(line_images, 1):
-            line_img = cv2.imread(line_img_path)
-            gray_line = cv2.cvtColor(line_img, cv2.COLOR_BGR2GRAY)
-            _, thresh_line = cv2.threshold(gray_line, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-            # Dilate to connect character components
-            kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
-            dilated_line = cv2.dilate(thresh_line, kernel, iterations=5)
-            # Find contours (characters)
-            contours, _ = cv2.findContours(dilated_line, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            char_boxes = [cv2.boundingRect(c) for c in contours]
-            sorted_chars = sorted(char_boxes, key=lambda b: b[0])  # left-to-right
-            chars_dir = os.path.join(chars_base_dir, f"page_{page_num}", f"line_{line_idx:02d}")
-            os.makedirs(chars_dir, exist_ok=True)
-            for char_idx, (x, y, w, h) in enumerate(sorted_chars, 1):
-                char_img = line_img[y:y+h, x:x+w]
-                char_path = os.path.join(chars_dir, f"char_{char_idx:02d}.png")
-                cv2.imwrite(char_path, char_img)
-                '''
+            num_iterations=page_hash_map_and_iterations.get(image_path,10) #make the default as 10
+            
+            print(f"Processing page {page_num} with number of text lines : {len(text_dict[page_num])}")
+            #extract_lines_from_image(image_path, output_dir, text_dict[page_num],num_iterations)
+            #break
+    
+    for key in combine_images_dict.keys():
+        image_path = key
+        list_of_tuples = combine_images_dict[key]
+        for tup in list_of_tuples:
+            first_image = f"line_{tup[0]:02d}.png"
+            second_image = f"line_{tup[1]:02d}.png"
+            output_dir=os.path.join(output_base_dir, "lines", f"page_{os.path.basename(image_path).split('_')[1].split('.')[0]}")
+            first_image_path = os.path.join(output_base_dir, "lines", f"page_{os.path.basename(image_path).split('_')[1].split('.')[0]}", first_image)
+            second_image_path = os.path.join(output_base_dir, "lines", f"page_{os.path.basename(image_path).split('_')[1].split('.')[0]}", second_image)
+            if not os.path.exists(first_image_path) or not os.path.exists(second_image_path):
+                print(f"Skipping {image_path} as one of the line images {first_image_path} or {second_image_path} does not exist.")
+                continue
+            #print(f"key is {key} output_dir {output_dir} first_image_path is {first_image_path} second {second_image_path}")
+            combine_images("", output_dir, "", [first_image_path, second_image_path])
+             
+     
+    
