@@ -68,9 +68,11 @@ html = '''
             border-collapse: collapse;
             width: 100%;
         }
+        
         .table-row {
             border-bottom: 1px solid #ccc;
         }
+       
         .table-cell-1 {
             padding: 8px;
             vertical-align: top;
@@ -185,7 +187,13 @@ page_html_init = '''
         margin: 0;
         padding: 0;
     }
-    table.mantra-table tr, table.mantra-table td {
+    table.mantra-table-error {
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        border: 5px solid red;
+    }
+    table.mantra-table tr, table.mantra-table td, table.mantra-table-error tr, table.mantra-table-error td {
         margin: 0;
         padding: 0 2px;
         border: none;
@@ -193,6 +201,7 @@ page_html_init = '''
         vertical-align: bottom;
         white-space: pre;
     }
+    
     .swara-cell {
         font-family: FONT-TO-BE-USED;
         color: #00796b;
@@ -240,6 +249,7 @@ for i, supersection in enumerate(supersections):
             )
             for l, mantra_set in enumerate(mantra_sets):
                 img_src=mantra_set.get('image-ref', '')
+                errorFlag=mantra_set.get('probableError', '')
                 page_html +=(
                 f'<div onclick="toggleImageVisibility(\'img-preview-{k}-{l}\')" id="img-preview-{k}-{l}" style="display:none; margin-bottom:8px; cursor:pointer;">'
 
@@ -247,8 +257,12 @@ for i, supersection in enumerate(supersections):
                 f'</div>'
                 
                 )
+                table_class_name="mantra-table"
+                if errorFlag == True:
+                    table_class_name="mantra-table-error"
+                
                 page_html +=(
-                f'<table class="mantra-table">'
+                f'<table class="{table_class_name}">'
                 f'<tr onclick="toggleImageVisibility(\'img-preview-{k}-{l}\')" style="cursor:pointer;">'
                 )
                 mantra_words=mantra_set.get("mantra-words", "")
@@ -258,7 +272,7 @@ for i, supersection in enumerate(supersections):
                 #for mantra_word in mantra_words:
                 #    page_html += f'<td class="mantra-cell">{mantra_word.get("word", "")}</td>'
                 #f'</tr>'
-                swara_list = mantra_set.get("swara", []).split()
+                swara_list = mantra_set.get("swara", "").split()
                 #page_html += f'<tr>'
                 m=0
                 # This regex pattern matches a string with an optional prefix, a parenthesis group, and a suffix:
