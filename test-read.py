@@ -78,6 +78,9 @@ def process_grantha_data():
                         mantra_line=int(img_names[1])
                         swara_line=int(img_names[2].replace(".png",""))
                         hashmap = image_json.get(img_path)
+                        if hashmap is None:
+                            print(f" WARNING {img_path} not found in image_json")
+                            continue
                         image_mantra_words=hashmap.get("mantra_word_char_mapping",{})
                         image_swara_words=hashmap.get("swara_word_char_mapping",{})
                         intersection_words=hashmap.get("swara_mantra_intersections",{})
@@ -100,7 +103,14 @@ def process_grantha_data():
                             if len(og_swara_text) != len(image_swara_words):
                                 #print(f" {img_path} swara text {len(text_swara_list)} , image {len(image_swara_words)} og_swara_text {len(og_swara_text)}")
                                 swara_differ_Flag=True
-                                pass
+                                # Check for empty swara word mapping and if this is not the last
+                        for s,swara_key in enumerate(intersection_words.keys()):
+                            swara_mapping=intersection_words.get(swara_key)
+                            #print(f" {img_path} swara_key {swara_key} has mapping {swara_mapping}")
+                            if len(swara_mapping) ==0 and s != len(intersection_words)-1:
+                                print(f" ERROR {img_path} swara_key {swara_key} has a empty mapping in image_swara_words")
+                                
+                                error_Flag=True
                         last_mantra_position=-1
                         full_sentence=""    
                         for item in intersection_words.keys():
@@ -192,7 +202,7 @@ def process_grantha_data():
                         full_sentence_array=full_sentence.split()
                         diff_len=abs(len(mantra_words) - len(full_sentence_array))
                         if diff_len >2 :
-                            print(f" {img_path} Length not the same {len(mantra_words)} {len(full_sentence_array)}")
+                            print(f"ERROR {img_path} Length not the same {len(mantra_words)} {len(full_sentence_array)}")
                             print(f" {mantra_words}")
                             error_Flag=True
                         mantra_set.pop("mantra-words")

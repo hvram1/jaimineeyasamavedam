@@ -10,13 +10,25 @@ import json
 def extract_words_from_image(image_path):
     NEARNESS_THRESHOLD=85 # 90 does not work . 
     base_name = os.path.basename(image_path)
+    parent_directory = os.path.basename(os.path.dirname(image_path))
+    parent_directory_names = parent_directory.split('_')
+    relative_path = os.path.dirname(os.path.dirname(image_path))
+    page_number=int(parent_directory_names[1]) 
     directory_name = os.path.dirname(image_path)
     img_names=base_name.split('_')
     if len(img_names) <3:
         print(f" This is a mantra only line and no positions")
         return False
     first_image=os.path.join(directory_name, "line_" + img_names[1].split('.')[0]+ ".png")
-    second_image=os.path.join(directory_name, "line_" + img_names[2].split('.')[0]+ ".png")
+    first_prefix=int(img_names[1])
+    second_prefix=int(img_names[2].split('.')[0])
+    if second_prefix < first_prefix:
+        page_number=page_number+1
+        second_image = os.path.join(relative_path, f"page_{page_number}","line_" + img_names[2].split('.')[0]+ ".png")
+    else:
+    
+    
+        second_image=os.path.join(directory_name, "line_" + img_names[2].split('.')[0]+ ".png")
     if not os.path.exists(first_image) or not os.path.exists(second_image) or not os.path.exists(image_path):
         print(f"Skipping {image_path} as one of the line images {first_image} or {second_image} does not exist or the {image_path} does not exist")
         return True
@@ -53,6 +65,8 @@ def extract_words_from_image(image_path):
             #print(f" prev-box {b-1} x,{prev_x} y,{prev_y} w,{prev_w} h,{prev_h} ")
             # Check if the current box is under the previous box vertically and overlapping horizontally
             #if prev_y <= y <= prev_y + prev_h and x <= prev_x + prev_w and x + w >= prev_x:
+            #box 3 x,1137 y,172 w,44 h,45 
+            #prev-box 2 x,891 y,20 w,245 h,361
             if (x <= prev_x and x + w > prev_x + prev_w) or (x >= prev_x and x + w <= prev_x + prev_w):
                 #print(f" {b} and {b-1} have a vertical alignment")
                 # Merge the boxes
@@ -62,7 +76,8 @@ def extract_words_from_image(image_path):
                 new_h = max(prev_y + prev_h, y + h) - new_y
                 combined_mantra_boxes[-1] = (new_x, new_y, new_w, new_h)
             # If no vertical overlap, check horizontal closeness
-            elif x <= prev_x + prev_w + NEARNESS_THRESHOLD and abs(y - prev_y) <= NEARNESS_THRESHOLD:
+            elif x <= prev_x + prev_w + NEARNESS_THRESHOLD :#and abs(y - prev_y) <= NEARNESS_THRESHOLD:
+                #print(f" {b} and {b-1} have a horizontal alignment")
                 # Merge the boxes
                 new_x = min(prev_x, x)
                 new_y = min(prev_y, y)
@@ -70,6 +85,7 @@ def extract_words_from_image(image_path):
                 new_h = max(prev_y + prev_h, y + h) - new_y
                 combined_mantra_boxes[-1] = (new_x, new_y, new_w, new_h)
             else:
+                #print(f" {b} and {b-1} do not have a horizontal alignment or vertical alignment")
                 combined_mantra_boxes.append(box)
 
     # Draw rectangles around each word with alternating colors (red and green)
@@ -215,7 +231,24 @@ def extract_words_from_image(image_path):
     #cv2.waitKey(0)
     #cv2.destroyAllWindows()
     return return_hash
-
+def reg_test():
+    test_images = [
+        #"output_text/lines/page_4/combined_14_15.png",
+        #"output_text/lines/page_5/combined_03_04.png",
+        #"output_text/lines/page_5/combined_05_06.png",
+        #"output_text/lines/page_5/combined_10_11.png", # Is an error 
+        "output_text/lines/page_5/combined_18_19.png",
+    ]
+    for image_path in test_images:
+        test_specific_image(image_path)
+    
+def test_specific_image(image_path):
+    if not os.path.exists(image_path):
+        print(f"Image {image_path} does not exist.")
+        return
+    result = extract_words_from_image(image_path)
+    print(f"Result for {image_path}:")
+    print(json.dumps(result, indent=4, ensure_ascii=False))
 def main():
     # Find all files under output_text/lines/* that start with the pattern combined_*.png
     base_path = "output_text/lines"
@@ -243,3 +276,5 @@ def main():
     print(f"Data written to {output_file}")
 if __name__ == "__main__":
     main()
+    #reg_test()
+    

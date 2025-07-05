@@ -106,13 +106,7 @@ def extract_text_from_pdf(pdf_path, output_file):
         return texts
 def process_missing_maps(texts):
     newstring=texts
-    missing_regular_exp=[
-        "\(", #0x28
-        "\)", #0x29
-        "\+", #0x2b
-        "\[", #0x5b,
-        "\|", #0x7c
-    ]
+    
     for item in missing_maps_list:
         #print(f"Missing Maps Item to match {hex(ord(item))}")
         pattern=f"\"{item}\""
@@ -140,7 +134,7 @@ def process_mapping_table(texts):
         #current_ascii_index=int(hex(ord(c)),16)
         if uniq_chars.get(c) == None:
                 uniq_chars[c]=1
-    outfile = f"{output_dir}/mapping.html"
+    outfile = f"output_text/mapping.html"
     write_html_table(outfile, uniq_chars,char_map)
     
 def process_text(texts):
@@ -167,7 +161,8 @@ def process_text(texts):
     #pattern7="\u0107\u00ec"
     #pattern7_replace="\U00011326\U0001134D\U00011330\U00011340"
     pattern8="\u0024"  # To compensate for some error in extraction 
-    pattern8_replace="\013e"
+    #pattern8_replace="\013e"
+    pattern8_replace = "\U00011328\U0001134D\U00011335"
     pattern9="\u006f\u00c0"
     pattern9_replace="\u006f"
     #texts=texts.replace(pattern1,pattern1_replace)
@@ -199,44 +194,13 @@ def process_text(texts):
     patterns_list= [
     "(\u00CD)([\u0000-\u0fff])(\u00C0)",
     "(\u00CD)([\u0000-\u0fff])(\u00CF)",
-    "(\u00CD)([\u0000-\u0fff])([\u012C\u012E\u00d2\u00d8\u00dc\u00dd\u00df\u00e0\u00e1\u00e4\u00e5\u00e9\u00ed\u00ee\u00f1\u00f2])",
+    "(\u00CD)([\u0000-\u0fff])([\u012C\u012E\u00d2\u00d8\u00dc\u00dd\u00df\u00e0\u00e1\u00e4\u00e5\u00e9\u00eb\u00ec\u00ed\u00ee\u00f1\u00f2])",
     "(\u00CE)([\u0000-\u0fff])([\u00e0\u00e1\u00e4])",
     #"(\u00CE)([\u0000-\u0fff])(\u00C0)",
     #"(\u00CE)([\u0000-\u0fff])(\u00CF)"
     ]
     newstring=texts
-    '''patterns_list= [
-        "(\u00CE)([\u0000-\u0fff])(\u00EA)",
-
-        "(\u00CD)([\u0000-\u0fff])(\u00EA)",
-
-        "(\u00CD)([\u0000-\u0fff])(\u00E4)",
-
-        "(\u00CD)([\u0000-\u0fff])(\u00F1)",
-
-        "(\u00CD)([\u0000-\u0fff])(\u012C)",
-
-        "(\u00CD)([\u0000-\u0fff])(\u00D2)",
-
-        "(\u00CD)([\u0000-\u0fff])(\u00D8)",
-
-        "(\u00CD)([\u0000-\u0fff])(\u00EE)",
-
-        "(\u00CD)([\u0000-\u0fff])(\u00DC)",
-
-        "(\u00cd)([\u0000-\u0fff])(\u00df)",
-        
-        "(\u00cd)([\u0000-\u0fff])(\u00e1)",
-        
-        "(\u00ce)([\u0000-\u0fff])(\u00e0)",
-        
-        "(\u00cd)([\u0000-\u0fff])(\u00e0)", # There is a special case of 0x6d 0xcd 0x6b 0xe0 0xc0 0xeb 0x79 in line 1065 to be handled
-        
-        
-        
-       
-        
-    ]'''
+    
     
     for pattern in patterns_list:
         print(f"Processing patternset 1 (E,ai,jE and jai with vosubscripts): {pattern} with string of length {len(newstring)}")
@@ -271,6 +235,10 @@ def process_text(texts):
                     #temp_string=f"{second_value}{virama}{third_value}{first_value}"
                 if third_char == 0xc0 or third_char == 0xcf:
                     temp_string=f"{second_value}{third_value}"
+                elif third_char == 0xec:
+                    temp_string=f"{second_value}{virama}{third_value}{first_value}"
+                elif third_char == 0xeb:
+                    temp_string=f"{second_value}{virama}{third_value}{first_value}"
                 else:
                     temp_string=f"{second_value}{third_value}{first_value}"
                 print(f"replaced {newstring[end:newstart]} with {temp_string}")
@@ -576,171 +544,19 @@ def process_text(texts):
 
         remaining_string=newstring[start:]
         newstring=my_newstring+remaining_string    
-    ''' 
-    patterns_list= [
-        "([\u0000-\uffff])([\u00ea\u00eb\u00ec])"
-        
-        #"([\u0000-\u0fff])(\u00ea)",
-        
-    ]
-
-    for pattern in patterns_list:
-        print(f"Processing patternset 4: {pattern} with string of length {len(newstring)}")
-        matches = re.finditer(pattern,newstring)
-        my_newstring=""
-        start=0
-        for match in matches:
-            end,newstart=match.span()
-
-            my_newstring+=newstring[start:end]
-            first_char=int(hex(ord(newstring[match.start()])),16)
-            second_char=int(hex(ord(newstring[match.end()-1])),16)
-
-            print(f"text is {hex(ord(newstring[match.start()]))} first_char {hex(first_char)} second_char {hex(second_char)} at {match.span()}")
-            first_value=char_map.get(first_char)
-
-            second_value=char_map.get(second_char)
-
-            if second_value == None or first_value == None:
-                print(f"Warning: No mapping found for {hex(first_char)} or {hex(second_char)}  at {match.span()}")
-                start,end=match.span()
-                prefix_text=newstring[:end]
-                list_lines=prefix_text.splitlines()
-
-                suffix_text=newstring[end:]
-                list_lines_1=suffix_text.splitlines()
-                err=(f" Error occured in {len(list_lines)}th line {list_lines[-1]}{list_lines_1[0]}")
-                line=list_lines[-1]+list_lines_1[0]
-                err_line_inhex=""
-                for current_ascii_character in line:
-                    err_line_inhex+=f"{hex(ord(current_ascii_character))} "
-                print(f"{err}")
-                print(f"{err_line_inhex}")
-            else:
-                if second_char == 0xeb:
-                    temp_string=f"{second_value}{virama}{first_value}"
-                else:
-                    temp_string=f"{first_value}{virama}{second_value}"
-                print(f"replaced {newstring[end:newstart]} with {temp_string}")
-                my_newstring+=temp_string
-            start=newstart
-
-        remaining_string=newstring[start:]
-        newstring=my_newstring+remaining_string 
-   
-    
-    patterns_list= [
-        "([\u0000-\u0fff])(\u00eb)",
-    ]
-
-    for pattern in patterns_list:
-        print(f"Processing patternset 5: {pattern} with string of length {len(newstring)}")
-        matches = re.finditer(pattern,newstring)
-        my_newstring=""
-        start=0
-        for match in matches:
-            end,newstart=match.span()
-
-            my_newstring+=newstring[start:end]
-            first_char=int(hex(ord(newstring[match.start()])),16)
-            second_char=int(hex(ord(newstring[match.end()-1])),16)
-
-            print(f"text is {hex(ord(newstring[match.start()]))} first_char {hex(first_char)} second_char {hex(second_char)} at {match.span()}")
-            first_value=char_map.get(first_char)
-
-            second_value=char_map.get(second_char)
-
-            if second_value == None or first_value == None:
-                print(f"Warning: No mapping found for {hex(first_char)} or {hex(second_char)}  at {match.span()}")
-                start,end=match.span()
-                prefix_text=newstring[:end]
-                list_lines=prefix_text.splitlines()
-
-                suffix_text=newstring[end:]
-                list_lines_1=suffix_text.splitlines()
-                err=(f" Error occured in {len(list_lines)}th line {list_lines[-1]}{list_lines_1[0]}")
-                line=list_lines[-1]+list_lines_1[0]
-                err_line_inhex=""
-                for current_ascii_character in line:
-                    err_line_inhex+=f"{hex(ord(current_ascii_character))} "
-                print(f"{err}")
-                print(f"{err_line_inhex}")
-            else:
-                
-                if first_char == 0xc8 or first_char == 0xd5 :
-                    temp_string=f"{first_value}{second_value}{virama}" 
-                else:   
-                    temp_string=f"{second_value}{virama}{first_value}"
-                print(f"replaced {newstring[end:newstart]} with {temp_string}")
-                my_newstring+=temp_string
-            start=newstart
-            
-    patterns_list= [
-        "(\u010a)([\u0000-\u0fff])",
-    ]
-
-    for pattern in patterns_list:
-        print(f"Processing patternset 6: {pattern} with string of length {len(newstring)}")
-        matches = re.finditer(pattern,newstring)
-        my_newstring=""
-        start=0
-        for match in matches:
-            end,newstart=match.span()
-
-            my_newstring+=newstring[start:end]
-            first_char=int(hex(ord(newstring[match.start()])),16)
-            second_char=int(hex(ord(newstring[match.end()-1])),16)
-
-            print(f"text is {hex(ord(newstring[match.start()]))} first_char {hex(first_char)} second_char {hex(second_char)} at {match.span()}")
-            first_value=char_map.get(first_char)
-
-            second_value=char_map.get(second_char)
-
-            if second_value == None or first_value == None:
-                print(f"Warning: No mapping found for {hex(first_char)} or {hex(second_char)}  at {match.span()}")
-                start,end=match.span()
-                prefix_text=newstring[:end]
-                list_lines=prefix_text.splitlines()
-
-                suffix_text=newstring[end:]
-                list_lines_1=suffix_text.splitlines()
-                err=(f" Error occured in {len(list_lines)}th line {list_lines[-1]}{list_lines_1[0]}")
-                line=list_lines[-1]+list_lines_1[0]
-                err_line_inhex=""
-                for current_ascii_character in line:
-                    err_line_inhex+=f"{hex(ord(current_ascii_character))} "
-                print(f"{err}")
-                print(f"{err_line_inhex}")
-            else:
-                if len(first_value)==2:
-                    first_value_first_char=first_value[0]
-                    first_value_second_char=first_value[1]
-                if len(second_value) ==2:
-                    second_value_first_char=second_value[0]
-                    second_value_second_char=second_value[1]
-                
-                if len(second_value)==2 and len(first_value) ==2:
-                    temp_string=f"{first_value_first_char}{second_value_first_char}{second_value_second_char}{first_value_second_char}"
-                 
-                else:   
-                    temp_string=f"{first_value}{second_value}"
-                print(f"replaced {newstring[end:newstart]} with {temp_string}")
-                my_newstring+=temp_string
-            start=newstart
-
-
-        remaining_string=newstring[start:]
-        newstring=my_newstring+remaining_string 
-    '''        
-          
+       
+    #print("Hex values:", " ".join(f"{hex(ord(c))}" for c in newstring))      
     recreated_output=""  
     recreated_hex = "" 
     x="";x1="" 
+    # pattern for $
+    
+    
     for c in newstring:
         current_ascii_character=c
         current_ascii_index=int(hex(ord(current_ascii_character)),16)
         if char_map.get(current_ascii_index) ==None:
-                    # print(f"no mapping for {l}")
+                    #print(f"no mapping for {current_ascii_character} for index {current_ascii_index}")
                     current_unicode_character=current_ascii_character
                     x+=f"{hex(ord(current_ascii_character))} "
                     x1+=f"{current_unicode_character}"
@@ -749,6 +565,7 @@ def process_text(texts):
                 
         else:
             current_unicode_character=char_map.get(current_ascii_index)
+            #print(f" mapping in {current_unicode_character} for {current_ascii_character} for index {current_ascii_index}")
             x1+=f"{current_unicode_character}"
             x+=f"{hex(ord(current_ascii_character))} "
     recreated_output=x1
@@ -830,7 +647,7 @@ def main():
         occurence2=texts.count(unicode_char)
         #print(f"Key: {hex(key)},  {unicode_char} Value: {value_string}, Occurrence: {occurence2}")
         texts=texts.replace(unicode_char,value_string)
-    #process_mapping_table(texts)
+    process_mapping_table(texts)
     #process_missing_maps(texts)
     lines=texts.splitlines()
     recreated_output=""
