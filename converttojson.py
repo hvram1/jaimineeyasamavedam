@@ -27,7 +27,7 @@ def combine_images(images_to_combine):
         #print(f" Creating {out_name}")
         output_dir=os.path.dirname(first_image)
         out_path = os.path.join(output_dir, out_name)
-        print(f" Creating {out_path} ")
+        print(f" Creating {out_path} with {first_image} and {second_image}")
         cv2.imwrite(out_path, combined)
         i+=2
     return

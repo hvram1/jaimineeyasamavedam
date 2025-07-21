@@ -59,6 +59,8 @@ def process_grantha_data():
                 subsections = sections[section].get('subsections', [])
                 mantra_sets = subsections[subsection].get('mantra_sets', [])
                 for l, mantra_set in enumerate(mantra_sets):
+                    mantra_sub_position_hash={}
+                    OneWord_MantraFlag=False
                     error_Flag=False
                     swara_differ_Flag=False
                     mantra_differ_Flag=False
@@ -87,6 +89,9 @@ def process_grantha_data():
                         
                         text_swara_list = mantra_set.get("swara", "").split()
                         text_mantra_words=mantra_set.get("mantra-words", "")
+                        if len(image_mantra_words) ==1:
+                            print(f" {img_path} Entire mantra  mapped as 1 word ")
+                            OneWord_MantraFlag=True
                         if len(text_mantra_words) != len(image_mantra_words) and len(image_mantra_words) < len(text_mantra_words):
                             
                             hashmap_og_text = find_matching_hashmap(all_hashmaps, page=str(page_number), line_number_in_page=mantra_line)
@@ -115,6 +120,9 @@ def process_grantha_data():
                         full_sentence=""    
                         for item in intersection_words.keys():
                             mantra_item = intersection_words.get(item)
+                            if len(mantra_item) ==0:
+                                #print(f" {img_path} Case of missing swara mantra intesction for {item}")
+                                continue
                             swara_position = int(item.replace("swara-", ""))
                             mantra_sub_position=-1
                             if swara_position < len(text_swara_list):
@@ -138,8 +146,17 @@ def process_grantha_data():
                                             if isinstance(sub_item, dict):
                                                 char_map=sub_item.get('intersecting_characters',{})
                                                 if len(char_map) >1:
+                                                    for ch, char in enumerate(char_map):
                                                     #print(f" WARNING {img_path} matching multiple charaters . picking the first one {char_map} .  ")
-                                                    mantra_sub_position=char_map[0]
+                                                    # check if the sub char position and word is already mapped ( in case of 1 word images)
+                                                        if mantra_sub_position_hash.get(ch,-1) ==mantra_position:
+                                                            pass
+                                                        else:
+                                                            mantra_sub_position=char_map[ch]
+                                                            mantra_sub_position_hash[ch] = mantra_position
+                                                            print(f" WARNING {img_path} matching multiple charaters . picking {ch} at {mantra_position} for swara {item}.  ")
+
+                                                            break
                                     else:
                                         #print(f" WARNING {img_path} mantra_item is not a list or empty {mantra_item}. Possibly not an error . Ignoring ")
                                         continue

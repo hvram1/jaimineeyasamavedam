@@ -125,7 +125,10 @@ def extract_words_from_image(image_path):
     for b, box in enumerate(bounding_boxes_swara):
         x, y, w, h = box
         if not combined_swara_boxes:
-            combined_swara_boxes.append(box)
+            if h< 20:
+                print(f"{image_path} has a ghost swara can be ignored -0 Swara 0 ")
+            else:
+                combined_swara_boxes.append(box)
         else:
             prev_x, prev_y, prev_w, prev_h = combined_swara_boxes[-1]
             if (x <= prev_x and x + w > prev_x + prev_w) or (x >= prev_x and x + w <= prev_x + prev_w):
@@ -133,15 +136,24 @@ def extract_words_from_image(image_path):
                 new_y = min(prev_y, y)
                 new_w = max(prev_x + prev_w, x + w) - new_x
                 new_h = max(prev_y + prev_h, y + h) - new_y
-                combined_swara_boxes[-1] = (new_x, new_y, new_w, new_h)
+                if new_h < 20:
+                    print(f"{image_path} has a ghost swara can be ignored -1 Swara {len(combined_swara_boxes)}")
+                else:
+                    combined_swara_boxes[-1] = (new_x, new_y, new_w, new_h)
             elif x <= prev_x + prev_w + NEARNESS_THRESHOLD and abs(y - prev_y) <= NEARNESS_THRESHOLD:
                 new_x = min(prev_x, x)
                 new_y = min(prev_y, y)
                 new_w = max(prev_x + prev_w, x + w) - new_x
                 new_h = max(prev_y + prev_h, y + h) - new_y
-                combined_swara_boxes[-1] = (new_x, new_y, new_w, new_h)
+                if new_h < 20:
+                    print(f"{image_path} has a ghost swara can be ignored -2 Swara {len(combined_swara_boxes)}")
+                else:
+                    combined_swara_boxes[-1] = (new_x, new_y, new_w, new_h)
             else:
-                combined_swara_boxes.append(box)
+                if h <20:
+                    print(f"{image_path} has a ghost swara can be ignored -3 Swara {len(combined_swara_boxes)} ")
+                else:
+                    combined_swara_boxes.append(box)
 
     # Draw rectangles around each word with alternating colors (red and green)
     for i, (x, y, w, h) in enumerate(combined_swara_boxes):
