@@ -21,7 +21,16 @@
 \usepackage{tabularray}
 \usepackage{emoji}
 \setemojifont{Apple Color Emoji}
-\setmainfont[Scale=1.0,Script=Devanagari,Ligatures=TeX,AutoFakeSlant]{AdiShila Vedic}
+
+\setmainfont[
+    Scale=1.0,
+    Script=Devanagari,
+    Ligatures=TeX,
+    AutoFakeSlant,
+    BoldFont={AdiShila Vedic Bold},
+    ItalicFont={AdiShila Vedic Italic},
+    BoldItalicFont={AdiShila Vedic Bold Italic}
+]{AdiShila Vedic}
 \setmainlanguage{sanskrit}
 
 \setotherlanguages{USenglish,tamil} %% or other languages
@@ -29,7 +38,16 @@
 
 \renewcommand{\theHsection}{\thepart.section.\thesection}
 \renewcommand{\thesection}{\arabic{section}}
-\newfontfamily\smallredfont[Scale=0.85,Script=Devanagari,Ligatures=TeX,Color=red,AutoFakeSlant]{AdiShila Vedic}
+\newfontfamily\smallredfont[
+    Scale=1.0,
+    Script=Devanagari,
+    Ligatures=TeX,
+    Color=red,
+    AutoFakeSlant,
+    BoldFont={AdiShila Vedic Bold},
+    ItalicFont={AdiShila Vedic Italic},
+    BoldItalicFont={AdiShila Vedic Bold Italic}
+]{AdiShila Vedic}
 \newcommand{\VAR}[1]{}
 \newcommand{\BLOCK}[1]{}
 \setcounter{tocdepth}{3} % Include subsubsections in the table of contents
@@ -44,10 +62,12 @@
     { \Huge
     जैमिनीय  साम  प्रकृति  गानम्
     }
-   \\
+  
    
     
 \end{sanskrit}
+\vfill
+Version 0.4 1st August 2025
 \end{center}
 
 \end{titlepage}
@@ -60,16 +80,17 @@
     %- set super_id = "super_" ~ i 
     %- set supersection_title = supersection.get("supersection_title", "Untitled Supersection") 
     \BLOCK{ if supersection_title }
-\section*{\textbf{\VAR{ supersection_title|escape_for_latex }}}
-\addcontentsline{toc}{section}{ \VAR{ supersection_title|escape_for_latex }}
+\section*{\textbf{\VAR{ supersection_title|escape_for_latex|replacecolon }}}
+\phantomsection
+\addcontentsline{toc}{section}{ \VAR{ supersection_title|escape_for_latex|replacecolon }}
     \BLOCK{ endif }
     \BLOCK{ for j, section in supersection.get('sections', {}).items() }
         
         %-set count = section.get('count', {}).get('current_count', 0)
         %- set section_title = "Section " ~ (j|string) ~ " (" ~ count+1|string ~ ")" 
         \BLOCK{ if section_title }
-
-\addcontentsline{toc}{subsection}{ \VAR{ section_title|escape_for_latex }}
+\phantomsection
+\addcontentsline{toc}{subsection}{ \VAR{ section_title|escape_for_latex|replacecolon }}
         \BLOCK{ endif }
         \BLOCK{ for k, subsection in section.get('subsections', {}).items() }
                
@@ -78,12 +99,16 @@
             %- set instance_count = mantra_sets | selectattr('instance') | list | length
             %- set subsection_title = header_number ~ " " ~ header 
             \BLOCK{ if subsection_title }
-\addcontentsline{toc}{subsubsection}{ \VAR{ header|escape_for_latex }}
-\subsubsection*{\textbf{\VAR{ header|escape_for_latex }}}
+\phantomsection
+\addcontentsline{toc}{subsubsection}{ \VAR{ header|escape_for_latex|replacecolon }}
+\subsubsection*{\textbf{\VAR{ header|escape_for_latex|replacecolon }}}
+
+\noindent
+
             \BLOCK{ endif }
              %- set mantra_sets = subsection.get('mantra_sets', [])
             \BLOCK{ if mantra_sets }
-\VAR{mantra_sets|format_mantra_sets(section_title,subsection_title)}
+\VAR{mantra_sets|format_mantra_sets(j,k)}
             \BLOCK{ endif }
         \BLOCK{ endfor }
     \BLOCK{ endfor }
