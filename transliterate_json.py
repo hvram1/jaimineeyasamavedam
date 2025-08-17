@@ -53,17 +53,20 @@ def test_transliteration():
    
 
 def main():
-    with open('output_text/rewritten_final-Grantha.json', 'r', encoding='utf-8') as f:
+    with open('output_text/updated-final-Devanagari.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    src_script = "Grantha"
-    target_scripts = ["Devanagari", "Tamil", "Malayalam"]
+    #src_script = "Grantha"
+    #target_scripts = ["Devanagari", "Tamil", "Malayalam"]
+    
+    src_script = "Devanagari"
+    target_scripts = ["Grantha", "Tamil", "Malayalam"]
 
     for target_script in target_scripts:
         print(f"Transliterating to {target_script}...")
         result_data = transliterate_json(data, src_script, target_script)
         
-        filename = f'output_text/final-{target_script}.json'
+        filename = f'output_text/updated-final-{target_script}.json'
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(result_data, f, ensure_ascii=False, indent=2)
 

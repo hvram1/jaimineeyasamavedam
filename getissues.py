@@ -87,16 +87,25 @@ if __name__ == "__main__":
                     #print(f"Swara String: {swara_string}")
                     json_format_list.append(issue_hash)
             json_format_hash['corrected-mantra_sets']=json_format_list
-            title=title.replace('Issue in Swara Section ','')
-            title_components = title.split()
-            section_name=title_components[0]
-            subsection_header_number=title_components[2]
+            #title=title.replace('Issue in Swara Section ','')
+            title=title.replace('Issue in Swara ','')
+            #title_components = title.split()
+            #print(title)
+            title_components = title.split(',') # This should give you section=xx and subsection=yy
+            section_name=title_components[0].split('=')[1]
+            subsection_header_number = title_components[1].split('=')[1]
+            # Ensure subsection_header_number is in the form 'subsection_N' where N is a number
+            match = re.match(r'(subsection_\d+)', subsection_header_number)
+            if match:
+                subsection_header_number = match.group(1)
+            #print(f"Section Name: {section_name}, Subsection Header Number: {subsection_header_number}")
             subsection_header = ' '.join(title_components[3:])
             json_format_hash['corrected-header']={'header_number':subsection_header_number,'header':subsection_header}
-            x='subsection_' + str(subsection_number)
-            #json_format_hash[x] = json_format_list
-            #to_json_hash[x]=json_format_hash
-            subsection_number+=1
+            #x='subsection_' + str(subsection_number)
+            x=subsection_header_number
+            json_format_hash[x] = json_format_list
+            to_json_hash[x]=json_format_hash
+            #subsection_number+=1
             if (section_hash.get(section_name)):
                 my_hash=section_hash.get(section_name)['subsections']
                 
