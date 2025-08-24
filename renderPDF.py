@@ -17,6 +17,33 @@ import grapheme
 '''
 Bug : Need to add the english prefix into the json tree
 '''
+def combine_ardhaksharas(text):
+    """
+    Combine ardhaksharas (half consonants) with following characters to form complete units.
+    For example: ग् + ना -> ग्ना as a single unit
+    """
+    grapheme_list = list(grapheme.graphemes(text))
+    combined_list = []
+    i = 0
+    
+    while i < len(grapheme_list):
+        current_grapheme = grapheme_list[i]
+        
+        # Check if current grapheme ends with halant (virama) - indicating an ardhakshara
+        if current_grapheme.endswith('\u094D'):  # \u094D is the halant/virama character
+            # Combine with next grapheme if it exists
+            if i + 1 < len(grapheme_list):
+                combined_grapheme = current_grapheme + grapheme_list[i + 1]
+                combined_list.append(combined_grapheme)
+                i += 2  # Skip the next grapheme as it's already combined
+            else:
+                combined_list.append(current_grapheme)
+                i += 1
+        else:
+            combined_list.append(current_grapheme)
+            i += 1
+    
+    return combined_list
 
 def my_encodeURL(url,param1,value1,param2,value2):
     #x=urllib.parse.quote(URL)
@@ -253,7 +280,8 @@ def format_mantra_sets(mantra_sets,section_title,subsection_title):
                     swara_word=""
                 
                 if swara_word !="":
-                    mylist=list(grapheme.graphemes(mantra_word))
+                    #mylist=list(grapheme.graphemes(mantra_word))
+                    mylist=combine_ardhaksharas(mantra_word)
                     last_grapheme = mylist[-1]
                     other_graphemes = ''.join(mylist[0:-1])
                     

@@ -4822,7 +4822,7 @@
                         "corrected-swara": "टी खि श चा खू श"
                     },
                     {
-                        "corrected-mantra": "धिया(टा)  वि प्रो(काच्)  आजा(का)  याता(का)   ।  इदा मी(खि)  दं(श)  ई दा(चा)  मिदकमिदा मा(खू)  इ दां(त्र)   ।  गो(च) ",
+                        "corrected-mantra": "धिया(टा)  वि प्रो(काच्)  आजा(का)  याता(का)   ।  इदा मी(खि)  दं(श)  ई दा(चा)  मिदकमिदा मा(खू)  इ दाम्(त्र)   ।  गो(च) ",
                         "corrected-swara": "टा काच् का का खि श चा खू त्र च"
                     },
                     {
@@ -4860,7 +4860,7 @@
                         "corrected-swara": "टी खि श चा खू श"
                     },
                     {
-                        "corrected-mantra": "धिया(टा)  वि प्रो(काच्)  आजा(का)  याता(का)   ।  इदा मी(खि)  दं(श)  ई दा(चा)  मिदकमिदा मा(खू)  इ दां(त्र)   ।  गो(च) ",
+                        "corrected-mantra": "धिया(टा)  वि प्रो(काच्)  आजा(का)  याता(का)   ।  इदा मी(खि)  दं(श)  ई दा(चा)  मिदकमिदा मा(खू)  इ दाम्(त्र)   ।  गो(च) ",
                         "corrected-swara": "टा काच् का का खि श चा खू त्र च"
                     },
                     {
@@ -4924,6 +4924,2484 @@
                     {
                         "corrected-mantra": "न्नृषाहमो(णी)  इ(श)   ।  मंहाइष्ठा(प्ली)  हो(प्ल्)  इळा(शा)  । ।  18  ॥ .",
                         "corrected-swara": "णी श प्ली प्ल् शा"
+                    }
+                ]
+            },
+            "subsection_163": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "प्रसम्म्राजञ्चॠ(तू)   ।  षाणा(खा)  इनाम्(शा)   ।  इन्द्रां",
+                        "corrected-swara": "तू खा शा"
+                    },
+                    {
+                        "corrected-mantra": "स्तो(भि) ता(त)  न व्यां(टा)  गा(ख) इर्भीः(णा)  ।  नरन्नृषा(षी) ह",
+                        "corrected-swara": "भि त टा ख णा षी"
+                    },
+                    {
+                        "corrected-mantra": "म्मंहिया(फी)  हा(प्ल)  उ वा(शा)   ।  ष्ठाम्(ख) ",
+                        "corrected-swara": "फी प्ल शा ख"
+                    },
+                    {
+                        "corrected-mantra": "प्रसम्म्राजञ्चर्षणीनामि(षृ) न्द्रंस्तोतानव्यं",
+                        "corrected-swara": "षृ"
+                    },
+                    {
+                        "corrected-mantra": "गा(तू)  इर्भीः(ता)   ।  इन्द्रंस्तोता(षी) नव्यङ्गा(टि)  इर्भी(खा) ",
+                        "corrected-swara": "तू ता षी टि खा"
+                    },
+                    {
+                        "corrected-mantra": "न्नरनृषाहम्मांहिष्ठा(शॄ)  साह(चा)  मैहा(का) ",
+                        "corrected-swara": "शॄ चा का"
+                    },
+                    {
+                        "corrected-mantra": "इ हो(टा)  या(ख)  औहोवा(शि)  ।  मं(थ)  हीष्ठा(टाख्)    .",
+                        "corrected-swara": "टा ख शि थ टाख्"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_163",
+                    "header": ""
+                },
+                "subsection_163": [
+                    {
+                        "corrected-mantra": "प्रसम्म्राजञ्चॠ(तू)   ।  षाणा(खा)  इनाम्(शा)   ।  इन्द्रां",
+                        "corrected-swara": "तू खा शा"
+                    },
+                    {
+                        "corrected-mantra": "स्तो(भि) ता(त)  न व्यां(टा)  गा(ख) इर्भीः(णा)  ।  नरन्नृषा(षी) ह",
+                        "corrected-swara": "भि त टा ख णा षी"
+                    },
+                    {
+                        "corrected-mantra": "म्मंहिया(फी)  हा(प्ल)  उ वा(शा)   ।  ष्ठाम्(ख) ",
+                        "corrected-swara": "फी प्ल शा ख"
+                    },
+                    {
+                        "corrected-mantra": "प्रसम्म्राजञ्चर्षणीनामि(षृ) न्द्रंस्तोतानव्यं",
+                        "corrected-swara": "षृ"
+                    },
+                    {
+                        "corrected-mantra": "गा(तू)  इर्भीः(ता)   ।  इन्द्रंस्तोता(षी) नव्यङ्गा(टि)  इर्भी(खा) ",
+                        "corrected-swara": "तू ता षी टि खा"
+                    },
+                    {
+                        "corrected-mantra": "न्नरनृषाहम्मांहिष्ठा(शॄ)  साह(चा)  मैहा(का) ",
+                        "corrected-swara": "शॄ चा का"
+                    },
+                    {
+                        "corrected-mantra": "इ हो(टा)  या(ख)  औहोवा(शि)  ।  मं(थ)  हीष्ठा(टाख्)    .",
+                        "corrected-swara": "टा ख शि थ टाख्"
+                    }
+                ]
+            }
+        }
+    },
+    "section_17": {
+        "subsections": {
+            "subsection_164": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "आपादुशी(ती)   ।  प्रियन्धसा(ती)  स्सूदक्षा(टि) स्या(त)   ।",
+                        "corrected-swara": "ती ती टि त"
+                    },
+                    {
+                        "corrected-mantra": "प्र हो(का)  षीणाः(चा)   ।  इन्दो(का)  रा(ट)  इन्द्राः(ता)  ।  यावा",
+                        "corrected-swara": "का चा का ट ता"
+                    },
+                    {
+                        "corrected-mantra": "शा(टि)  इ राः(ता)   ।  ऐ(क)  हिया(टा)  इहिया(खि)  औहोवा(शि)   ।",
+                        "corrected-swara": "टि ता क टा खि शि"
+                    },
+                    {
+                        "corrected-mantra": "ए(तच्)  ऊ(ट)  पा(ख) .",
+                        "corrected-swara": "तच् ट ख"
+                    },
+                    {
+                        "corrected-mantra": "अपा(फा)  दुशिप्रिया(खी)  न्धसाः(शा)   ।  सूदक्षस्या(षी) ",
+                        "corrected-swara": "फा खी शा षी"
+                    },
+                    {
+                        "corrected-mantra": "प्रहोषिणा(की)  इन्दौहौ(टि)  हुवा(पा)  इन्द्रो",
+                        "corrected-swara": "की टि पा"
+                    },
+                    {
+                        "corrected-mantra": "यवा(फी)  शा(ङ्)  इराः(शा)   ।  ऐ(क)  हा(ट)  ए(ट)  हि या(खा) ",
+                        "corrected-swara": "फी ङ् शा क ट ट खा"
+                    },
+                    {
+                        "corrected-mantra": "औहोवा(शि)   ।  ए(त)  ऊपा(टाच्)    .",
+                        "corrected-swara": "शि त टाच्"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_164",
+                    "header": ""
+                },
+                "subsection_164": [
+                    {
+                        "corrected-mantra": "आपादुशी(ती)   ।  प्रियन्धसा(ती)  स्सूदक्षा(टि) स्या(त)   ।",
+                        "corrected-swara": "ती ती टि त"
+                    },
+                    {
+                        "corrected-mantra": "प्र हो(का)  षीणाः(चा)   ।  इन्दो(का)  रा(ट)  इन्द्राः(ता)  ।  यावा",
+                        "corrected-swara": "का चा का ट ता"
+                    },
+                    {
+                        "corrected-mantra": "शा(टि)  इ राः(ता)   ।  ऐ(क)  हिया(टा)  इहिया(खि)  औहोवा(शि)   ।",
+                        "corrected-swara": "टि ता क टा खि शि"
+                    },
+                    {
+                        "corrected-mantra": "ए(तच्)  ऊ(ट)  पा(ख) .",
+                        "corrected-swara": "तच् ट ख"
+                    },
+                    {
+                        "corrected-mantra": "अपा(फा)  दुशिप्रिया(खी)  न्धसाः(शा)   ।  सूदक्षस्या(षी) ",
+                        "corrected-swara": "फा खी शा षी"
+                    },
+                    {
+                        "corrected-mantra": "प्रहोषिणा(की)  इन्दौहौ(टि)  हुवा(पा)  इन्द्रो",
+                        "corrected-swara": "की टि पा"
+                    },
+                    {
+                        "corrected-mantra": "यवा(फी)  शा(ङ्)  इराः(शा)   ।  ऐ(क)  हा(ट)  ए(ट)  हि या(खा) ",
+                        "corrected-swara": "फी ङ् शा क ट ट खा"
+                    },
+                    {
+                        "corrected-mantra": "औहोवा(शि)   ।  ए(त)  ऊपा(टाच्)    .",
+                        "corrected-swara": "शि त टाच्"
+                    }
+                ]
+            },
+            "subsection_165": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "इमाउत्वा(ती)   ।  पुरो(टा)  वसा(टा) बु(श)   ।  आभिप्र",
+                        "corrected-swara": "ती टा टा श"
+                    },
+                    {
+                        "corrected-mantra": "नोनवूत्(टू)  गाइराः(टि)   ।  औ(थ)  हो(च)  इ(श)   ।  गा वो(था) ",
+                        "corrected-swara": "टू टि थ च श था"
+                    },
+                    {
+                        "corrected-mantra": "वात् सा(टा)  न्ना(प) धे(श)   ।  ना(ख)  वो(प्ल)  हा इ(शा)    .",
+                        "corrected-swara": "टा प श ख प्ल शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_165",
+                    "header": ""
+                },
+                "subsection_165": [
+                    {
+                        "corrected-mantra": "इमाउत्वा(ती)   ।  पुरो(टा)  वसा(टा) बु(श)   ।  आभिप्र",
+                        "corrected-swara": "ती टा टा श"
+                    },
+                    {
+                        "corrected-mantra": "नोनवूत्(टू)  गाइराः(टि)   ।  औ(थ)  हो(च)  इ(श)   ।  गा वो(था) ",
+                        "corrected-swara": "टू टि थ च श था"
+                    },
+                    {
+                        "corrected-mantra": "वात् सा(टा)  न्ना(प) धे(श)   ।  ना(ख)  वो(प्ल)  हा इ(शा)    .",
+                        "corrected-swara": "टा प श ख प्ल शा"
+                    }
+                ]
+            },
+            "subsection_166": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "अत्रा(ता) हा(क) गो(ष) रमन्वताउवा(टू)   हाउवा(टि) ",
+                        "corrected-swara": "ता क ष टू टि"
+                    },
+                    {
+                        "corrected-mantra": "हो(च)  इ(श)  । नामत्वष्टु(षी) रपीच्यामुवा(टु)  हाउवा(टि)  हो(च) ",
+                        "corrected-swara": "च श षी टु टि च"
+                    },
+                    {
+                        "corrected-mantra": "इ(श)  । इत्थाचन्द्रमसो(षी) गृहाउवा(टी)  हाउवा(टि) हो(टट्)  या(ख) ",
+                        "corrected-swara": "श षी टी टि टट् ख"
+                    },
+                    {
+                        "corrected-mantra": "औहोवा(शि)   ।  ऊ(ख)  पा(श) ।.",
+                        "corrected-swara": "शि ख श"
+                    },
+                    {
+                        "corrected-mantra": "हावत्रा(ति) । हा(क)  गोर(षा) मन्वताउवा(टु)  होइया(टि) होवा(था)  उ",
+                        "corrected-swara": "ति क षा टु टि था"
+                    },
+                    {
+                        "corrected-mantra": "वो(चा) इ(श) । नामत्वष्टुर(षु) पीच्यमियाउवा(टू)   होइया(टि) होवा(था) ",
+                        "corrected-swara": "चा श षु टू टि था"
+                    },
+                    {
+                        "corrected-mantra": "उ वो(चा) इ(श) ।इत्थाचन्द्रमसो(षू) गृहाउवा(टी) होइया(टि) होवा(था) ",
+                        "corrected-swara": "चा श षू टी टि था"
+                    },
+                    {
+                        "corrected-mantra": "उ वो(टा)  या(ख)  औहोवा(शि)   ।",
+                        "corrected-swara": "टा ख शि"
+                    },
+                    {
+                        "corrected-mantra": "ऊ(ख)  पा(श)    .",
+                        "corrected-swara": "ख श"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_166",
+                    "header": ""
+                },
+                "subsection_166": [
+                    {
+                        "corrected-mantra": "अत्रा(ता) हा(क) गो(ष) रमन्वताउवा(टू)   हाउवा(टि) ",
+                        "corrected-swara": "ता क ष टू टि"
+                    },
+                    {
+                        "corrected-mantra": "हो(च)  इ(श)  । नामत्वष्टु(षी) रपीच्यामुवा(टु)  हाउवा(टि)  हो(च) ",
+                        "corrected-swara": "च श षी टु टि च"
+                    },
+                    {
+                        "corrected-mantra": "इ(श)  । इत्थाचन्द्रमसो(षी) गृहाउवा(टी)  हाउवा(टि) हो(टट्)  या(ख) ",
+                        "corrected-swara": "श षी टी टि टट् ख"
+                    },
+                    {
+                        "corrected-mantra": "औहोवा(शि)   ।  ऊ(ख)  पा(श) ।.",
+                        "corrected-swara": "शि ख श"
+                    },
+                    {
+                        "corrected-mantra": "हावत्रा(ति) । हा(क)  गोर(षा) मन्वताउवा(टु)  होइया(टि) होवा(था)  उ",
+                        "corrected-swara": "ति क षा टु टि था"
+                    },
+                    {
+                        "corrected-mantra": "वो(चा) इ(श) । नामत्वष्टुर(षु) पीच्यमियाउवा(टू)   होइया(टि) होवा(था) ",
+                        "corrected-swara": "चा श षु टू टि था"
+                    },
+                    {
+                        "corrected-mantra": "उ वो(चा) इ(श) ।इत्थाचन्द्रमसो(षू) गृहाउवा(टी) होइया(टि) होवा(था) ",
+                        "corrected-swara": "चा श षू टी टि था"
+                    },
+                    {
+                        "corrected-mantra": "उ वो(टा)  या(ख)  औहोवा(शि)   ।",
+                        "corrected-swara": "टा ख शि"
+                    },
+                    {
+                        "corrected-mantra": "ऊ(ख)  पा(श)    .",
+                        "corrected-swara": "ख श"
+                    }
+                ]
+            },
+            "subsection_167": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "यदिन्द्रोया(ती)   ।  नाया(टा)  दों(च)  ओं(ट)  ओ(ख) वा(श)   ।  रीतो",
+                        "corrected-swara": "ती टा च ट ख श"
+                    },
+                    {
+                        "corrected-mantra": "महीरापा(टू)  ओं(ट)  ओ(ख)  वा(श)   । वृषावृषा(टी)  न्तमा(खा) ",
+                        "corrected-swara": "टू ट ख श टी खा"
+                    },
+                    {
+                        "corrected-mantra": "औहोवा(शि)  । तत्रापू(कि)  षा(च)  भु वा (ता) त्सा(ट)  सा(ट) चा(ख) .",
+                        "corrected-swara": "शि कि च ता ट ट ख"
+                    },
+                    {
+                        "corrected-mantra": "यदिन्द्रोआना(षु) यद्रीता(ती)  ए(त)   ।  माहीरापो(टीच्)  मा(क)  हीरा",
+                        "corrected-swara": "षु ती त टीच् क"
+                    },
+                    {
+                        "corrected-mantra": "पो(टि)  वार्षा(का) न्ता(ख) माः(ण)   ।  तत्रापू(टि)  षा पू(टाट्)  षा(ख) ",
+                        "corrected-swara": "टि का ख ण टि टाट् ख"
+                    },
+                    {
+                        "corrected-mantra": "औहोवा(शि)   ।  भुवा(ता)  त्सा(ट)  चा(ख)    .",
+                        "corrected-swara": "शि ता ट ख"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_167",
+                    "header": ""
+                },
+                "subsection_167": [
+                    {
+                        "corrected-mantra": "यदिन्द्रोया(ती)   ।  नाया(टा)  दों(च)  ओं(ट)  ओ(ख) वा(श)   ।  रीतो",
+                        "corrected-swara": "ती टा च ट ख श"
+                    },
+                    {
+                        "corrected-mantra": "महीरापा(टू)  ओं(ट)  ओ(ख)  वा(श)   । वृषावृषा(टी)  न्तमा(खा) ",
+                        "corrected-swara": "टू ट ख श टी खा"
+                    },
+                    {
+                        "corrected-mantra": "औहोवा(शि)  । तत्रापू(कि)  षा(च)  भु वा (ता) त्सा(ट)  सा(ट) चा(ख) .",
+                        "corrected-swara": "शि कि च ता ट ट ख"
+                    },
+                    {
+                        "corrected-mantra": "यदिन्द्रोआना(षु) यद्रीता(ती)  ए(त)   ।  माहीरापो(टीच्)  मा(क)  हीरा",
+                        "corrected-swara": "षु ती त टीच् क"
+                    },
+                    {
+                        "corrected-mantra": "पो(टि)  वार्षा(का) न्ता(ख) माः(ण)   ।  तत्रापू(टि)  षा पू(टाट्)  षा(ख) ",
+                        "corrected-swara": "टि का ख ण टि टाट् ख"
+                    },
+                    {
+                        "corrected-mantra": "औहोवा(शि)   ।  भुवा(ता)  त्सा(ट)  चा(ख)    .",
+                        "corrected-swara": "शि ता ट ख"
+                    }
+                ]
+            },
+            "subsection_168": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "गौर्धया(ति) ए(त)   ।  तिमरूतां(तीच्)  श्रा(क)  वस्यु",
+                        "corrected-swara": "ति त तीच् क"
+                    },
+                    {
+                        "corrected-mantra": "र्मा(टि)  तामघो(खि)  नाम्(श)   ।  युक्तावन्हा(ची)  इ(श)   ।",
+                        "corrected-swara": "टि खि श ची श"
+                    },
+                    {
+                        "corrected-mantra": "रथा(का)  ना(ट)  मा(ख)  औहो वा(शि)   ।  ऊ(च)  पा(श) ",
+                        "corrected-swara": "का ट ख शि च श"
+                    },
+                    {
+                        "corrected-mantra": "गौर्धयति(षी) मरुता(ति) मे(त)  । श्रावस्युर्म(टी)  तामघोना(टीच्)  मुहु",
+                        "corrected-swara": "षी ति त टी टीच्"
+                    },
+                    {
+                        "corrected-mantra": "वा(टि)  हा(त)  इ(श)   ।  युक्तावा(चि) न्ही(थ)  रूहुवा(टि) हा(त) ",
+                        "corrected-swara": "टि त श चि थ टि त"
+                    },
+                    {
+                        "corrected-mantra": "इ(श)   ।  र था(का)  नामौ(पा)  होबा(प्ला)  हो(प्ल)  इळा(शा)  ॥ 9 ॥ .",
+                        "corrected-swara": "श का पा प्ला प्ल शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_168",
+                    "header": ""
+                },
+                "subsection_168": [
+                    {
+                        "corrected-mantra": "गौर्धया(ति) ए(त)   ।  तिमरूतां(तीच्)  श्रा(क)  वस्यु",
+                        "corrected-swara": "ति त तीच् क"
+                    },
+                    {
+                        "corrected-mantra": "र्मा(टि)  तामघो(खि)  नाम्(श)   ।  युक्तावन्हा(ची)  इ(श)   ।",
+                        "corrected-swara": "टि खि श ची श"
+                    },
+                    {
+                        "corrected-mantra": "रथा(का)  ना(ट)  मा(ख)  औहो वा(शि)   ।  ऊ(च)  पा(श) ",
+                        "corrected-swara": "का ट ख शि च श"
+                    },
+                    {
+                        "corrected-mantra": "गौर्धयति(षी) मरुता(ति) मे(त)  । श्रावस्युर्म(टी)  तामघोना(टीच्)  मुहु",
+                        "corrected-swara": "षी ति त टी टीच्"
+                    },
+                    {
+                        "corrected-mantra": "वा(टि)  हा(त)  इ(श)   ।  युक्तावा(चि) न्ही(थ)  रूहुवा(टि) हा(त) ",
+                        "corrected-swara": "टि त श चि थ टि त"
+                    },
+                    {
+                        "corrected-mantra": "इ(श)   ।  र था(का)  नामौ(पा)  होबा(प्ला)  हो(प्ल)  इळा(शा)  ॥ 9 ॥ .",
+                        "corrected-swara": "श का पा प्ला प्ल शा"
+                    }
+                ]
+            },
+            "subsection_169": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "उपानो(पि)  हरिभी(प्लि)  स्सूतो(ङा) वा(श)   ।  याहिमदा(टी) ",
+                        "corrected-swara": "पि प्लि ङा श टी"
+                    },
+                    {
+                        "corrected-mantra": "नाम्पाता(टि)  उपनो(ति)  हा(त)  ओ(प)  बा(प्ल)  रा(ख)  इभीः(प्ला) ",
+                        "corrected-swara": "टि ति त प प्ल ख प्ला"
+                    },
+                    {
+                        "corrected-mantra": "सूता मौ(पि)  होबा(प्ला)  हो(प्ल)  इळा(शा)  ॥ 10  ॥",
+                        "corrected-swara": "पि प्ला प्ल शा"
+                    },
+                    {
+                        "corrected-mantra": "उपनो(षि) हाबुहोरा(ती)  इभीः(ता)   ।  सू(ट)  ताम्(त)   ।",
+                        "corrected-swara": "षि ती ता ट त"
+                    },
+                    {
+                        "corrected-mantra": "याहिमदा(की)  नाम्पा(टा)  ताउपानो(खी)  हा(ण)   ।",
+                        "corrected-swara": "की टा खी ण"
+                    },
+                    {
+                        "corrected-mantra": "रा(ट)  इ भा(खा)  औहो वा(शि)   । सू तं(का)  रा(च)  इ ष्ठाः(टाख्)    .",
+                        "corrected-swara": "ट खा शि का च टाख्"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_169",
+                    "header": ""
+                },
+                "subsection_169": [
+                    {
+                        "corrected-mantra": "उपानो(पि)  हरिभी(प्लि)  स्सूतो(ङा) वा(श)   ।  याहिमदा(टी) ",
+                        "corrected-swara": "पि प्लि ङा श टी"
+                    },
+                    {
+                        "corrected-mantra": "नाम्पाता(टि)  उपनो(ति)  हा(त)  ओ(प)  बा(प्ल)  रा(ख)  इभीः(प्ला) ",
+                        "corrected-swara": "टि ति त प प्ल ख प्ला"
+                    },
+                    {
+                        "corrected-mantra": "सूता मौ(पि)  होबा(प्ला)  हो(प्ल)  इळा(शा)  ॥ 10  ॥",
+                        "corrected-swara": "पि प्ला प्ल शा"
+                    },
+                    {
+                        "corrected-mantra": "उपनो(षि) हाबुहोरा(ती)  इभीः(ता)   ।  सू(ट)  ताम्(त)   ।",
+                        "corrected-swara": "षि ती ता ट त"
+                    },
+                    {
+                        "corrected-mantra": "याहिमदा(की)  नाम्पा(टा)  ताउपानो(खी)  हा(ण)   ।",
+                        "corrected-swara": "की टा खी ण"
+                    },
+                    {
+                        "corrected-mantra": "रा(ट)  इ भा(खा)  औहो वा(शि)   । सू तं(का)  रा(च)  इ ष्ठाः(टाख्)    .",
+                        "corrected-swara": "ट खा शि का च टाख्"
+                    }
+                ]
+            },
+            "subsection_170": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "इष्टाहोत्रा(ती)  आ(च) सृक्षा(खा)  ता (ण) । इ(क)  न्द्रंवृधान्तो(टी) ",
+                        "corrected-swara": "ती च खा ण क टी"
+                    },
+                    {
+                        "corrected-mantra": "अध्वा(खा)  रा(ण)  इ(श)   ।  अच्छावा(खि) भा(श)  र्त्थमोजा(खि) ",
+                        "corrected-swara": "खा ण श खि श खि"
+                    },
+                    {
+                        "corrected-mantra": "सा(त्र)   ।  ए(त)  ऊ(क) दधिर्निधीः(टीख्)  .",
+                        "corrected-swara": "त्र त क टीख्"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_170",
+                    "header": ""
+                },
+                "subsection_170": [
+                    {
+                        "corrected-mantra": "इष्टाहोत्रा(ती)  आ(च) सृक्षा(खा)  ता (ण) । इ(क)  न्द्रंवृधान्तो(टी) ",
+                        "corrected-swara": "ती च खा ण क टी"
+                    },
+                    {
+                        "corrected-mantra": "अध्वा(खा)  रा(ण)  इ(श)   ।  अच्छावा(खि) भा(श)  र्त्थमोजा(खि) ",
+                        "corrected-swara": "खा ण श खि श खि"
+                    },
+                    {
+                        "corrected-mantra": "सा(त्र)   ।  ए(त)  ऊ(क) दधिर्निधीः(टीख्)  .",
+                        "corrected-swara": "त्र त क टीख्"
+                    }
+                ]
+            },
+            "subsection_171": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "अहमिद्धा(फी)  इपितुःपरा(कु) इ(श)   ।  मे(क)  धामृतस्यजग्रहा(षृ) ",
+                        "corrected-swara": "फी कु श क षृ"
+                    },
+                    {
+                        "corrected-mantra": "आहंसूर्या(की)  इवा(पा)  हा(प्ल)  हा(ङ्)  इ(श)  ।",
+                        "corrected-swara": "की पा प्ल ङ् श"
+                    },
+                    {
+                        "corrected-mantra": "जनिहोइहोऔ(कू)  होऔ(का)  होवा(पा) हाबु(प्ला)  ।",
+                        "corrected-swara": "कू का पा प्ला"
+                    },
+                    {
+                        "corrected-mantra": "बा(श)    .",
+                        "corrected-swara": "श"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_171",
+                    "header": ""
+                },
+                "subsection_171": [
+                    {
+                        "corrected-mantra": "अहमिद्धा(फी)  इपितुःपरा(कु) इ(श)   ।  मे(क)  धामृतस्यजग्रहा(षृ) ",
+                        "corrected-swara": "फी कु श क षृ"
+                    },
+                    {
+                        "corrected-mantra": "आहंसूर्या(की)  इवा(पा)  हा(प्ल)  हा(ङ्)  इ(श)  ।",
+                        "corrected-swara": "की पा प्ल ङ् श"
+                    },
+                    {
+                        "corrected-mantra": "जनिहोइहोऔ(कू)  होऔ(का)  होवा(पा) हाबु(प्ला)  ।",
+                        "corrected-swara": "कू का पा प्ला"
+                    },
+                    {
+                        "corrected-mantra": "बा(श)    .",
+                        "corrected-swara": "श"
+                    }
+                ]
+            },
+            "subsection_172": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "रेवतीर्णाः(ती)   ।  सधा(टा)  मा(ख)  दा(ण)  इ(श)   ।  इन्द्रा(टा) ",
+                        "corrected-swara": "ती टा ख ण श टा"
+                    },
+                    {
+                        "corrected-mantra": "इसा(खा) न्तू(ण)   ।  तूविवा(टि)  जाः(च)   ।  क्षू(ट) मा(त) न्तो(ट) ",
+                        "corrected-swara": "खा ण टि च ट त ट"
+                    },
+                    {
+                        "corrected-mantra": "या(क)  । भि(क)  र्म्मो(प) बादा इ मो(प्ली)  हाइ(शा)    .",
+                        "corrected-swara": "क क प प्ली शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_172",
+                    "header": ""
+                },
+                "subsection_172": [
+                    {
+                        "corrected-mantra": "रेवतीर्णाः(ती)   ।  सधा(टा)  मा(ख)  दा(ण)  इ(श)   ।  इन्द्रा(टा) ",
+                        "corrected-swara": "ती टा ख ण श टा"
+                    },
+                    {
+                        "corrected-mantra": "इसा(खा) न्तू(ण)   ।  तूविवा(टि)  जाः(च)   ।  क्षू(ट) मा(त) न्तो(ट) ",
+                        "corrected-swara": "खा ण टि च ट त ट"
+                    },
+                    {
+                        "corrected-mantra": "या(क)  । भि(क)  र्म्मो(प) बादा इ मो(प्ली)  हाइ(शा)    .",
+                        "corrected-swara": "क क प प्ली शा"
+                    }
+                ]
+            },
+            "subsection_173": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "सोमःपूषा(ती)   ।  चाचाई(षि) ततूरया(की) ",
+                        "corrected-swara": "ती षि की"
+                    },
+                    {
+                        "corrected-mantra": "वयो(खा)  वा(श)   ।  वाइश्वासां(की) सुक्षीतीनामया(टू) ",
+                        "corrected-swara": "खा श की टू"
+                    },
+                    {
+                        "corrected-mantra": "व यो(खा) वा(श)  दा(च)  इ वा(या)  त्रारा(टा)   थीयोहा(खि) ",
+                        "corrected-swara": "खा श च या टा खि"
+                    },
+                    {
+                        "corrected-mantra": "इताः(त्रा)   । गा वो(था)  अश्वाः(टाख्)    .",
+                        "corrected-swara": "त्रा था टाख्"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_173",
+                    "header": ""
+                },
+                "subsection_173": [
+                    {
+                        "corrected-mantra": "सोमःपूषा(ती)   ।  चाचाई(षि) ततूरया(की) ",
+                        "corrected-swara": "ती षि की"
+                    },
+                    {
+                        "corrected-mantra": "वयो(खा)  वा(श)   ।  वाइश्वासां(की) सुक्षीतीनामया(टू) ",
+                        "corrected-swara": "खा श की टू"
+                    },
+                    {
+                        "corrected-mantra": "व यो(खा) वा(श)  दा(च)  इ वा(या)  त्रारा(टा)   थीयोहा(खि) ",
+                        "corrected-swara": "खा श च या टा खि"
+                    },
+                    {
+                        "corrected-mantra": "इताः(त्रा)   । गा वो(था)  अश्वाः(टाख्)    .",
+                        "corrected-swara": "त्रा था टाख्"
+                    }
+                ]
+            }
+        }
+    },
+    "section_18": {
+        "subsections": {
+            "subsection_174": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "पान्तमावो(षी) अन्धसाः(ति)   ।  इ(क)  न्द्रामा(का)  भिप्रागाया",
+                        "corrected-swara": "षी ति क का"
+                    },
+                    {
+                        "corrected-mantra": "ता(टु)  हा(त)  हा(त)  इ(श) । विश्वासाहं(कीच्)  शाता(का)  क्रातूं(टा) ",
+                        "corrected-swara": "टु त त श कीच् का टा"
+                    },
+                    {
+                        "corrected-mantra": "हा(त) हा(त) इ(श) । मं(क)  हाइष्ठाञ्चा(टी)  हा(त) हा(त) इ(श) ",
+                        "corrected-swara": "त त श क टी त त श"
+                    },
+                    {
+                        "corrected-mantra": "र्षणा(टा)  इ ना(खा) मौहोवा(शि)   ।  उ ऊ(खा)  पा(श) .।",
+                        "corrected-swara": "टा खा शि खा श"
+                    },
+                    {
+                        "corrected-mantra": "पान्तमाओ(षी) अन्धसइहा(तु)   ।  इ(थ)  न्द्रामभाइप्रगा(कू)  य",
+                        "corrected-swara": "षी तु थ कू"
+                    },
+                    {
+                        "corrected-mantra": "ता(टा)  इहा(ता)   ।  विश्वासा(कि)  हंशाता(टिच्)  क्रातू(टा) मिहा(ता) ",
+                        "corrected-swara": "टा ता कि टिच् टा ता"
+                    },
+                    {
+                        "corrected-mantra": "मं(क) हाइष्ठा(चि) ञ्चाइहा(टि)  । र्षणा(टाच्) ईना(का)  मिहा(टाख्)  .।",
+                        "corrected-swara": "क चि टि टाच् का टाख्"
+                    },
+                    {
+                        "corrected-mantra": "पान्ता(णा)  मा(फ)  वो(ख)  अन्धसाः(शि)   ।  आइन्द्रामभाइ(षू) प्र",
+                        "corrected-swara": "णा फ ख शि षू"
+                    },
+                    {
+                        "corrected-mantra": "गा(टा)  या(ख) ता(ण)  । विश्वा(टा)  सा(ख)  हम्(ण) ",
+                        "corrected-swara": "टा ख ण टा ख ण"
+                    },
+                    {
+                        "corrected-mantra": "शा(त) ताक्रा(पा) तुम्(श)  । मंहिष्ठञ्च(कीथ)  र्षाणा(चा) इ(श) ना(त) ",
+                        "corrected-swara": "त पा श कीथ चा श त"
+                    },
+                    {
+                        "corrected-mantra": "मा(टख्)  औहोवा(शि)   । ओ(त)  काः(ख) .",
+                        "corrected-swara": "टख् शि त ख"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_174",
+                    "header": ""
+                },
+                "subsection_174": [
+                    {
+                        "corrected-mantra": "पान्तमावो(षी) अन्धसाः(ति)   ।  इ(क)  न्द्रामा(का)  भिप्रागाया",
+                        "corrected-swara": "षी ति क का"
+                    },
+                    {
+                        "corrected-mantra": "ता(टु)  हा(त)  हा(त)  इ(श) । विश्वासाहं(कीच्)  शाता(का)  क्रातूं(टा) ",
+                        "corrected-swara": "टु त त श कीच् का टा"
+                    },
+                    {
+                        "corrected-mantra": "हा(त) हा(त) इ(श) । मं(क)  हाइष्ठाञ्चा(टी)  हा(त) हा(त) इ(श) ",
+                        "corrected-swara": "त त श क टी त त श"
+                    },
+                    {
+                        "corrected-mantra": "र्षणा(टा)  इ ना(खा) मौहोवा(शि)   ।  उ ऊ(खा)  पा(श) .।",
+                        "corrected-swara": "टा खा शि खा श"
+                    },
+                    {
+                        "corrected-mantra": "पान्तमाओ(षी) अन्धसइहा(तु)   ।  इ(थ)  न्द्रामभाइप्रगा(कू)  य",
+                        "corrected-swara": "षी तु थ कू"
+                    },
+                    {
+                        "corrected-mantra": "ता(टा)  इहा(ता)   ।  विश्वासा(कि)  हंशाता(टिच्)  क्रातू(टा) मिहा(ता) ",
+                        "corrected-swara": "टा ता कि टिच् टा ता"
+                    },
+                    {
+                        "corrected-mantra": "मं(क) हाइष्ठा(चि) ञ्चाइहा(टि)  । र्षणा(टाच्) ईना(का)  मिहा(टाख्)  .।",
+                        "corrected-swara": "क चि टि टाच् का टाख्"
+                    },
+                    {
+                        "corrected-mantra": "पान्ता(णा)  मा(फ)  वो(ख)  अन्धसाः(शि)   ।  आइन्द्रामभाइ(षू) प्र",
+                        "corrected-swara": "णा फ ख शि षू"
+                    },
+                    {
+                        "corrected-mantra": "गा(टा)  या(ख) ता(ण)  । विश्वा(टा)  सा(ख)  हम्(ण) ",
+                        "corrected-swara": "टा ख ण टा ख ण"
+                    },
+                    {
+                        "corrected-mantra": "शा(त) ताक्रा(पा) तुम्(श)  । मंहिष्ठञ्च(कीथ)  र्षाणा(चा) इ(श) ना(त) ",
+                        "corrected-swara": "त पा श कीथ चा श त"
+                    },
+                    {
+                        "corrected-mantra": "मा(टख्)  औहोवा(शि)   । ओ(त)  काः(ख) .",
+                        "corrected-swara": "टख् शि त ख"
+                    }
+                ]
+            },
+            "subsection_175": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "प्रावाइन्द्रा(टी) यामादा(खि) नम्(ण) ।  प्रवा(टा) इन्द्रा",
+                        "corrected-swara": "टी खि ण टा"
+                    },
+                    {
+                        "corrected-mantra": "औ(पि)  हो(श)   ।  या(ख)  मा(प्ल)  दा(ख)  नम्(ण)  । हरा(टा)  अ",
+                        "corrected-swara": "पि श ख प्ल ख ण टा"
+                    },
+                    {
+                        "corrected-mantra": "श्वाऔ(पि)  हो(श)   ।  या(ख)  गा(प्ल)  या(ख)  ता(ण)   ।  सखा(टा) ",
+                        "corrected-swara": "पि श ख प्ल ख ण टा"
+                    },
+                    {
+                        "corrected-mantra": "यास्सोऔ(पि)  हो(श)   ।  मापो(प्ला)  बा(प्ल)  वाव्नो(प्ला)  हाइ(शा) ",
+                        "corrected-swara": "पि श प्ला प्ल प्ला शा"
+                    },
+                    {
+                        "corrected-mantra": "प्रवा(टा)  इन्द्राऔ(पि)  हो(श)  । या(ख) मा(प्ल)  दा(ख) नम्(ण)   ।",
+                        "corrected-swara": "टा पि श ख प्ल ख ण"
+                    },
+                    {
+                        "corrected-mantra": "हरा(टा) आश्वाऔ(पि) हो(श)  । या(ख) गा(प्ल) या(ख) ता(ण)   ।",
+                        "corrected-swara": "टा पि श ख प्ल ख ण"
+                    },
+                    {
+                        "corrected-mantra": "सखा(टा)  यास्सोऔ(पि) हो(श) । मापो(प्ला) बा(प्ल) वाव्नो(प्ला) ",
+                        "corrected-swara": "टा पि श प्ला प्ल प्ला"
+                    },
+                    {
+                        "corrected-mantra": "हाइ(शा)    प्रावाई(टि)  या(त)  ई(ट)  या(त)   ।  इन्द्रोई(टि)  या(त)  ई(ट)  या",
+                        "corrected-swara": "शा टि त ट त टि त ट"
+                    },
+                    {
+                        "corrected-mantra": "या(खा) मा(प्ल)  दा(ख) नम्(ण)   ।  हाराई(ट)  या(त)  ई(ट)  या(त) ",
+                        "corrected-swara": "खा प्ल ख ण ट त ट त"
+                    },
+                    {
+                        "corrected-mantra": "आश्वोई(टि)  या(त) ई(ट)  याया(खा) गा(प्ल)  या(ख)  ता(ण) । साखा",
+                        "corrected-swara": "टि त ट खा प्ल ख ण"
+                    },
+                    {
+                        "corrected-mantra": "ई(टि)  या(त)  ई(ट)  या(त)   । यास्सोई(टि) या(त)  ई(ट)  या(त) ।",
+                        "corrected-swara": "टि त ट त टि त ट त"
+                    },
+                    {
+                        "corrected-mantra": "मापो(पा)  बा(प्ल)  वाव्नो(प्ला) हाइ(शा)    .",
+                        "corrected-swara": "पा प्ल प्ला शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_175",
+                    "header": ""
+                },
+                "subsection_175": [
+                    {
+                        "corrected-mantra": "प्रावाइन्द्रा(टी) यामादा(खि) नम्(ण) ।  प्रवा(टा) इन्द्रा",
+                        "corrected-swara": "टी खि ण टा"
+                    },
+                    {
+                        "corrected-mantra": "औ(पि)  हो(श)   ।  या(ख)  मा(प्ल)  दा(ख)  नम्(ण)  । हरा(टा)  अ",
+                        "corrected-swara": "पि श ख प्ल ख ण टा"
+                    },
+                    {
+                        "corrected-mantra": "श्वाऔ(पि)  हो(श)   ।  या(ख)  गा(प्ल)  या(ख)  ता(ण)   ।  सखा(टा) ",
+                        "corrected-swara": "पि श ख प्ल ख ण टा"
+                    },
+                    {
+                        "corrected-mantra": "यास्सोऔ(पि)  हो(श)   ।  मापो(प्ला)  बा(प्ल)  वाव्नो(प्ला)  हाइ(शा) ",
+                        "corrected-swara": "पि श प्ला प्ल प्ला शा"
+                    },
+                    {
+                        "corrected-mantra": "प्रवा(टा)  इन्द्राऔ(पि)  हो(श)  । या(ख) मा(प्ल)  दा(ख) नम्(ण)   ।",
+                        "corrected-swara": "टा पि श ख प्ल ख ण"
+                    },
+                    {
+                        "corrected-mantra": "हरा(टा) आश्वाऔ(पि) हो(श)  । या(ख) गा(प्ल) या(ख) ता(ण)   ।",
+                        "corrected-swara": "टा पि श ख प्ल ख ण"
+                    },
+                    {
+                        "corrected-mantra": "सखा(टा)  यास्सोऔ(पि) हो(श) । मापो(प्ला) बा(प्ल) वाव्नो(प्ला) ",
+                        "corrected-swara": "टा पि श प्ला प्ल प्ला"
+                    },
+                    {
+                        "corrected-mantra": "हाइ(शा)    प्रावाई(टि)  या(त)  ई(ट)  या(त)   ।  इन्द्रोई(टि)  या(त)  ई(ट)  या",
+                        "corrected-swara": "शा टि त ट त टि त ट"
+                    },
+                    {
+                        "corrected-mantra": "या(खा) मा(प्ल)  दा(ख) नम्(ण)   ।  हाराई(ट)  या(त)  ई(ट)  या(त) ",
+                        "corrected-swara": "खा प्ल ख ण ट त ट त"
+                    },
+                    {
+                        "corrected-mantra": "आश्वोई(टि)  या(त) ई(ट)  याया(खा) गा(प्ल)  या(ख)  ता(ण) । साखा",
+                        "corrected-swara": "टि त ट खा प्ल ख ण"
+                    },
+                    {
+                        "corrected-mantra": "ई(टि)  या(त)  ई(ट)  या(त)   । यास्सोई(टि) या(त)  ई(ट)  या(त) ।",
+                        "corrected-swara": "टि त ट त टि त ट त"
+                    },
+                    {
+                        "corrected-mantra": "मापो(पा)  बा(प्ल)  वाव्नो(प्ला) हाइ(शा)    .",
+                        "corrected-swara": "पा प्ल प्ला शा"
+                    }
+                ]
+            },
+            "subsection_176": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "प्रवौ(का)  होवा(टा)  इन्द्राऔ(कि)  होवा(टा)   ।  या(ख)  मा(प्ल) ",
+                        "corrected-swara": "का टा कि टा ख प्ल"
+                    },
+                    {
+                        "corrected-mantra": "दा(ख)  नम्(ण)   ।  हरौ(का)  होवा(का)  आश्वाऔ(कि)  हो वा(टा)   ।",
+                        "corrected-swara": "ख ण का का कि टा"
+                    },
+                    {
+                        "corrected-mantra": "या(ख)  गा(प्ल) या(ख) ता(ण)  । सखौ(का) होवा(टा)  यास्सोऔ(कि) ",
+                        "corrected-swara": "ख प्ल ख ण का टा कि"
+                    },
+                    {
+                        "corrected-mantra": "हो वा(टा)  मापो(पा)  बा(प्ल)  वाव्नो(प्ला)  हाइ(शा) ",
+                        "corrected-swara": "टा पा प्ल प्ला शा"
+                    },
+                    {
+                        "corrected-mantra": "प्रावा(चा)  ददाऔ(टि)  हो(त)   ।  इन्द्रोददाऔ(पु)  हो(श)   ।",
+                        "corrected-swara": "चा टि त पु श"
+                    },
+                    {
+                        "corrected-mantra": "या(ख)  मा(प्ल)  दा(ख)  नम्(ण)   । हारी(चा)  ददाऔ(टि) हो(त)  ।",
+                        "corrected-swara": "ख प्ल ख ण चा टि त"
+                    },
+                    {
+                        "corrected-mantra": "आश्वोददाऔ(पु)  हो(श)  । या(ख) गा(प्ल) या(ख) ता(ण)  । स",
+                        "corrected-swara": "पु श ख प्ल ख ण"
+                    },
+                    {
+                        "corrected-mantra": "चा(खा)  ददाऔ(टि)  हो(त)   । यास्सोददाऔ(पु)  हो(श)   ।  मा पो(प्ला)  बा वा(प्ला)  व्नो(श) हा इ(शा) .।",
+                        "corrected-swara": "खा टि त पु श प्ला प्ला श शा"
+                    },
+                    {
+                        "corrected-mantra": "प्रवप्रवाः(ती)   ।  इन्द्रा(ता)  ये (क) न्द्रा(थ)  यामा(का)  दा(य) नाम्(ट) ",
+                        "corrected-swara": "ती ता क थ का य ट"
+                    },
+                    {
+                        "corrected-mantra": "ह रा(ता)  इहरियश्वा(टुच)  यागा(का)  या(य)  ता(ट)   ।  साखा",
+                        "corrected-swara": "ता टुच का य ट"
+                    },
+                    {
+                        "corrected-mantra": "या(भि) स्सो(त)   ।  मापो(प्ला)  बावा(प्लक)  व्नो(प्ल)  हाइ(शा)    .",
+                        "corrected-swara": "भि त प्ला प्लक प्ल शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_176",
+                    "header": ""
+                },
+                "subsection_176": [
+                    {
+                        "corrected-mantra": "प्रवौ(का)  होवा(टा)  इन्द्राऔ(कि)  होवा(टा)   ।  या(ख)  मा(प्ल) ",
+                        "corrected-swara": "का टा कि टा ख प्ल"
+                    },
+                    {
+                        "corrected-mantra": "दा(ख)  नम्(ण)   ।  हरौ(का)  होवा(का)  आश्वाऔ(कि)  हो वा(टा)   ।",
+                        "corrected-swara": "ख ण का का कि टा"
+                    },
+                    {
+                        "corrected-mantra": "या(ख)  गा(प्ल) या(ख) ता(ण)  । सखौ(का) होवा(टा)  यास्सोऔ(कि) ",
+                        "corrected-swara": "ख प्ल ख ण का टा कि"
+                    },
+                    {
+                        "corrected-mantra": "हो वा(टा)  मापो(पा)  बा(प्ल)  वाव्नो(प्ला)  हाइ(शा) ",
+                        "corrected-swara": "टा पा प्ल प्ला शा"
+                    },
+                    {
+                        "corrected-mantra": "प्रावा(चा)  ददाऔ(टि)  हो(त)   ।  इन्द्रोददाऔ(पु)  हो(श)   ।",
+                        "corrected-swara": "चा टि त पु श"
+                    },
+                    {
+                        "corrected-mantra": "या(ख)  मा(प्ल)  दा(ख)  नम्(ण)   । हारी(चा)  ददाऔ(टि) हो(त)  ।",
+                        "corrected-swara": "ख प्ल ख ण चा टि त"
+                    },
+                    {
+                        "corrected-mantra": "आश्वोददाऔ(पु)  हो(श)  । या(ख) गा(प्ल) या(ख) ता(ण)  । स",
+                        "corrected-swara": "पु श ख प्ल ख ण"
+                    },
+                    {
+                        "corrected-mantra": "चा(खा)  ददाऔ(टि)  हो(त)   । यास्सोददाऔ(पु)  हो(श)   ।  मा पो(प्ला)  बा वा(प्ला)  व्नो(श) हा इ(शा) .।",
+                        "corrected-swara": "खा टि त पु श प्ला प्ला श शा"
+                    },
+                    {
+                        "corrected-mantra": "प्रवप्रवाः(ती)   ।  इन्द्रा(ता)  ये (क) न्द्रा(थ)  यामा(का)  दा(य) नाम्(ट) ",
+                        "corrected-swara": "ती ता क थ का य ट"
+                    },
+                    {
+                        "corrected-mantra": "ह रा(ता)  इहरियश्वा(टुच)  यागा(का)  या(य)  ता(ट)   ।  साखा",
+                        "corrected-swara": "ता टुच का य ट"
+                    },
+                    {
+                        "corrected-mantra": "या(भि) स्सो(त)   ।  मापो(प्ला)  बावा(प्लक)  व्नो(प्ल)  हाइ(शा)    .",
+                        "corrected-swara": "भि त प्ला प्लक प्ल शा"
+                    }
+                ]
+            },
+            "subsection_177": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "वयंवायाम्(ती)  ऊ(ख)  त्वा(श)   ।  तादीदा(खि)  र्त्थाः(ण)   ।",
+                        "corrected-swara": "ती ख श खि ण"
+                    },
+                    {
+                        "corrected-mantra": "इन्द्र्त्वाय(षी) न्तस्सखा(खि)  याः(प्ल)   ।  कण्वा(ता)  ऊ(प) ",
+                        "corrected-swara": "षी खि प्ल ता प"
+                    },
+                    {
+                        "corrected-mantra": "क्थेभिर्जरन्तेए(प्लू)  हियाहा(शि)  हो(प्ल)  इळा(शा)  ॥ 10  ॥",
+                        "corrected-swara": "प्लू शि प्ल शा"
+                    },
+                    {
+                        "corrected-mantra": "वयमू(खि)  त्वातदिदार्त्थाः(शु)  ऐहीहो(टि) इ(श)   ।",
+                        "corrected-swara": "खि शु टि श"
+                    },
+                    {
+                        "corrected-mantra": "वायमुत्वातदि(षू) दर्त्थाइन्द्र्त्वाय(कू)  न्तस्सखा(टि)  याः(त)   ।",
+                        "corrected-swara": "षू कू टि त"
+                    },
+                    {
+                        "corrected-mantra": "का(ख)  ण्वाः(ण)  । उक्थाइभी(की) र्जो(प) बा(प्ल)  ।  रन्ता(ता) या(टाख्)   .",
+                        "corrected-swara": "ख ण की प प्ल ता टाख्"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_177",
+                    "header": ""
+                },
+                "subsection_177": [
+                    {
+                        "corrected-mantra": "वयंवायाम्(ती)  ऊ(ख)  त्वा(श)   ।  तादीदा(खि)  र्त्थाः(ण)   ।",
+                        "corrected-swara": "ती ख श खि ण"
+                    },
+                    {
+                        "corrected-mantra": "इन्द्र्त्वाय(षी) न्तस्सखा(खि)  याः(प्ल)   ।  कण्वा(ता)  ऊ(प) ",
+                        "corrected-swara": "षी खि प्ल ता प"
+                    },
+                    {
+                        "corrected-mantra": "क्थेभिर्जरन्तेए(प्लू)  हियाहा(शि)  हो(प्ल)  इळा(शा)  ॥ 10  ॥",
+                        "corrected-swara": "प्लू शि प्ल शा"
+                    },
+                    {
+                        "corrected-mantra": "वयमू(खि)  त्वातदिदार्त्थाः(शु)  ऐहीहो(टि) इ(श)   ।",
+                        "corrected-swara": "खि शु टि श"
+                    },
+                    {
+                        "corrected-mantra": "वायमुत्वातदि(षू) दर्त्थाइन्द्र्त्वाय(कू)  न्तस्सखा(टि)  याः(त)   ।",
+                        "corrected-swara": "षू कू टि त"
+                    },
+                    {
+                        "corrected-mantra": "का(ख)  ण्वाः(ण)  । उक्थाइभी(की) र्जो(प) बा(प्ल)  ।  रन्ता(ता) या(टाख्)   .",
+                        "corrected-swara": "ख ण की प प्ल ता टाख्"
+                    }
+                ]
+            },
+            "subsection_178": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "इन्द्रायमद्वना(तू) इ(श)   ।",
+                        "corrected-swara": "तू श"
+                    },
+                    {
+                        "corrected-mantra": "सूतामिन्द्रा(षी) यमद्वने(ची) सूताम्(शा)   ।",
+                        "corrected-swara": "षी ची शा"
+                    },
+                    {
+                        "corrected-mantra": "पा(च)  राइष्टो(टि) भा(तिच्)  न्तूनो(चा)  गिराः(श्य)   । अर्कमा(टि) ",
+                        "corrected-swara": "च टि तिच् चा श्य टि"
+                    },
+                    {
+                        "corrected-mantra": "र्च्चा(तच्)  न्तू(क)  का रा(टा)  वाः(खण्)  । ओ(प)  इळा(शा)  ॥ 12  ॥",
+                        "corrected-swara": "तच् क टा खण् प शा"
+                    },
+                    {
+                        "corrected-mantra": "इन्द्रायमद्वने(तू) हा(त) बु(श)   ।  ओइसू(टि)  ताम्(त)   ।",
+                        "corrected-swara": "तू त श टि त"
+                    },
+                    {
+                        "corrected-mantra": "पारिष्टो(कि) भान्तु नो(टि)  हा(त)  इगा राः(ती)   ।  पारिष्टोभान्तुनो(टू) ",
+                        "corrected-swara": "कि टि त ती टू"
+                    },
+                    {
+                        "corrected-mantra": "हा(त)  इगाइराः(टी)  । अर्कमा(टि)  र्च्चा(ख)  औहोवा(शि)   ।  ए(त) ",
+                        "corrected-swara": "त टी टि ख शि त"
+                    },
+                    {
+                        "corrected-mantra": "न्तु का(चा) रावाः(टाख्) ",
+                        "corrected-swara": "चा टाख्"
+                    },
+                    {
+                        "corrected-mantra": "इन्द्रायमद्वने(षू) सुतमिन्द्रायमो(तू) वा(त)   ।",
+                        "corrected-swara": "षू तू त"
+                    },
+                    {
+                        "corrected-mantra": "द्वा(त)  नाइसू(पि)  ताम्(श)   ।  पारिष्टो(कि)  भा(ट) हा(त हा(त) ",
+                        "corrected-swara": "त पि श कि ट त हा(त"
+                    },
+                    {
+                        "corrected-mantra": "न्तुनो(टा)  गा(ख)  इराः(णा)   ।  अर्कामार्च्चा(भि)  हा(त)  हा(तच्) ",
+                        "corrected-swara": "टा ख णा भि त तच्"
+                    },
+                    {
+                        "corrected-mantra": "न्तु(क)  का रा(टा)  वाः(खण्)   ।  ओ(प)  इळा(प्ला)  ॥ 14  ॥ .",
+                        "corrected-swara": "क टा खण् प प्ला"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_178",
+                    "header": ""
+                },
+                "subsection_178": [
+                    {
+                        "corrected-mantra": "इन्द्रायमद्वना(तू) इ(श)   ।",
+                        "corrected-swara": "तू श"
+                    },
+                    {
+                        "corrected-mantra": "सूतामिन्द्रा(षी) यमद्वने(ची) सूताम्(शा)   ।",
+                        "corrected-swara": "षी ची शा"
+                    },
+                    {
+                        "corrected-mantra": "पा(च)  राइष्टो(टि) भा(तिच्)  न्तूनो(चा)  गिराः(श्य)   । अर्कमा(टि) ",
+                        "corrected-swara": "च टि तिच् चा श्य टि"
+                    },
+                    {
+                        "corrected-mantra": "र्च्चा(तच्)  न्तू(क)  का रा(टा)  वाः(खण्)  । ओ(प)  इळा(शा)  ॥ 12  ॥",
+                        "corrected-swara": "तच् क टा खण् प शा"
+                    },
+                    {
+                        "corrected-mantra": "इन्द्रायमद्वने(तू) हा(त) बु(श)   ।  ओइसू(टि)  ताम्(त)   ।",
+                        "corrected-swara": "तू त श टि त"
+                    },
+                    {
+                        "corrected-mantra": "पारिष्टो(कि) भान्तु नो(टि)  हा(त)  इगा राः(ती)   ।  पारिष्टोभान्तुनो(टू) ",
+                        "corrected-swara": "कि टि त ती टू"
+                    },
+                    {
+                        "corrected-mantra": "हा(त)  इगाइराः(टी)  । अर्कमा(टि)  र्च्चा(ख)  औहोवा(शि)   ।  ए(त) ",
+                        "corrected-swara": "त टी टि ख शि त"
+                    },
+                    {
+                        "corrected-mantra": "न्तु का(चा) रावाः(टाख्) ",
+                        "corrected-swara": "चा टाख्"
+                    },
+                    {
+                        "corrected-mantra": "इन्द्रायमद्वने(षू) सुतमिन्द्रायमो(तू) वा(त)   ।",
+                        "corrected-swara": "षू तू त"
+                    },
+                    {
+                        "corrected-mantra": "द्वा(त)  नाइसू(पि)  ताम्(श)   ।  पारिष्टो(कि)  भा(ट) हा(त हा(त) ",
+                        "corrected-swara": "त पि श कि ट त हा(त"
+                    },
+                    {
+                        "corrected-mantra": "न्तुनो(टा)  गा(ख)  इराः(णा)   ।  अर्कामार्च्चा(भि)  हा(त)  हा(तच्) ",
+                        "corrected-swara": "टा ख णा भि त तच्"
+                    },
+                    {
+                        "corrected-mantra": "न्तु(क)  का रा(टा)  वाः(खण्)   ।  ओ(प)  इळा(प्ला)  ॥ 14  ॥ .",
+                        "corrected-swara": "क टा खण् प प्ला"
+                    }
+                ]
+            },
+            "subsection_179": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "अयन्तया(ती)   ।",
+                        "corrected-swara": "ती"
+                    },
+                    {
+                        "corrected-mantra": "द्रासोमो(टि)  होवा(का)  हो(च) इ(श)  ।  नीपू(का) ",
+                        "corrected-swara": "टि का च श का"
+                    },
+                    {
+                        "corrected-mantra": "तोआ(टा)  धी(च)  ब र्हा(खा)  इषी(णा)   ।  आ(च)  ईहि(था) ",
+                        "corrected-swara": "टा च खा णा च था"
+                    },
+                    {
+                        "corrected-mantra": "मस्याद्रा(टिट्)  वा(ख)   औहो वा(शि)   ।  पि(ख)  बा(श) ",
+                        "corrected-swara": "टिट् ख शि ख श"
+                    },
+                    {
+                        "corrected-mantra": "अयन्तइन्द्रसो(तू)  हो(त)  माः(त)   ।  नीपूतोआ(की)  धीबर्हा(टि)  इ",
+                        "corrected-swara": "तू त त की टि"
+                    },
+                    {
+                        "corrected-mantra": "षी(टा)   ।  ऐहा(टा)  इमास्या(चि)  । द्रावा(का) पाइबा(टि) ",
+                        "corrected-swara": "टा टा चि का टि"
+                    },
+                    {
+                        "corrected-mantra": "आइहि(षि) मास्याद्रवा(की)  पाइबा(टि)  । पी(ख) बा(श)  .",
+                        "corrected-swara": "षि की टि ख श"
+                    },
+                    {
+                        "corrected-mantra": "अयन्तइन्द्रसो(फू)  मो(त)  ना(प)  इपूतो(णि)  आधी(ण्य) ",
+                        "corrected-swara": "फू त प णि ण्य"
+                    },
+                    {
+                        "corrected-mantra": "बर्हिषी(णि)  । नीपूतोआ(की)  धीबर्हा(टि)  इषी(ता)   ।",
+                        "corrected-swara": "णि की टि ता"
+                    },
+                    {
+                        "corrected-mantra": "ऐ(क) हाइमा(टी) स्या(त)  । द्रावा(का)  पा(प) इबा(त्रा)  ई(ख) हा(श)  .",
+                        "corrected-swara": "क टी त का प त्रा ख श"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_179",
+                    "header": ""
+                },
+                "subsection_179": [
+                    {
+                        "corrected-mantra": "अयन्तया(ती)   ।",
+                        "corrected-swara": "ती"
+                    },
+                    {
+                        "corrected-mantra": "द्रासोमो(टि)  होवा(का)  हो(च) इ(श)  ।  नीपू(का) ",
+                        "corrected-swara": "टि का च श का"
+                    },
+                    {
+                        "corrected-mantra": "तोआ(टा)  धी(च)  ब र्हा(खा)  इषी(णा)   ।  आ(च)  ईहि(था) ",
+                        "corrected-swara": "टा च खा णा च था"
+                    },
+                    {
+                        "corrected-mantra": "मस्याद्रा(टिट्)  वा(ख)   औहो वा(शि)   ।  पि(ख)  बा(श) ",
+                        "corrected-swara": "टिट् ख शि ख श"
+                    },
+                    {
+                        "corrected-mantra": "अयन्तइन्द्रसो(तू)  हो(त)  माः(त)   ।  नीपूतोआ(की)  धीबर्हा(टि)  इ",
+                        "corrected-swara": "तू त त की टि"
+                    },
+                    {
+                        "corrected-mantra": "षी(टा)   ।  ऐहा(टा)  इमास्या(चि)  । द्रावा(का) पाइबा(टि) ",
+                        "corrected-swara": "टा टा चि का टि"
+                    },
+                    {
+                        "corrected-mantra": "आइहि(षि) मास्याद्रवा(की)  पाइबा(टि)  । पी(ख) बा(श)  .",
+                        "corrected-swara": "षि की टि ख श"
+                    },
+                    {
+                        "corrected-mantra": "अयन्तइन्द्रसो(फू)  मो(त)  ना(प)  इपूतो(णि)  आधी(ण्य) ",
+                        "corrected-swara": "फू त प णि ण्य"
+                    },
+                    {
+                        "corrected-mantra": "बर्हिषी(णि)  । नीपूतोआ(की)  धीबर्हा(टि)  इषी(ता)   ।",
+                        "corrected-swara": "णि की टि ता"
+                    },
+                    {
+                        "corrected-mantra": "ऐ(क) हाइमा(टी) स्या(त)  । द्रावा(का)  पा(प) इबा(त्रा)  ई(ख) हा(श)  .",
+                        "corrected-swara": "क टी त का प त्रा ख श"
+                    }
+                ]
+            },
+            "subsection_180": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "सुरू(ता)  पा(च)  कृत्नुमू(चि)  तया(चा)  इ(श)   ।  सुदूघा(चि) ",
+                        "corrected-swara": "ता च चि चा श चि"
+                    },
+                    {
+                        "corrected-mantra": "मिवगो(टि)  दुहया(ति)  आउवा(टि)   ।  ऊ(ख) पा(श)  । जुहूमा(टि) ",
+                        "corrected-swara": "टि ति टि ख श टि"
+                    },
+                    {
+                        "corrected-mantra": "सी(त)   । द्यवी(चा)  द्यविया(ति) आउवा(टि) ।  उऊ(खा) पा(श) ",
+                        "corrected-swara": "त चा ति टि खा श"
+                    },
+                    {
+                        "corrected-mantra": "सुरूहा(ति)  हा(त)  इ(श)   ।  पकृत्नुमू(टीच्)  ताया(टा) इ(श)   ।",
+                        "corrected-swara": "ति त श टीच् टा श"
+                    },
+                    {
+                        "corrected-mantra": "सुदुघा(चि)  मिवगो(टि)  दुहाऐहीऐही(तूच्)   ।  जुहौ(टा) ",
+                        "corrected-swara": "चि टि तूच् टा"
+                    },
+                    {
+                        "corrected-mantra": "हुवाइमा(टी) सी(ट)   ।  द्यवी(चा)  द्यवी(चा) ऐहीऐही(तीच्) .।",
+                        "corrected-swara": "टी ट चा चा तीच्"
+                    },
+                    {
+                        "corrected-mantra": "सुरूपकृत्नु(तु)  मूता(पा)  या(ण)  इ(श)   ।  ओइ(षा) सुरूपकृ",
+                        "corrected-swara": "तु पा ण श षा"
+                    },
+                    {
+                        "corrected-mantra": "त्नुमू(यू)  ताया(टा) इ(श)   ।  ओइ(षा) सुदुघामिवागो(यू)  दू",
+                        "corrected-swara": "यू टा श षा यू"
+                    },
+                    {
+                        "corrected-mantra": "हा(टा) इ(श)   ।  जु हू(का)  मसा(पा)  इद्यविद्यावैही(शू)   ।  जुहु(टा) ",
+                        "corrected-swara": "टा श का पा शू टा"
+                    },
+                    {
+                        "corrected-mantra": "मासी(टाच्) द्या(क)  विद्यवी(पि)  आबुहोआबुहोवा(शृ)  ।",
+                        "corrected-swara": "टाच् क पि शृ"
+                    },
+                    {
+                        "corrected-mantra": "ए(त)  द्यवी(ताच्) ",
+                        "corrected-swara": "त ताच्"
+                    },
+                    {
+                        "corrected-mantra": "सुरूपकृ(ती)   ।  त्नुमू(टा)  ताया(चा) इ(श)   ।  सुदुघा(कि) मी(ट) ",
+                        "corrected-swara": "ती टा चा श कि ट"
+                    },
+                    {
+                        "corrected-mantra": "वागो(टाच्)  दू(ख)  हाइसुदुघा(कु) मा(श)  । वागो(टाच्)  दूहा(का) ",
+                        "corrected-swara": "टाच् ख कु श टाच् का"
+                    },
+                    {
+                        "corrected-mantra": "इ(श) । जुहूमा(टि) सी(त)  । द्या(प) वी(श)  । द्या(ख) वो(प्ल) ",
+                        "corrected-swara": "श टि त प श ख प्ल"
+                    },
+                    {
+                        "corrected-mantra": "हाइ(शा) .",
+                        "corrected-swara": "शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_180",
+                    "header": ""
+                },
+                "subsection_180": [
+                    {
+                        "corrected-mantra": "सुरू(ता)  पा(च)  कृत्नुमू(चि)  तया(चा)  इ(श)   ।  सुदूघा(चि) ",
+                        "corrected-swara": "ता च चि चा श चि"
+                    },
+                    {
+                        "corrected-mantra": "मिवगो(टि)  दुहया(ति)  आउवा(टि)   ।  ऊ(ख) पा(श)  । जुहूमा(टि) ",
+                        "corrected-swara": "टि ति टि ख श टि"
+                    },
+                    {
+                        "corrected-mantra": "सी(त)   । द्यवी(चा)  द्यविया(ति) आउवा(टि) ।  उऊ(खा) पा(श) ",
+                        "corrected-swara": "त चा ति टि खा श"
+                    },
+                    {
+                        "corrected-mantra": "सुरूहा(ति)  हा(त)  इ(श)   ।  पकृत्नुमू(टीच्)  ताया(टा) इ(श)   ।",
+                        "corrected-swara": "ति त श टीच् टा श"
+                    },
+                    {
+                        "corrected-mantra": "सुदुघा(चि)  मिवगो(टि)  दुहाऐहीऐही(तूच्)   ।  जुहौ(टा) ",
+                        "corrected-swara": "चि टि तूच् टा"
+                    },
+                    {
+                        "corrected-mantra": "हुवाइमा(टी) सी(ट)   ।  द्यवी(चा)  द्यवी(चा) ऐहीऐही(तीच्) .।",
+                        "corrected-swara": "टी ट चा चा तीच्"
+                    },
+                    {
+                        "corrected-mantra": "सुरूपकृत्नु(तु)  मूता(पा)  या(ण)  इ(श)   ।  ओइ(षा) सुरूपकृ",
+                        "corrected-swara": "तु पा ण श षा"
+                    },
+                    {
+                        "corrected-mantra": "त्नुमू(यू)  ताया(टा) इ(श)   ।  ओइ(षा) सुदुघामिवागो(यू)  दू",
+                        "corrected-swara": "यू टा श षा यू"
+                    },
+                    {
+                        "corrected-mantra": "हा(टा) इ(श)   ।  जु हू(का)  मसा(पा)  इद्यविद्यावैही(शू)   ।  जुहु(टा) ",
+                        "corrected-swara": "टा श का पा शू टा"
+                    },
+                    {
+                        "corrected-mantra": "मासी(टाच्) द्या(क)  विद्यवी(पि)  आबुहोआबुहोवा(शृ)  ।",
+                        "corrected-swara": "टाच् क पि शृ"
+                    },
+                    {
+                        "corrected-mantra": "ए(त)  द्यवी(ताच्) ",
+                        "corrected-swara": "त ताच्"
+                    },
+                    {
+                        "corrected-mantra": "सुरूपकृ(ती)   ।  त्नुमू(टा)  ताया(चा) इ(श)   ।  सुदुघा(कि) मी(ट) ",
+                        "corrected-swara": "ती टा चा श कि ट"
+                    },
+                    {
+                        "corrected-mantra": "वागो(टाच्)  दू(ख)  हाइसुदुघा(कु) मा(श)  । वागो(टाच्)  दूहा(का) ",
+                        "corrected-swara": "टाच् ख कु श टाच् का"
+                    },
+                    {
+                        "corrected-mantra": "इ(श) । जुहूमा(टि) सी(त)  । द्या(प) वी(श)  । द्या(ख) वो(प्ल) ",
+                        "corrected-swara": "श टि त प श ख प्ल"
+                    },
+                    {
+                        "corrected-mantra": "हाइ(शा) .",
+                        "corrected-swara": "शा"
+                    }
+                ]
+            },
+            "subsection_181": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "अभित्वावृषभा(षू) सूता(ता इ(श)   । सुतंसृजा(कीच्)  मी",
+                        "corrected-swara": "षू ता इ(श कीच्"
+                    },
+                    {
+                        "corrected-mantra": "पा(का)  इता(या) या(ट)  इ(श)   । तृम्पा(का)  वा(य)  या(ट)   ।",
+                        "corrected-swara": "का या ट श का य ट"
+                    },
+                    {
+                        "corrected-mantra": "श्नुहा(ता) आउवाए(भी)  मा(ख)  दम्(श) ",
+                        "corrected-swara": "ता भी ख श"
+                    },
+                    {
+                        "corrected-mantra": "अभित्वावृषभा(षू) सुतेभ्या(ति)  हा(त) बु(श)   ।",
+                        "corrected-swara": "षू ति त श"
+                    },
+                    {
+                        "corrected-mantra": "त्वा(तच्)  वृषा(का)  भा(य)  सूता(टा) इ(श)   ।  सूतंसृजा(कीच्) ",
+                        "corrected-swara": "तच् का य टा श कीच्"
+                    },
+                    {
+                        "corrected-mantra": "मीपा(का)  इता(या)  या(ट) इ(श)  । तृंपा(का)  होइविया(की) ",
+                        "corrected-swara": "का या ट श का की"
+                    },
+                    {
+                        "corrected-mantra": "हो(कथ्) श्नुहीमा(टि)  दां(खण)   ।  ओ(प)  इळा(प्ला)  । ।  23  ॥",
+                        "corrected-swara": "कथ् टि खण प प्ला"
+                    },
+                    {
+                        "corrected-mantra": "अभित्वावृषभा(षू) सुतेसुतंसृजो(तू) वा(त)   । मीपी(का)  ता(ट) ",
+                        "corrected-swara": "षू तू त का ट"
+                    },
+                    {
+                        "corrected-mantra": "या(त)  इ(श)  । सुतं(का)  सृजा(काच्)  मी(क)  पीता(टा)  या(त)  इ(श) ",
+                        "corrected-swara": "त श का काच् क टा त श"
+                    },
+                    {
+                        "corrected-mantra": "तृं(ट) पा(त) वा(टट्)  या(ख)  औहोवा(शि) ।श्नुही(था) मा(ट)  दाम्(ख ) .",
+                        "corrected-swara": "ट त टट् ख शि था ट ख"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_181",
+                    "header": ""
+                },
+                "subsection_181": [
+                    {
+                        "corrected-mantra": "अभित्वावृषभा(षू) सूता(ता इ(श)   । सुतंसृजा(कीच्)  मी",
+                        "corrected-swara": "षू ता इ(श कीच्"
+                    },
+                    {
+                        "corrected-mantra": "पा(का)  इता(या) या(ट)  इ(श)   । तृम्पा(का)  वा(य)  या(ट)   ।",
+                        "corrected-swara": "का या ट श का य ट"
+                    },
+                    {
+                        "corrected-mantra": "श्नुहा(ता) आउवाए(भी)  मा(ख)  दम्(श) ",
+                        "corrected-swara": "ता भी ख श"
+                    },
+                    {
+                        "corrected-mantra": "अभित्वावृषभा(षू) सुतेभ्या(ति)  हा(त) बु(श)   ।",
+                        "corrected-swara": "षू ति त श"
+                    },
+                    {
+                        "corrected-mantra": "त्वा(तच्)  वृषा(का)  भा(य)  सूता(टा) इ(श)   ।  सूतंसृजा(कीच्) ",
+                        "corrected-swara": "तच् का य टा श कीच्"
+                    },
+                    {
+                        "corrected-mantra": "मीपा(का)  इता(या)  या(ट) इ(श)  । तृंपा(का)  होइविया(की) ",
+                        "corrected-swara": "का या ट श का की"
+                    },
+                    {
+                        "corrected-mantra": "हो(कथ्) श्नुहीमा(टि)  दां(खण)   ।  ओ(प)  इळा(प्ला)  । ।  23  ॥",
+                        "corrected-swara": "कथ् टि खण प प्ला"
+                    },
+                    {
+                        "corrected-mantra": "अभित्वावृषभा(षू) सुतेसुतंसृजो(तू) वा(त)   । मीपी(का)  ता(ट) ",
+                        "corrected-swara": "षू तू त का ट"
+                    },
+                    {
+                        "corrected-mantra": "या(त)  इ(श)  । सुतं(का)  सृजा(काच्)  मी(क)  पीता(टा)  या(त)  इ(श) ",
+                        "corrected-swara": "त श का काच् क टा त श"
+                    },
+                    {
+                        "corrected-mantra": "तृं(ट) पा(त) वा(टट्)  या(ख)  औहोवा(शि) ।श्नुही(था) मा(ट)  दाम्(ख ) .",
+                        "corrected-swara": "ट त टट् ख शि था ट ख"
+                    }
+                ]
+            },
+            "subsection_182": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "याइ(था) न्द्रा(प) चमसेष्वाइया(शू) ।  सोमा(का)  श्चामूषु",
+                        "corrected-swara": "था प शू का"
+                    },
+                    {
+                        "corrected-mantra": "ते(कीच्)  सू(क) तस्सोमश्चमू(कुच)  षु(क)  ताइसू(टि)  ताः(त)   ।",
+                        "corrected-swara": "कीच् क कुच क टि त"
+                    },
+                    {
+                        "corrected-mantra": "पाइबा(टि)  हा(त)  इदा स्यय(टि)  हा(त)  इ(श)   ।  त्वामीशा(टि) ",
+                        "corrected-swara": "टि त टि त श टि"
+                    },
+                    {
+                        "corrected-mantra": "इषा(खाण्) इ(श)   ।  ओ(प)  इळा(शा)  ॥ 25  ॥",
+                        "corrected-swara": "खाण् श प शा"
+                    },
+                    {
+                        "corrected-mantra": "यइन्द्रचामा(तु)  सेष्वा(ता)  । सोमश्चमूषुता(थू)  इसु(प) ताः(श)  ।",
+                        "corrected-swara": "तु ता थू प श"
+                    },
+                    {
+                        "corrected-mantra": "सोमश्चमू(ती)  षू(त)  । ताइसू(पि)  ताः(श)   । ओ(ट)  इपिबेदस्यो(खु) ",
+                        "corrected-swara": "ती त पि श ट खु"
+                    },
+                    {
+                        "corrected-mantra": "हा(ण)  इ(श)   ।",
+                        "corrected-swara": "ण श"
+                    },
+                    {
+                        "corrected-mantra": "त्वमाइशा(खीणफप्ल)  इ(श) .।षा(ख)  इ(श)    .",
+                        "corrected-swara": "खीणफप्ल श ख श"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_182",
+                    "header": ""
+                },
+                "subsection_182": [
+                    {
+                        "corrected-mantra": "याइ(था) न्द्रा(प) चमसेष्वाइया(शू) ।  सोमा(का)  श्चामूषु",
+                        "corrected-swara": "था प शू का"
+                    },
+                    {
+                        "corrected-mantra": "ते(कीच्)  सू(क) तस्सोमश्चमू(कुच)  षु(क)  ताइसू(टि)  ताः(त)   ।",
+                        "corrected-swara": "कीच् क कुच क टि त"
+                    },
+                    {
+                        "corrected-mantra": "पाइबा(टि)  हा(त)  इदा स्यय(टि)  हा(त)  इ(श)   ।  त्वामीशा(टि) ",
+                        "corrected-swara": "टि त टि त श टि"
+                    },
+                    {
+                        "corrected-mantra": "इषा(खाण्) इ(श)   ।  ओ(प)  इळा(शा)  ॥ 25  ॥",
+                        "corrected-swara": "खाण् श प शा"
+                    },
+                    {
+                        "corrected-mantra": "यइन्द्रचामा(तु)  सेष्वा(ता)  । सोमश्चमूषुता(थू)  इसु(प) ताः(श)  ।",
+                        "corrected-swara": "तु ता थू प श"
+                    },
+                    {
+                        "corrected-mantra": "सोमश्चमू(ती)  षू(त)  । ताइसू(पि)  ताः(श)   । ओ(ट)  इपिबेदस्यो(खु) ",
+                        "corrected-swara": "ती त पि श ट खु"
+                    },
+                    {
+                        "corrected-mantra": "हा(ण)  इ(श)   ।",
+                        "corrected-swara": "ण श"
+                    },
+                    {
+                        "corrected-mantra": "त्वमाइशा(खीणफप्ल)  इ(श) .।षा(ख)  इ(श)    .",
+                        "corrected-swara": "खीणफप्ल श ख श"
+                    }
+                ]
+            },
+            "subsection_183": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "योगेयोगे(षी) तवस्तारां(ती)   ।  वाजेवाजे(की) हवा(चा)  महे(काच्) ",
+                        "corrected-swara": "षी ती की चा काच्"
+                    },
+                    {
+                        "corrected-mantra": "साखाया(टि) ई (त)  । न्द्रा(क) मो(प)  बातायो(प्लि)  हाइ(शा) ",
+                        "corrected-swara": "टि त क प प्लि शा"
+                    },
+                    {
+                        "corrected-mantra": "योगेयोगे(षी) तवस्ता(ति)  राम्(त)   ।  वाजेवाजे(की)  हवा(चा) ",
+                        "corrected-swara": "षी ति त की चा"
+                    },
+                    {
+                        "corrected-mantra": "महे(काच्)  होवा(टा)  हा(त)  इ(श)   ।  साखाया(टि)  ई(त)   ।  हो",
+                        "corrected-swara": "काच् टा त श टि त"
+                    },
+                    {
+                        "corrected-mantra": "वा(टा)  हा(त) इ(श)   ।  न्दरामू(टि)  ता(च)  या औहो(शि)  वा  ।",
+                        "corrected-swara": "टा त श टि च शि"
+                    },
+                    {
+                        "corrected-mantra": "उऊ(खा)  पा(श) .।",
+                        "corrected-swara": "खा श"
+                    },
+                    {
+                        "corrected-mantra": "योगेयोगे(षी) तवहाबुस्ता(तु) राम्(त)   ।  वाजेवाजे(की)  हवा(टा) ",
+                        "corrected-swara": "षी तु त की टा"
+                    },
+                    {
+                        "corrected-mantra": "माहाए(कि)  हूवाऔ(कि)  हो(त)  वा(त)   ।  साखा(थाच्)  या(क) ",
+                        "corrected-swara": "कि कि त त थाच् क"
+                    },
+                    {
+                        "corrected-mantra": "इन्द्रमू(कि)  तायाए(कि)   ।  हूवाऔ(कि)  हो(त)  वा(त)   । सखा(का) ",
+                        "corrected-swara": "कि कि कि त त का"
+                    },
+                    {
+                        "corrected-mantra": "यया(टा)  हुवाऔ(कि)  हो(त)  वा(त)   । न्द्रमू(का)  तये(टाख्) ।.",
+                        "corrected-swara": "टा कि त त का टाख्"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_183",
+                    "header": ""
+                },
+                "subsection_183": [
+                    {
+                        "corrected-mantra": "योगेयोगे(षी) तवस्तारां(ती)   ।  वाजेवाजे(की) हवा(चा)  महे(काच्) ",
+                        "corrected-swara": "षी ती की चा काच्"
+                    },
+                    {
+                        "corrected-mantra": "साखाया(टि) ई (त)  । न्द्रा(क) मो(प)  बातायो(प्लि)  हाइ(शा) ",
+                        "corrected-swara": "टि त क प प्लि शा"
+                    },
+                    {
+                        "corrected-mantra": "योगेयोगे(षी) तवस्ता(ति)  राम्(त)   ।  वाजेवाजे(की)  हवा(चा) ",
+                        "corrected-swara": "षी ति त की चा"
+                    },
+                    {
+                        "corrected-mantra": "महे(काच्)  होवा(टा)  हा(त)  इ(श)   ।  साखाया(टि)  ई(त)   ।  हो",
+                        "corrected-swara": "काच् टा त श टि त"
+                    },
+                    {
+                        "corrected-mantra": "वा(टा)  हा(त) इ(श)   ।  न्दरामू(टि)  ता(च)  या औहो(शि)  वा  ।",
+                        "corrected-swara": "टा त श टि च शि"
+                    },
+                    {
+                        "corrected-mantra": "उऊ(खा)  पा(श) .।",
+                        "corrected-swara": "खा श"
+                    },
+                    {
+                        "corrected-mantra": "योगेयोगे(षी) तवहाबुस्ता(तु) राम्(त)   ।  वाजेवाजे(की)  हवा(टा) ",
+                        "corrected-swara": "षी तु त की टा"
+                    },
+                    {
+                        "corrected-mantra": "माहाए(कि)  हूवाऔ(कि)  हो(त)  वा(त)   ।  साखा(थाच्)  या(क) ",
+                        "corrected-swara": "कि कि त त थाच् क"
+                    },
+                    {
+                        "corrected-mantra": "इन्द्रमू(कि)  तायाए(कि)   ।  हूवाऔ(कि)  हो(त)  वा(त)   । सखा(का) ",
+                        "corrected-swara": "कि कि कि त त का"
+                    },
+                    {
+                        "corrected-mantra": "यया(टा)  हुवाऔ(कि)  हो(त)  वा(त)   । न्द्रमू(का)  तये(टाख्) ।.",
+                        "corrected-swara": "टा कि त त का टाख्"
+                    }
+                ]
+            },
+            "subsection_184": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "आतू(खा)  एतानिषी(प्ली)  दा(ङ)  ता(श)   ।  इ(थ)  न्द्रामभाप्रगा(षु) ",
+                        "corrected-swara": "खा प्ली ङ श थ षु"
+                    },
+                    {
+                        "corrected-mantra": "यतासाखा(कीच्)  यस्तो(का)  मवाऔ(पि)  हो(श)  मवा(टा)  हा(ख) ",
+                        "corrected-swara": "कीच् का पि श टा ख"
+                    },
+                    {
+                        "corrected-mantra": "साः(ण)   । हायाईसाखा(टुच्)  यस्तो(का)  मवाऔ(पि) हो(श)   ।",
+                        "corrected-swara": "ण टुच् का पि श"
+                    },
+                    {
+                        "corrected-mantra": "हिम्मा(टा)  हा(ख) सो(प्ल)  हाइ(शा)    .",
+                        "corrected-swara": "टा ख प्ल शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_184",
+                    "header": ""
+                },
+                "subsection_184": [
+                    {
+                        "corrected-mantra": "आतू(खा)  एतानिषी(प्ली)  दा(ङ)  ता(श)   ।  इ(थ)  न्द्रामभाप्रगा(षु) ",
+                        "corrected-swara": "खा प्ली ङ श थ षु"
+                    },
+                    {
+                        "corrected-mantra": "यतासाखा(कीच्)  यस्तो(का)  मवाऔ(पि)  हो(श)  मवा(टा)  हा(ख) ",
+                        "corrected-swara": "कीच् का पि श टा ख"
+                    },
+                    {
+                        "corrected-mantra": "साः(ण)   । हायाईसाखा(टुच्)  यस्तो(का)  मवाऔ(पि) हो(श)   ।",
+                        "corrected-swara": "ण टुच् का पि श"
+                    },
+                    {
+                        "corrected-mantra": "हिम्मा(टा)  हा(ख) सो(प्ल)  हाइ(शा)    .",
+                        "corrected-swara": "टा ख प्ल शा"
+                    }
+                ]
+            }
+        }
+    },
+    "section_19": {
+        "subsections": {
+            "subsection_185": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "इदामे(ति)   ।  ह्यनू(टा)  ओजासा(भि)   ।  सूतं(का)  राधा(का) ",
+                        "corrected-swara": "ति टा भि का का"
+                    },
+                    {
+                        "corrected-mantra": "ना(च)  म्पा(य) ता(ट)  इ(श)   ।  पीबात्वस्यागी(यु)  र्वाणाः(पा)   ।",
+                        "corrected-swara": "च य ट श यु पा"
+                    },
+                    {
+                        "corrected-mantra": "पीबा(खा)  तुवा(ता)  । स्या(ट) गा(ख) औहोवा(शि) । र्वा(ख)  णाः(प्ल) ",
+                        "corrected-swara": "खा ता ट ख शि ख प्ल"
+                    },
+                    {
+                        "corrected-mantra": "इदंह्या(ति)  औहो(ता)   ।  नू(क)  ओजा(खा) सा(ण)   ।  सूतं(का) ",
+                        "corrected-swara": "ति ता क खा ण का"
+                    },
+                    {
+                        "corrected-mantra": "राधा(का)  ना(ट)  ओंपा(खा)  ता(ण)  इ(श)  । पिबात्वस्या(पी) ",
+                        "corrected-swara": "का ट खा ण श पी"
+                    },
+                    {
+                        "corrected-mantra": "गा(प्ल) हा(ङ)  इ(श) । र्वा(प) णाएहिया(प्ली) हा(श)  हो(प्ल) ",
+                        "corrected-swara": "प्ल ङ श प प्ली श प्ल"
+                    },
+                    {
+                        "corrected-mantra": "इळा(शा)  ॥ 2  ॥",
+                        "corrected-swara": "शा"
+                    },
+                    {
+                        "corrected-mantra": "इदंह्यनू(ती)  ओजसा(ति)   ।  सूतं(का)  राधा(का)  ना(च) ",
+                        "corrected-swara": "ती ति का का च"
+                    },
+                    {
+                        "corrected-mantra": "म्पा(य)  तौ(ट)  होवा(ता)  हा(त)  इ(श) ।  पिबा(चा)  त्वस्या",
+                        "corrected-swara": "य ट ता त श चा"
+                    },
+                    {
+                        "corrected-mantra": "गा(चि)  इर्वा(या)  णौ(ट) होवा(ता)  हा(त)  इ(श) ।  पिबातुवौ(टी) ",
+                        "corrected-swara": "चि या ट ता त श टी"
+                    },
+                    {
+                        "corrected-mantra": "होवा(ता)  हा(त)  इ(श) । स्यागाइर्वा(टीट्)  णा(ख) औहोवा(शि)  । घृता(ता)  श्चूताः(टाख्)    .",
+                        "corrected-swara": "ता त श टीट् ख शि ता टाख्"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_185",
+                    "header": ""
+                },
+                "subsection_185": [
+                    {
+                        "corrected-mantra": "इदामे(ति)   ।  ह्यनू(टा)  ओजासा(भि)   ।  सूतं(का)  राधा(का) ",
+                        "corrected-swara": "ति टा भि का का"
+                    },
+                    {
+                        "corrected-mantra": "ना(च)  म्पा(य) ता(ट)  इ(श)   ।  पीबात्वस्यागी(यु)  र्वाणाः(पा)   ।",
+                        "corrected-swara": "च य ट श यु पा"
+                    },
+                    {
+                        "corrected-mantra": "पीबा(खा)  तुवा(ता)  । स्या(ट) गा(ख) औहोवा(शि) । र्वा(ख)  णाः(प्ल) ",
+                        "corrected-swara": "खा ता ट ख शि ख प्ल"
+                    },
+                    {
+                        "corrected-mantra": "इदंह्या(ति)  औहो(ता)   ।  नू(क)  ओजा(खा) सा(ण)   ।  सूतं(का) ",
+                        "corrected-swara": "ति ता क खा ण का"
+                    },
+                    {
+                        "corrected-mantra": "राधा(का)  ना(ट)  ओंपा(खा)  ता(ण)  इ(श)  । पिबात्वस्या(पी) ",
+                        "corrected-swara": "का ट खा ण श पी"
+                    },
+                    {
+                        "corrected-mantra": "गा(प्ल) हा(ङ)  इ(श) । र्वा(प) णाएहिया(प्ली) हा(श)  हो(प्ल) ",
+                        "corrected-swara": "प्ल ङ श प प्ली श प्ल"
+                    },
+                    {
+                        "corrected-mantra": "इळा(शा)  ॥ 2  ॥",
+                        "corrected-swara": "शा"
+                    },
+                    {
+                        "corrected-mantra": "इदंह्यनू(ती)  ओजसा(ति)   ।  सूतं(का)  राधा(का)  ना(च) ",
+                        "corrected-swara": "ती ति का का च"
+                    },
+                    {
+                        "corrected-mantra": "म्पा(य)  तौ(ट)  होवा(ता)  हा(त)  इ(श) ।  पिबा(चा)  त्वस्या",
+                        "corrected-swara": "य ट ता त श चा"
+                    },
+                    {
+                        "corrected-mantra": "गा(चि)  इर्वा(या)  णौ(ट) होवा(ता)  हा(त)  इ(श) ।  पिबातुवौ(टी) ",
+                        "corrected-swara": "चि या ट ता त श टी"
+                    },
+                    {
+                        "corrected-mantra": "होवा(ता)  हा(त)  इ(श) । स्यागाइर्वा(टीट्)  णा(ख) औहोवा(शि)  । घृता(ता)  श्चूताः(टाख्)    .",
+                        "corrected-swara": "ता त श टीट् ख शि ता टाख्"
+                    }
+                ]
+            },
+            "subsection_186": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "महंइन्द्राः(ती) ।  पूरश्चनो(की)  मा(य)  ही(ट)  त्वा(य)  मा(ट) ।",
+                        "corrected-swara": "ती की य ट य ट"
+                    },
+                    {
+                        "corrected-mantra": "स्तू(क)  वज्रिणा(चि)  इ(श)   ।  दा(य)  यू(ट)  र्णा(य)  प्रा(ट)  थी(क) ",
+                        "corrected-swara": "क चि श य ट य ट क"
+                    },
+                    {
+                        "corrected-mantra": "ना(ट)  शावाः(खाण्)   ।  ओ(प)  इळा(प्ला)  । ।  4  ॥",
+                        "corrected-swara": "ट खाण् प प्ला"
+                    },
+                    {
+                        "corrected-mantra": "महंहाइन्द्राः(तु) । पू(त) राश्चा(पा) नाः(श) ।  महा(टा)  इत्वा(खा) ",
+                        "corrected-swara": "तु त पा श टा खा"
+                    },
+                    {
+                        "corrected-mantra": "मा(ण) ।  स्तुवौ(टा)  हौहाहो(खि)  वाज्रीणाइ(शी)   ।  द्यौर्न्नाप्रथी(ती) ",
+                        "corrected-swara": "ण टा खि शी ती"
+                    },
+                    {
+                        "corrected-mantra": "नाशवाः(ति)   ।  द्यौर्न्ना(खा) प्रा(ण)   ।",
+                        "corrected-swara": "ति खा ण"
+                    },
+                    {
+                        "corrected-mantra": "थिनौ(टा)  हौहाहो(खि) ",
+                        "corrected-swara": "टा खि"
+                    },
+                    {
+                        "corrected-mantra": "बा(प्ल)  शावो(प्ला)  हाइ(शा) ",
+                        "corrected-swara": "प्ल प्ला शा"
+                    },
+                    {
+                        "corrected-mantra": "महंइन्द्राः(फी)   पूराश्चनाः(की)  ।  माही(था)  त्वा(टट्)  मा(त) ।",
+                        "corrected-swara": "फी की था टट् त"
+                    },
+                    {
+                        "corrected-mantra": "स्तु(च)  वज्रा(टाटट्)  इणा(ता)  इ(श)   ।  द्यौ(क) र्न्ना(टटट्)  प्रा(त)   ।",
+                        "corrected-swara": "च टाटट् ता श क टटट् त"
+                    },
+                    {
+                        "corrected-mantra": "थि(क)  ना(ट)  शा(ट)  वाः(खण्)   ।  ओ(प)  इळा(प्ला)  ॥ 6  ॥ .",
+                        "corrected-swara": "क ट ट खण् प प्ला"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_186",
+                    "header": ""
+                },
+                "subsection_186": [
+                    {
+                        "corrected-mantra": "महंइन्द्राः(ती) ।  पूरश्चनो(की)  मा(य)  ही(ट)  त्वा(य)  मा(ट) ।",
+                        "corrected-swara": "ती की य ट य ट"
+                    },
+                    {
+                        "corrected-mantra": "स्तू(क)  वज्रिणा(चि)  इ(श)   ।  दा(य)  यू(ट)  र्णा(य)  प्रा(ट)  थी(क) ",
+                        "corrected-swara": "क चि श य ट य ट क"
+                    },
+                    {
+                        "corrected-mantra": "ना(ट)  शावाः(खाण्)   ।  ओ(प)  इळा(प्ला)  । ।  4  ॥",
+                        "corrected-swara": "ट खाण् प प्ला"
+                    },
+                    {
+                        "corrected-mantra": "महंहाइन्द्राः(तु) । पू(त) राश्चा(पा) नाः(श) ।  महा(टा)  इत्वा(खा) ",
+                        "corrected-swara": "तु त पा श टा खा"
+                    },
+                    {
+                        "corrected-mantra": "मा(ण) ।  स्तुवौ(टा)  हौहाहो(खि)  वाज्रीणाइ(शी)   ।  द्यौर्न्नाप्रथी(ती) ",
+                        "corrected-swara": "ण टा खि शी ती"
+                    },
+                    {
+                        "corrected-mantra": "नाशवाः(ति)   ।  द्यौर्न्ना(खा) प्रा(ण)   ।",
+                        "corrected-swara": "ति खा ण"
+                    },
+                    {
+                        "corrected-mantra": "थिनौ(टा)  हौहाहो(खि) ",
+                        "corrected-swara": "टा खि"
+                    },
+                    {
+                        "corrected-mantra": "बा(प्ल)  शावो(प्ला)  हाइ(शा) ",
+                        "corrected-swara": "प्ल प्ला शा"
+                    },
+                    {
+                        "corrected-mantra": "महंइन्द्राः(फी)   पूराश्चनाः(की)  ।  माही(था)  त्वा(टट्)  मा(त) ।",
+                        "corrected-swara": "फी की था टट् त"
+                    },
+                    {
+                        "corrected-mantra": "स्तु(च)  वज्रा(टाटट्)  इणा(ता)  इ(श)   ।  द्यौ(क) र्न्ना(टटट्)  प्रा(त)   ।",
+                        "corrected-swara": "च टाटट् ता श क टटट् त"
+                    },
+                    {
+                        "corrected-mantra": "थि(क)  ना(ट)  शा(ट)  वाः(खण्)   ।  ओ(प)  इळा(प्ला)  ॥ 6  ॥ .",
+                        "corrected-swara": "क ट ट खण् प प्ला"
+                    }
+                ]
+            },
+            "subsection_187": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "आतूनया(ती)   ।  इन्द्रक्षूमा(टी) न्ताम्(त)   ।  चाइत्रंराभं(टु)  हा(त)   ।",
+                        "corrected-swara": "ती टी त टु त"
+                    },
+                    {
+                        "corrected-mantra": "इसङ्गृ(कि)  भायामाहा(टी)  हस्तो(खा)  हा(ण)  इ(श)   ।  द क्षा(टाच्) ",
+                        "corrected-swara": "कि टी खा ण श टाच्"
+                    },
+                    {
+                        "corrected-mantra": "इणा(का)  ईना(चा)   । महाहा(टिट्)  स्ता(ख) औहोवा(शि)  । दक्षिणे(कि)  ना(टख्) ",
+                        "corrected-swara": "का चा टिट् ख शि कि टख्"
+                    },
+                    {
+                        "corrected-mantra": "आतून(षि) इन्द्रक्षूमा(ती)  न्ताम्(त)   ।  चित्रं(टा) रा(ख)  भम्(ण) ",
+                        "corrected-swara": "षि ती त टा ख ण"
+                    },
+                    {
+                        "corrected-mantra": "सं(क) गृभा(पा)  य(श)  मा(ट)  हा(त)  हा(टट्)  स्ता(ख)  औहोवा(शि)    दक्षिणेना(खी)   .",
+                        "corrected-swara": "क पा श ट त टट् ख शि खी"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_187",
+                    "header": ""
+                },
+                "subsection_187": [
+                    {
+                        "corrected-mantra": "आतूनया(ती)   ।  इन्द्रक्षूमा(टी) न्ताम्(त)   ।  चाइत्रंराभं(टु)  हा(त)   ।",
+                        "corrected-swara": "ती टी त टु त"
+                    },
+                    {
+                        "corrected-mantra": "इसङ्गृ(कि)  भायामाहा(टी)  हस्तो(खा)  हा(ण)  इ(श)   ।  द क्षा(टाच्) ",
+                        "corrected-swara": "कि टी खा ण श टाच्"
+                    },
+                    {
+                        "corrected-mantra": "इणा(का)  ईना(चा)   । महाहा(टिट्)  स्ता(ख) औहोवा(शि)  । दक्षिणे(कि)  ना(टख्) ",
+                        "corrected-swara": "का चा टिट् ख शि कि टख्"
+                    },
+                    {
+                        "corrected-mantra": "आतून(षि) इन्द्रक्षूमा(ती)  न्ताम्(त)   ।  चित्रं(टा) रा(ख)  भम्(ण) ",
+                        "corrected-swara": "षि ती त टा ख ण"
+                    },
+                    {
+                        "corrected-mantra": "सं(क) गृभा(पा)  य(श)  मा(ट)  हा(त)  हा(टट्)  स्ता(ख)  औहोवा(शि)    दक्षिणेना(खी)   .",
+                        "corrected-swara": "क पा श ट त टट् ख शि खी"
+                    }
+                ]
+            },
+            "subsection_188": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "आतून(षि) इन्द्रक्षूमा(ती)  न्ताम्(त)   ।  चित्रंराभंसङ्गृ(टू) ",
+                        "corrected-swara": "षि ती त टू"
+                    },
+                    {
+                        "corrected-mantra": "भा(क)  या(थ)  चि(ष) त्रंराभंसङ्गृऔ(कू)  होइभा(खि)  या(ण)   ।",
+                        "corrected-swara": "क थ ष कू खि ण"
+                    },
+                    {
+                        "corrected-mantra": "ऐ(क)  हाइमहाहस्ती(षू)  दक्षा(टा)  हो(च)  इ(श)  । औ(क)  हो",
+                        "corrected-swara": "क षू टा च श क"
+                    },
+                    {
+                        "corrected-mantra": "वा(का)  हो(प)  बाणा(प्ला)  इनो(प्ला)  हा इ(शा) ",
+                        "corrected-swara": "का प प्ला प्ला शा"
+                    },
+                    {
+                        "corrected-mantra": "आ तू(णा)  ना इ(णा)  न्द्रा(फ)  क्षुमा(खा)  न्तम्(श)   ।  चित्रंराभंस",
+                        "corrected-swara": "णा णा फ खा श"
+                    },
+                    {
+                        "corrected-mantra": "ङ्गृभाया चा(षे) इत्रंराभंसङ्गृ(कू)  ई(ख)  हा(प्ल)  भा(ख)  या(ण)   ।",
+                        "corrected-swara": "षे कू ख प्ल ख ण"
+                    },
+                    {
+                        "corrected-mantra": "ऐ(क)  हाइमहाहस्ती(षू)  दक्षा(टा)  हो(च)  इ(श)  । औ(क) होवा(का) ",
+                        "corrected-swara": "क षू टा च श क का"
+                    },
+                    {
+                        "corrected-mantra": "हो(प)  बा(प्ल)  णाइनो(प्लि)  हाइ(शा)    .",
+                        "corrected-swara": "प प्ल प्लि शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_188",
+                    "header": ""
+                },
+                "subsection_188": [
+                    {
+                        "corrected-mantra": "आतून(षि) इन्द्रक्षूमा(ती)  न्ताम्(त)   ।  चित्रंराभंसङ्गृ(टू) ",
+                        "corrected-swara": "षि ती त टू"
+                    },
+                    {
+                        "corrected-mantra": "भा(क)  या(थ)  चि(ष) त्रंराभंसङ्गृऔ(कू)  होइभा(खि)  या(ण)   ।",
+                        "corrected-swara": "क थ ष कू खि ण"
+                    },
+                    {
+                        "corrected-mantra": "ऐ(क)  हाइमहाहस्ती(षू)  दक्षा(टा)  हो(च)  इ(श)  । औ(क)  हो",
+                        "corrected-swara": "क षू टा च श क"
+                    },
+                    {
+                        "corrected-mantra": "वा(का)  हो(प)  बाणा(प्ला)  इनो(प्ला)  हा इ(शा) ",
+                        "corrected-swara": "का प प्ला प्ला शा"
+                    },
+                    {
+                        "corrected-mantra": "आ तू(णा)  ना इ(णा)  न्द्रा(फ)  क्षुमा(खा)  न्तम्(श)   ।  चित्रंराभंस",
+                        "corrected-swara": "णा णा फ खा श"
+                    },
+                    {
+                        "corrected-mantra": "ङ्गृभाया चा(षे) इत्रंराभंसङ्गृ(कू)  ई(ख)  हा(प्ल)  भा(ख)  या(ण)   ।",
+                        "corrected-swara": "षे कू ख प्ल ख ण"
+                    },
+                    {
+                        "corrected-mantra": "ऐ(क)  हाइमहाहस्ती(षू)  दक्षा(टा)  हो(च)  इ(श)  । औ(क) होवा(का) ",
+                        "corrected-swara": "क षू टा च श क का"
+                    },
+                    {
+                        "corrected-mantra": "हो(प)  बा(प्ल)  णाइनो(प्लि)  हाइ(शा)    .",
+                        "corrected-swara": "प प्ल प्लि शा"
+                    }
+                ]
+            },
+            "subsection_189": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "अभ्येआभी(ती)   ।  प्रागो(का)  पाती(था)  ङ्गीराः(टा)   ।  इन्द्रम",
+                        "corrected-swara": "ती का था टा"
+                    },
+                    {
+                        "corrected-mantra": "र्च्चायाथा(यू)  विदा(पा)  इसूनूम्(ति)   । ओइसत्यो(पी) हा(ण)  इ(श) ",
+                        "corrected-swara": "यू पा ति पी ण श"
+                    },
+                    {
+                        "corrected-mantra": "स्या(ट)  सा(ख)  औहोवा(शि)  । पा(च)  ती (ट) मे(ख) ",
+                        "corrected-swara": "ट ख शि च ट ख"
+                    },
+                    {
+                        "corrected-mantra": "अभ्येआभी(ती)   ।  प्रगोपती(की)  ङ्गिराः(टा)   ।  इन्द्रमर्च्चा(टी) ",
+                        "corrected-swara": "ती की टा टी"
+                    },
+                    {
+                        "corrected-mantra": "या(ख)  था(ण)  । हिं(ट)  हिं(त)  ओ(प)  ई(ण)  वीदा(णा)  इ सनुं(फि) ",
+                        "corrected-swara": "ख ण ट त प ण णा फि"
+                    },
+                    {
+                        "corrected-mantra": "सात्या(फा) स्यासात्(ता)   ।  हिं(ट)  हिं(त)  ओ(प)  बा(प्ल)  पा ता(प्ला)  इं(श)  हाइ(शा) .",
+                        "corrected-swara": "फा ता ट त प प्ल प्ला श शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_189",
+                    "header": ""
+                },
+                "subsection_189": [
+                    {
+                        "corrected-mantra": "अभ्येआभी(ती)   ।  प्रागो(का)  पाती(था)  ङ्गीराः(टा)   ।  इन्द्रम",
+                        "corrected-swara": "ती का था टा"
+                    },
+                    {
+                        "corrected-mantra": "र्च्चायाथा(यू)  विदा(पा)  इसूनूम्(ति)   । ओइसत्यो(पी) हा(ण)  इ(श) ",
+                        "corrected-swara": "यू पा ति पी ण श"
+                    },
+                    {
+                        "corrected-mantra": "स्या(ट)  सा(ख)  औहोवा(शि)  । पा(च)  ती (ट) मे(ख) ",
+                        "corrected-swara": "ट ख शि च ट ख"
+                    },
+                    {
+                        "corrected-mantra": "अभ्येआभी(ती)   ।  प्रगोपती(की)  ङ्गिराः(टा)   ।  इन्द्रमर्च्चा(टी) ",
+                        "corrected-swara": "ती की टा टी"
+                    },
+                    {
+                        "corrected-mantra": "या(ख)  था(ण)  । हिं(ट)  हिं(त)  ओ(प)  ई(ण)  वीदा(णा)  इ सनुं(फि) ",
+                        "corrected-swara": "ख ण ट त प ण णा फि"
+                    },
+                    {
+                        "corrected-mantra": "सात्या(फा) स्यासात्(ता)   ।  हिं(ट)  हिं(त)  ओ(प)  बा(प्ल)  पा ता(प्ला)  इं(श)  हाइ(शा) .",
+                        "corrected-swara": "फा ता ट त प प्ल प्ला श शा"
+                    }
+                ]
+            },
+            "subsection_190": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "आभी(फा)  प्रगो(खा)  पती(खा)  ङ्गिराः(शा)   ।  इन्द्रमर्च्च(षी) यथा",
+                        "corrected-swara": "फा खा खा शा षी"
+                    },
+                    {
+                        "corrected-mantra": "विदाए(टु)   ।  सूनुंसात्या(की)  ओ(प)  स्या(श)  सा(फ) ",
+                        "corrected-swara": "टु की प श फ"
+                    },
+                    {
+                        "corrected-mantra": "त्पाताइं(शि)   ।  सूनुंसात्या(की)  ओ(प)  स्यासो(प्ला)  बा(प्ल) ",
+                        "corrected-swara": "शि की प प्ला प्ल"
+                    },
+                    {
+                        "corrected-mantra": "त्पाता(प्ला)  इं(श)   ।  हाइ(शा)    .",
+                        "corrected-swara": "प्ला श शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_190",
+                    "header": ""
+                },
+                "subsection_190": [
+                    {
+                        "corrected-mantra": "आभी(फा)  प्रगो(खा)  पती(खा)  ङ्गिराः(शा)   ।  इन्द्रमर्च्च(षी) यथा",
+                        "corrected-swara": "फा खा खा शा षी"
+                    },
+                    {
+                        "corrected-mantra": "विदाए(टु)   ।  सूनुंसात्या(की)  ओ(प)  स्या(श)  सा(फ) ",
+                        "corrected-swara": "टु की प श फ"
+                    },
+                    {
+                        "corrected-mantra": "त्पाताइं(शि)   ।  सूनुंसात्या(की)  ओ(प)  स्यासो(प्ला)  बा(प्ल) ",
+                        "corrected-swara": "शि की प प्ला प्ल"
+                    },
+                    {
+                        "corrected-mantra": "त्पाता(प्ला)  इं(श)   ।  हाइ(शा)    .",
+                        "corrected-swara": "प्ला श शा"
+                    }
+                ]
+            },
+            "subsection_191": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "कयानश्ची(ती)  । त्रा(त)  याभू(पा) वात्(श)  । ऊ(क)  ताइ",
+                        "corrected-swara": "ती त पा श क"
+                    },
+                    {
+                        "corrected-mantra": "सदावा(कु)  र्धस्सा(खा) खा(ण)   ।  कयाशा(टि)  चा(त)  इ(श)   ।",
+                        "corrected-swara": "कु खा ण टि त श"
+                    },
+                    {
+                        "corrected-mantra": "ष्ठा(प)  या(श)  वा(ख)  र्तो(प्ल)  हाइ(शा) ",
+                        "corrected-swara": "प श ख प्ल शा"
+                    },
+                    {
+                        "corrected-mantra": "होवाइ होवाइ(षू) कयानश्ची(ती)  । त्रा(त)  याभू(पा)  वात्(श)    ।",
+                        "corrected-swara": "षू ती त पा श"
+                    },
+                    {
+                        "corrected-mantra": "होवाइहोवाइ(षू) ऊती(चा)  स्सादा(काच्)  वृधा(का)  स्सा(प)  खा(श) ",
+                        "corrected-swara": "षू चा काच् का प श"
+                    },
+                    {
+                        "corrected-mantra": "होवाइ होवाइ(षू)  कया(ता)  शचा(ता) इ(श)   ।  ष्ठाया वा(टिट्) ",
+                        "corrected-swara": "षू ता ता श टिट्"
+                    },
+                    {
+                        "corrected-mantra": "र्ता(ख) औहोवा(शि)   ।  ऊ(ख)  पा(श)    .",
+                        "corrected-swara": "ख शि ख श"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_191",
+                    "header": ""
+                },
+                "subsection_191": [
+                    {
+                        "corrected-mantra": "कयानश्ची(ती)  । त्रा(त)  याभू(पा) वात्(श)  । ऊ(क)  ताइ",
+                        "corrected-swara": "ती त पा श क"
+                    },
+                    {
+                        "corrected-mantra": "सदावा(कु)  र्धस्सा(खा) खा(ण)   ।  कयाशा(टि)  चा(त)  इ(श)   ।",
+                        "corrected-swara": "कु खा ण टि त श"
+                    },
+                    {
+                        "corrected-mantra": "ष्ठा(प)  या(श)  वा(ख)  र्तो(प्ल)  हाइ(शा) ",
+                        "corrected-swara": "प श ख प्ल शा"
+                    },
+                    {
+                        "corrected-mantra": "होवाइ होवाइ(षू) कयानश्ची(ती)  । त्रा(त)  याभू(पा)  वात्(श)    ।",
+                        "corrected-swara": "षू ती त पा श"
+                    },
+                    {
+                        "corrected-mantra": "होवाइहोवाइ(षू) ऊती(चा)  स्सादा(काच्)  वृधा(का)  स्सा(प)  खा(श) ",
+                        "corrected-swara": "षू चा काच् का प श"
+                    },
+                    {
+                        "corrected-mantra": "होवाइ होवाइ(षू)  कया(ता)  शचा(ता) इ(श)   ।  ष्ठाया वा(टिट्) ",
+                        "corrected-swara": "षू ता ता श टिट्"
+                    },
+                    {
+                        "corrected-mantra": "र्ता(ख) औहोवा(शि)   ।  ऊ(ख)  पा(श)    .",
+                        "corrected-swara": "ख शि ख श"
+                    }
+                ]
+            },
+            "subsection_192": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "का(ण)  या(फ)  नश्चा(फा)  इत्रा(खा)  याभुवात्(शि)  ।  ऊती(का) ",
+                        "corrected-swara": "ण फ फा खा शि का"
+                    },
+                    {
+                        "corrected-mantra": "स्सादा(का)  वृधस्सखाऔ(कु)  होहा(ता)  इकया(टि)  शचा(ता)  इ(श) ",
+                        "corrected-swara": "का कु ता टि ता श"
+                    },
+                    {
+                        "corrected-mantra": "ष्ठयौहो(ति)  हिम्मा(टा)  वा(ट)  र्तो(ख) । हा(त्र)  इ(श) ",
+                        "corrected-swara": "ति टा ट ख त्र श"
+                    },
+                    {
+                        "corrected-mantra": "का(ण)  स्त्वा(फ)  स त्यो(फा)  मा(ख)  दानाम्(शा)   ।  मंहिष्ठो(कि) ",
+                        "corrected-swara": "ण फ फा ख शा कि"
+                    },
+                    {
+                        "corrected-mantra": "मत्सद(की)  न्धसाऔ(कि)  होहा(ता)  इदृढा(टि)  चिदा(ता) ",
+                        "corrected-swara": "की कि ता टि ता"
+                    },
+                    {
+                        "corrected-mantra": "रूजौहो(ति)  हिम्मा(टा)   ।  वा(ट)  सो(ख)  । हा(त्र)  इ(श) ",
+                        "corrected-swara": "ति टा ट ख त्र श"
+                    },
+                    {
+                        "corrected-mantra": "आ(ण)  भी (फ)  षूणा(फा)  स्सा(ख)  खीनाम्(शा)  । अविता(कि) ",
+                        "corrected-swara": "ण फ फा ख शा कि"
+                    },
+                    {
+                        "corrected-mantra": "जराइतृ(की)  णामाऔ(कि) होहा(ता)  ईशातां(टि)  भवा(ता)   ।  सियौ",
+                        "corrected-swara": "की कि ता टि ता"
+                    },
+                    {
+                        "corrected-mantra": "हो(ति)  हिम्मा(टा)   ।  ता(ट) यो(ख)  ।हा(त्र)  इ(श)    .",
+                        "corrected-swara": "ति टा ट ख त्र श"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_192",
+                    "header": ""
+                },
+                "subsection_192": [
+                    {
+                        "corrected-mantra": "का(ण)  या(फ)  नश्चा(फा)  इत्रा(खा)  याभुवात्(शि)  ।  ऊती(का) ",
+                        "corrected-swara": "ण फ फा खा शि का"
+                    },
+                    {
+                        "corrected-mantra": "स्सादा(का)  वृधस्सखाऔ(कु)  होहा(ता)  इकया(टि)  शचा(ता)  इ(श) ",
+                        "corrected-swara": "का कु ता टि ता श"
+                    },
+                    {
+                        "corrected-mantra": "ष्ठयौहो(ति)  हिम्मा(टा)  वा(ट)  र्तो(ख) । हा(त्र)  इ(श) ",
+                        "corrected-swara": "ति टा ट ख त्र श"
+                    },
+                    {
+                        "corrected-mantra": "का(ण)  स्त्वा(फ)  स त्यो(फा)  मा(ख)  दानाम्(शा)   ।  मंहिष्ठो(कि) ",
+                        "corrected-swara": "ण फ फा ख शा कि"
+                    },
+                    {
+                        "corrected-mantra": "मत्सद(की)  न्धसाऔ(कि)  होहा(ता)  इदृढा(टि)  चिदा(ता) ",
+                        "corrected-swara": "की कि ता टि ता"
+                    },
+                    {
+                        "corrected-mantra": "रूजौहो(ति)  हिम्मा(टा)   ।  वा(ट)  सो(ख)  । हा(त्र)  इ(श) ",
+                        "corrected-swara": "ति टा ट ख त्र श"
+                    },
+                    {
+                        "corrected-mantra": "आ(ण)  भी (फ)  षूणा(फा)  स्सा(ख)  खीनाम्(शा)  । अविता(कि) ",
+                        "corrected-swara": "ण फ फा ख शा कि"
+                    },
+                    {
+                        "corrected-mantra": "जराइतृ(की)  णामाऔ(कि) होहा(ता)  ईशातां(टि)  भवा(ता)   ।  सियौ",
+                        "corrected-swara": "की कि ता टि ता"
+                    },
+                    {
+                        "corrected-mantra": "हो(ति)  हिम्मा(टा)   ।  ता(ट) यो(ख)  ।हा(त्र)  इ(श)    .",
+                        "corrected-swara": "ति टा ट ख त्र श"
+                    }
+                ]
+            },
+            "subsection_193": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "त्यमूवाः(ति)   ।  सत्रा(था) साहाम्(टा)  ।  विश्वासुगीरिषू(टू) ",
+                        "corrected-swara": "ति था टा टू"
+                    },
+                    {
+                        "corrected-mantra": "आयाताम्(टि) । आच्यावा(टिट्) या(ख)  औहोवा(शि)  स्यू(क) तये(टाख्) ",
+                        "corrected-swara": "टि टिट् ख शि क टाख्"
+                    },
+                    {
+                        "corrected-mantra": "त्या(ख)  मूवस्सत्रासाहम्मोवा(शृ)   ।  विश्वासु(षि) गीरिष्वाया(टी) ",
+                        "corrected-swara": "ख शृ षि टी"
+                    },
+                    {
+                        "corrected-mantra": "ताम्(च)  । आच्यावा(टि)  या(त) । सियौ(टा)  हो वा(खा)  हा(ण) ",
+                        "corrected-swara": "च टि त टा खा ण"
+                    },
+                    {
+                        "corrected-mantra": "इ(श)   । ता(ख)  यो(प्ल)  हाइ(शा)    .",
+                        "corrected-swara": "श ख प्ल शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_193",
+                    "header": ""
+                },
+                "subsection_193": [
+                    {
+                        "corrected-mantra": "त्यमूवाः(ति)   ।  सत्रा(था) साहाम्(टा)  ।  विश्वासुगीरिषू(टू) ",
+                        "corrected-swara": "ति था टा टू"
+                    },
+                    {
+                        "corrected-mantra": "आयाताम्(टि) । आच्यावा(टिट्) या(ख)  औहोवा(शि)  स्यू(क) तये(टाख्) ",
+                        "corrected-swara": "टि टिट् ख शि क टाख्"
+                    },
+                    {
+                        "corrected-mantra": "त्या(ख)  मूवस्सत्रासाहम्मोवा(शृ)   ।  विश्वासु(षि) गीरिष्वाया(टी) ",
+                        "corrected-swara": "ख शृ षि टी"
+                    },
+                    {
+                        "corrected-mantra": "ताम्(च)  । आच्यावा(टि)  या(त) । सियौ(टा)  हो वा(खा)  हा(ण) ",
+                        "corrected-swara": "च टि त टा खा ण"
+                    },
+                    {
+                        "corrected-mantra": "इ(श)   । ता(ख)  यो(प्ल)  हाइ(शा)    .",
+                        "corrected-swara": "श ख प्ल शा"
+                    }
+                ]
+            },
+            "subsection_194": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "सादा(ता)   ।  सस्पता(चि)  ईमा(या)  त्भूता(टा)  उवो(खा)  वा(श)   ।",
+                        "corrected-swara": "ता चि या टा खा श"
+                    },
+                    {
+                        "corrected-mantra": "प्राया(टा)  उवो(खा) वा(श)   ।  आइन्द्रास्याका(कू)  मा(ख)  याम्(त्र) ",
+                        "corrected-swara": "टा खा श कू ख त्र"
+                    },
+                    {
+                        "corrected-mantra": "सानिम्मे(चि)  धामया(टि)  सि षाम्(खा)    .",
+                        "corrected-swara": "चि टि खा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_194",
+                    "header": ""
+                },
+                "subsection_194": [
+                    {
+                        "corrected-mantra": "सादा(ता)   ।  सस्पता(चि)  ईमा(या)  त्भूता(टा)  उवो(खा)  वा(श)   ।",
+                        "corrected-swara": "ता चि या टा खा श"
+                    },
+                    {
+                        "corrected-mantra": "प्राया(टा)  उवो(खा) वा(श)   ।  आइन्द्रास्याका(कू)  मा(ख)  याम्(त्र) ",
+                        "corrected-swara": "टा खा श कू ख त्र"
+                    },
+                    {
+                        "corrected-mantra": "सानिम्मे(चि)  धामया(टि)  सि षाम्(खा)    .",
+                        "corrected-swara": "चि टि खा"
+                    }
+                ]
+            },
+            "subsection_195": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "हावाप्सूदा(खी) क्षा(श)  आप्सूदा(खि)  क्षाः(ण) ",
+                        "corrected-swara": "खी श खि ण"
+                    },
+                    {
+                        "corrected-mantra": "एते(का)  पन्था(थाच्)  आथोदीवाः(टी)   हावाप्सूदा(खी) क्षा(श) ",
+                        "corrected-swara": "का थाच् टी खी श"
+                    },
+                    {
+                        "corrected-mantra": "आप्सूदा(खि)  क्षाः(ण)   ए भि(का) र्व्या(थच) श्वामाइरा या(टु)   ।",
+                        "corrected-swara": "खि ण का थच टु"
+                    },
+                    {
+                        "corrected-mantra": "हाउता श्रो(खी)  षान्(ण)  । तूनोभू(टिट्)  वा(ख)  औहोवा(शि)  । ई(ख)  ति(श)    .",
+                        "corrected-swara": "खी ण टिट् ख शि ख श"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_195",
+                    "header": ""
+                },
+                "subsection_195": [
+                    {
+                        "corrected-mantra": "हावाप्सूदा(खी) क्षा(श)  आप्सूदा(खि)  क्षाः(ण) ",
+                        "corrected-swara": "खी श खि ण"
+                    },
+                    {
+                        "corrected-mantra": "एते(का)  पन्था(थाच्)  आथोदीवाः(टी)   हावाप्सूदा(खी) क्षा(श) ",
+                        "corrected-swara": "का थाच् टी खी श"
+                    },
+                    {
+                        "corrected-mantra": "आप्सूदा(खि)  क्षाः(ण)   ए भि(का) र्व्या(थच) श्वामाइरा या(टु)   ।",
+                        "corrected-swara": "खि ण का थच टु"
+                    },
+                    {
+                        "corrected-mantra": "हाउता श्रो(खी)  षान्(ण)  । तूनोभू(टिट्)  वा(ख)  औहोवा(शि)  । ई(ख)  ति(श)    .",
+                        "corrected-swara": "खी ण टिट् ख शि ख श"
+                    }
+                ]
+            },
+            "subsection_196": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "भद्रंभा(ति) द्राम्(त)    ।  ना(क)  आभा(टा)  रा(ख)  इषामूर्जम्(शी)   ।",
+                        "corrected-swara": "ति त क टा ख शी"
+                    },
+                    {
+                        "corrected-mantra": "शाताक्रा(टि)  ता(ख)  बूयादिन्द्रामृ(शु)  धा(ट)  । या(ख) ",
+                        "corrected-swara": "टि ख शु ट ख"
+                    },
+                    {
+                        "corrected-mantra": "औहोवा(शि)   ।  सी(ख)  नः(श)    .",
+                        "corrected-swara": "शि ख श"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_196",
+                    "header": ""
+                },
+                "subsection_196": [
+                    {
+                        "corrected-mantra": "भद्रंभा(ति) द्राम्(त)    ।  ना(क)  आभा(टा)  रा(ख)  इषामूर्जम्(शी)   ।",
+                        "corrected-swara": "ति त क टा ख शी"
+                    },
+                    {
+                        "corrected-mantra": "शाताक्रा(टि)  ता(ख)  बूयादिन्द्रामृ(शु)  धा(ट)  । या(ख) ",
+                        "corrected-swara": "टि ख शु ट ख"
+                    },
+                    {
+                        "corrected-mantra": "औहोवा(शि)   ।  सी(ख)  नः(श)    .",
+                        "corrected-swara": "शि ख श"
+                    }
+                ]
+            },
+            "subsection_197": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "अस्तिसोमोअयं(षू) सुतोअस्तेआस्ती(तू)   ।",
+                        "corrected-swara": "षू तू"
+                    },
+                    {
+                        "corrected-mantra": "सोमोअयंसुतः(षू) पिबन्त्यस्यामा(फु)  रुतो(ख)  हा(ण)  इ(श)   ।",
+                        "corrected-swara": "षू फु ख ण श"
+                    },
+                    {
+                        "corrected-mantra": "उतस्वराजो(पु)  अश्वाइनो(प्ली)  हाइ(शा)    .",
+                        "corrected-swara": "पु प्ली शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_197",
+                    "header": ""
+                },
+                "subsection_197": [
+                    {
+                        "corrected-mantra": "अस्तिसोमोअयं(षू) सुतोअस्तेआस्ती(तू)   ।",
+                        "corrected-swara": "षू तू"
+                    },
+                    {
+                        "corrected-mantra": "सोमोअयंसुतः(षू) पिबन्त्यस्यामा(फु)  रुतो(ख)  हा(ण)  इ(श)   ।",
+                        "corrected-swara": "षू फु ख ण श"
+                    },
+                    {
+                        "corrected-mantra": "उतस्वराजो(पु)  अश्वाइनो(प्ली)  हाइ(शा)    .",
+                        "corrected-swara": "पु प्ली शा"
+                    }
+                ]
+            }
+        }
+    },
+    "section_20": {
+        "subsections": {
+            "subsection_198": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "ईङ्ख्ययन्तीः(ती)   ।  अपा(टा)  स्यूवाः(टा)   ।  आइन्द्रन्जा(कीच्) ",
+                        "corrected-swara": "ती टा टा कीच्"
+                    },
+                    {
+                        "corrected-mantra": "तामू(चा)  पा(य)  सा ता(टा)  इ(श)   ।  व(क) न्वाना(टा) साः(त)   ।",
+                        "corrected-swara": "चा य टा श क टा त"
+                    },
+                    {
+                        "corrected-mantra": "सूवीर्या(कि)  आउवा(शि)   ।  वृधे(ताच्)    .",
+                        "corrected-swara": "कि शि ताच्"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_198",
+                    "header": ""
+                },
+                "subsection_198": [
+                    {
+                        "corrected-mantra": "ईङ्ख्ययन्तीः(ती)   ।  अपा(टा)  स्यूवाः(टा)   ।  आइन्द्रन्जा(कीच्) ",
+                        "corrected-swara": "ती टा टा कीच्"
+                    },
+                    {
+                        "corrected-mantra": "तामू(चा)  पा(य)  सा ता(टा)  इ(श)   ।  व(क) न्वाना(टा) साः(त)   ।",
+                        "corrected-swara": "चा य टा श क टा त"
+                    },
+                    {
+                        "corrected-mantra": "सूवीर्या(कि)  आउवा(शि)   ।  वृधे(ताच्)    .",
+                        "corrected-swara": "कि शि ताच्"
+                    }
+                ]
+            },
+            "subsection_199": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "न किदे(ती)  वाः  । ईनाइनीमासा(टू)  इ(श)  मासी(का)  या(ख) ",
+                        "corrected-swara": "ती टू श का ख"
+                    },
+                    {
+                        "corrected-mantra": "नक्यायो(शि)   ।  पायापयामासा(टू)  इ(श)   ।  मासी(का)  या(ख) ",
+                        "corrected-swara": "शि टू श का ख"
+                    },
+                    {
+                        "corrected-mantra": "मन्द्रश्रुत्यम्(शी)   । चाराचरामासा(टू)  इ(श)  । मासी(खा)  या(ण)    .",
+                        "corrected-swara": "शी टू श खा ण"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_199",
+                    "header": ""
+                },
+                "subsection_199": [
+                    {
+                        "corrected-mantra": "न किदे(ती)  वाः  । ईनाइनीमासा(टू)  इ(श)  मासी(का)  या(ख) ",
+                        "corrected-swara": "ती टू श का ख"
+                    },
+                    {
+                        "corrected-mantra": "नक्यायो(शि)   ।  पायापयामासा(टू)  इ(श)   ।  मासी(का)  या(ख) ",
+                        "corrected-swara": "शि टू श का ख"
+                    },
+                    {
+                        "corrected-mantra": "मन्द्रश्रुत्यम्(शी)   । चाराचरामासा(टू)  इ(श)  । मासी(खा)  या(ण)    .",
+                        "corrected-swara": "शी टू श खा ण"
+                    }
+                ]
+            },
+            "subsection_200": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "दोषोआगात्(ती)   ।  बृ(ष) हद्गायद्युमत्गा(टू) मा(त)   ।",
+                        "corrected-swara": "ती ष टू त"
+                    },
+                    {
+                        "corrected-mantra": "आथ(चा) र्वणस्तुहीयौ(टु)  हो(ख)  इदेवाम्(ति)   ।",
+                        "corrected-swara": "चा टु ख ति"
+                    },
+                    {
+                        "corrected-mantra": "सा(क)  वो(प)  बा(प्ल)  तारां(प्ला)  हाइ(शा)    .",
+                        "corrected-swara": "क प प्ल प्ला शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_200",
+                    "header": ""
+                },
+                "subsection_200": [
+                    {
+                        "corrected-mantra": "दोषोआगात्(ती)   ।  बृ(ष) हद्गायद्युमत्गा(टू) मा(त)   ।",
+                        "corrected-swara": "ती ष टू त"
+                    },
+                    {
+                        "corrected-mantra": "आथ(चा) र्वणस्तुहीयौ(टु)  हो(ख)  इदेवाम्(ति)   ।",
+                        "corrected-swara": "चा टु ख ति"
+                    },
+                    {
+                        "corrected-mantra": "सा(क)  वो(प)  बा(प्ल)  तारां(प्ला)  हाइ(शा)    .",
+                        "corrected-swara": "क प प्ल प्ला शा"
+                    }
+                ]
+            },
+            "subsection_201": {
+                "corrected-mantra_sets": [
+                    {
+                        "corrected-mantra": "एषोऊषाः(ती)   ।  आपू(का)  र्व्युयव्यूच्छती(कू)  हो",
+                        "corrected-swara": "ती का कू"
+                    },
+                    {
+                        "corrected-mantra": "वा(टा) हा(त) इ(श)   ।  प्रीयादा(टि)  इवा(खा)  स्तुषा(खा)  इवा मा(ति)   ।",
+                        "corrected-swara": "टा त श टि खा खा ति"
+                    },
+                    {
+                        "corrected-mantra": "श्वी(क)  नो(प)  बा(प्ल)  बृहात्(प्ला)  हाइ(शा)    .",
+                        "corrected-swara": "क प प्ल प्ला शा"
+                    }
+                ],
+                "corrected-header": {
+                    "header_number": "subsection_201",
+                    "header": ""
+                },
+                "subsection_201": [
+                    {
+                        "corrected-mantra": "एषोऊषाः(ती)   ।  आपू(का)  र्व्युयव्यूच्छती(कू)  हो",
+                        "corrected-swara": "ती का कू"
+                    },
+                    {
+                        "corrected-mantra": "वा(टा) हा(त) इ(श)   ।  प्रीयादा(टि)  इवा(खा)  स्तुषा(खा)  इवा मा(ति)   ।",
+                        "corrected-swara": "टा त श टि खा खा ति"
+                    },
+                    {
+                        "corrected-mantra": "श्वी(क)  नो(प)  बा(प्ल)  बृहात्(प्ला)  हाइ(शा)    .",
+                        "corrected-swara": "क प प्ल प्ला शा"
                     }
                 ]
             }

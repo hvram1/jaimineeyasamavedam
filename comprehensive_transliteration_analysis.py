@@ -1,6 +1,12 @@
 import re
 from collections import defaultdict
 from aksharamukha import transliterate
+import regex  # added to handle grapheme clusters
+import grapheme
+
+
+
+
 
 def read_transliteration_file():
     """Read the transliteration-differences.txt file and extract g, t, c lines."""
@@ -81,29 +87,39 @@ def analyze_all_sections():
         g_words = extract_words_from_line(g_line)
         t_words = extract_words_from_line(t_line)
         c_words = extract_words_from_line(c_line)
-        #print(f"Section: {section_name}  G words: {len(g_words)}  T words: {len(t_words)}  C words: {len(c_words)}")
-        # Check word count matching
-        if len(g_words) != len(t_words) or len(t_words) != len(c_words):
+        
+        
+            
+        # Combine words into single strings without spaces
+        g_combined = ''.join(g_words)
+        t_combined = ''.join(t_words)
+        c_combined = ''.join(c_words)
+        
+        # Get grapheme clusters for t_combined and c_combined
+        t_graphemes = parse_grapheme_units(t_combined)
+        c_graphemes = parse_grapheme_units(c_combined)
+        g_graphemes = parse_grapheme_units(g_combined)
+
+        if len(c_graphemes) != len(g_graphemes):
             word_count_issues.append({
                 'section': section_name,
-                'g_count': len(g_words),
-                't_count': len(t_words),
-                'c_count': len(c_words)
+                'g_count': len(g_graphemes),
+                't_count': len(t_graphemes),
+                'c_count': len(c_graphemes)
             })
             continue
-            
+        
         matching_word_count_sections += 1
         
-        # Check transliteration for sections with matching word counts
+        # Check transliteration for sections with matching word counts and grapheme lengths
         section_mismatches = []
         section_matches = 0
 
-        for i, (g_word, t_word, c_word) in enumerate(zip(g_words, t_words, c_words)):
+        for i, (g_word, t_word, c_word) in enumerate(zip(g_graphemes, t_graphemes, c_graphemes)):
             total_words_checked += 1
             try:
                 # Transliterate from Grantha to Devanagari
                 transliterated = transliterate.process('Grantha', 'Devanagari', g_word)
-                #print(f"{transliterated}  {t_word} {c_word}")
                 
                 if transliterated == t_word and transliterated == c_word:
                     section_matches += 1
@@ -129,12 +145,10 @@ def analyze_all_sections():
         
         if len(section_mismatches) == 0:
             perfect_transliteration_sections += 1
-            #print(f"Section {section_name} has perfect transliteration.")
         else:
-            #print(f"Section {section_name} has transliteration mismatches:")
             transliteration_issues.append({
                 'section': section_name,
-                'total_words': len(g_words),
+                'total_words': len(c_graphemes),
                 'matches': section_matches,
                 'mismatches': section_mismatches
             })
@@ -149,6 +163,35 @@ def analyze_all_sections():
         'word_count_issues': word_count_issues,
         'transliteration_issues': transliteration_issues
     }
+
+def parse_grapheme_units(text):
+    """
+    Parse the string and return a list of grapheme units.
+    If a substring is enclosed in parentheses, treat it as a single unit.
+    Otherwise, split into grapheme clusters.
+    """
+    units = []
+    i = 0
+    while i < len(text):
+        if text[i] == '(':  # Start of parenthetical
+            end = text.find(')', i)
+            if end != -1:
+                units.append(text[i:end+1])
+                i = end + 1
+            else:
+                # Unmatched '(', treat as normal grapheme
+                units.append(text[i])
+                i += 1
+        else:
+            # Use grapheme library to get the next grapheme cluster
+            cluster = next(grapheme.graphemes(text[i:]), None)
+            if cluster:
+                units.append(cluster)
+                i += len(cluster)
+            else:
+                units.append(text[i])
+                i += 1
+    return units
 
 def main():
     print("COMPREHENSIVE TRANSLITERATION ANALYSIS")
@@ -191,6 +234,7 @@ def main():
                 else:
                     print(f"    {mismatch['grantha']} -> {mismatch['transliterated']} (expected: {mismatch['expected_c']})")
 
-    print(results)
+    for result in results['word_count_issues']:
+        print(result)
 if __name__ == "__main__":
     main()
