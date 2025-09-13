@@ -67,7 +67,7 @@
     
 \end{sanskrit}
 \vfill
-Version 0.7 6th September 2025
+Version 0.8 13th September 2025
 \end{center}
 
 \end{titlepage}
@@ -108,7 +108,7 @@ Version 0.7 6th September 2025
             \BLOCK{ endif }
              %- set mantra_sets = subsection.get('mantra_sets', [])
             \BLOCK{ if mantra_sets }
-\VAR{mantra_sets|format_mantra_sets(j,k)}
+\VAR{subsection|format_mantra_sets(j,k)}
             \BLOCK{ endif }
         \BLOCK{ endfor }
     \BLOCK{ endfor }

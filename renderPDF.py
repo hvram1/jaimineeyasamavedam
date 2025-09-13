@@ -139,6 +139,58 @@ def CreatePdf (templateFileName,name,DocfamilyName,data):
     return exit_code
 
 
+def CreateTextFile (templateFileName,name,DocfamilyName,data):
+    data=escape_for_latex(data)
+    
+    outputdir="output_text"
+    logdir=f"{outputdir}/logs"
+    exit_code=0
+    
+    TexFileName=f"{name}_{DocfamilyName}_Unicode.tex"
+    PdfFileName=f"{name}_{DocfamilyName}_Unicode.pdf"
+    TextFileName=f"{name}_{DocfamilyName}_Unicode.txt"
+    TocFileName=f"{name}_{DocfamilyName}_Unicode.toc"
+    LogFileName=f"{name}_{DocfamilyName}_Unicode.log"
+    template = templateFileName
+    outputdir = f"{outputdir}/txt/{name}"
+    Path(outputdir).mkdir(parents=True, exist_ok=True)
+    Path(logdir).mkdir(parents=True, exist_ok=True)
+    document = template.render(supersections=data)
+    
+
+    tmpdirname="."
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        tmpfilename=f"{tmpdirname}/{TextFileName}"
+
+        with open(tmpfilename,"w") as f:
+            f.write(document)
+        #result = subprocess.Popen(["latexmk","-lualatex", "--interaction=nonstopmode","--silent",tmpfilename],cwd=tmpdirname)
+        #result.wait()
+        #src_pdf_file=Path(f"{tmpdirname}/{PdfFileName}")
+        #dst_pdf_file=Path(f"{outputdir}/{PdfFileName}")
+        #src_log_file=Path(f"{tmpdirname}/{LogFileName}")
+        #dst_log_file=Path(f"{logdir}/{LogFileName}")
+        #src_toc_file=Path(f"{tmpdirname}/{TocFileName}")
+        #dst_toc_file=Path(f"{outputdir}/{TocFileName}")
+        src_text_file=Path(f"{tmpdirname}/{TextFileName}")
+        dst_text_file=Path(f"{outputdir}/{TextFileName}")
+        
+        #if result.returncode != 0:
+        #    print('Exit-code not 0  check Code!',src_tex_file)
+        #    exit_code=1
+        path = Path(src_text_file)
+        if path.is_file():
+            src_text_file.rename(dst_text_file)  
+        #path = Path(src_pdf_file)
+        #if path.is_file():      
+        #    src_pdf_file.rename(dst_pdf_file)
+        #path = Path(src_log_file)
+        #if path.is_file():
+        #    src_log_file.rename(dst_log_file)
+        #src_toc_file.rename(dst_toc_file)
+    return exit_code
+
+
 '''
 if isinstance(data, dict):
         new_data = {}
@@ -185,7 +237,7 @@ def replacecolon(data):
     return data
         
         
-def format_mantra_sets(mantra_sets,section_title,subsection_title):
+def format_mantra_sets(subsection,section_title,subsection_title):
     global MAX_COLUMNS
     issue_url='https://github.com/hvram1/jaimineeyasamavedam/issues/new'
     unicode_pattern = re.compile(
@@ -211,28 +263,49 @@ def format_mantra_sets(mantra_sets,section_title,subsection_title):
     formatted_sets = []
     #formatted_sets.append(tblr_start_string)
     mantra_for_issues=""
-    
+    mantra_sets = subsection.get('mantra_sets', [])
+    mantra_array = []
     for mantra_set in mantra_sets:
-        probable_error = mantra_set.get('probableError', False)
         mantra_words = mantra_set.get('mantra-words', [])
-        swara = mantra_set.get('swara','')
-        swara_list=swara.split()
-        formatted_set = []
+        mantra=""
+        for w,word in enumerate(mantra_words):
+            actual_word = word.get('word', 'WORD')
+            
+            mantra+=" " +actual_word
+        mantra_array.append(mantra)
+    
         
-        mantra_for_issue=""
-        if probable_error == True:
-            errorFlag=True
-        corrected_mantra = mantra_set.get('corrected-mantra',"")
-        instance_value = mantra_set.get('instance',0)
-        if len(corrected_mantra)>0:
-            mantra = corrected_mantra
-            errorFlag=False
-        else :
-            mantra=""
-            for w,word in enumerate(mantra_words):
-                actual_word = word.get('word', 'WORD')
+    corrected_mantra_sets = subsection.get('corrected-mantra_sets', [])
+    corrected_mantra_array = []
+    if corrected_mantra_sets is not None:
+        for corrected in corrected_mantra_sets:
+            corrected_mantra = corrected.get('corrected-mantra', '')
+            if corrected_mantra:
+                corrected_mantra_array.append(corrected_mantra)
                 
-                mantra+=" " +actual_word
+    if len(corrected_mantra_array) != 0:
+        mantra_array = corrected_mantra_array
+    for mantra in mantra_array:
+        #probable_error = mantra_set.get('probableError', False)
+        #mantra_words = mantra_set.get('mantra-words', [])
+        #swara = mantra_set.get('swara','')
+        #swara_list=swara.split()
+        #formatted_set = []
+        errorFlag=False
+        mantra_for_issue=""
+        #if probable_error == True:
+        #    errorFlag=True
+        #corrected_mantra = mantra_set.get('corrected-mantra',"")
+        #instance_value = mantra_set.get('instance',0)
+        #if len(corrected_mantra)>0:
+        #    mantra = corrected_mantra
+        #    errorFlag=False
+        #else :
+        #    mantra=""
+        #    for w,word in enumerate(mantra_words):
+        #        actual_word = word.get('word', 'WORD')
+        #        
+        #        mantra+=" " +actual_word
           
         
         #This is what needs to be done
@@ -364,6 +437,41 @@ def format_mantra_sets(mantra_sets,section_title,subsection_title):
     return "\n".join(formatted_sets)
 
 
+def format_mantra_sets_text(subsection,section_title,subsection_title):
+    
+    formatted_sets = []
+    
+    mantra_sets = subsection.get('mantra_sets', [])
+    mantra_array = []
+    for mantra_set in mantra_sets:
+        mantra_words = mantra_set.get('mantra-words', [])
+        mantra=""
+        for w,word in enumerate(mantra_words):
+            actual_word = word.get('word', 'WORD')
+            
+            mantra+=" " +actual_word
+        mantra_array.append(mantra)
+    
+        
+    corrected_mantra_sets = subsection.get('corrected-mantra_sets', [])
+    corrected_mantra_array = []
+    if corrected_mantra_sets is not None:
+        for corrected in corrected_mantra_sets:
+            corrected_mantra = corrected.get('corrected-mantra', '')
+            if corrected_mantra:
+                corrected_mantra_array.append(corrected_mantra)
+                
+    if len(corrected_mantra_array) != 0:
+        mantra_array = corrected_mantra_array
+    formatted_sets.append("\n#Start of Mantra Sets ## DO NOT EDIT")
+    for mantra in mantra_array:
+        formatted_sets.append(mantra)
+    formatted_sets.append("\n#End of Mantra Sets ## DO NOT EDIT")
+    return "\n".join(formatted_sets)
+    
+        
+
+
 #CreateGhanaFiles()
 
 #CreateCompilation()
@@ -381,13 +489,14 @@ def main():
     data_Grantha = json.loads(ts_string_Grantha)
 
     template_dir="pdf_templates"
+    text_template_dir="text_templates"
     
     templateFile_Grantha=f"{template_dir}/Grantha_main.template"
     templateFile_Devanagari=f"{template_dir}/Devanagari_main.template"
     templateFile_Tamil=f"{template_dir}/Tamil_main.template"
     templateFile_Malayalam=f"{template_dir}/Malayalam_main.template"
     
-
+    text_templateFile_Devanagari=f"{text_template_dir}/Devanagari_main.template"
 
 
     outputdir="output_text"
@@ -410,6 +519,7 @@ def main():
     latex_jinja_env.filters["my_encodeURL"] = my_encodeURL
     latex_jinja_env.filters["escape_for_latex"] = escape_for_latex
     latex_jinja_env.filters["format_mantra_sets"] = format_mantra_sets
+    latex_jinja_env.filters["format_mantra_sets_text"] = format_mantra_sets_text
     latex_jinja_env.filters["replacecolon"] = replacecolon
     
     invocation=''
@@ -424,9 +534,11 @@ def main():
     
     data_Devanagari = json.loads(ts_string_Devanagari)
     template_file = latex_jinja_env.get_template(templateFile_Devanagari)
+    text_template_file = latex_jinja_env.get_template(text_templateFile_Devanagari)
     
     supersections = data_Devanagari.get('supersection', {})
     CreatePdf(template_file,f"Devanagari","Devanagari",supersections)
+    CreateTextFile(text_template_file,f"Devanagari","Devanagari",supersections)
     
     #ts_string_Tamil = Path("output_text/final-Tamil.json").read_text(encoding="utf-8")
     
