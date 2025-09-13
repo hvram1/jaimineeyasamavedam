@@ -28,7 +28,35 @@
             <a href="https://www.aksharamukha.com/converter" target="_blank" rel="noopener">Aksharamukha</a>.
         </li>
     </ol>
-
+    <h2 style="color: #2d3a4a; margin-top: 2em;">Correction Process</h2>
+    <ol style="line-height: 1.7; color: #333;">
+        <li>We are using the Devanagari file for correction rather than Grantha</li>
+        <li> Once the proof reading is complete the text will be transliterated into Grantha, Malayalam and Tamil</li>
+        <li> The json file is treated as the sole source of truth. The correction process is the following workflow 
+            <ol>
+                <li> Get the open issues from Github using the script <code>get_issues.py</code></li>
+                <li> Convert the issues into json and create a updated_Devanagari.json file</li>
+                <li> Convert the updated_Devanagari.json file to .tex file </li>
+                <li> Convert the .tex to PDF using LuaLatex </li>
+                <li> Check in the PDF to Github </li>
+            </ol>
+        </li>
+        <li>There are a couple of challenges in the above workflow:
+            <ol>
+                <li> The headings are not editable </li>
+                <li>
+                    <s>
+                        The expectation is that the number of lines should be the same in the corrected version.
+                        This is not ideal and results in one more correction cycle to just fix the sentences.
+                        So for now the correction cycle fixes the swaras and the mantras etc. not the number of sentences.
+                        
+                    </s>
+                        This has now been fixed 
+                </li>
+            </ol>
+        </li>
+        <li> There is a new text file added from Release 0.8 which can be used to edit headings etc. </li>
+    </ol>
     <h2 style="color: #2d3a4a; margin-top: 2em;">How to Run the Code</h2>
     <ol style="line-height: 1.7; color: #333;">
         <li>Clone or download the repository.</li>
