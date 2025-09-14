@@ -463,10 +463,10 @@ def format_mantra_sets_text(subsection,section_title,subsection_title):
                 
     if len(corrected_mantra_array) != 0:
         mantra_array = corrected_mantra_array
-    formatted_sets.append("\n#Start of Mantra Sets ## DO NOT EDIT")
+    formatted_sets.append(f"\n#Start of Mantra Sets -- {subsection_title} ## DO NOT EDIT")
     for mantra in mantra_array:
         formatted_sets.append(mantra)
-    formatted_sets.append("\n#End of Mantra Sets ## DO NOT EDIT")
+    formatted_sets.append(f"\n#End of Mantra Sets -- {subsection_title} ## DO NOT EDIT")
     return "\n".join(formatted_sets)
     
         

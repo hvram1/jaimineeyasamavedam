@@ -7,9 +7,9 @@ Version 0.8 13th September 2025
     %- set super_id = "super_" ~ i 
     %- set supersection_title = supersection.get("supersection_title", "Untitled Supersection") 
     \BLOCK{ if supersection_title }
-# Start of SuperSection Title ## DO NOT EDIT
+# Start of SuperSection Title -- \VAR{i} ## DO NOT EDIT
 \VAR{ supersection_title}
-# End of SuperSection Title ## DO NOT EDIT
+# End of SuperSection Title -- \VAR{i} ## DO NOT EDIT
 
     \BLOCK{ endif }
     \BLOCK{ for j, section in supersection.get('sections', {}).items() }
@@ -17,9 +17,9 @@ Version 0.8 13th September 2025
         %-set count = section.get('count', {}).get('current_count', 0)
         %- set section_title = "Section " ~ (j|string) ~ " (" ~ count+1|string ~ ")" 
         \BLOCK{ if section_title }
-# Start of Section Title ## DO NOT EDIT
+# Start of Section Title -- \VAR{j} ## DO NOT EDIT
 \VAR{ section_title }
-# End of Section Title ## DO NOT EDIT
+# End of Section Title -- \VAR{j} ## DO NOT EDIT
         \BLOCK{ endif }
         \BLOCK{ for k, subsection in section.get('subsections', {}).items() }
                
@@ -28,9 +28,9 @@ Version 0.8 13th September 2025
             %- set instance_count = mantra_sets | selectattr('instance') | list | length
             %- set subsection_title = header_number ~ " " ~ header 
             \BLOCK{ if subsection_title }
-# Start of SubSection Title ## DO NOT EDIT
+# Start of SubSection Title -- \VAR{k} ## DO NOT EDIT
 \VAR{ header }
-# End of SubSection Title ## DO NOT EDIT
+# End of SubSection Title -- \VAR{k} ## DO NOT EDIT
 
 
 
