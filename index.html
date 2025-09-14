@@ -40,10 +40,21 @@
                 <li> Convert the .tex to PDF using LuaLatex </li>
                 <li> Check in the PDF to Github </li>
             </ol>
+
+        </li>
+        <li> This is the workflow for the correction process if the text file is used : 
+            <ol>
+                <li> The text file needs to be of the specific format . -- A line starting with the # and another line ending with the # and corrections in between</li>
+                <li> There can be multiple corrections in a file </li>
+                <li> The files can either be checked in using a Pull request [GitHub PR mechanism](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)</li>
+                <li> If this is not possible we can explore alternative means </li>
+                <li> The end result is to obtain a <strong>[corrected json file](output_text/corrected-Devanagari.json)</strong> that incorporates all changes.</li>
+                <li> The corrected json file is then merged back into the main json file using the [script](apply-corrections.py)</li>
+            </ol>
         </li>
         <li>There are a couple of challenges in the above workflow:
             <ol>
-                <li> The headings are not editable </li>
+                <li> <s></s>The headings are not editable </s></li>
                 <li>
                     <s>
                         The expectation is that the number of lines should be the same in the corrected version.
