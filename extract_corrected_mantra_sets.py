@@ -14,8 +14,12 @@ def extract_corrected_mantra_sets(mantra_sets):
             'corrected-mantra': cm,
             'corrected-swara': cs
         })
+        if cm and cs:
+            del mantra_set['corrected-mantra']
+            del mantra_set['corrected-swara']
     # Only return if at least one is not both None
     if any((x['corrected-mantra'] is not None or x['corrected-swara'] is not None) for x in corrected):
+        
         return corrected
     else:
         return None
