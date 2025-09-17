@@ -69,6 +69,15 @@
         <li> There is a new text file added from Release 0.8 which can be used to edit headings etc. Changes made to this file can 
             be checked in via the [GitHub PR mechanism](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request). 
         </li>
+        <li> This is the workflow to be followed. This can be run simulatenously with the other workflow to get issues from the GitHub
+            <ol>
+                <li> Create a file in the directory output_text/txt/corrections . The file name has to be in the format corrections_nnn.txt </li>
+                <li> This file should contain the section name marker, and one or more subsection markers </li>
+                <li> You can have multiple sections in.a file. Each section can contain one more subsections </li>
+                <li> Run the command <code>python3 get_text_corrections.py </code> This will process all the files present and produce one output file <code> output_text/corrected-Devanagari-from-txt.json</code></li>
+                <li> The corrected json file is then merged back into the main json file using the <code>apply-corrections_text</code></li>
+            </ol>
+        </li>
     </ol>
     <h2 style="color: #2d3a4a; margin-top: 2em;">How to Run the Code</h2>
     <ol style="line-height: 1.7; color: #333;">
