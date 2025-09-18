@@ -7,6 +7,7 @@ grapheme==0.6.0
 idna==3.10
 jaconv==0.4.0
 joblib
+jinja2
 langcodes
 language_data
 lxml==5.4.0
