@@ -110,7 +110,7 @@ def CreatePdf (templateFileName,name,DocfamilyName,data):
     with tempfile.TemporaryDirectory() as tmpdirname:
         tmpfilename=f"{tmpdirname}/{TexFileName}"
 
-        with open(tmpfilename,"w") as f:
+        with open(tmpfilename,"w",encoding="utf-8") as f:
             f.write(document)
         #result = subprocess.Popen(["latexmk","-lualatex", "--interaction=nonstopmode","--silent",tmpfilename],cwd=tmpdirname)
         #result.wait()
@@ -128,12 +128,18 @@ def CreatePdf (templateFileName,name,DocfamilyName,data):
         #    exit_code=1
         path = Path(src_tex_file)
         if path.is_file():
+            if dst_tex_file.exists():
+                dst_tex_file.unlink()
             src_tex_file.rename(dst_tex_file)  
         path = Path(src_pdf_file)
-        if path.is_file():      
+        if path.is_file():
+            if dst_pdf_file.exists():
+                dst_pdf_file.unlink()
             src_pdf_file.rename(dst_pdf_file)
         path = Path(src_log_file)
         if path.is_file():
+            if dst_log_file.exists():
+                dst_log_file.unlink()
             src_log_file.rename(dst_log_file)
         #src_toc_file.rename(dst_toc_file)
     return exit_code
@@ -162,7 +168,7 @@ def CreateTextFile (templateFileName,name,DocfamilyName,data):
     with tempfile.TemporaryDirectory() as tmpdirname:
         tmpfilename=f"{tmpdirname}/{TextFileName}"
 
-        with open(tmpfilename,"w") as f:
+        with open(tmpfilename,"w",encoding="utf-8") as f:
             f.write(document)
         #result = subprocess.Popen(["latexmk","-lualatex", "--interaction=nonstopmode","--silent",tmpfilename],cwd=tmpdirname)
         #result.wait()
@@ -180,6 +186,8 @@ def CreateTextFile (templateFileName,name,DocfamilyName,data):
         #    exit_code=1
         path = Path(src_text_file)
         if path.is_file():
+            if dst_text_file.exists():
+                dst_text_file.unlink()
             src_text_file.rename(dst_text_file)  
         #path = Path(src_pdf_file)
         #if path.is_file():      
