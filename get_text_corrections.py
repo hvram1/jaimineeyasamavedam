@@ -51,6 +51,7 @@ def parse_corrections_txt(input_txt):
         elif mantra_end_match:
             in_mantra = False
             for mantra in mantra_sets:
+                mantra=mantra.replace(')', ') ')
                 data[current_section]["subsections"][current_subsection]["corrected-mantra_sets"].append({
                     "corrected-mantra": mantra,
                     "corrected-swara": ""
