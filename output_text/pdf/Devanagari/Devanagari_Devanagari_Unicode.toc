@@ -1,674 +1,833 @@
 \xpg@aux {}{sanskrit}
 \xpg@aux {}{sanskrit}
 \xpg@aux {}{sanskrit}
-\contentsline {section}{ आग्नेयः पांः}{23}{section*.4}%
-\contentsline {subsection}{ Section section\_1 (191)}{23}{section*.5}%
-\contentsline {subsubsection}{ गौतमस्यपर्कः}{23}{section*.6}%
-\contentsline {subsubsection}{ कश्यपस्यबर्हिषीयम्}{24}{section*.8}%
-\contentsline {subsubsection}{ गौतमस्यचैवपर्कः}{25}{section*.10}%
-\contentsline {subsubsection}{ सौपर्णञ्च}{26}{section*.12}%
-\contentsline {subsubsection}{ वैश्पमनसञ्चादित्यसामवा}{27}{section*.14}%
-\contentsline {subsubsection}{ श्रौतर्षाणित्रीणि}{28}{section*.16}%
-\contentsline {subsubsection}{ औशनञ्च}{29}{section*.18}%
-\contentsline {subsubsection}{ शैरीषेच}{30}{section*.20}%
-\contentsline {subsubsection}{ इन्दरस्यसंवर्गौवात्रघ्नेचे}{31}{section*.22}%
-\contentsline {subsubsection}{ साकमश्पस्यशौनःशेपेःसामनी चे}{32}{section*.24}%
-\contentsline {subsubsection}{ वत्सस्यकाण्वस्यसामनीचे}{33}{section*.26}%
-\contentsline {subsubsection}{ अग्नेश्पवैश्पानरस्याष्रेयम्}{34}{section*.28}%
-\contentsline {subsubsection}{ सुमित्रस्यचवाडरश्पेस्साम}{35}{section*.30}%
-\contentsline {subsection}{ Section section\_2 (151)}{36}{section*.32}%
-\contentsline {subsubsection}{ अग्नेश्पसंवर्गः}{36}{section*.33}%
-\contentsline {subsubsection}{ वैश्पमनसञ्च}{37}{section*.35}%
-\contentsline {subsubsection}{ श्नाभाश्नौष्टेचे}{38}{section*.37}%
-\contentsline {subsubsection}{ वैश्पामित्रञ्च}{39}{section*.39}%
-\contentsline {subsubsection}{ अग्नेश्पजराबोधीये}{40}{section*.41}%
-\contentsline {subsubsection}{ मारूतञ्च}{41}{section*.43}%
-\contentsline {subsubsection}{ भार्गवेच}{42}{section*.45}%
-\contentsline {subsubsection}{ अग्नेश्पवारवभीयं}{43}{section*.47}%
-\contentsline {subsubsection}{ और्वस्यवैधारेस्सामनीचे}{44}{section*.49}%
-\contentsline {subsubsection}{ अत्रेश्पासंगम्}{45}{section*.51}%
-\contentsline {subsubsection}{ प्रजापतेश्पनिधनकामं}{46}{section*.53}%
-\contentsline {subsection}{ Section section\_3 (211)}{47}{section*.55}%
-\contentsline {subsubsection}{ सैन्धुक्षितानित्रीणि}{47}{section*.56}%
-\contentsline {subsubsection}{ अग्नेर्हरसीचे}{48}{section*.58}%
-\contentsline {subsubsection}{ इहवचामदेव्यंतृतीयं}{49}{section*.60}%
-\contentsline {subsubsection}{ यामेचे}{50}{section*.62}%
-\contentsline {subsubsection}{ अग्नेराक्षोघ्नेचे}{51}{section*.64}%
-\contentsline {subsubsection}{ वैश्पम्नसञ्च}{52}{section*.66}%
-\contentsline {subsubsection}{ अग्नेश्पाष्रेयं}{53}{section*.68}%
-\contentsline {subsubsection}{ सोमसामच}{54}{section*.70}%
-\contentsline {subsubsection}{ गोपवनञ्च}{55}{section*.72}%
-\contentsline {subsubsection}{ सूर्यसामनीचे}{56}{section*.74}%
-\contentsline {subsubsection}{ कावञ्च}{57}{section*.76}%
-\contentsline {subsubsection}{ वसुरोचिषस्सौर्यवचर््चसस्यसामनीचे}{58}{section*.78}%
-\contentsline {subsubsection}{ गौरांगिरसस्यसामनीचे}{59}{section*.80}%
-\contentsline {subsection}{ Section section\_4 (221)}{60}{section*.82}%
-\contentsline {subsubsection}{ भारचाजस्यौपहवौचौ}{60}{section*.83}%
-\contentsline {subsubsection}{ श्रुष्टीगवं}{61}{section*.85}%
-\contentsline {subsubsection}{ अग्नेश्पयज्ञायज्ञीयं}{62}{section*.87}%
-\contentsline {subsubsection}{ कार्तवेशञ्च}{63}{section*.89}%
-\contentsline {subsubsection}{ नाम्रेधञ्च}{64}{section*.91}%
-\contentsline {subsubsection}{ महाकार्तवेशञ्च}{65}{section*.93}%
-\contentsline {subsubsection}{ भारचाजस्यपृश्नीचे}{66}{section*.95}%
-\contentsline {subsubsection}{ उरोरांगिरसस्यसाम}{67}{section*.97}%
-\contentsline {subsubsection}{ गौतमस्यपौरुमुद्गेचेपुरु}{68}{section*.99}%
-\contentsline {subsubsection}{ मण्डोर्जामदग्न्यस्यसामनीचे}{69}{section*.101}%
-\contentsline {subsubsection}{ भारचाजस्यगाधम्}{70}{section*.103}%
-\contentsline {subsubsection}{ गौतमेचे}{71}{section*.105}%
-\contentsline {subsubsection}{ अग्नेरायुः}{72}{section*.107}%
-\contentsline {subsubsection}{ अग्नेर्हरसीचे}{73}{section*.109}%
-\contentsline {subsubsection}{ दैर्घश्रवसेचे}{74}{section*.111}%
-\contentsline {subsection}{ Section section\_5 (161)}{75}{section*.113}%
-\contentsline {subsubsection}{ अग्नेराग्नेयेचे}{75}{section*.114}%
-\contentsline {subsubsection}{ गौतमस्यमनाय्रेचे}{76}{section*.116}%
-\contentsline {subsubsection}{ दैवोराजञ्च}{77}{section*.118}%
-\contentsline {subsubsection}{ गाधिनश्पकौशिकस्यसाम}{78}{section*.120}%
-\contentsline {subsubsection}{ बार्हदुत्थेचे}{79}{section*.122}%
-\contentsline {subsubsection}{ पौरुमीढञ्च}{80}{section*.124}%
-\contentsline {subsubsection}{ कार्णश्रवसं}{81}{section*.126}%
-\contentsline {subsubsection}{ दैवोदासञ्च}{82}{section*.128}%
-\contentsline {subsubsection}{ सौकृतवञ्च}{83}{section*.130}%
-\contentsline {subsubsection}{ काण्वेचे}{84}{section*.132}%
-\contentsline {subsubsection}{ मानवेचे}{85}{section*.134}%
-\contentsline {subsection}{ Section section\_6 (101)}{86}{section*.136}%
-\contentsline {subsubsection}{ अग्नेश्पद्रविणम्}{86}{section*.137}%
-\contentsline {subsubsection}{ बार्हस्खत्यञ्चब्राह्मणस्खत्यंवा}{87}{section*.139}%
-\contentsline {subsubsection}{ वसिष्ठस्यचवींकं}{88}{section*.141}%
-\contentsline {subsubsection}{ विस्खर्धञ्च}{89}{section*.143}%
-\contentsline {subsubsection}{ ऐतवृशञ्च}{90}{section*.145}%
-\contentsline {subsubsection}{ मनसश्पदोहः}{91}{section*.147}%
-\contentsline {subsubsection}{ समन्तानितृणिअग्नेरेकमिन्दाग्नेयार्वा}{92}{section*.149}%
-\contentsline {subsubsection}{ वमृस्यवैचानसस्यसाम}{94}{section*.151}%
-\contentsline {subsection}{ Section section\_7 (161)}{95}{section*.153}%
-\contentsline {subsubsection}{ श्यावाश्पञ्च}{95}{section*.154}%
-\contentsline {subsubsection}{ ऋतुसामनीच}{96}{section*.156}%
-\contentsline {subsubsection}{ यामञ्च}{97}{section*.158}%
-\contentsline {subsubsection}{ अग्नेश्पाग्नेयम्}{98}{section*.160}%
-\contentsline {subsubsection}{ अग्नेवैरश्पानरस्यसामनीचे}{99}{section*.162}%
-\contentsline {subsubsection}{ ऐटतेचे}{100}{section*.164}%
-\contentsline {subsubsection}{ वामदेव्यञ्च}{101}{section*.166}%
-\contentsline {subsubsection}{ वैश्यजेयातिषेच}{102}{section*.168}%
-\contentsline {subsubsection}{ यामेचे}{104}{section*.170}%
-\contentsline {subsubsection}{ प्रजापतेराशिमरायेचेमरायराशिनिवा}{105}{section*.172}%
-\contentsline {subsection}{ Section section\_8 (091)}{106}{section*.174}%
-\contentsline {subsubsection}{ शेयनञ्च}{106}{section*.175}%
-\contentsline {subsubsection}{ वासोक्रञ्च}{107}{section*.177}%
-\contentsline {subsubsection}{ पौष्णञ्च}{108}{section*.179}%
-\contentsline {subsubsection}{ कौत्सञ्च}{109}{section*.181}%
-\contentsline {subsubsection}{ काश्यपेचे}{110}{section*.183}%
-\contentsline {subsubsection}{ घृताचेरान्द्गिरसस्यसामनीचे}{111}{section*.185}%
-\contentsline {subsubsection}{ भारचाजस्यप्रासाहं}{112}{section*.187}%
-\contentsline {subsection}{ Section section\_9 (131)}{113}{section*.189}%
-\contentsline {subsubsection}{ पाथेचे}{113}{section*.190}%
-\contentsline {subsubsection}{ बृहच्चाग्नेयम्}{114}{section*.192}%
-\contentsline {subsubsection}{ कौन्मुदम्}{115}{section*.194}%
-\contentsline {subsubsection}{ बृहचैवाग्नेयम्}{116}{section*.196}%
-\contentsline {subsubsection}{ कौन्मुदञ्चैव}{117}{section*.198}%
-\contentsline {subsubsection}{ अग्नेर्यचाहिष्ठीयेचे}{118}{section*.200}%
-\contentsline {subsubsection}{ अग्नेश्पविशोविशीयम्}{119}{section*.202}%
-\contentsline {subsubsection}{ प्रजापतेःकनीनिकेचेअत्रेर्वा}{120}{section*.204}%
-\contentsline {subsubsection}{ श्रौतर्वणञ्च}{121}{section*.206}%
-\contentsline {subsubsection}{ कश्यवस्यसयोनिः}{122}{section*.208}%
-\contentsline {subsection}{ Section section\_10 (071)}{123}{section*.210}%
-\contentsline {subsubsection}{ बार्हस्खत्यञ्चा}{123}{section*.211}%
-\contentsline {subsubsection}{ ऐषञ्चारूढवदाङ्गरसम्}{124}{section*.213}%
-\contentsline {subsubsection}{ आसीतेचे}{125}{section*.215}%
-\contentsline {subsubsection}{ त्वाष्टीसामच}{126}{section*.217}%
-\contentsline {subsubsection}{ मानवञ्च}{127}{section*.219}%
-\contentsline {subsubsection}{ अगस्तस्यचराक्षोघ्नम्}{128}{section*.221}%
-\contentsline {subsection}{ Section section\_11 (181)}{129}{section*.223}%
-\contentsline {subsubsection}{ तौदेचे}{129}{section*.224}%
-\contentsline {subsubsection}{ दैर्घतमसानित्रीणि}{130}{section*.226}%
-\contentsline {subsubsection}{ श्यावाश्पस्यप्रहितौचौ}{131}{section*.228}%
-\contentsline {subsubsection}{ प्रजापतेःश्रुधीयेचे}{132}{section*.230}%
-\contentsline {subsubsection}{ प्रजापतेःसदोहविर्धानानित्रीणिसदःपूर्वंह}{133}{section*.232}%
-\contentsline {subsubsection}{ त्वष्टुश्पातिथ्यं}{134}{section*.234}%
-\contentsline {subsubsection}{ अदितेश्पसाम}{135}{section*.236}%
-\contentsline {subsubsection}{ अगस्तस्यचराक्षोघ्नं}{136}{section*.238}%
-\contentsline {subsubsection}{ वात्जंभंच}{137}{section*.240}%
-\contentsline {subsubsection}{ बृहदाग्नेयंचसंकृतवंवा}{138}{section*.242}%
-\contentsline {subsubsection}{ अगस्तस्यचैवराक्षोघ्नं}{139}{section*.244}%
-\contentsline {subsection}{ Section section\_12 (161)}{140}{section*.246}%
-\contentsline {subsubsection}{ वसिष्ठस्यप्रमंहिष्ठीयानिचत्वारि}{140}{section*.247}%
-\contentsline {subsubsection}{ भरचाजस्यवाजभृत्}{142}{section*.249}%
-\contentsline {subsubsection}{ सौभराणित्रीणि}{143}{section*.251}%
-\contentsline {subsubsection}{ पधस्यसौभरस्यसामनीचे}{144}{section*.253}%
-\contentsline {subsubsection}{ दैवानीकञ्च}{145}{section*.255}%
-\contentsline {subsubsection}{ साडरञ्च}{146}{section*.257}%
-\contentsline {subsubsection}{ जमदग्नेश्पसंवर्गः}{147}{section*.259}%
-\contentsline {subsubsection}{ अगस्तयस्यचराक्षोघ्नं}{148}{section*.261}%
-\contentsline {subsubsection}{ अग्नेश्पश्रैष्ठ्यं}{149}{section*.263}%
-\contentsline {subsubsection}{ आदित्यस्यचरुचिरोचनंवा}{150}{section*.265}%
-\contentsline {section}{ ॥ तचपांः ॥}{151}{section*.268}%
-\contentsline {subsection}{ Section section\_14 (231)}{151}{section*.269}%
-\contentsline {subsubsection}{ मर्गीयवञ्च}{151}{section*.270}%
-\contentsline {subsubsection}{ रौद्रेचे}{152}{section*.272}%
-\contentsline {subsubsection}{ मार्गीयवञ्चैव}{153}{section*.274}%
-\contentsline {subsubsection}{ आश्पंच}{154}{section*.276}%
-\contentsline {subsubsection}{ ऐटतेचे}{155}{section*.278}%
-\contentsline {subsubsection}{ श्रौतकक्षेचे}{156}{section*.280}%
-\contentsline {subsubsection}{ तन्वस्यपाथस्यसामनीचे वसोवाष्रेः}{157}{section*.282}%
-\contentsline {subsubsection}{ अंगिरसान्निवेष्टौचौ इ नांवासंक्षारौ}{158}{section*.284}%
-\contentsline {subsubsection}{ शय्यातानित्रीणि}{159}{section*.286}%
-\contentsline {subsubsection}{ इन्दराण्यास्साम}{160}{section*.288}%
-\contentsline {subsubsection}{ गोषूक्तं}{161}{section*.290}%
-\contentsline {subsubsection}{ आश्पसूक्तञ्च}{162}{section*.292}%
-\contentsline {subsubsection}{ गौरीवितं}{163}{section*.294}%
-\contentsline {subsubsection}{ गौराणित्रीणि}{164}{section*.296}%
-\contentsline {subsection}{ Section section\_15 (221)}{165}{section*.298}%
-\contentsline {subsubsection}{ सौपर्णानि त्रीणि}{165}{section*.299}%
-\contentsline {subsubsection}{ शाकलं}{166}{section*.301}%
-\contentsline {subsubsection}{ आभरचसवेचेऐन्दराग्नेवा}{167}{section*.303}%
-\contentsline {subsubsection}{ तान्वेचे}{168}{section*.305}%
-\contentsline {subsubsection}{ रौहितकूलियेचे}{169}{section*.307}%
-\contentsline {subsubsection}{ इन्दराण्यास्सामनीचे}{170}{section*.309}%
-\contentsline {subsubsection}{ इन्दरस्यसहस्रबाहवियं}{171}{section*.311}%
-\contentsline {subsubsection}{ धॄषतोमारूतस्यसामनीचे}{172}{section*.313}%
-\contentsline {subsubsection}{ भारचाजस्यदारसैत्नित्रिणि}{173}{section*.315}%
-\contentsline {subsubsection}{ ऐड्मवाहानि त्रीणि}{174}{section*.317}%
-\contentsline {subsubsection}{ अहेǐपैण्वस्य साम अहिहनोवा}{175}{section*.319}%
-\contentsline {subsection}{ Section section\_16 (201)}{176}{section*.321}%
-\contentsline {subsubsection}{ ऐषंच}{176}{section*.322}%
-\contentsline {subsubsection}{ पौषंच}{177}{section*.324}%
-\contentsline {subsubsection}{ मरूताञ्चसंवेशीयं}{178}{section*.326}%
-\contentsline {subsubsection}{ हाविष्मते}{179}{section*.328}%
-\contentsline {subsubsection}{ हाविष्कृतेचे}{180}{section*.330}%
-\contentsline {subsubsection}{ काक्षीवतञ्च}{181}{section*.332}%
-\contentsline {subsubsection}{ उषसश्प साम}{182}{section*.334}%
-\contentsline {subsubsection}{ भारचाजस्यमौक्षेचे}{183}{section*.336}%
-\contentsline {subsubsection}{ भारचाजानित्रीणि}{184}{section*.338}%
-\contentsline {subsubsection}{ शौक्तसामनीचे}{185}{section*.340}%
-\contentsline {subsubsection}{ वार्षाहरेचे}{186}{section*.342}%
-\contentsline {subsubsection}{ कूत्सस्यप्रतोदौचौ}{187}{section*.344}%
-\contentsline {subsection}{ Section section\_17 (151)}{188}{section*.346}%
-\contentsline {subsubsection}{ सौश्रवसेचे}{188}{section*.347}%
-\contentsline {subsubsection}{ त्वाष्टिसामच}{189}{section*.349}%
-\contentsline {subsubsection}{ त्वष्टुरातिथेयचे}{190}{section*.351}%
-\contentsline {subsubsection}{ पौष्णेचे}{191}{section*.353}%
-\contentsline {subsubsection}{ श्यावाश्पेचे}{192}{section*.355}%
-\contentsline {subsubsection}{ प्रजापतेस्सुतंरयिष्ठीयेचे}{193}{section*.357}%
-\contentsline {subsubsection}{ आप्सरसंच इष्टाहोत्रीयंवा आपांवानिधि}{194}{section*.359}%
-\contentsline {subsubsection}{ प्रजापतेर्निधन कामं}{195}{section*.361}%
-\contentsline {subsubsection}{ वाजिदापर्यञ्च}{196}{section*.363}%
-\contentsline {subsubsection}{ सोमापौष्णञ्च}{197}{section*.365}%
-\contentsline {subsection}{ Section section\_18 (301)}{198}{section*.367}%
-\contentsline {subsubsection}{ वैतहव्यानि त्रीणि}{198}{section*.368}%
-\contentsline {subsubsection}{ शौक्तनित्रीणि}{199}{section*.370}%
-\contentsline {subsubsection}{ गौरीवितानित्रीणि}{200}{section*.372}%
-\contentsline {subsubsection}{ काण्वेचे}{201}{section*.374}%
-\contentsline {subsubsection}{ सौमित्रेचे दैवोदासं तृतीयं श्रौत}{202}{section*.376}%
-\contentsline {subsubsection}{ वैष्णवानि त्रीणि इहवचाम दैवोदासन्तृतीयं}{203}{section*.378}%
-\contentsline {subsubsection}{ औदलेचे वैणवेचे वैणवे}{204}{section*.380}%
-\contentsline {subsubsection}{ दैवोदासानित्रीणिआर्षभाणिवायदिवावाडयश्पा}{206}{section*.382}%
-\contentsline {subsubsection}{ कौत्सेचे पाञ्चवाजेवा}{207}{section*.384}%
-\contentsline {subsubsection}{ सौमेधानित्रीणि पौर्वतिथानिवा}{208}{section*.386}%
-\contentsline {subsubsection}{ दैवातिथं मैधातिथं वा}{209}{section*.388}%
-\contentsline {subsection}{ Section section\_19 (241)}{210}{section*.390}%
-\contentsline {subsubsection}{ माधूच्छन्दसंक्रौ सौपर्णंवा घृतश्पुन्निधनं}{210}{section*.391}%
-\contentsline {subsubsection}{ पैरयमेधानित्रीणि शौक्त सामानिवा उत्गातृदमनं}{211}{section*.393}%
-\contentsline {subsubsection}{ गौरीवितेचे}{212}{section*.395}%
-\contentsline {subsubsection}{ आपालवैणवेचे}{213}{section*.397}%
-\contentsline {subsubsection}{ धुरश्शमेयचे}{214}{section*.399}%
-\contentsline {subsubsection}{ महागौरीवितं तृतीयं}{215}{section*.401}%
-\contentsline {subsubsection}{ वाचस्सामनीचे}{216}{section*.403}%
-\contentsline {subsubsection}{ महावामदेव्यंतृतीयं}{217}{section*.405}%
-\contentsline {subsubsection}{ इन्दरस्यसत्रासाहीयेचे}{218}{section*.407}%
-\contentsline {subsubsection}{ माहावामदेव्यञ्च}{219}{section*.409}%
-\contentsline {subsubsection}{ वैर्यश्पञ्च}{220}{section*.411}%
-\contentsline {subsubsection}{ गौतमस्यच भद्रं}{221}{section*.413}%
-\contentsline {subsubsection}{ अश्पिनोश्प साम}{222}{section*.415}%
-\contentsline {subsection}{ Section section\_20 (121)}{223}{section*.417}%
-\contentsline {subsubsection}{ त्वाष्ट्रीसामच}{223}{section*.418}%
-\contentsline {subsubsection}{ गोधासामच}{224}{section*.420}%
-\contentsline {subsubsection}{ सवितुश्पसाम}{225}{section*.422}%
-\contentsline {subsubsection}{ उषसश्पसाम}{226}{section*.424}%
-\contentsline {subsubsection}{ त्वष्टुरातिथेयचे}{227}{section*.426}%
-\contentsline {subsubsection}{ सौमित्रञ्च}{228}{section*.428}%
-\contentsline {subsubsection}{ इन्दरस्यचमाया}{229}{section*.430}%
-\contentsline {subsubsection}{ वैश्पामित्रेच}{230}{section*.432}%
-\contentsline {subsubsection}{ शोनश्शेपञ्च}{231}{section*.434}%
-\contentsline {subsubsection}{ प्रतीचीनेषन्न् काशीतं}{232}{section*.436}%
-\contentsline {subsection}{ Section section\_21 (111)}{233}{section*.438}%
-\contentsline {subsubsection}{ सौमित्रन्न्}{233}{section*.439}%
-\contentsline {subsubsection}{ श्यावाश्पेचे}{234}{section*.441}%
-\contentsline {subsubsection}{ शैचण्डिनञ्च}{235}{section*.443}%
-\contentsline {subsubsection}{ वैतहव्यञ्च}{236}{section*.445}%
-\contentsline {subsubsection}{ भारचाजञ्च}{237}{section*.447}%
-\contentsline {subsubsection}{ अरूणस्यचवैददशेस्साम}{238}{section*.449}%
-\contentsline {subsubsection}{ सौभरञ्च}{239}{section*.451}%
-\contentsline {subsubsection}{ पाष्ठौहेच}{240}{section*.453}%
-\contentsline {subsubsection}{ साकमश्पंधुरांवासाम}{241}{section*.455}%
-\contentsline {subsection}{ Section section\_22 (121)}{242}{section*.457}%
-\contentsline {subsubsection}{ यामञ्च}{242}{section*.458}%
-\contentsline {subsubsection}{ आङ्गीरसञ्चइन्दरस्यवा हरिश्रीर्निधनम्}{243}{section*.460}%
-\contentsline {subsubsection}{ वैरूपञ्च}{244}{section*.462}%
-\contentsline {subsubsection}{ असीतञ्चसिन्धुषामवा}{245}{section*.464}%
-\contentsline {subsubsection}{ यमस्यार्कौचौ}{246}{section*.466}%
-\contentsline {subsubsection}{ सौमित्रेचे}{247}{section*.468}%
-\contentsline {subsubsection}{ इन्दरस्याभयम्}{248}{section*.470}%
-\contentsline {subsubsection}{ त्वाष्टीसामनीचे}{249}{section*.472}%
-\contentsline {subsubsection}{ इन्दराण्यास्सामा}{250}{section*.474}%
-\contentsline {subsection}{ Section section\_23 (101)}{251}{section*.476}%
-\contentsline {subsubsection}{ श्यावाश्पञ्च}{251}{section*.477}%
-\contentsline {subsubsection}{ वैरूप ञ्च}{252}{section*.479}%
-\contentsline {subsubsection}{ सौमित्र ञ्च}{253}{section*.481}%
-\contentsline {subsubsection}{ स्तौभ ञ्च}{254}{section*.483}%
-\contentsline {subsubsection}{ श्रौत ञ्च}{255}{section*.485}%
-\contentsline {subsubsection}{ आभीशवञ्च}{256}{section*.487}%
-\contentsline {subsubsection}{ ऐषञ्च}{257}{section*.489}%
-\contentsline {subsubsection}{ इन्दरस्यचक्षुरपवी}{258}{section*.491}%
-\contentsline {subsubsection}{ सौमित्रे}{259}{section*.493}%
-\contentsline {subsection}{ Section section\_24 (91)}{260}{section*.495}%
-\contentsline {subsubsection}{ कौत्स ञ्च}{260}{section*.496}%
-\contentsline {subsubsection}{ ऐष ञ्च}{261}{section*.498}%
-\contentsline {subsubsection}{ उषसश्पसाम}{262}{section*.500}%
-\contentsline {subsubsection}{ बार्हदुक्थ ञ्च}{263}{section*.502}%
-\contentsline {subsubsection}{ वरुणसामच}{264}{section*.504}%
-\contentsline {subsubsection}{ उषसश्पैवसाम}{265}{section*.506}%
-\contentsline {subsubsection}{ मित्रावरुणयोश्पसंयोजनं}{266}{section*.508}%
-\contentsline {subsubsection}{ ऋतुसामच}{267}{section*.510}%
-\contentsline {subsubsection}{ विष्णोश्पसाम}{268}{section*.512}%
-\contentsline {subsection}{ Section section\_25 (121)}{269}{section*.514}%
-\contentsline {subsubsection}{ कौत्सञ्च}{269}{section*.515}%
-\contentsline {subsubsection}{ कश्यप ञ्चआप्सुरसंवा}{270}{section*.517}%
-\contentsline {subsubsection}{ बार्हदुक्थेचे}{271}{section*.519}%
-\contentsline {subsubsection}{ औध्वरसद्मनेचे प्रहितोर्वा संयोजने}{272}{section*.521}%
-\contentsline {subsubsection}{ कौत्सानिचत्वारि}{273}{section*.523}%
-\contentsline {subsubsection}{ अभिवादस्यऔदलस्यसाम}{274}{section*.525}%
-\contentsline {subsubsection}{ सोमसामच}{275}{section*.527}%
-\contentsline {section}{ ॥ बृहति पांः ॥}{276}{section*.530}%
-\contentsline {subsection}{ Section section\_27 (311)}{276}{section*.531}%
-\contentsline {subsubsection}{ इन्दरस्यार्कौचौ}{276}{section*.532}%
-\contentsline {subsubsection}{ भारचाजेचे}{277}{section*.534}%
-\contentsline {subsubsection}{ सन्नतेत्वे}{278}{section*.536}%
-\contentsline {subsubsection}{ शैतन्त्रतीयं}{279}{section*.538}%
-\contentsline {subsubsection}{ नाविकंच}{280}{section*.540}%
-\contentsline {subsubsection}{ प्रजापतेः श्पाभीवर्तः}{281}{section*.542}%
-\contentsline {subsubsection}{ भागंञ्च}{282}{section*.544}%
-\contentsline {subsubsection}{ इन्दरस्याभीवर्तः}{283}{section*.546}%
-\contentsline {subsubsection}{ नौधसं}{284}{section*.548}%
-\contentsline {subsubsection}{ लौशेचे}{285}{section*.550}%
-\contentsline {subsubsection}{ धानाकेचे}{286}{section*.552}%
-\contentsline {subsubsection}{ कालेयानित्रीणि}{287}{section*.554}%
-\contentsline {subsubsection}{ ऐषिरेचे}{288}{section*.556}%
-\contentsline {subsubsection}{ गोश्रंगेत्वे}{289}{section*.558}%
-\contentsline {subsubsection}{ प्रष्ठमेकं}{290}{section*.560}%
-\contentsline {subsubsection}{ शुक्लएकं}{291}{section*.562}%
-\contentsline {subsubsection}{ जमदग्नेरभिवर्तएकं}{292}{section*.564}%
-\contentsline {subsubsection}{ कौन्मुलबर्हिषेत्वे}{293}{section*.566}%
-\contentsline {subsubsection}{ वसिष्ठस्यजनित्रेत्वे}{294}{section*.568}%
-\contentsline {subsubsection}{ मैधातिथं}{295}{section*.570}%
-\contentsline {subsection}{ Section section\_28 (251)}{296}{section*.572}%
-\contentsline {subsubsection}{ वैचानसं}{296}{section*.573}%
-\contentsline {subsubsection}{ प्राकर्षं}{297}{section*.575}%
-\contentsline {subsubsection}{ सात्यं}{298}{section*.577}%
-\contentsline {subsubsection}{ भारत्वाजानिचत्वारि कण्वब्रहत्वाचितीयं}{299}{section*.579}%
-\contentsline {subsubsection}{ वाम्मराणित्रीणि}{301}{section*.581}%
-\contentsline {subsubsection}{ गौंगवं}{302}{section*.583}%
-\contentsline {subsubsection}{ साध्राणि त्रीणि}{303}{section*.585}%
-\contentsline {subsubsection}{ विरूपस्य समिचीन प्राचीनेचे}{305}{section*.587}%
-\contentsline {subsubsection}{ यौक्तस्रजंइन्द्रियसेयन्दियंवा}{306}{section*.589}%
-\contentsline {subsubsection}{ आत्राणित्रीणि}{307}{section*.591}%
-\contentsline {subsubsection}{ वासिष्ठानित्रीणि}{308}{section*.593}%
-\contentsline {subsubsection}{ वत् सस्यकाण्वस्य सामनीचे गौतमस्यवा}{309}{section*.595}%
-\contentsline {subsection}{ Section section\_29 (251)}{310}{section*.597}%
-\contentsline {subsubsection}{ हरायणानि त्रीणि}{310}{section*.598}%
-\contentsline {subsubsection}{ वाम्राणित्रीणि}{312}{section*.600}%
-\contentsline {subsubsection}{ वरुणसामानित्रीणि}{314}{section*.602}%
-\contentsline {subsubsection}{ वषट्कारनिधनन्ज साकमश्पं}{316}{section*.604}%
-\contentsline {subsubsection}{ बृ हतश्पमारूतस्यसाम}{317}{section*.606}%
-\contentsline {subsubsection}{ संश्रवसे वीश्रवसे सत्यश्रवसे श्रवस}{318}{section*.608}%
-\contentsline {subsubsection}{ वासिष्ठानि त्रीणि भार्गवं वा त्रतीयं}{320}{section*.610}%
-\contentsline {subsubsection}{ स्ववस आण\{{[}\}कस्यसामनीचे}{321}{section*.612}%
-\contentsline {subsubsection}{ काण्वं}{322}{section*.614}%
-\contentsline {subsubsection}{ वैष्टं भेचे}{323}{section*.616}%
-\contentsline {subsubsection}{ काण्वञ्चैवा}{324}{section*.618}%
-\contentsline {subsubsection}{ श्रुष्टिगवञ्च}{325}{section*.620}%
-\contentsline {subsection}{ Section section\_30 (171)}{326}{section*.622}%
-\contentsline {subsubsection}{ इन्दरस्यच व्रषकं}{326}{section*.623}%
-\contentsline {subsubsection}{ चैगतेच}{327}{section*.625}%
-\contentsline {subsubsection}{ कार्तवेशञ्च}{328}{section*.627}%
-\contentsline {subsubsection}{ इन्दरस्यच शरणं}{329}{section*.629}%
-\contentsline {subsubsection}{ श्रायन्तीय ञ्च}{330}{section*.631}%
-\contentsline {subsubsection}{ आक्षीलन्चबाभ्रंवा}{331}{section*.633}%
-\contentsline {subsubsection}{ शौक्तानि त्रीणि शुक्लानिवा आश्पानिवा}{332}{section*.635}%
-\contentsline {subsubsection}{ प्रजापतेर्निधन कामं}{333}{section*.637}%
-\contentsline {subsubsection}{ गौतमस्यमनार्याणित्रीणि}{334}{section*.639}%
-\contentsline {subsubsection}{ वैरूपाणित्रीणि}{336}{section*.641}%
-\contentsline {subsection}{ Section section\_31 (161)}{337}{section*.643}%
-\contentsline {subsubsection}{ पौरूहन्मनञ्च}{337}{section*.644}%
-\contentsline {subsubsection}{ प्राकर्षञ्च}{338}{section*.646}%
-\contentsline {subsubsection}{ इन्दरस्यचाभयंकरं}{339}{section*.648}%
-\contentsline {subsubsection}{ कावर्षाचे}{340}{section*.650}%
-\contentsline {subsubsection}{ सूर्यसामच}{341}{section*.652}%
-\contentsline {subsubsection}{ नैपातिथेचे वाशेवा}{342}{section*.654}%
-\contentsline {subsubsection}{ कौन्मुदेचेस्वजोरतिषीवा}{343}{section*.656}%
-\contentsline {subsubsection}{ अनूपेचे}{344}{section*.658}%
-\contentsline {subsubsection}{ वैरूपञ्च}{345}{section*.660}%
-\contentsline {subsubsection}{ वाचश्पसाम}{346}{section*.662}%
-\contentsline {subsubsection}{ आक्षीलेचे}{347}{section*.664}%
-\contentsline {subsection}{ Section section\_32 (171)}{348}{section*.666}%
-\contentsline {subsubsection}{ गौरीवितेǐप्रहितौचौ}{348}{section*.667}%
-\contentsline {subsubsection}{ आत्रेचे}{349}{section*.669}%
-\contentsline {subsubsection}{ गौतमेचे}{350}{section*.671}%
-\contentsline {subsubsection}{ वामदेव्यञ्च}{351}{section*.673}%
-\contentsline {subsubsection}{ अश्पिनोश्पसाम}{352}{section*.675}%
-\contentsline {subsubsection}{ वसिष्ठस्य वज्राणि त्रीणि}{353}{section*.677}%
-\contentsline {subsubsection}{ सौबभ्रवेचे}{354}{section*.679}%
-\contentsline {subsubsection}{ वैर्यश्पं}{355}{section*.681}%
-\contentsline {subsubsection}{ इन्दरस्यसहस्रायुतेचे प्रजापतेर्वा}{356}{section*.683}%
-\contentsline {subsubsection}{ इन्दराण्यास्साम}{357}{section*.685}%
-\contentsline {subsection}{ Section section\_33 (101)}{358}{section*.687}%
-\contentsline {subsubsection}{ सौभरञ्च}{358}{section*.688}%
-\contentsline {subsubsection}{ गात् समदञ्च}{359}{section*.690}%
-\contentsline {subsubsection}{ वाचश्पसाम}{360}{section*.692}%
-\contentsline {subsubsection}{ बार्हदुक्थञ्च}{361}{section*.694}%
-\contentsline {subsubsection}{ नैपातिथञ्च}{362}{section*.696}%
-\contentsline {subsubsection}{ तौरश्रवस ञ्च}{363}{section*.698}%
-\contentsline {subsubsection}{ त्वष्टार्याश्पसाम}{364}{section*.700}%
-\contentsline {subsubsection}{ अदितेश्पसाम}{365}{section*.702}%
-\contentsline {subsubsection}{ आजीक्त ञ्च}{366}{section*.704}%
-\contentsline {subsubsection}{ माधुच्छन्दसञ्च}{367}{section*.706}%
-\contentsline {subsection}{ Section section\_34 (111)}{368}{section*.708}%
-\contentsline {subsubsection}{ उषसश्प साम}{368}{section*.709}%
-\contentsline {subsubsection}{ अश्पिनोश्प साम}{369}{section*.711}%
-\contentsline {subsubsection}{ अश्पिनोश्पसंयोजनं}{370}{section*.713}%
-\contentsline {subsubsection}{ अश्पिनोश्पैवसाम}{371}{section*.715}%
-\contentsline {subsubsection}{ सोमसामच}{372}{section*.717}%
-\contentsline {subsubsection}{ आजामायवञ्च}{373}{section*.719}%
-\contentsline {subsubsection}{ समुद्रस्यच पैरयमेधस्य साम}{374}{section*.721}%
-\contentsline {subsubsection}{ वैरूपेच}{375}{section*.723}%
-\contentsline {subsubsection}{ वैश्पदेवञ्च}{376}{section*.725}%
-\contentsline {subsubsection}{ पुरीषन्जाथर्वणं}{377}{section*.727}%
-\contentsline {section}{ ॥असावि पांः॥}{378}{section*.730}%
-\contentsline {subsection}{ Section section\_36 (191)}{378}{section*.731}%
-\contentsline {subsubsection}{ प्राकर्षञ्च}{378}{section*.732}%
-\contentsline {subsubsection}{ वसिष्ठस्यचनिन्हवं}{379}{section*.734}%
-\contentsline {subsubsection}{ गृ त् समदस्ययोनिनीचे}{380}{section*.736}%
-\contentsline {subsubsection}{ औरूक्षयेचे}{381}{section*.738}%
-\contentsline {subsubsection}{ पाथ्रेचे}{382}{section*.740}%
-\contentsline {subsubsection}{ सौमित्रेचे}{383}{section*.742}%
-\contentsline {subsubsection}{ वात्सप्राणित्रीणि}{384}{section*.744}%
-\contentsline {subsubsection}{ वैदन्वतञ्च}{386}{section*.746}%
-\contentsline {subsubsection}{ सौपर्णञ्च}{387}{section*.748}%
-\contentsline {subsubsection}{ यामञ्च}{388}{section*.750}%
-\contentsline {subsubsection}{ ऋ तुसामनिच}{389}{section*.752}%
-\contentsline {subsubsection}{ इन्दरस्यवारवन्तीयं}{390}{section*.754}%
-\contentsline {subsection}{ Section section\_37 (171)}{391}{section*.756}%
-\contentsline {subsubsection}{ इन्दरस्यच क्षुरपविनीचे}{391}{section*.757}%
-\contentsline {subsubsection}{ सौरश्मेचे}{392}{section*.759}%
-\contentsline {subsubsection}{ बृ हतोमारूतस्यसामनीचे}{393}{section*.761}%
-\contentsline {subsubsection}{ सोम सामनीचे}{394}{section*.763}%
-\contentsline {subsubsection}{ इन्दरस्यवज्रेचे}{395}{section*.765}%
-\contentsline {subsubsection}{ भृष्टिमतस्सौर्यवचर््चसस्य सामनीचे}{396}{section*.767}%
-\contentsline {subsubsection}{ वसिष्ठस्यां कुशौचौ}{397}{section*.769}%
-\contentsline {subsubsection}{ भारचाजञ्च}{398}{section*.771}%
-\contentsline {subsubsection}{ वासिष्ठञ्च}{399}{section*.773}%
-\contentsline {subsubsection}{ पु रीषञ्चा थर्वणं}{400}{section*.775}%
-\contentsline {subsection}{ Section section\_38 (181)}{401}{section*.777}%
-\contentsline {subsubsection}{ आदित्याः सामनीचे ताक्ष्यरसामनिवा}{401}{section*.778}%
-\contentsline {subsubsection}{ इन्दरस्यच त्रातं}{402}{section*.780}%
-\contentsline {subsubsection}{ वाक्त त्रतुरं}{403}{section*.782}%
-\contentsline {subsubsection}{ द्युतानस्य मारूतस्य सामनीचे}{404}{section*.784}%
-\contentsline {subsubsection}{ आत्रं}{405}{section*.786}%
-\contentsline {subsubsection}{ गृत् समदस्यसमिधौचौ}{406}{section*.788}%
-\contentsline {subsubsection}{ वैश्पामित्रं}{407}{section*.790}%
-\contentsline {subsubsection}{ सावित्राणिषट्पैरयमेधानिवा}{408}{section*.792}%
-\contentsline {subsubsection}{ कूतिवारस्यवैरूपस्यसाम}{410}{section*.794}%
-\contentsline {subsubsection}{ वामदेव्यं}{411}{section*.796}%
-\contentsline {subsection}{ Section section\_39 (281)}{412}{section*.798}%
-\contentsline {subsubsection}{ शैचठिनेचे}{412}{section*.799}%
-\contentsline {subsubsection}{ उचंशीयन्तृतीयं}{413}{section*.801}%
-\contentsline {subsubsection}{ शैचठिनानीत्रीणी}{414}{section*.803}%
-\contentsline {subsubsection}{ आष्टादंष्ट्रेचे}{415}{section*.805}%
-\contentsline {subsubsection}{ महावैश्पामित्रेचे}{416}{section*.807}%
-\contentsline {subsubsection}{ गृत्समदस्यवींकानिचत्वारिवसिष्ठस्यवा}{417}{section*.809}%
-\contentsline {subsubsection}{ वसिष्ठस्यवींकानिचत्वारीन्दरस्यवाप्रियाणि}{418}{section*.811}%
-\contentsline {subsubsection}{ तिरश्पेरांगिरसस्यसामनीचेदेवानांवा}{419}{section*.813}%
-\contentsline {subsubsection}{ वैश्पामित्रं}{420}{section*.815}%
-\contentsline {subsubsection}{ काण्वेचे}{421}{section*.817}%
-\contentsline {subsubsection}{ वैश्पामित्रञ्च}{422}{section*.819}%
-\contentsline {subsubsection}{ इन्दस्यशुडाशुडीयेचे}{423}{section*.821}%
-\contentsline {subsubsection}{ गौतमस्यरयिष्ठेचे}{424}{section*.823}%
-\contentsline {subsection}{ Section section\_40 (111)}{425}{section*.825}%
-\contentsline {subsubsection}{ कौल्मल बर्हिषेचे}{425}{section*.826}%
-\contentsline {subsubsection}{ नानदन्तृतीयं}{426}{section*.828}%
-\contentsline {subsubsection}{ शाकपूत ञ्च}{427}{section*.830}%
-\contentsline {subsubsection}{ कौल्मलबर्हिषेचे}{428}{section*.832}%
-\contentsline {subsubsection}{ मधुश्पयुन्निधनञ्च प्राजापत्यं}{429}{section*.834}%
-\contentsline {subsubsection}{ उषसश्पसाम}{430}{section*.836}%
-\contentsline {subsubsection}{ गौतमं}{431}{section*.838}%
-\contentsline {subsubsection}{ अग्नेश्पदधिक्रं}{432}{section*.840}%
-\contentsline {subsubsection}{ मारूतंवैश्पामित्रंवा आंगीरसानां वा}{433}{section*.842}%
-\contentsline {subsection}{ Section section\_41 (131)}{434}{section*.844}%
-\contentsline {subsubsection}{ वामदेव्यञ्च}{434}{section*.845}%
-\contentsline {subsubsection}{ काश्यप ञ्च}{435}{section*.847}%
-\contentsline {subsubsection}{ अग्नेवैरश्पानरस्यसामनीचे}{436}{section*.849}%
-\contentsline {subsubsection}{ शाकपूतेचे}{437}{section*.851}%
-\contentsline {subsubsection}{ पैरयमेध ञ्च}{438}{section*.853}%
-\contentsline {subsubsection}{ बार्हदुक्थञ्च}{439}{section*.855}%
-\contentsline {subsubsection}{ वरूणान्याश्पसाम}{440}{section*.857}%
-\contentsline {subsubsection}{ उषसश्पसाम}{441}{section*.859}%
-\contentsline {subsubsection}{ देवानांचरुचिरोचनंवा}{442}{section*.861}%
-\contentsline {subsubsection}{ ऋक्सामयोस्सामनीचे}{443}{section*.863}%
-\contentsline {section}{ ॥ ऐन्दर पांः ॥}{444}{section*.866}%
-\contentsline {subsection}{ Section section\_54 (691)}{444}{section*.867}%
-\contentsline {subsubsection}{ आजीकञ्च}{444}{section*.868}%
-\contentsline {subsubsection}{ आभीकञ्च}{445}{section*.870}%
-\contentsline {subsubsection}{ रषभश्पपवमानः}{446}{section*.872}%
-\contentsline {subsubsection}{ आभीक11ञ्चव}{447}{section*.874}%
-\contentsline {subsubsection}{ बाभ्रवेचे}{448}{section*.876}%
-\contentsline {subsubsection}{ इन्दराण्यास्साम}{449}{section*.878}%
-\contentsline {subsubsection}{ शैशपेचे}{450}{section*.880}%
-\contentsline {subsubsection}{ प्रजापतेदोरहोदोहीयेचे}{451}{section*.882}%
-\contentsline {subsubsection}{ इन्दराण्याश्पैवसाम}{452}{section*.884}%
-\contentsline {subsubsection}{ आमहीयवञ्च}{453}{section*.886}%
-\contentsline {subsubsection}{ आजीकञ्च}{454}{section*.888}%
-\contentsline {subsubsection}{ सूरूपेचे}{455}{section*.890}%
-\contentsline {subsubsection}{ जमदग्नेश्शिल्खेचे}{456}{section*.892}%
-\contentsline {subsubsection}{ संहितञ्च}{457}{section*.894}%
-\contentsline {subsubsection}{ वसिष्ठस्यशकूनः}{458}{section*.896}%
-\contentsline {subsubsection}{ जमदग्नेश्पगंभीरं}{459}{section*.898}%
-\contentsline {subsubsection}{ संहित11ञ्चव}{460}{section*.900}%
-\contentsline {subsubsection}{ सोमसामनीचे}{461}{section*.902}%
-\contentsline {subsubsection}{ आशुभार्गवंतृतीयं}{462}{section*.904}%
-\contentsline {subsubsection}{ वैश्पदेवेचे}{463}{section*.906}%
-\contentsline {subsubsection}{ इन्दरसामनीचे}{464}{section*.908}%
-\contentsline {subsubsection}{ यौक्त3श्पेचे…}{465}{section*.910}%
-\contentsline {subsubsection}{ भासञ्च…}{466}{section*.912}%
-\contentsline {subsubsection}{ सोमसामच…}{467}{section*.914}%
-\contentsline {subsubsection}{ प्रजापतेश्पसहोरयिष्ठीयं…}{468}{section*.916}%
-\contentsline {subsubsection}{ मादिलं…}{469}{section*.918}%
-\contentsline {subsubsection}{ सोमसामचैव…}{470}{section*.920}%
-\contentsline {subsubsection}{ प्रजपते श्पैव सहो रयिष्ठीयं सोम}{471}{section*.922}%
-\contentsline {subsubsection}{ वैष्टंभेचे…}{472}{section*.924}%
-\contentsline {subsubsection}{ पाष्ठौहेचे…}{473}{section*.926}%
-\contentsline {subsubsection}{ वैष्टंभ11ञ्चव…}{474}{section*.928}%
-\contentsline {subsubsection}{ पाष्ठौह11ञ्चव…}{475}{section*.930}%
-\contentsline {subsubsection}{ इषोवृधीयञ्च…}{476}{section*.932}%
-\contentsline {subsubsection}{ इन्दरसाम…}{477}{section*.934}%
-\contentsline {subsubsection}{ वैश्पदेवेच…}{478}{section*.936}%
-\contentsline {subsubsection}{ इन्दरसामचैव…}{479}{section*.938}%
-\contentsline {subsubsection}{ आग्नेयानित्रीणि…}{480}{section*.940}%
-\contentsline {subsubsection}{ आश्पानिचत्वारि…}{481}{section*.942}%
-\contentsline {subsubsection}{ च्यावनानिचत्वारि…}{482}{section*.944}%
-\contentsline {subsubsection}{ प्राजापतेयचे…}{483}{section*.946}%
-\contentsline {subsubsection}{ वैदन्वतानिचत्वारिरषभोवावैदन्वतश्पतुर्थः}{484}{section*.948}%
-\contentsline {subsubsection}{ रजेरांगीरसस्यपदस्तोभौचौ…}{486}{section*.950}%
-\contentsline {subsubsection}{ और्णायवेचे…}{487}{section*.952}%
-\contentsline {subsection}{ Section section\_55 (191)}{488}{section*.954}%
-\contentsline {subsubsection}{ सौभरेचे…}{488}{section*.955}%
-\contentsline {subsubsection}{ इन्दरस्यवृषकाणित्रिणि…}{489}{section*.957}%
-\contentsline {subsubsection}{ बभ्रोःकूंभस्यसामानित्रीणि…}{490}{section*.959}%
-\contentsline {subsubsection}{ बभ्रोःकार्तवेशानित्रीणि…}{491}{section*.961}%
-\contentsline {subsubsection}{ शाम्मरदेचे…}{492}{section*.963}%
-\contentsline {subsubsection}{ वसिष्ठस्यजनित्रेचे…}{493}{section*.965}%
-\contentsline {subsubsection}{ मरूतांप्रकीळाहस्तरयःसंक्रीळाहवानिक्रिळाहवा…}{494}{section*.967}%
-\contentsline {subsubsection}{ औशनं…}{495}{section*.969}%
-\contentsline {subsection}{ Section section\_56 (161)}{496}{section*.971}%
-\contentsline {subsubsection}{ यामानित्रीणि…}{496}{section*.972}%
-\contentsline {subsubsection}{ अंकतेवैररूपस्यसाम…}{497}{section*.974}%
-\contentsline {subsubsection}{ औशनेच…}{498}{section*.976}%
-\contentsline {subsubsection}{ सोमसामच…}{499}{section*.978}%
-\contentsline {subsubsection}{ काष्णेरच…}{500}{section*.980}%
-\contentsline {subsubsection}{ भारचाजञ्च…}{501}{section*.982}%
-\contentsline {subsubsection}{ वैश्पमित्रञ्च…}{502}{section*.984}%
-\contentsline {subsubsection}{ इन्दरस्यवात्ररघ्नं…}{503}{section*.986}%
-\contentsline {subsubsection}{ सोमसामानित्रीणि…}{504}{section*.988}%
-\contentsline {subsubsection}{ भारच ाज11ञ्चव…}{505}{section*.990}%
-\contentsline {subsection}{ Section section\_57 (201)}{506}{section*.992}%
-\contentsline {subsubsection}{ वार्षाहरम्…}{506}{section*.993}%
-\contentsline {subsubsection}{ वार्शानित्रीणि}{507}{section*.995}%
-\contentsline {subsubsection}{ वैरूपेचदेवानांवाणसायिनी}{508}{section*.997}%
-\contentsline {subsubsection}{ तरभस्यचवैददश्पेस्साम}{509}{section*.999}%
-\contentsline {subsubsection}{ सोमसामच}{510}{section*.1001}%
-\contentsline {subsubsection}{ सूर्यसामच…}{511}{section*.1003}%
-\contentsline {subsubsection}{ दाड्यरच्युतानित्रीणि…}{512}{section*.1005}%
-\contentsline {subsubsection}{ इन्दरस्यचवृषकम्…}{513}{section*.1007}%
-\contentsline {subsubsection}{ ऐषञ्च…}{514}{section*.1009}%
-\contentsline {subsubsection}{ श्यवाश्पञ्च…}{515}{section*.1011}%
-\contentsline {subsubsection}{ सोमसामच…}{516}{section*.1013}%
-\contentsline {subsubsection}{ आग्नेयञ्च…}{517}{section*.1015}%
-\contentsline {subsubsection}{ आयासेयच…}{518}{section*.1017}%
-\contentsline {subsubsection}{ भारचाजञ्च…}{519}{section*.1019}%
-\contentsline {subsection}{ Section section\_58 (761)}{520}{section*.1021}%
-\contentsline {subsubsection}{ आयास्यञ्च}{520}{section*.1022}%
-\contentsline {subsubsection}{ वसिष्ठस्यचापदासे}{521}{section*.1024}%
-\contentsline {subsubsection}{ माण्डवञ्च}{522}{section*.1026}%
-\contentsline {subsubsection}{ उन्व च्च}{523}{section*.1028}%
-\contentsline {subsubsection}{ माण्डव11ञ्चव}{524}{section*.1030}%
-\contentsline {subsubsection}{ प्रजापतेश्पसदोविशीयं}{525}{section*.1032}%
-\contentsline {subsubsection}{ जमग्नेस्सवासिनी चे}{526}{section*.1034}%
-\contentsline {subsubsection}{ आयासेयचेसोमसामनीवा}{527}{section*.1036}%
-\contentsline {subsubsection}{ कण्वरथभ रं}{528}{section*.1038}%
-\contentsline {subsubsection}{ आयास्यञ्च}{529}{section*.1040}%
-\contentsline {subsubsection}{ रौरवं}{530}{section*.1042}%
-\contentsline {subsubsection}{ यौधाजयञ्च}{531}{section*.1044}%
-\contentsline {subsubsection}{ वसिष्ठस्यचप्लवं}{532}{section*.1046}%
-\contentsline {subsubsection}{ अच्छिद्रञ्च}{533}{section*.1048}%
-\contentsline {subsubsection}{ रयिष्ठञ्च}{534}{section*.1050}%
-\contentsline {subsubsection}{ भारञ्च जेचे}{535}{section*.1052}%
-\contentsline {subsubsection}{ आभिशवेचे}{536}{section*.1054}%
-\contentsline {subsubsection}{ अगिंरसामधीवासपरीवासौञ्च2}{537}{section*.1056}%
-\contentsline {subsubsection}{ माण्डवेचे}{538}{section*.1058}%
-\contentsline {subsubsection}{ वैनसोमकृतवेचे}{539}{section*.1060}%
-\contentsline {subsubsection}{ प्रजापतेर्गूर्दौचौ}{540}{section*.1062}%
-\contentsline {subsubsection}{ मरूतांगोष्ठापुंसिनिचे}{541}{section*.1064}%
-\contentsline {subsubsection}{ महारौरवञ्च}{542}{section*.1066}%
-\contentsline {subsubsection}{ महायौधाजयञ्च}{543}{section*.1068}%
-\contentsline {subsubsection}{ आश्पानिचत्वारि}{544}{section*.1070}%
-\contentsline {subsubsection}{ आग्नेयञ्च}{546}{section*.1072}%
-\contentsline {subsubsection}{ सोमसामच}{547}{section*.1074}%
-\contentsline {subsubsection}{ न्विहिंकारञ्चवामदेव्यम्}{548}{section*.1076}%
-\contentsline {subsubsection}{ अंगिरसामुत् सेधनिषेधौ चौ}{549}{section*.1078}%
-\contentsline {subsubsection}{ सोमसामानिष ट्}{550}{section*.1080}%
-\contentsline {subsubsection}{ विष्णोररणीचे}{552}{section*.1082}%
-\contentsline {subsubsection}{ आ ङ्गि रसानित्रीणि}{553}{section*.1084}%
-\contentsline {subsubsection}{ औक्ष्णोरन्ध्राणित्रीणि}{554}{section*.1086}%
-\contentsline {subsubsection}{ औक्ष्णोनिधनानित्रीणि}{555}{section*.1088}%
-\contentsline {subsubsection}{ वाजजिच्चा}{556}{section*.1090}%
-\contentsline {subsubsection}{ न्वभ्यासञ्चसौषवंवसिष्ठस्यवापिप्खलि}{557}{section*.1092}%
-\contentsline {subsubsection}{ वैश्पदेवेच}{558}{section*.1094}%
-\contentsline {subsubsection}{ इङ्र सामच}{559}{section*.1096}%
-\contentsline {subsubsection}{ वैश्पदेवञ्चैव}{560}{section*.1098}%
-\contentsline {subsubsection}{ इङ्रसामानित्रीणि}{561}{section*.1100}%
-\contentsline {subsubsection}{ स्वǐपृष्ठमान्गरसं}{562}{section*.1102}%
-\contentsline {subsubsection}{ सोमसामच}{563}{section*.1104}%
-\contentsline {subsubsection}{ आदित्यानाञ्चपवि त्रम्}{564}{section*.1106}%
-\contentsline {subsubsection}{ सोमसामनीचे}{565}{section*.1108}%
-\contentsline {subsubsection}{ स्वǐपृष्ठ ञ्चैवान्गिरसं}{566}{section*.1110}%
-\contentsline {subsubsection}{ सोमसामचैव}{567}{section*.1112}%
-\contentsline {subsection}{ Section section\_59 (361)}{568}{section*.1114}%
-\contentsline {subsubsection}{ औशनानित्रीणि…}{568}{section*.1115}%
-\contentsline {subsubsection}{ प्रशस्यजानस्याभीवर्तौचौ…}{569}{section*.1117}%
-\contentsline {subsubsection}{ प्रजापतेर्वाजसनिनीचे वाजजितौचौ}{570}{section*.1119}%
-\contentsline {subsubsection}{ अंगिरसां संक्रोशास्तरयः देवानांवा साम}{572}{section*.1121}%
-\contentsline {subsubsection}{ वेनोविशालेचे…}{574}{section*.1123}%
-\contentsline {subsubsection}{ गौतमस्यतभ|3त1भ|चे…}{575}{section*.1125}%
-\contentsline {subsubsection}{ अगस्तयस्ययमिकेचे…}{576}{section*.1127}%
-\contentsline {subsubsection}{ मरूतांकालकाक्रभ2…}{577}{section*.1129}%
-\contentsline {subsubsection}{ वासिष्ठानिषट्…}{578}{section*.1131}%
-\contentsline {subsubsection}{ आश्पथ…}{580}{section*.1133}%
-\contentsline {subsubsection}{ सोमसामनीचे…}{581}{section*.1135}%
-\contentsline {subsubsection}{ ऐषञ्च}{582}{section*.1137}%
-\contentsline {subsubsection}{ माधुच्चन्दसं}{583}{section*.1139}%
-\contentsline {subsubsection}{ सोमसामानि चत्वारि}{584}{section*.1141}%
-\contentsline {subsubsection}{ मरूतांव्रतोपोहस्संपचा}{586}{section*.1143}%
-\contentsline {subsection}{ Section section\_60 (211)}{587}{section*.1145}%
-\contentsline {subsubsection}{ कूत् सस्याधिरथ्यानित्रीणि…}{587}{section*.1146}%
-\contentsline {subsubsection}{ वैश्पजेयातिषाणित्रीणि…}{588}{section*.1148}%
-\contentsline {subsubsection}{ वाचस्सामनीचे…}{589}{section*.1150}%
-\contentsline {subsubsection}{ दाशस्खत्यानिषट्…}{590}{section*.1152}%
-\contentsline {subsubsection}{ कश्यपस्यचशोभनं…}{592}{section*.1154}%
-\contentsline {subsubsection}{ आत्रं…}{593}{section*.1156}%
-\contentsline {subsubsection}{ अपांसाम…}{594}{section*.1158}%
-\contentsline {subsubsection}{ श्नौष्टाणित्रीणि…}{595}{section*.1160}%
-\contentsline {subsubsection}{ वासिष्ठं}{597}{section*.1162}%
-\contentsline {subsection}{ Section section\_61 (331)}{598}{section*.1164}%
-\contentsline {subsubsection}{ नकूलस्य वाम देवस्य प्रें चौ चौ}{598}{section*.1165}%
-\contentsline {subsubsection}{ महा कार्क्तवेशञ्च}{599}{section*.1167}%
-\contentsline {subsubsection}{ औड्वसद्मन ञ्च}{600}{section*.1169}%
-\contentsline {subsubsection}{ श्यावाश्पञ्च}{601}{section*.1171}%
-\contentsline {subsubsection}{ आन्धीगव ञ्च}{602}{section*.1173}%
-\contentsline {subsubsection}{ क्रौञ्चानित्रीणि}{603}{section*.1175}%
-\contentsline {subsubsection}{ गृत्समदस्यसूत्राणि चत्वारि}{604}{section*.1177}%
-\contentsline {subsubsection}{ आकुपारम्}{605}{section*.1179}%
-\contentsline {subsubsection}{ त्वाष्टीसामनीचे}{606}{section*.1181}%
-\contentsline {subsubsection}{ सोम सामानि चत्वारि वासिष्ठानि वा मदाई}{607}{section*.1183}%
-\contentsline {subsubsection}{ त्वाष्टिसामनीचैव}{609}{section*.1185}%
-\contentsline {subsubsection}{ क्रौ ञ्चेचेशार्मदेवा}{610}{section*.1187}%
-\contentsline {subsubsection}{ सोमसामानि त्रीणि}{611}{section*.1189}%
-\contentsline {subsubsection}{ क्रौ ञ्चञ्चैव उचचवा}{612}{section*.1191}%
-\contentsline {subsubsection}{ सोम साम चै व}{613}{section*.1193}%
-\contentsline {subsubsection}{ पैरय्यमेधानि त्रीणि}{614}{section*.1195}%
-\contentsline {subsubsection}{ औशनंवैरूपम्}{615}{section*.1197}%
-\contentsline {subsection}{ Section section\_62 (351)}{616}{section*.1199}%
-\contentsline {subsubsection}{ कावं}{616}{section*.1200}%
-\contentsline {subsubsection}{ प्रजापतेर्वाजसनिनीचे}{617}{section*.1202}%
-\contentsline {subsubsection}{ वाजिजितौचौ}{618}{section*.1204}%
-\contentsline {subsubsection}{ काववञ्च}{619}{section*.1206}%
-\contentsline {subsubsection}{ सामराजानित्रीणि विशालानिवा उचन्तिवा}{620}{section*.1208}%
-\contentsline {subsubsection}{ आंगीरसानित्रीणि}{621}{section*.1210}%
-\contentsline {subsubsection}{ औशनं}{622}{section*.1212}%
-\contentsline {subsubsection}{ प्रवत्भार्गवं}{623}{section*.1214}%
-\contentsline {subsubsection}{ विरूपस्यचतन्तेर}{624}{section*.1216}%
-\contentsline {subsubsection}{ भार्गव ञ्चैव}{625}{section*.1218}%
-\contentsline {subsubsection}{ यामं}{626}{section*.1220}%
-\contentsline {subsubsection}{ दाशशीष्रेचे}{627}{section*.1222}%
-\contentsline {subsubsection}{ सैन्धुक्षितानित्रीणि}{628}{section*.1224}%
-\contentsline {subsubsection}{ यामानित्रीणि}{629}{section*.1226}%
-\contentsline {subsubsection}{ मरूतान्धेनुनीचे}{630}{section*.1228}%
-\contentsline {subsubsection}{ वसिष्ठस्यापामीवेचे वायोर्वाभिकृन्दौ}{631}{section*.1230}%
-\contentsline {subsubsection}{ अणते व्यणत स्समञ्चत इति काक्षीवतानां}{632}{section*.1232}%
-\contentsline {subsubsection}{ आदित्यस्यर्कपुष्खे देवानांवा}{634}{section*.1234}%
-\contentsline {subsection}{ Section section\_63 (391)}{635}{section*.1236}%
-\contentsline {subsubsection}{ वसिष्ठस्यपदेचे}{635}{section*.1237}%
-\contentsline {subsubsection}{ वसिष्ठस्यानुपदेचे}{636}{section*.1239}%
-\contentsline {subsubsection}{ पौष्कलं}{637}{section*.1241}%
-\contentsline {subsubsection}{ ऐषिराणिप ञ्च}{638}{section*.1243}%
-\contentsline {subsubsection}{ शौक्तानिपञ्च}{640}{section*.1245}%
-\contentsline {subsubsection}{ कार्णश्रवसानि त्रीणिगौलोमानिवा}{642}{section*.1247}%
-\contentsline {subsubsection}{ वैश्पदेवेचे}{643}{section*.1249}%
-\contentsline {subsubsection}{ इन्दरसामनीचे}{644}{section*.1251}%
-\contentsline {subsubsection}{ मरूतांप्रेंचःवसिष्ठस्यवा}{645}{section*.1253}%
-\contentsline {subsubsection}{ आग्नेयञ्च}{646}{section*.1255}%
-\contentsline {subsubsection}{ सोमसामच}{647}{section*.1257}%
-\contentsline {subsubsection}{ सु ज्ञानेचे}{648}{section*.1259}%
-\contentsline {subsubsection}{ द्यौतेचे}{649}{section*.1261}%
-\contentsline {subsubsection}{ आतीषातीयेचे}{650}{section*.1263}%
-\contentsline {subsubsection}{ सोमसामानि चत्वारि}{651}{section*.1265}%
-\contentsline {subsubsection}{ सोमस्ययशांसित्रीणि}{652}{section*.1267}%
-\contentsline {subsubsection}{ औशनंवासिष्ठवा}{653}{section*.1269}%
-\contentsline {subsection}{ Section section\_64 (351)}{654}{section*.1271}%
-\contentsline {subsubsection}{ वासिष्ठेचे}{654}{section*.1272}%
-\contentsline {subsubsection}{ सभानित्रीणि}{655}{section*.1274}%
-\contentsline {subsubsection}{ ऐषिराणिचत्वारिच्यावनानिवा}{656}{section*.1276}%
-\contentsline {subsubsection}{ शौक्तानि त्रीणि}{657}{section*.1278}%
-\contentsline {subsubsection}{ वाचस्सामानित्रीणि}{658}{section*.1280}%
-\contentsline {subsubsection}{ कौन्मलबर्हिषाणिप शंकुतृतीयंसीदन्तीयंवा}{659}{section*.1282}%
-\contentsline {subsubsection}{ दीघ्रेचे}{661}{section*.1284}%
-\contentsline {subsubsection}{ सोमसानितृणि}{662}{section*.1286}%
-\contentsline {subsubsection}{ शैतेष्याणिचत्वारि}{663}{section*.1288}%
-\contentsline {subsubsection}{ सोमसामानित्रीणि}{664}{section*.1290}%
-\contentsline {subsubsection}{ गायत्रपाश्पर}{665}{section*.1292}%
-\contentsline {subsubsection}{ सन्तनिच}{666}{section*.1294}%
+\contentsline {section}{ आग्नेयः पांः}{28}{section*.4}%
+\contentsline {subsection}{ Section section\_1 (191)}{28}{section*.5}%
+\contentsline {subsubsection}{ गौतमस्यपर्कः}{28}{section*.6}%
+\contentsline {subsubsection}{ कश्यपस्यबर्हिषीयम्}{29}{section*.8}%
+\contentsline {subsubsection}{ गौतमस्यचैवपर्कः}{30}{section*.10}%
+\contentsline {subsubsection}{ सौपर्णञ्च}{31}{section*.12}%
+\contentsline {subsubsection}{ वैश्पमनसञ्चादित्यसामवा}{32}{section*.14}%
+\contentsline {subsubsection}{ श्रौतर्षाणित्रीणि}{33}{section*.16}%
+\contentsline {subsubsection}{ औशनञ्च}{34}{section*.18}%
+\contentsline {subsubsection}{ शैरीषेच}{35}{section*.20}%
+\contentsline {subsubsection}{ इन्दरस्यसंवर्गौवात्रघ्नेचे}{36}{section*.22}%
+\contentsline {subsubsection}{ साकमश्पस्यशौनःशेपेःसामनी चे}{37}{section*.24}%
+\contentsline {subsubsection}{ वत्सस्यकाण्वस्यसामनीचे}{38}{section*.26}%
+\contentsline {subsubsection}{ अग्नेश्पवैश्पानरस्याष्रेयम्}{39}{section*.28}%
+\contentsline {subsubsection}{ सुमित्रस्यचवाडरश्पेस्साम}{40}{section*.30}%
+\contentsline {subsection}{ Section section\_2 (151)}{41}{section*.32}%
+\contentsline {subsubsection}{ अग्नेश्पसंवर्गः}{41}{section*.33}%
+\contentsline {subsubsection}{ वैश्पमनसञ्च}{42}{section*.35}%
+\contentsline {subsubsection}{ श्नाभाश्नौष्टेचे}{43}{section*.37}%
+\contentsline {subsubsection}{ वैश्पामित्रञ्च}{44}{section*.39}%
+\contentsline {subsubsection}{ अग्नेश्पजराबोधीये}{45}{section*.41}%
+\contentsline {subsubsection}{ मारूतञ्च}{46}{section*.43}%
+\contentsline {subsubsection}{ भार्गवेच}{47}{section*.45}%
+\contentsline {subsubsection}{ अग्नेश्पवारवभीयं}{48}{section*.47}%
+\contentsline {subsubsection}{ और्वस्यवैधारेस्सामनीचे}{49}{section*.49}%
+\contentsline {subsubsection}{ अत्रेश्पासंगम्}{50}{section*.51}%
+\contentsline {subsubsection}{ प्रजापतेश्पनिधनकामं}{51}{section*.53}%
+\contentsline {subsection}{ Section section\_3 (211)}{52}{section*.55}%
+\contentsline {subsubsection}{ सैन्धुक्षितानित्रीणि}{52}{section*.56}%
+\contentsline {subsubsection}{ अग्नेर्हरसीचे}{53}{section*.58}%
+\contentsline {subsubsection}{ इहवचामदेव्यंतृतीयं}{54}{section*.60}%
+\contentsline {subsubsection}{ यामेचे}{55}{section*.62}%
+\contentsline {subsubsection}{ अग्नेराक्षोघ्नेचे}{56}{section*.64}%
+\contentsline {subsubsection}{ वैश्पम्नसञ्च}{57}{section*.66}%
+\contentsline {subsubsection}{ अग्नेश्पाष्रेयं}{58}{section*.68}%
+\contentsline {subsubsection}{ सोमसामच}{59}{section*.70}%
+\contentsline {subsubsection}{ गोपवनञ्च}{60}{section*.72}%
+\contentsline {subsubsection}{ सूर्यसामनीचे}{61}{section*.74}%
+\contentsline {subsubsection}{ कावञ्च}{62}{section*.76}%
+\contentsline {subsubsection}{ वसुरोचिषस्सौर्यवचर््चसस्यसामनीचे}{63}{section*.78}%
+\contentsline {subsubsection}{ गौरांगिरसस्यसामनीचे}{64}{section*.80}%
+\contentsline {subsection}{ Section section\_4 (221)}{65}{section*.82}%
+\contentsline {subsubsection}{ भारचाजस्यौपहवौचौ}{65}{section*.83}%
+\contentsline {subsubsection}{ श्रुष्टीगवं}{66}{section*.85}%
+\contentsline {subsubsection}{ अग्नेश्पयज्ञायज्ञीयं}{67}{section*.87}%
+\contentsline {subsubsection}{ कार्तवेशञ्च}{68}{section*.89}%
+\contentsline {subsubsection}{ नाम्रेधञ्च}{69}{section*.91}%
+\contentsline {subsubsection}{ महाकार्तवेशञ्च}{70}{section*.93}%
+\contentsline {subsubsection}{ भारचाजस्यपृश्नीचे}{71}{section*.95}%
+\contentsline {subsubsection}{ उरोरांगिरसस्यसाम}{72}{section*.97}%
+\contentsline {subsubsection}{ गौतमस्यपौरुमुद्गेचेपुरु}{73}{section*.99}%
+\contentsline {subsubsection}{ मण्डोर्जामदग्न्यस्यसामनीचे}{74}{section*.101}%
+\contentsline {subsubsection}{ भारचाजस्यगाधम्}{75}{section*.103}%
+\contentsline {subsubsection}{ गौतमेचे}{76}{section*.105}%
+\contentsline {subsubsection}{ अग्नेरायुः}{77}{section*.107}%
+\contentsline {subsubsection}{ अग्नेर्हरसीचे}{78}{section*.109}%
+\contentsline {subsubsection}{ दैर्घश्रवसेचे}{79}{section*.111}%
+\contentsline {subsection}{ Section section\_5 (161)}{80}{section*.113}%
+\contentsline {subsubsection}{ अग्नेराग्नेयेचे}{80}{section*.114}%
+\contentsline {subsubsection}{ गौतमस्यमनाय्रेचे}{81}{section*.116}%
+\contentsline {subsubsection}{ दैवोराजञ्च}{82}{section*.118}%
+\contentsline {subsubsection}{ गाधिनश्पकौशिकस्यसाम}{83}{section*.120}%
+\contentsline {subsubsection}{ बार्हदुत्थेचे}{84}{section*.122}%
+\contentsline {subsubsection}{ पौरुमीढञ्च}{85}{section*.124}%
+\contentsline {subsubsection}{ कार्णश्रवसं}{86}{section*.126}%
+\contentsline {subsubsection}{ दैवोदासञ्च}{87}{section*.128}%
+\contentsline {subsubsection}{ सौकृतवञ्च}{88}{section*.130}%
+\contentsline {subsubsection}{ काण्वेचे}{89}{section*.132}%
+\contentsline {subsubsection}{ मानवेचे}{90}{section*.134}%
+\contentsline {subsection}{ Section section\_6 (101)}{91}{section*.136}%
+\contentsline {subsubsection}{ अग्नेश्पद्रविणम्}{91}{section*.137}%
+\contentsline {subsubsection}{ बार्हस्खत्यञ्चब्राह्मणस्खत्यंवा}{92}{section*.139}%
+\contentsline {subsubsection}{ वसिष्ठस्यचवींकं}{93}{section*.141}%
+\contentsline {subsubsection}{ विस्खर्धञ्च}{94}{section*.143}%
+\contentsline {subsubsection}{ ऐतवृशञ्च}{95}{section*.145}%
+\contentsline {subsubsection}{ मनसश्पदोहः}{96}{section*.147}%
+\contentsline {subsubsection}{ समन्तानितृणिअग्नेरेकमिन्दाग्नेयार्वा}{97}{section*.149}%
+\contentsline {subsubsection}{ वमृस्यवैचानसस्यसाम}{99}{section*.151}%
+\contentsline {subsection}{ Section section\_7 (161)}{100}{section*.153}%
+\contentsline {subsubsection}{ श्यावाश्पञ्च}{100}{section*.154}%
+\contentsline {subsubsection}{ ऋतुसामनीच}{101}{section*.156}%
+\contentsline {subsubsection}{ यामञ्च}{102}{section*.158}%
+\contentsline {subsubsection}{ अग्नेश्पाग्नेयम्}{103}{section*.160}%
+\contentsline {subsubsection}{ अग्नेवैरश्पानरस्यसामनीचे}{104}{section*.162}%
+\contentsline {subsubsection}{ ऐटतेचे}{105}{section*.164}%
+\contentsline {subsubsection}{ वामदेव्यञ्च}{106}{section*.166}%
+\contentsline {subsubsection}{ वैश्यजेयातिषेच}{107}{section*.168}%
+\contentsline {subsubsection}{ यामेचे}{109}{section*.170}%
+\contentsline {subsubsection}{ प्रजापतेराशिमरायेचेमरायराशिनिवा}{110}{section*.172}%
+\contentsline {subsection}{ Section section\_8 (091)}{111}{section*.174}%
+\contentsline {subsubsection}{ शेयनञ्च}{111}{section*.175}%
+\contentsline {subsubsection}{ वासोक्रञ्च}{112}{section*.177}%
+\contentsline {subsubsection}{ पौष्णञ्च}{113}{section*.179}%
+\contentsline {subsubsection}{ कौत्सञ्च}{114}{section*.181}%
+\contentsline {subsubsection}{ काश्यपेचे}{115}{section*.183}%
+\contentsline {subsubsection}{ घृताचेरान्द्गिरसस्यसामनीचे}{116}{section*.185}%
+\contentsline {subsubsection}{ भारचाजस्यप्रासाहं}{117}{section*.187}%
+\contentsline {subsection}{ Section section\_9 (131)}{118}{section*.189}%
+\contentsline {subsubsection}{ पाथेचे}{118}{section*.190}%
+\contentsline {subsubsection}{ बृहच्चाग्नेयम्}{119}{section*.192}%
+\contentsline {subsubsection}{ कौन्मुदम्}{120}{section*.194}%
+\contentsline {subsubsection}{ बृहचैवाग्नेयम्}{121}{section*.196}%
+\contentsline {subsubsection}{ कौन्मुदञ्चैव}{122}{section*.198}%
+\contentsline {subsubsection}{ अग्नेर्यचाहिष्ठीयेचे}{123}{section*.200}%
+\contentsline {subsubsection}{ अग्नेश्पविशोविशीयम्}{124}{section*.202}%
+\contentsline {subsubsection}{ प्रजापतेःकनीनिकेचेअत्रेर्वा}{125}{section*.204}%
+\contentsline {subsubsection}{ श्रौतर्वणञ्च}{126}{section*.206}%
+\contentsline {subsubsection}{ कश्यवस्यसयोनिः}{127}{section*.208}%
+\contentsline {subsection}{ Section section\_10 (071)}{128}{section*.210}%
+\contentsline {subsubsection}{ बार्हस्खत्यञ्चा}{128}{section*.211}%
+\contentsline {subsubsection}{ ऐषञ्चारूढवदाङ्गरसम्}{129}{section*.213}%
+\contentsline {subsubsection}{ आसीतेचे}{130}{section*.215}%
+\contentsline {subsubsection}{ त्वाष्टीसामच}{131}{section*.217}%
+\contentsline {subsubsection}{ मानवञ्च}{132}{section*.219}%
+\contentsline {subsubsection}{ अगस्तस्यचराक्षोघ्नम्}{133}{section*.221}%
+\contentsline {subsection}{ Section section\_11 (181)}{134}{section*.223}%
+\contentsline {subsubsection}{ तौदेचे}{134}{section*.224}%
+\contentsline {subsubsection}{ दैर्घतमसानित्रीणि}{135}{section*.226}%
+\contentsline {subsubsection}{ श्यावाश्पस्यप्रहितौचौ}{136}{section*.228}%
+\contentsline {subsubsection}{ प्रजापतेःश्रुधीयेचे}{137}{section*.230}%
+\contentsline {subsubsection}{ प्रजापतेःसदोहविर्धानानित्रीणिसदःपूर्वंह}{138}{section*.232}%
+\contentsline {subsubsection}{ त्वष्टुश्पातिथ्यं}{139}{section*.234}%
+\contentsline {subsubsection}{ अदितेश्पसाम}{140}{section*.236}%
+\contentsline {subsubsection}{ अगस्तस्यचराक्षोघ्नं}{141}{section*.238}%
+\contentsline {subsubsection}{ वात्जंभंच}{142}{section*.240}%
+\contentsline {subsubsection}{ बृहदाग्नेयंचसंकृतवंवा}{143}{section*.242}%
+\contentsline {subsubsection}{ अगस्तस्यचैवराक्षोघ्नं}{144}{section*.244}%
+\contentsline {subsection}{ Section section\_12 (161)}{145}{section*.246}%
+\contentsline {subsubsection}{ वसिष्ठस्यप्रमंहिष्ठीयानिचत्वारि}{145}{section*.247}%
+\contentsline {subsubsection}{ भरचाजस्यवाजभृत्}{147}{section*.249}%
+\contentsline {subsubsection}{ सौभराणित्रीणि}{148}{section*.251}%
+\contentsline {subsubsection}{ पधस्यसौभरस्यसामनीचे}{149}{section*.253}%
+\contentsline {subsubsection}{ दैवानीकञ्च}{150}{section*.255}%
+\contentsline {subsubsection}{ साडरञ्च}{151}{section*.257}%
+\contentsline {subsubsection}{ जमदग्नेश्पसंवर्गः}{152}{section*.259}%
+\contentsline {subsubsection}{ अगस्तयस्यचराक्षोघ्नं}{153}{section*.261}%
+\contentsline {subsubsection}{ अग्नेश्पश्रैष्ठ्यं}{154}{section*.263}%
+\contentsline {subsubsection}{ आदित्यस्यचरुचिरोचनंवा}{155}{section*.265}%
+\contentsline {section}{ ॥ तचपांः ॥}{156}{section*.268}%
+\contentsline {subsection}{ Section section\_14 (231)}{156}{section*.269}%
+\contentsline {subsubsection}{ मर्गीयवञ्च}{156}{section*.270}%
+\contentsline {subsubsection}{ रौद्रेचे}{157}{section*.272}%
+\contentsline {subsubsection}{ मार्गीयवञ्चैव}{158}{section*.274}%
+\contentsline {subsubsection}{ आश्पंच}{159}{section*.276}%
+\contentsline {subsubsection}{ ऐटतेचे}{160}{section*.278}%
+\contentsline {subsubsection}{ श्रौतकक्षेचे}{161}{section*.280}%
+\contentsline {subsubsection}{ तन्वस्यपाथस्यसामनीचे वसोवाष्रेः}{162}{section*.282}%
+\contentsline {subsubsection}{ अंगिरसान्निवेष्टौचौ इ नांवासंक्षारौ}{163}{section*.284}%
+\contentsline {subsubsection}{ शय्यातानित्रीणि}{164}{section*.286}%
+\contentsline {subsubsection}{ इन्दराण्यास्साम}{165}{section*.288}%
+\contentsline {subsubsection}{ गोषूक्तं}{166}{section*.290}%
+\contentsline {subsubsection}{ आश्पसूक्तञ्च}{167}{section*.292}%
+\contentsline {subsubsection}{ गौरीवितं}{168}{section*.294}%
+\contentsline {subsubsection}{ गौराणित्रीणि}{169}{section*.296}%
+\contentsline {subsection}{ Section section\_15 (221)}{170}{section*.298}%
+\contentsline {subsubsection}{ सौपर्णानि त्रीणि}{170}{section*.299}%
+\contentsline {subsubsection}{ शाकलं}{171}{section*.301}%
+\contentsline {subsubsection}{ आभरचसवेचेऐन्दराग्नेवा}{172}{section*.303}%
+\contentsline {subsubsection}{ तान्वेचे}{173}{section*.305}%
+\contentsline {subsubsection}{ रौहितकूलियेचे}{174}{section*.307}%
+\contentsline {subsubsection}{ इन्दराण्यास्सामनीचे}{175}{section*.309}%
+\contentsline {subsubsection}{ इन्दरस्यसहस्रबाहवियं}{176}{section*.311}%
+\contentsline {subsubsection}{ धॄषतोमारूतस्यसामनीचे}{177}{section*.313}%
+\contentsline {subsubsection}{ भारचाजस्यदारसैत्नित्रिणि}{178}{section*.315}%
+\contentsline {subsubsection}{ ऐड्मवाहानि त्रीणि}{179}{section*.317}%
+\contentsline {subsubsection}{ अहेǐपैण्वस्य साम अहिहनोवा}{180}{section*.319}%
+\contentsline {subsection}{ Section section\_16 (201)}{181}{section*.321}%
+\contentsline {subsubsection}{ ऐषंच}{181}{section*.322}%
+\contentsline {subsubsection}{ पौषंच}{182}{section*.324}%
+\contentsline {subsubsection}{ मरूताञ्चसंवेशीयं}{183}{section*.326}%
+\contentsline {subsubsection}{ हाविष्मते}{184}{section*.328}%
+\contentsline {subsubsection}{ हाविष्कृतेचे}{185}{section*.330}%
+\contentsline {subsubsection}{ काक्षीवतञ्च}{186}{section*.332}%
+\contentsline {subsubsection}{ उषसश्प साम}{187}{section*.334}%
+\contentsline {subsubsection}{ भारचाजस्यमौक्षेचे}{188}{section*.336}%
+\contentsline {subsubsection}{ भारचाजानित्रीणि}{189}{section*.338}%
+\contentsline {subsubsection}{ शौक्तसामनीचे}{190}{section*.340}%
+\contentsline {subsubsection}{ वार्षाहरेचे}{191}{section*.342}%
+\contentsline {subsubsection}{ कूत्सस्यप्रतोदौचौ}{192}{section*.344}%
+\contentsline {subsection}{ Section section\_17 (151)}{193}{section*.346}%
+\contentsline {subsubsection}{ सौश्रवसेचे}{193}{section*.347}%
+\contentsline {subsubsection}{ त्वाष्टिसामच}{194}{section*.349}%
+\contentsline {subsubsection}{ त्वष्टुरातिथेयचे}{195}{section*.351}%
+\contentsline {subsubsection}{ पौष्णेचे}{196}{section*.353}%
+\contentsline {subsubsection}{ श्यावाश्पेचे}{197}{section*.355}%
+\contentsline {subsubsection}{ प्रजापतेस्सुतंरयिष्ठीयेचे}{198}{section*.357}%
+\contentsline {subsubsection}{ आप्सरसंच इष्टाहोत्रीयंवा आपांवानिधि}{199}{section*.359}%
+\contentsline {subsubsection}{ प्रजापतेर्निधन कामं}{200}{section*.361}%
+\contentsline {subsubsection}{ वाजिदापर्यञ्च}{201}{section*.363}%
+\contentsline {subsubsection}{ सोमापौष्णञ्च}{202}{section*.365}%
+\contentsline {subsection}{ Section section\_18 (301)}{203}{section*.367}%
+\contentsline {subsubsection}{ वैतहव्यानि त्रीणि}{203}{section*.368}%
+\contentsline {subsubsection}{ शौक्तनित्रीणि}{204}{section*.370}%
+\contentsline {subsubsection}{ गौरीवितानित्रीणि}{205}{section*.372}%
+\contentsline {subsubsection}{ काण्वेचे}{206}{section*.374}%
+\contentsline {subsubsection}{ सौमित्रेचे दैवोदासं तृतीयं श्रौत}{207}{section*.376}%
+\contentsline {subsubsection}{ वैष्णवानि त्रीणि इहवचाम दैवोदासन्तृतीयं}{208}{section*.378}%
+\contentsline {subsubsection}{ औदलेचे वैणवेचे वैणवे}{209}{section*.380}%
+\contentsline {subsubsection}{ दैवोदासानित्रीणिआर्षभाणिवायदिवावाडयश्पा}{211}{section*.382}%
+\contentsline {subsubsection}{ कौत्सेचे पाञ्चवाजेवा}{212}{section*.384}%
+\contentsline {subsubsection}{ सौमेधानित्रीणि पौर्वतिथानिवा}{213}{section*.386}%
+\contentsline {subsubsection}{ दैवातिथं मैधातिथं वा}{214}{section*.388}%
+\contentsline {subsection}{ Section section\_19 (241)}{215}{section*.390}%
+\contentsline {subsubsection}{ माधूच्छन्दसंक्रौ सौपर्णंवा घृतश्पुन्निधनं}{215}{section*.391}%
+\contentsline {subsubsection}{ पैरयमेधानित्रीणि शौक्त सामानिवा उत्गातृदमनं}{216}{section*.393}%
+\contentsline {subsubsection}{ गौरीवितेचे}{217}{section*.395}%
+\contentsline {subsubsection}{ आपालवैणवेचे}{218}{section*.397}%
+\contentsline {subsubsection}{ धुरश्शमेयचे}{219}{section*.399}%
+\contentsline {subsubsection}{ महागौरीवितं तृतीयं}{220}{section*.401}%
+\contentsline {subsubsection}{ वाचस्सामनीचे}{221}{section*.403}%
+\contentsline {subsubsection}{ महावामदेव्यंतृतीयं}{222}{section*.405}%
+\contentsline {subsubsection}{ इन्दरस्यसत्रासाहीयेचे}{223}{section*.407}%
+\contentsline {subsubsection}{ माहावामदेव्यञ्च}{224}{section*.409}%
+\contentsline {subsubsection}{ वैर्यश्पञ्च}{225}{section*.411}%
+\contentsline {subsubsection}{ गौतमस्यच भद्रं}{226}{section*.413}%
+\contentsline {subsubsection}{ अश्पिनोश्प साम}{227}{section*.415}%
+\contentsline {subsection}{ Section section\_20 (121)}{228}{section*.417}%
+\contentsline {subsubsection}{ त्वाष्ट्रीसामच}{228}{section*.418}%
+\contentsline {subsubsection}{ गोधासामच}{229}{section*.420}%
+\contentsline {subsubsection}{ सवितुश्पसाम}{230}{section*.422}%
+\contentsline {subsubsection}{ उषसश्पसाम}{231}{section*.424}%
+\contentsline {subsubsection}{ त्वष्टुरातिथेयचे}{232}{section*.426}%
+\contentsline {subsubsection}{ सौमित्रञ्च}{233}{section*.428}%
+\contentsline {subsubsection}{ इन्दरस्यचमाया}{234}{section*.430}%
+\contentsline {subsubsection}{ वैश्पामित्रेच}{235}{section*.432}%
+\contentsline {subsubsection}{ शोनश्शेपञ्च}{236}{section*.434}%
+\contentsline {subsubsection}{ प्रतीचीनेषन्न् काशीतं}{237}{section*.436}%
+\contentsline {subsection}{ Section section\_21 (111)}{238}{section*.438}%
+\contentsline {subsubsection}{ सौमित्रन्न्}{238}{section*.439}%
+\contentsline {subsubsection}{ श्यावाश्पेचे}{239}{section*.441}%
+\contentsline {subsubsection}{ शैचण्डिनञ्च}{240}{section*.443}%
+\contentsline {subsubsection}{ वैतहव्यञ्च}{241}{section*.445}%
+\contentsline {subsubsection}{ भारचाजञ्च}{242}{section*.447}%
+\contentsline {subsubsection}{ अरूणस्यचवैददशेस्साम}{243}{section*.449}%
+\contentsline {subsubsection}{ सौभरञ्च}{244}{section*.451}%
+\contentsline {subsubsection}{ पाष्ठौहेच}{245}{section*.453}%
+\contentsline {subsubsection}{ साकमश्पंधुरांवासाम}{246}{section*.455}%
+\contentsline {subsection}{ Section section\_22 (121)}{247}{section*.457}%
+\contentsline {subsubsection}{ यामञ्च}{247}{section*.458}%
+\contentsline {subsubsection}{ आङ्गीरसञ्चइन्दरस्यवा हरिश्रीर्निधनम्}{248}{section*.460}%
+\contentsline {subsubsection}{ वैरूपञ्च}{249}{section*.462}%
+\contentsline {subsubsection}{ असीतञ्चसिन्धुषामवा}{250}{section*.464}%
+\contentsline {subsubsection}{ यमस्यार्कौचौ}{251}{section*.466}%
+\contentsline {subsubsection}{ सौमित्रेचे}{252}{section*.468}%
+\contentsline {subsubsection}{ इन्दरस्याभयम्}{253}{section*.470}%
+\contentsline {subsubsection}{ त्वाष्टीसामनीचे}{254}{section*.472}%
+\contentsline {subsubsection}{ इन्दराण्यास्सामा}{255}{section*.474}%
+\contentsline {subsection}{ Section section\_23 (101)}{256}{section*.476}%
+\contentsline {subsubsection}{ श्यावाश्पञ्च}{256}{section*.477}%
+\contentsline {subsubsection}{ वैरूप ञ्च}{257}{section*.479}%
+\contentsline {subsubsection}{ सौमित्र ञ्च}{258}{section*.481}%
+\contentsline {subsubsection}{ स्तौभ ञ्च}{259}{section*.483}%
+\contentsline {subsubsection}{ श्रौत ञ्च}{260}{section*.485}%
+\contentsline {subsubsection}{ आभीशवञ्च}{261}{section*.487}%
+\contentsline {subsubsection}{ ऐषञ्च}{262}{section*.489}%
+\contentsline {subsubsection}{ इन्दरस्यचक्षुरपवी}{263}{section*.491}%
+\contentsline {subsubsection}{ सौमित्रे}{264}{section*.493}%
+\contentsline {subsection}{ Section section\_24 (91)}{265}{section*.495}%
+\contentsline {subsubsection}{ कौत्स ञ्च}{265}{section*.496}%
+\contentsline {subsubsection}{ ऐष ञ्च}{266}{section*.498}%
+\contentsline {subsubsection}{ उषसश्पसाम}{267}{section*.500}%
+\contentsline {subsubsection}{ बार्हदुक्थ ञ्च}{268}{section*.502}%
+\contentsline {subsubsection}{ वरुणसामच}{269}{section*.504}%
+\contentsline {subsubsection}{ उषसश्पैवसाम}{270}{section*.506}%
+\contentsline {subsubsection}{ मित्रावरुणयोश्पसंयोजनं}{271}{section*.508}%
+\contentsline {subsubsection}{ ऋतुसामच}{272}{section*.510}%
+\contentsline {subsubsection}{ विष्णोश्पसाम}{273}{section*.512}%
+\contentsline {subsection}{ Section section\_25 (121)}{274}{section*.514}%
+\contentsline {subsubsection}{ कौत्सञ्च}{274}{section*.515}%
+\contentsline {subsubsection}{ कश्यप ञ्चआप्सुरसंवा}{275}{section*.517}%
+\contentsline {subsubsection}{ बार्हदुक्थेचे}{276}{section*.519}%
+\contentsline {subsubsection}{ औध्वरसद्मनेचे प्रहितोर्वा संयोजने}{277}{section*.521}%
+\contentsline {subsubsection}{ कौत्सानिचत्वारि}{278}{section*.523}%
+\contentsline {subsubsection}{ अभिवादस्यऔदलस्यसाम}{279}{section*.525}%
+\contentsline {subsubsection}{ सोमसामच}{280}{section*.527}%
+\contentsline {section}{ ॥ बृहति पांः ॥}{281}{section*.530}%
+\contentsline {subsection}{ Section section\_27 (311)}{281}{section*.531}%
+\contentsline {subsubsection}{ इन्दरस्यार्कौचौ}{281}{section*.532}%
+\contentsline {subsubsection}{ भारचाजेचे}{282}{section*.534}%
+\contentsline {subsubsection}{ सन्नतेत्वे}{283}{section*.536}%
+\contentsline {subsubsection}{ शैतन्त्रतीयं}{284}{section*.538}%
+\contentsline {subsubsection}{ नाविकंच}{285}{section*.540}%
+\contentsline {subsubsection}{ प्रजापतेः श्पाभीवर्तः}{286}{section*.542}%
+\contentsline {subsubsection}{ भागंञ्च}{287}{section*.544}%
+\contentsline {subsubsection}{ इन्दरस्याभीवर्तः}{288}{section*.546}%
+\contentsline {subsubsection}{ नौधसं}{289}{section*.548}%
+\contentsline {subsubsection}{ लौशेचे}{290}{section*.550}%
+\contentsline {subsubsection}{ धानाकेचे}{291}{section*.552}%
+\contentsline {subsubsection}{ कालेयानित्रीणि}{292}{section*.554}%
+\contentsline {subsubsection}{ ऐषिरेचे}{293}{section*.556}%
+\contentsline {subsubsection}{ गोश्रंगेत्वे}{294}{section*.558}%
+\contentsline {subsubsection}{ प्रष्ठमेकं}{295}{section*.560}%
+\contentsline {subsubsection}{ शुक्लएकं}{296}{section*.562}%
+\contentsline {subsubsection}{ जमदग्नेरभिवर्तएकं}{297}{section*.564}%
+\contentsline {subsubsection}{ कौन्मुलबर्हिषेत्वे}{298}{section*.566}%
+\contentsline {subsubsection}{ वसिष्ठस्यजनित्रेत्वे}{299}{section*.568}%
+\contentsline {subsubsection}{ मैधातिथं}{300}{section*.570}%
+\contentsline {subsection}{ Section section\_28 (251)}{301}{section*.572}%
+\contentsline {subsubsection}{ वैचानसं}{301}{section*.573}%
+\contentsline {subsubsection}{ प्राकर्षं}{302}{section*.575}%
+\contentsline {subsubsection}{ सात्यं}{303}{section*.577}%
+\contentsline {subsubsection}{ भारत्वाजानिचत्वारि कण्वब्रहत्वाचितीयं}{304}{section*.579}%
+\contentsline {subsubsection}{ वाम्मराणित्रीणि}{306}{section*.581}%
+\contentsline {subsubsection}{ गौंगवं}{307}{section*.583}%
+\contentsline {subsubsection}{ साध्राणि त्रीणि}{308}{section*.585}%
+\contentsline {subsubsection}{ विरूपस्य समिचीन प्राचीनेचे}{310}{section*.587}%
+\contentsline {subsubsection}{ यौक्तस्रजंइन्द्रियसेयन्दियंवा}{311}{section*.589}%
+\contentsline {subsubsection}{ आत्राणित्रीणि}{312}{section*.591}%
+\contentsline {subsubsection}{ वासिष्ठानित्रीणि}{313}{section*.593}%
+\contentsline {subsubsection}{ वत् सस्यकाण्वस्य सामनीचे गौतमस्यवा}{314}{section*.595}%
+\contentsline {subsection}{ Section section\_29 (251)}{315}{section*.597}%
+\contentsline {subsubsection}{ हरायणानि त्रीणि}{315}{section*.598}%
+\contentsline {subsubsection}{ वाम्राणित्रीणि}{317}{section*.600}%
+\contentsline {subsubsection}{ वरुणसामानित्रीणि}{319}{section*.602}%
+\contentsline {subsubsection}{ वषट्कारनिधनन्ज साकमश्पं}{321}{section*.604}%
+\contentsline {subsubsection}{ बृ हतश्पमारूतस्यसाम}{322}{section*.606}%
+\contentsline {subsubsection}{ संश्रवसे वीश्रवसे सत्यश्रवसे श्रवस}{323}{section*.608}%
+\contentsline {subsubsection}{ वासिष्ठानि त्रीणि भार्गवं वा त्रतीयं}{324}{section*.610}%
+\contentsline {subsubsection}{ स्ववस आण\{{[}\}कस्यसामनीचे}{325}{section*.612}%
+\contentsline {subsubsection}{ काण्वं}{326}{section*.614}%
+\contentsline {subsubsection}{ वैष्टं भेचे}{327}{section*.616}%
+\contentsline {subsubsection}{ काण्वञ्चैवा}{328}{section*.618}%
+\contentsline {subsubsection}{ श्रुष्टिगवञ्च}{329}{section*.620}%
+\contentsline {subsection}{ Section section\_30 (171)}{330}{section*.622}%
+\contentsline {subsubsection}{ इन्दरस्यच व्रषकं}{330}{section*.623}%
+\contentsline {subsubsection}{ चैगतेच}{331}{section*.625}%
+\contentsline {subsubsection}{ कार्तवेशञ्च}{332}{section*.627}%
+\contentsline {subsubsection}{ इन्दरस्यच शरणं}{333}{section*.629}%
+\contentsline {subsubsection}{ श्रायन्तीय ञ्च}{334}{section*.631}%
+\contentsline {subsubsection}{ आक्षीलन्चबाभ्रंवा}{335}{section*.633}%
+\contentsline {subsubsection}{ शौक्तानि त्रीणि शुक्लानिवा आश्पानिवा}{336}{section*.635}%
+\contentsline {subsubsection}{ प्रजापतेर्निधन कामं}{337}{section*.637}%
+\contentsline {subsubsection}{ गौतमस्यमनार्याणित्रीणि}{338}{section*.639}%
+\contentsline {subsubsection}{ वैरूपाणित्रीणि}{340}{section*.641}%
+\contentsline {subsection}{ Section section\_31 (161)}{341}{section*.643}%
+\contentsline {subsubsection}{ पौरूहन्मनञ्च}{341}{section*.644}%
+\contentsline {subsubsection}{ प्राकर्षञ्च}{342}{section*.646}%
+\contentsline {subsubsection}{ इन्दरस्यचाभयंकरं}{343}{section*.648}%
+\contentsline {subsubsection}{ कावर्षाचे}{344}{section*.650}%
+\contentsline {subsubsection}{ सूर्यसामच}{345}{section*.652}%
+\contentsline {subsubsection}{ नैपातिथेचे वाशेवा}{346}{section*.654}%
+\contentsline {subsubsection}{ कौन्मुदेचेस्वजोरतिषीवा}{347}{section*.656}%
+\contentsline {subsubsection}{ अनूपेचे}{348}{section*.658}%
+\contentsline {subsubsection}{ वैरूपञ्च}{349}{section*.660}%
+\contentsline {subsubsection}{ वाचश्पसाम}{350}{section*.662}%
+\contentsline {subsubsection}{ आक्षीलेचे}{351}{section*.664}%
+\contentsline {subsection}{ Section section\_32 (171)}{352}{section*.666}%
+\contentsline {subsubsection}{ गौरीवितेǐप्रहितौचौ}{352}{section*.667}%
+\contentsline {subsubsection}{ आत्रेचे}{353}{section*.669}%
+\contentsline {subsubsection}{ गौतमेचे}{354}{section*.671}%
+\contentsline {subsubsection}{ वामदेव्यञ्च}{355}{section*.673}%
+\contentsline {subsubsection}{ अश्पिनोश्पसाम}{356}{section*.675}%
+\contentsline {subsubsection}{ वसिष्ठस्य वज्राणि त्रीणि}{357}{section*.677}%
+\contentsline {subsubsection}{ सौबभ्रवेचे}{358}{section*.679}%
+\contentsline {subsubsection}{ वैर्यश्पं}{359}{section*.681}%
+\contentsline {subsubsection}{ इन्दरस्यसहस्रायुतेचे प्रजापतेर्वा}{360}{section*.683}%
+\contentsline {subsubsection}{ इन्दराण्यास्साम}{361}{section*.685}%
+\contentsline {subsection}{ Section section\_33 (101)}{362}{section*.687}%
+\contentsline {subsubsection}{ सौभरञ्च}{362}{section*.688}%
+\contentsline {subsubsection}{ गात् समदञ्च}{363}{section*.690}%
+\contentsline {subsubsection}{ वाचश्पसाम}{364}{section*.692}%
+\contentsline {subsubsection}{ बार्हदुक्थञ्च}{365}{section*.694}%
+\contentsline {subsubsection}{ नैपातिथञ्च}{366}{section*.696}%
+\contentsline {subsubsection}{ तौरश्रवस ञ्च}{367}{section*.698}%
+\contentsline {subsubsection}{ त्वष्टार्याश्पसाम}{368}{section*.700}%
+\contentsline {subsubsection}{ अदितेश्पसाम}{369}{section*.702}%
+\contentsline {subsubsection}{ आजीक्त ञ्च}{370}{section*.704}%
+\contentsline {subsubsection}{ माधुच्छन्दसञ्च}{371}{section*.706}%
+\contentsline {subsection}{ Section section\_34 (111)}{372}{section*.708}%
+\contentsline {subsubsection}{ उषसश्प साम}{372}{section*.709}%
+\contentsline {subsubsection}{ अश्पिनोश्प साम}{373}{section*.711}%
+\contentsline {subsubsection}{ अश्पिनोश्पसंयोजनं}{374}{section*.713}%
+\contentsline {subsubsection}{ अश्पिनोश्पैवसाम}{375}{section*.715}%
+\contentsline {subsubsection}{ सोमसामच}{376}{section*.717}%
+\contentsline {subsubsection}{ आजामायवञ्च}{377}{section*.719}%
+\contentsline {subsubsection}{ समुद्रस्यच पैरयमेधस्य साम}{378}{section*.721}%
+\contentsline {subsubsection}{ वैरूपेच}{379}{section*.723}%
+\contentsline {subsubsection}{ वैश्पदेवञ्च}{380}{section*.725}%
+\contentsline {subsubsection}{ पुरीषन्जाथर्वणं}{381}{section*.727}%
+\contentsline {section}{ ॥असावि पांः॥}{382}{section*.730}%
+\contentsline {subsection}{ Section section\_36 (191)}{382}{section*.731}%
+\contentsline {subsubsection}{ प्राकर्षञ्च}{382}{section*.732}%
+\contentsline {subsubsection}{ वसिष्ठस्यचनिन्हवं}{383}{section*.734}%
+\contentsline {subsubsection}{ गृ त् समदस्ययोनिनीचे}{384}{section*.736}%
+\contentsline {subsubsection}{ औरूक्षयेचे}{385}{section*.738}%
+\contentsline {subsubsection}{ पाथ्रेचे}{386}{section*.740}%
+\contentsline {subsubsection}{ सौमित्रेचे}{387}{section*.742}%
+\contentsline {subsubsection}{ वात्सप्राणित्रीणि}{388}{section*.744}%
+\contentsline {subsubsection}{ वैदन्वतञ्च}{390}{section*.746}%
+\contentsline {subsubsection}{ सौपर्णञ्च}{391}{section*.748}%
+\contentsline {subsubsection}{ यामञ्च}{392}{section*.750}%
+\contentsline {subsubsection}{ ऋ तुसामनिच}{393}{section*.752}%
+\contentsline {subsubsection}{ इन्दरस्यवारवन्तीयं}{394}{section*.754}%
+\contentsline {subsection}{ Section section\_37 (171)}{395}{section*.756}%
+\contentsline {subsubsection}{ इन्दरस्यच क्षुरपविनीचे}{395}{section*.757}%
+\contentsline {subsubsection}{ सौरश्मेचे}{396}{section*.759}%
+\contentsline {subsubsection}{ बृ हतोमारूतस्यसामनीचे}{397}{section*.761}%
+\contentsline {subsubsection}{ सोम सामनीचे}{398}{section*.763}%
+\contentsline {subsubsection}{ इन्दरस्यवज्रेचे}{399}{section*.765}%
+\contentsline {subsubsection}{ भृष्टिमतस्सौर्यवचर््चसस्य सामनीचे}{400}{section*.767}%
+\contentsline {subsubsection}{ वसिष्ठस्यां कुशौचौ}{401}{section*.769}%
+\contentsline {subsubsection}{ भारचाजञ्च}{402}{section*.771}%
+\contentsline {subsubsection}{ वासिष्ठञ्च}{403}{section*.773}%
+\contentsline {subsubsection}{ पु रीषञ्चा थर्वणं}{404}{section*.775}%
+\contentsline {subsection}{ Section section\_38 (181)}{405}{section*.777}%
+\contentsline {subsubsection}{ आदित्याः सामनीचे ताक्ष्यरसामनिवा}{405}{section*.778}%
+\contentsline {subsubsection}{ इन्दरस्यच त्रातं}{406}{section*.780}%
+\contentsline {subsubsection}{ वाक्त त्रतुरं}{407}{section*.782}%
+\contentsline {subsubsection}{ द्युतानस्य मारूतस्य सामनीचे}{408}{section*.784}%
+\contentsline {subsubsection}{ आत्रं}{409}{section*.786}%
+\contentsline {subsubsection}{ गृत् समदस्यसमिधौचौ}{410}{section*.788}%
+\contentsline {subsubsection}{ वैश्पामित्रं}{411}{section*.790}%
+\contentsline {subsubsection}{ सावित्राणिषट्पैरयमेधानिवा}{412}{section*.792}%
+\contentsline {subsubsection}{ कूतिवारस्यवैरूपस्यसाम}{413}{section*.794}%
+\contentsline {subsubsection}{ वामदेव्यं}{414}{section*.796}%
+\contentsline {subsection}{ Section section\_39 (281)}{415}{section*.798}%
+\contentsline {subsubsection}{ शैचठिनेचे}{415}{section*.799}%
+\contentsline {subsubsection}{ उचंशीयन्तृतीयं}{416}{section*.801}%
+\contentsline {subsubsection}{ शैचठिनानीत्रीणी}{417}{section*.803}%
+\contentsline {subsubsection}{ आष्टादंष्ट्रेचे}{418}{section*.805}%
+\contentsline {subsubsection}{ महावैश्पामित्रेचे}{419}{section*.807}%
+\contentsline {subsubsection}{ गृत्समदस्यवींकानिचत्वारिवसिष्ठस्यवा}{420}{section*.809}%
+\contentsline {subsubsection}{ वसिष्ठस्यवींकानिचत्वारीन्दरस्यवाप्रियाणि}{422}{section*.811}%
+\contentsline {subsubsection}{ तिरश्पेरांगिरसस्यसामनीचेदेवानांवा}{424}{section*.813}%
+\contentsline {subsubsection}{ वैश्पामित्रं}{425}{section*.815}%
+\contentsline {subsubsection}{ काण्वेचे}{426}{section*.817}%
+\contentsline {subsubsection}{ वैश्पामित्रञ्च}{427}{section*.819}%
+\contentsline {subsubsection}{ इन्दस्यशुडाशुडीयेचे}{428}{section*.821}%
+\contentsline {subsubsection}{ गौतमस्यरयिष्ठेचे}{429}{section*.823}%
+\contentsline {subsection}{ Section section\_40 (111)}{430}{section*.825}%
+\contentsline {subsubsection}{ कौल्मल बर्हिषेचे}{430}{section*.826}%
+\contentsline {subsubsection}{ नानदन्तृतीयं}{431}{section*.828}%
+\contentsline {subsubsection}{ शाकपूत ञ्च}{432}{section*.830}%
+\contentsline {subsubsection}{ कौल्मलबर्हिषेचे}{433}{section*.832}%
+\contentsline {subsubsection}{ मधुश्पयुन्निधनञ्च प्राजापत्यं}{434}{section*.834}%
+\contentsline {subsubsection}{ उषसश्पसाम}{435}{section*.836}%
+\contentsline {subsubsection}{ गौतमं}{436}{section*.838}%
+\contentsline {subsubsection}{ अग्नेश्पदधिक्रं}{437}{section*.840}%
+\contentsline {subsubsection}{ मारूतंवैश्पामित्रंवा आंगीरसानां वा}{438}{section*.842}%
+\contentsline {subsection}{ Section section\_41 (131)}{439}{section*.844}%
+\contentsline {subsubsection}{ वामदेव्यञ्च}{439}{section*.845}%
+\contentsline {subsubsection}{ काश्यप ञ्च}{440}{section*.847}%
+\contentsline {subsubsection}{ अग्नेवैरश्पानरस्यसामनीचे}{441}{section*.849}%
+\contentsline {subsubsection}{ शाकपूतेचे}{442}{section*.851}%
+\contentsline {subsubsection}{ पैरयमेध ञ्च}{443}{section*.853}%
+\contentsline {subsubsection}{ बार्हदुक्थञ्च}{444}{section*.855}%
+\contentsline {subsubsection}{ वरूणान्याश्पसाम}{445}{section*.857}%
+\contentsline {subsubsection}{ उषसश्पसाम}{446}{section*.859}%
+\contentsline {subsubsection}{ देवानांचरुचिरोचनंवा}{447}{section*.861}%
+\contentsline {subsubsection}{ ऋक्सामयोस्सामनीचे}{448}{section*.863}%
+\contentsline {section}{ ॥ ऐन्दर पांः ॥}{449}{section*.866}%
+\contentsline {subsection}{ Section section\_43 (241)}{449}{section*.867}%
+\contentsline {subsubsection}{ तैरशोकं}{449}{section*.868}%
+\contentsline {subsubsection}{ शैचण्डिनेचे}{450}{section*.870}%
+\contentsline {subsubsection}{ अत्रेर्विवक्तरौचौ}{451}{section*.872}%
+\contentsline {subsubsection}{ महासावेदसेचे}{452}{section*.874}%
+\contentsline {subsubsection}{ शैरीषेचे}{453}{section*.876}%
+\contentsline {subsubsection}{ इन्दरसेयन्द्रियाणिद्रीणि}{454}{section*.878}%
+\contentsline {subsubsection}{ वैरूपाणित्रीणि}{456}{section*.880}%
+\contentsline {subsubsection}{ बार्हदुक्थञ्च}{457}{section*.882}%
+\contentsline {subsubsection}{ त्रासदस्यवेच}{458}{section*.884}%
+\contentsline {subsubsection}{ सौभरेचे}{459}{section*.886}%
+\contentsline {subsubsection}{ वरूणसामनीचे}{460}{section*.888}%
+\contentsline {subsubsection}{ इन्दरस्यचशेयनः}{461}{section*.890}%
+\contentsline {subsubsection}{ वैरूपम्}{462}{section*.892}%
+\contentsline {subsection}{ Section section\_44 (211)}{463}{section*.894}%
+\contentsline {subsubsection}{ यामं}{463}{section*.895}%
+\contentsline {subsubsection}{ गृत्समदस्यमदौचौ}{464}{section*.897}%
+\contentsline {subsubsection}{ आभीशवेचे}{465}{section*.899}%
+\contentsline {subsubsection}{ आभीकेचे}{466}{section*.901}%
+\contentsline {subsubsection}{ बार्हगिराणित्रीणी}{467}{section*.903}%
+\contentsline {subsubsection}{ इन्दरस्यचस्वाराज्यं}{468}{section*.905}%
+\contentsline {subsubsection}{ कश्यपस्यचधृष्णुं}{469}{section*.907}%
+\contentsline {subsubsection}{ वैदन्वतं}{470}{section*.909}%
+\contentsline {subsubsection}{ यामेचे}{471}{section*.911}%
+\contentsline {subsubsection}{ तैरतानित्रीणि}{472}{section*.913}%
+\contentsline {subsubsection}{ सौपण्रेचे}{473}{section*.915}%
+\contentsline {subsubsection}{ लौशं}{474}{section*.917}%
+\contentsline {subsection}{ Section section\_45 (101)}{475}{section*.919}%
+\contentsline {subsubsection}{ इन्दरस्यसयेचे सेनुदेवा वामदेव्यवा}{475}{section*.920}%
+\contentsline {subsubsection}{ अंगिरसान्निवेष्टौचौ}{476}{section*.922}%
+\contentsline {subsubsection}{ सत्यश्रवसोवार्यश्पसाम}{477}{section*.924}%
+\contentsline {subsubsection}{ उषसश्पसाम}{478}{section*.926}%
+\contentsline {subsubsection}{ लौश ञ्च}{479}{section*.928}%
+\contentsline {subsubsection}{ यामञ्च}{480}{section*.930}%
+\contentsline {subsubsection}{ अंगिरसाञ्चैवनिवेष्टः}{481}{section*.932}%
+\contentsline {subsubsection}{ गौरयश्पांगिरसस्यसाम}{482}{section*.934}%
+\contentsline {subsection}{ Section section\_46 (211)}{483}{section*.936}%
+\contentsline {subsubsection}{ वसिष्ठस्य संक्रमौचौसौहविषाणित्रीणि}{483}{section*.937}%
+\contentsline {subsubsection}{ वाकानित्रीणि}{484}{section*.939}%
+\contentsline {subsubsection}{ प्रजापतेर्धर्मविधर्माणिचत्वारि}{485}{section*.941}%
+\contentsline {subsubsection}{ भागञ्च}{486}{section*.943}%
+\contentsline {subsubsection}{ वाजिनाञ्चसाम}{487}{section*.945}%
+\contentsline {subsubsection}{ प्रजापतेर्हिकनिकविकानित्रीणि}{488}{section*.947}%
+\contentsline {subsubsection}{ आश्पेचे}{489}{section*.949}%
+\contentsline {subsubsection}{ वाजिनाञ्चसाम}{490}{section*.951}%
+\contentsline {subsubsection}{ आदित्यानाञ्चपवित्रं}{491}{section*.953}%
+\contentsline {subsection}{ Section section\_47 (281)}{492}{section*.955}%
+\contentsline {subsubsection}{ इन्दरस्यक्रोशनुक्रोशेचे}{492}{section*.956}%
+\contentsline {subsubsection}{ कौत्सन्तृतीयं}{493}{section*.958}%
+\contentsline {subsubsection}{ प्रहितोःसंयोजनेचे}{494}{section*.960}%
+\contentsline {subsubsection}{ दैवोदासेचे}{495}{section*.962}%
+\contentsline {subsubsection}{ हारिवर्णानिचत्वारि}{496}{section*.964}%
+\contentsline {subsubsection}{ तैरतानिचत्वारि}{497}{section*.966}%
+\contentsline {subsubsection}{ सराधसǐप्रराधस्यश्पां}{498}{section*.968}%
+\contentsline {subsubsection}{ वैश्पमनसं}{499}{section*.970}%
+\contentsline {subsubsection}{ सौमित्राणित्रीणि}{500}{section*.972}%
+\contentsline {subsubsection}{ तैरककूभानित्रीणि}{501}{section*.974}%
+\contentsline {subsubsection}{ औक्षोरन्धराणित्रीणिऔक्षोनिधनानिवा}{502}{section*.976}%
+\contentsline {subsection}{ Section section\_48 (151)}{503}{section*.978}%
+\contentsline {subsubsection}{ इन्दराण्यास्सामनीचे इन्दरस्यवासांवक्तेर}{503}{section*.979}%
+\contentsline {subsubsection}{ दैवोदासानिचत्वारि}{504}{section*.981}%
+\contentsline {subsubsection}{ रेवञ्च}{505}{section*.983}%
+\contentsline {subsubsection}{ आक्षारञ्च}{506}{section*.985}%
+\contentsline {subsubsection}{ रेव ञ्चै व}{507}{section*.987}%
+\contentsline {subsubsection}{ आक्षार ञ्चैव}{508}{section*.989}%
+\contentsline {subsubsection}{ यामम्}{509}{section*.991}%
+\contentsline {subsubsection}{ भारचाजस्यशुन्धयु}{510}{section*.993}%
+\contentsline {subsubsection}{ आदित्यानाञ्चा पामीवं}{511}{section*.995}%
+\contentsline {subsubsection}{ वसिष्ठस्यचवैराजे}{512}{section*.997}%
+\contentsline {subsection}{ Section section\_49 (181)}{513}{section*.999}%
+\contentsline {subsubsection}{ इन्दरस्याभ्रातृव्यं}{513}{section*.1000}%
+\contentsline {subsubsection}{ शार्करेचे}{514}{section*.1002}%
+\contentsline {subsubsection}{ बृहत्कं}{515}{section*.1004}%
+\contentsline {subsubsection}{ सौयवसानिचत्वारिपुनरींवातृतीयम्}{516}{section*.1006}%
+\contentsline {subsubsection}{ मरुताञ्चसंवेशीयंककूभंवा}{517}{section*.1008}%
+\contentsline {subsubsection}{ इन्दरस्याभरेचे}{518}{section*.1010}%
+\contentsline {subsubsection}{ ऐषिराणित्रीणि}{519}{section*.1012}%
+\contentsline {subsubsection}{ प्रजापतेस्सीदन्तीयेचे}{520}{section*.1014}%
+\contentsline {subsubsection}{ पथस्यसौभरस्यसामनीचे}{521}{section*.1016}%
+\contentsline {subsection}{ Section section\_50 (161)}{522}{section*.1018}%
+\contentsline {subsubsection}{ वसिष्ठस्याभरेचे}{522}{section*.1019}%
+\contentsline {subsubsection}{ वासुमन्दैचे}{523}{section*.1021}%
+\contentsline {subsubsection}{ कावर्षाणित्रीणि}{524}{section*.1023}%
+\contentsline {subsubsection}{ प्रजापतेःशेयाकानुशेयाकानित्रीणि}{525}{section*.1025}%
+\contentsline {subsubsection}{ वाचस्सामनीचे}{526}{section*.1027}%
+\contentsline {subsubsection}{ मरुताञ्चसाम}{527}{section*.1029}%
+\contentsline {subsubsection}{ वैश्पामित्रञ्च}{528}{section*.1031}%
+\contentsline {subsubsection}{ मारूतञ्चैव}{529}{section*.1033}%
+\contentsline {subsubsection}{ उचंशपुत्रञ्च}{530}{section*.1035}%
+\contentsline {subsection}{ Section section\_51 (171)}{531}{section*.1037}%
+\contentsline {subsubsection}{ धुरश्शमेयचे}{531}{section*.1038}%
+\contentsline {subsubsection}{ प्रजापतेर्गूर्दः}{532}{section*.1040}%
+\contentsline {subsubsection}{ विश्पामित्रस्यचार्दः}{533}{section*.1042}%
+\contentsline {subsubsection}{ प्रजापतेश्पैवगूर्दः}{534}{section*.1044}%
+\contentsline {subsubsection}{ विश्पामित्रस्यचैवात्यर्दः}{535}{section*.1046}%
+\contentsline {subsubsection}{ प्रजापतेस्सन्तनीकेचे}{536}{section*.1048}%
+\contentsline {subsubsection}{ प्रजापतेर्धनधम्रेचे}{537}{section*.1050}%
+\contentsline {subsubsection}{ उषसश्पसाम}{538}{section*.1052}%
+\contentsline {subsubsection}{ वैश्पामित्रञ्च}{539}{section*.1054}%
+\contentsline {subsubsection}{ भारचाञ्च}{540}{section*.1056}%
+\contentsline {subsubsection}{ इन्दरस्यचरातिः}{541}{section*.1058}%
+\contentsline {subsubsection}{ भारचाज ञ्चैव}{542}{section*.1060}%
+\contentsline {subsubsection}{ इन्दरस्यचवैराजे}{543}{section*.1062}%
+\contentsline {subsection}{ Section section\_52 (161)}{544}{section*.1064}%
+\contentsline {subsubsection}{ प्रजापतेर्वाजसनी}{544}{section*.1065}%
+\contentsline {subsubsection}{ गौराङ्गीरसस्यसामनीचे}{545}{section*.1067}%
+\contentsline {subsubsection}{ प्रयस्वच्चप्राजापत्यं}{546}{section*.1069}%
+\contentsline {subsubsection}{ अक्षय्यञ्चरेवत्}{547}{section*.1071}%
+\contentsline {subsubsection}{ सवितुश्पसाम}{548}{section*.1073}%
+\contentsline {subsubsection}{ वाक्त्रतुरञ्च}{549}{section*.1075}%
+\contentsline {subsubsection}{ ऐषञ्च}{550}{section*.1077}%
+\contentsline {subsubsection}{ यामंमरूताञ्चसाम}{551}{section*.1079}%
+\contentsline {subsubsection}{ भारचाजस्यविषमाणित्रीणिइन्वकंवातृतीयं}{552}{section*.1081}%
+\contentsline {subsubsection}{ पारूचे्छपेचे}{553}{section*.1083}%
+\contentsline {subsubsection}{ बार्हस्खतेयचेअग्नेर्वाराक्षोघ्ने}{554}{section*.1085}%
+\contentsline {subsection}{ Section section\_53 (691)}{556}{section*.1087}%
+\contentsline {subsubsection}{ आजीकञ्च}{556}{section*.1088}%
+\contentsline {subsubsection}{ आभीकञ्च}{557}{section*.1090}%
+\contentsline {subsubsection}{ रषभश्पपवमानः}{558}{section*.1092}%
+\contentsline {subsubsection}{ आभीक11ञ्चव}{559}{section*.1094}%
+\contentsline {subsubsection}{ बाभ्रवेचे}{560}{section*.1096}%
+\contentsline {subsubsection}{ इन्दराण्यास्साम}{561}{section*.1098}%
+\contentsline {subsubsection}{ शैशपेचे}{562}{section*.1100}%
+\contentsline {subsubsection}{ प्रजापतेदोरहोदोहीयेचे}{563}{section*.1102}%
+\contentsline {subsubsection}{ इन्दराण्याश्पैवसाम}{564}{section*.1104}%
+\contentsline {subsubsection}{ आमहीयवञ्च}{565}{section*.1106}%
+\contentsline {subsubsection}{ आजीकञ्च}{566}{section*.1108}%
+\contentsline {subsubsection}{ सूरूपेचे}{567}{section*.1110}%
+\contentsline {subsubsection}{ जमदग्नेश्शिल्खेचे}{568}{section*.1112}%
+\contentsline {subsubsection}{ संहितञ्च}{569}{section*.1114}%
+\contentsline {subsubsection}{ वसिष्ठस्यशकूनः}{570}{section*.1116}%
+\contentsline {subsubsection}{ जमदग्नेश्पगंभीरं}{571}{section*.1118}%
+\contentsline {subsubsection}{ संहित11ञ्चव}{572}{section*.1120}%
+\contentsline {subsubsection}{ सोमसामनीचे}{573}{section*.1122}%
+\contentsline {subsubsection}{ आशुभार्गवंतृतीयं}{574}{section*.1124}%
+\contentsline {subsubsection}{ वैश्पदेवेचे}{575}{section*.1126}%
+\contentsline {subsubsection}{ इन्दरसामनीचे}{576}{section*.1128}%
+\contentsline {subsubsection}{ यौक्त3श्पेचे…}{577}{section*.1130}%
+\contentsline {subsubsection}{ भासञ्च…}{578}{section*.1132}%
+\contentsline {subsubsection}{ सोमसामच…}{579}{section*.1134}%
+\contentsline {subsubsection}{ प्रजापतेश्पसहोरयिष्ठीयं…}{580}{section*.1136}%
+\contentsline {subsubsection}{ मादिलं…}{581}{section*.1138}%
+\contentsline {subsubsection}{ सोमसामचैव…}{582}{section*.1140}%
+\contentsline {subsubsection}{ प्रजपते श्पैव सहो रयिष्ठीयं सोम}{583}{section*.1142}%
+\contentsline {subsubsection}{ वैष्टंभेचे…}{584}{section*.1144}%
+\contentsline {subsubsection}{ पाष्ठौहेचे…}{585}{section*.1146}%
+\contentsline {subsubsection}{ वैष्टंभ11ञ्चव…}{586}{section*.1148}%
+\contentsline {subsubsection}{ पाष्ठौह11ञ्चव…}{587}{section*.1150}%
+\contentsline {subsubsection}{ इषोवृधीयञ्च…}{588}{section*.1152}%
+\contentsline {subsubsection}{ इन्दरसाम…}{589}{section*.1154}%
+\contentsline {subsubsection}{ वैश्पदेवेच…}{590}{section*.1156}%
+\contentsline {subsubsection}{ इन्दरसामचैव…}{591}{section*.1158}%
+\contentsline {subsubsection}{ आग्नेयानित्रीणि…}{592}{section*.1160}%
+\contentsline {subsubsection}{ आश्पानिचत्वारि…}{593}{section*.1162}%
+\contentsline {subsubsection}{ च्यावनानिचत्वारि…}{594}{section*.1164}%
+\contentsline {subsubsection}{ प्राजापतेयचे…}{595}{section*.1166}%
+\contentsline {subsubsection}{ वैदन्वतानिचत्वारिरषभोवावैदन्वतश्पतुर्थः}{596}{section*.1168}%
+\contentsline {subsubsection}{ रजेरांगीरसस्यपदस्तोभौचौ…}{598}{section*.1170}%
+\contentsline {subsubsection}{ और्णायवेचे…}{599}{section*.1172}%
+\contentsline {subsection}{ Section section\_54 (691)}{600}{section*.1174}%
+\contentsline {subsubsection}{ आजीकञ्च}{600}{section*.1175}%
+\contentsline {subsubsection}{ आभीकञ्च}{601}{section*.1177}%
+\contentsline {subsubsection}{ रषभश्पपवमानः}{602}{section*.1179}%
+\contentsline {subsubsection}{ आभीक11ञ्चव}{603}{section*.1181}%
+\contentsline {subsubsection}{ बाभ्रवेचे}{604}{section*.1183}%
+\contentsline {subsubsection}{ इन्दराण्यास्साम}{605}{section*.1185}%
+\contentsline {subsubsection}{ शैशपेचे}{606}{section*.1187}%
+\contentsline {subsubsection}{ प्रजापतेदोरहोदोहीयेचे}{607}{section*.1189}%
+\contentsline {subsubsection}{ इन्दराण्याश्पैवसाम}{608}{section*.1191}%
+\contentsline {subsubsection}{ आमहीयवञ्च}{609}{section*.1193}%
+\contentsline {subsubsection}{ आजीकञ्च}{610}{section*.1195}%
+\contentsline {subsubsection}{ सूरूपेचे}{611}{section*.1197}%
+\contentsline {subsubsection}{ जमदग्नेश्शिल्खेचे}{612}{section*.1199}%
+\contentsline {subsubsection}{ संहितञ्च}{613}{section*.1201}%
+\contentsline {subsubsection}{ वसिष्ठस्यशकूनः}{614}{section*.1203}%
+\contentsline {subsubsection}{ जमदग्नेश्पगंभीरं}{615}{section*.1205}%
+\contentsline {subsubsection}{ संहित11ञ्चव}{616}{section*.1207}%
+\contentsline {subsubsection}{ सोमसामनीचे}{617}{section*.1209}%
+\contentsline {subsubsection}{ आशुभार्गवंतृतीयं}{618}{section*.1211}%
+\contentsline {subsubsection}{ वैश्पदेवेचे}{619}{section*.1213}%
+\contentsline {subsubsection}{ इन्दरसामनीचे}{620}{section*.1215}%
+\contentsline {subsubsection}{ यौक्त3श्पेचे…}{621}{section*.1217}%
+\contentsline {subsubsection}{ भासञ्च…}{622}{section*.1219}%
+\contentsline {subsubsection}{ सोमसामच…}{623}{section*.1221}%
+\contentsline {subsubsection}{ प्रजापतेश्पसहोरयिष्ठीयं…}{624}{section*.1223}%
+\contentsline {subsubsection}{ मादिलं…}{625}{section*.1225}%
+\contentsline {subsubsection}{ सोमसामचैव…}{626}{section*.1227}%
+\contentsline {subsubsection}{ प्रजपते श्पैव सहो रयिष्ठीयं सोम}{627}{section*.1229}%
+\contentsline {subsubsection}{ वैष्टंभेचे…}{628}{section*.1231}%
+\contentsline {subsubsection}{ पाष्ठौहेचे…}{629}{section*.1233}%
+\contentsline {subsubsection}{ वैष्टंभ11ञ्चव…}{630}{section*.1235}%
+\contentsline {subsubsection}{ पाष्ठौह11ञ्चव…}{631}{section*.1237}%
+\contentsline {subsubsection}{ इषोवृधीयञ्च…}{632}{section*.1239}%
+\contentsline {subsubsection}{ इन्दरसाम…}{633}{section*.1241}%
+\contentsline {subsubsection}{ वैश्पदेवेच…}{634}{section*.1243}%
+\contentsline {subsubsection}{ इन्दरसामचैव…}{635}{section*.1245}%
+\contentsline {subsubsection}{ आग्नेयानित्रीणि…}{636}{section*.1247}%
+\contentsline {subsubsection}{ आश्पानिचत्वारि…}{637}{section*.1249}%
+\contentsline {subsubsection}{ च्यावनानिचत्वारि…}{638}{section*.1251}%
+\contentsline {subsubsection}{ प्राजापतेयचे…}{639}{section*.1253}%
+\contentsline {subsubsection}{ वैदन्वतानिचत्वारिरषभोवावैदन्वतश्पतुर्थः}{640}{section*.1255}%
+\contentsline {subsubsection}{ रजेरांगीरसस्यपदस्तोभौचौ…}{642}{section*.1257}%
+\contentsline {subsubsection}{ और्णायवेचे…}{643}{section*.1259}%
+\contentsline {subsection}{ Section section\_55 (191)}{644}{section*.1261}%
+\contentsline {subsubsection}{ सौभरेचे…}{644}{section*.1262}%
+\contentsline {subsubsection}{ इन्दरस्यवृषकाणित्रिणि…}{645}{section*.1264}%
+\contentsline {subsubsection}{ बभ्रोःकूंभस्यसामानित्रीणि…}{646}{section*.1266}%
+\contentsline {subsubsection}{ बभ्रोःकार्तवेशानित्रीणि…}{647}{section*.1268}%
+\contentsline {subsubsection}{ शाम्मरदेचे…}{648}{section*.1270}%
+\contentsline {subsubsection}{ वसिष्ठस्यजनित्रेचे…}{649}{section*.1272}%
+\contentsline {subsubsection}{ मरूतांप्रकीळाहस्तरयःसंक्रीळाहवानिक्रिळाहवा…}{650}{section*.1274}%
+\contentsline {subsubsection}{ औशनं…}{651}{section*.1276}%
+\contentsline {subsection}{ Section section\_56 (161)}{652}{section*.1278}%
+\contentsline {subsubsection}{ यामानित्रीणि…}{652}{section*.1279}%
+\contentsline {subsubsection}{ अंकतेवैररूपस्यसाम…}{653}{section*.1281}%
+\contentsline {subsubsection}{ औशनेच…}{654}{section*.1283}%
+\contentsline {subsubsection}{ सोमसामच…}{655}{section*.1285}%
+\contentsline {subsubsection}{ काष्णेरच…}{656}{section*.1287}%
+\contentsline {subsubsection}{ भारचाजञ्च…}{657}{section*.1289}%
+\contentsline {subsubsection}{ वैश्पमित्रञ्च…}{658}{section*.1291}%
+\contentsline {subsubsection}{ इन्दरस्यवात्ररघ्नं…}{659}{section*.1293}%
+\contentsline {subsubsection}{ सोमसामानित्रीणि…}{660}{section*.1295}%
+\contentsline {subsubsection}{ भारच ाज11ञ्चव…}{661}{section*.1297}%
+\contentsline {subsection}{ Section section\_57 (201)}{662}{section*.1299}%
+\contentsline {subsubsection}{ वार्षाहरम्…}{662}{section*.1300}%
+\contentsline {subsubsection}{ वार्शानित्रीणि}{663}{section*.1302}%
+\contentsline {subsubsection}{ वैरूपेचदेवानांवाणसायिनी}{664}{section*.1304}%
+\contentsline {subsubsection}{ तरभस्यचवैददश्पेस्साम}{665}{section*.1306}%
+\contentsline {subsubsection}{ सोमसामच}{666}{section*.1308}%
+\contentsline {subsubsection}{ सूर्यसामच…}{667}{section*.1310}%
+\contentsline {subsubsection}{ दाड्यरच्युतानित्रीणि…}{668}{section*.1312}%
+\contentsline {subsubsection}{ इन्दरस्यचवृषकम्…}{669}{section*.1314}%
+\contentsline {subsubsection}{ ऐषञ्च…}{670}{section*.1316}%
+\contentsline {subsubsection}{ श्यवाश्पञ्च…}{671}{section*.1318}%
+\contentsline {subsubsection}{ सोमसामच…}{672}{section*.1320}%
+\contentsline {subsubsection}{ आग्नेयञ्च…}{673}{section*.1322}%
+\contentsline {subsubsection}{ आयासेयच…}{674}{section*.1324}%
+\contentsline {subsubsection}{ भारचाजञ्च…}{675}{section*.1326}%
+\contentsline {subsection}{ Section section\_58 (761)}{676}{section*.1328}%
+\contentsline {subsubsection}{ आयास्यञ्च}{676}{section*.1329}%
+\contentsline {subsubsection}{ वसिष्ठस्यचापदासे}{677}{section*.1331}%
+\contentsline {subsubsection}{ माण्डवञ्च}{678}{section*.1333}%
+\contentsline {subsubsection}{ उन्व च्च}{679}{section*.1335}%
+\contentsline {subsubsection}{ माण्डव11ञ्चव}{680}{section*.1337}%
+\contentsline {subsubsection}{ प्रजापतेश्पसदोविशीयं}{681}{section*.1339}%
+\contentsline {subsubsection}{ जमग्नेस्सवासिनी चे}{682}{section*.1341}%
+\contentsline {subsubsection}{ आयासेयचेसोमसामनीवा}{683}{section*.1343}%
+\contentsline {subsubsection}{ कण्वरथभ रं}{684}{section*.1345}%
+\contentsline {subsubsection}{ आयास्यञ्च}{685}{section*.1347}%
+\contentsline {subsubsection}{ रौरवं}{686}{section*.1349}%
+\contentsline {subsubsection}{ यौधाजयञ्च}{687}{section*.1351}%
+\contentsline {subsubsection}{ वसिष्ठस्यचप्लवं}{688}{section*.1353}%
+\contentsline {subsubsection}{ अच्छिद्रञ्च}{689}{section*.1355}%
+\contentsline {subsubsection}{ रयिष्ठञ्च}{690}{section*.1357}%
+\contentsline {subsubsection}{ भारञ्च जेचे}{691}{section*.1359}%
+\contentsline {subsubsection}{ आभिशवेचे}{692}{section*.1361}%
+\contentsline {subsubsection}{ अगिंरसामधीवासपरीवासौञ्च2}{693}{section*.1363}%
+\contentsline {subsubsection}{ माण्डवेचे}{694}{section*.1365}%
+\contentsline {subsubsection}{ वैनसोमकृतवेचे}{695}{section*.1367}%
+\contentsline {subsubsection}{ प्रजापतेर्गूर्दौचौ}{696}{section*.1369}%
+\contentsline {subsubsection}{ मरूतांगोष्ठापुंसिनिचे}{697}{section*.1371}%
+\contentsline {subsubsection}{ महारौरवञ्च}{698}{section*.1373}%
+\contentsline {subsubsection}{ महायौधाजयञ्च}{699}{section*.1375}%
+\contentsline {subsubsection}{ आश्पानिचत्वारि}{700}{section*.1377}%
+\contentsline {subsubsection}{ आग्नेयञ्च}{702}{section*.1379}%
+\contentsline {subsubsection}{ सोमसामच}{703}{section*.1381}%
+\contentsline {subsubsection}{ न्विहिंकारञ्चवामदेव्यम्}{704}{section*.1383}%
+\contentsline {subsubsection}{ अंगिरसामुत् सेधनिषेधौ चौ}{705}{section*.1385}%
+\contentsline {subsubsection}{ सोमसामानिष ट्}{706}{section*.1387}%
+\contentsline {subsubsection}{ विष्णोररणीचे}{708}{section*.1389}%
+\contentsline {subsubsection}{ आ ङ्गि रसानित्रीणि}{709}{section*.1391}%
+\contentsline {subsubsection}{ औक्ष्णोरन्ध्राणित्रीणि}{710}{section*.1393}%
+\contentsline {subsubsection}{ औक्ष्णोनिधनानित्रीणि}{711}{section*.1395}%
+\contentsline {subsubsection}{ वाजजिच्चा}{712}{section*.1397}%
+\contentsline {subsubsection}{ न्वभ्यासञ्चसौषवंवसिष्ठस्यवापिप्खलि}{713}{section*.1399}%
+\contentsline {subsubsection}{ वैश्पदेवेच}{714}{section*.1401}%
+\contentsline {subsubsection}{ इङ्र सामच}{715}{section*.1403}%
+\contentsline {subsubsection}{ वैश्पदेवञ्चैव}{716}{section*.1405}%
+\contentsline {subsubsection}{ इङ्रसामानित्रीणि}{717}{section*.1407}%
+\contentsline {subsubsection}{ स्वǐपृष्ठमान्गरसं}{718}{section*.1409}%
+\contentsline {subsubsection}{ सोमसामच}{719}{section*.1411}%
+\contentsline {subsubsection}{ आदित्यानाञ्चपवि त्रम्}{720}{section*.1413}%
+\contentsline {subsubsection}{ सोमसामनीचे}{721}{section*.1415}%
+\contentsline {subsubsection}{ स्वǐपृष्ठ ञ्चैवान्गिरसं}{722}{section*.1417}%
+\contentsline {subsubsection}{ सोमसामचैव}{723}{section*.1419}%
+\contentsline {subsection}{ Section section\_59 (361)}{724}{section*.1421}%
+\contentsline {subsubsection}{ औशनानित्रीणि…}{724}{section*.1422}%
+\contentsline {subsubsection}{ प्रशस्यजानस्याभीवर्तौचौ…}{725}{section*.1424}%
+\contentsline {subsubsection}{ प्रजापतेर्वाजसनिनीचे वाजजितौचौ}{726}{section*.1426}%
+\contentsline {subsubsection}{ अंगिरसां संक्रोशास्तरयः देवानांवा साम}{728}{section*.1428}%
+\contentsline {subsubsection}{ वेनोविशालेचे…}{730}{section*.1430}%
+\contentsline {subsubsection}{ गौतमस्यतभ|3त1भ|चे…}{731}{section*.1432}%
+\contentsline {subsubsection}{ अगस्तयस्ययमिकेचे…}{732}{section*.1434}%
+\contentsline {subsubsection}{ मरूतांकालकाक्रभ2…}{733}{section*.1436}%
+\contentsline {subsubsection}{ वासिष्ठानिषट्…}{734}{section*.1438}%
+\contentsline {subsubsection}{ आश्पथ…}{736}{section*.1440}%
+\contentsline {subsubsection}{ सोमसामनीचे…}{737}{section*.1442}%
+\contentsline {subsubsection}{ ऐषञ्च}{738}{section*.1444}%
+\contentsline {subsubsection}{ माधुच्चन्दसं}{739}{section*.1446}%
+\contentsline {subsubsection}{ सोमसामानि चत्वारि}{740}{section*.1448}%
+\contentsline {subsubsection}{ मरूतांव्रतोपोहस्संपचा}{742}{section*.1450}%
+\contentsline {subsection}{ Section section\_60 (211)}{743}{section*.1452}%
+\contentsline {subsubsection}{ कूत् सस्याधिरथ्यानित्रीणि…}{743}{section*.1453}%
+\contentsline {subsubsection}{ वैश्पजेयातिषाणित्रीणि…}{744}{section*.1455}%
+\contentsline {subsubsection}{ वाचस्सामनीचे…}{745}{section*.1457}%
+\contentsline {subsubsection}{ दाशस्खत्यानिषट्…}{746}{section*.1459}%
+\contentsline {subsubsection}{ कश्यपस्यचशोभनं…}{748}{section*.1461}%
+\contentsline {subsubsection}{ आत्रं…}{749}{section*.1463}%
+\contentsline {subsubsection}{ अपांसाम…}{750}{section*.1465}%
+\contentsline {subsubsection}{ श्नौष्टाणित्रीणि…}{751}{section*.1467}%
+\contentsline {subsubsection}{ वासिष्ठं}{753}{section*.1469}%
+\contentsline {subsection}{ Section section\_61 (331)}{754}{section*.1471}%
+\contentsline {subsubsection}{ नकूलस्य वाम देवस्य प्रें चौ चौ}{754}{section*.1472}%
+\contentsline {subsubsection}{ महा कार्क्तवेशञ्च}{755}{section*.1474}%
+\contentsline {subsubsection}{ औड्वसद्मन ञ्च}{756}{section*.1476}%
+\contentsline {subsubsection}{ श्यावाश्पञ्च}{757}{section*.1478}%
+\contentsline {subsubsection}{ आन्धीगव ञ्च}{758}{section*.1480}%
+\contentsline {subsubsection}{ क्रौञ्चानित्रीणि}{759}{section*.1482}%
+\contentsline {subsubsection}{ गृत्समदस्यसूत्राणि चत्वारि}{760}{section*.1484}%
+\contentsline {subsubsection}{ आकुपारम्}{761}{section*.1486}%
+\contentsline {subsubsection}{ त्वाष्टीसामनीचे}{762}{section*.1488}%
+\contentsline {subsubsection}{ सोम सामानि चत्वारि वासिष्ठानि वा मदाई}{763}{section*.1490}%
+\contentsline {subsubsection}{ त्वाष्टिसामनीचैव}{765}{section*.1492}%
+\contentsline {subsubsection}{ क्रौ ञ्चेचेशार्मदेवा}{766}{section*.1494}%
+\contentsline {subsubsection}{ सोमसामानि त्रीणि}{767}{section*.1496}%
+\contentsline {subsubsection}{ क्रौ ञ्चञ्चैव उचचवा}{768}{section*.1498}%
+\contentsline {subsubsection}{ सोम साम चै व}{769}{section*.1500}%
+\contentsline {subsubsection}{ पैरय्यमेधानि त्रीणि}{770}{section*.1502}%
+\contentsline {subsubsection}{ औशनंवैरूपम्}{771}{section*.1504}%
+\contentsline {subsection}{ Section section\_62 (351)}{772}{section*.1506}%
+\contentsline {subsubsection}{ कावं}{772}{section*.1507}%
+\contentsline {subsubsection}{ प्रजापतेर्वाजसनिनीचे}{773}{section*.1509}%
+\contentsline {subsubsection}{ वाजिजितौचौ}{774}{section*.1511}%
+\contentsline {subsubsection}{ काववञ्च}{775}{section*.1513}%
+\contentsline {subsubsection}{ सामराजानित्रीणि विशालानिवा उचन्तिवा}{776}{section*.1515}%
+\contentsline {subsubsection}{ आंगीरसानित्रीणि}{777}{section*.1517}%
+\contentsline {subsubsection}{ औशनं}{778}{section*.1519}%
+\contentsline {subsubsection}{ प्रवत्भार्गवं}{779}{section*.1521}%
+\contentsline {subsubsection}{ विरूपस्यचतन्तेर}{780}{section*.1523}%
+\contentsline {subsubsection}{ भार्गव ञ्चैव}{781}{section*.1525}%
+\contentsline {subsubsection}{ यामं}{782}{section*.1527}%
+\contentsline {subsubsection}{ दाशशीष्रेचे}{783}{section*.1529}%
+\contentsline {subsubsection}{ सैन्धुक्षितानित्रीणि}{784}{section*.1531}%
+\contentsline {subsubsection}{ यामानित्रीणि}{785}{section*.1533}%
+\contentsline {subsubsection}{ मरूतान्धेनुनीचे}{786}{section*.1535}%
+\contentsline {subsubsection}{ वसिष्ठस्यापामीवेचे वायोर्वाभिकृन्दौ}{787}{section*.1537}%
+\contentsline {subsubsection}{ अणते व्यणत स्समञ्चत इति काक्षीवतानां}{788}{section*.1539}%
+\contentsline {subsubsection}{ आदित्यस्यर्कपुष्खे देवानांवा}{790}{section*.1541}%
+\contentsline {subsection}{ Section section\_63 (391)}{791}{section*.1543}%
+\contentsline {subsubsection}{ वसिष्ठस्यपदेचे}{791}{section*.1544}%
+\contentsline {subsubsection}{ वसिष्ठस्यानुपदेचे}{792}{section*.1546}%
+\contentsline {subsubsection}{ पौष्कलं}{793}{section*.1548}%
+\contentsline {subsubsection}{ ऐषिराणिप ञ्च}{794}{section*.1550}%
+\contentsline {subsubsection}{ शौक्तानिपञ्च}{796}{section*.1552}%
+\contentsline {subsubsection}{ कार्णश्रवसानि त्रीणिगौलोमानिवा}{798}{section*.1554}%
+\contentsline {subsubsection}{ वैश्पदेवेचे}{799}{section*.1556}%
+\contentsline {subsubsection}{ इन्दरसामनीचे}{800}{section*.1558}%
+\contentsline {subsubsection}{ मरूतांप्रेंचःवसिष्ठस्यवा}{801}{section*.1560}%
+\contentsline {subsubsection}{ आग्नेयञ्च}{802}{section*.1562}%
+\contentsline {subsubsection}{ सोमसामच}{803}{section*.1564}%
+\contentsline {subsubsection}{ सु ज्ञानेचे}{804}{section*.1566}%
+\contentsline {subsubsection}{ द्यौतेचे}{805}{section*.1568}%
+\contentsline {subsubsection}{ आतीषातीयेचे}{806}{section*.1570}%
+\contentsline {subsubsection}{ सोमसामानि चत्वारि}{807}{section*.1572}%
+\contentsline {subsubsection}{ सोमस्ययशांसित्रीणि}{808}{section*.1574}%
+\contentsline {subsubsection}{ औशनंवासिष्ठवा}{809}{section*.1576}%
+\contentsline {subsection}{ Section section\_64 (351)}{810}{section*.1578}%
+\contentsline {subsubsection}{ वासिष्ठेचे}{810}{section*.1579}%
+\contentsline {subsubsection}{ सभानित्रीणि}{811}{section*.1581}%
+\contentsline {subsubsection}{ ऐषिराणिचत्वारिच्यावनानिवा}{812}{section*.1583}%
+\contentsline {subsubsection}{ शौक्तानि त्रीणि}{813}{section*.1585}%
+\contentsline {subsubsection}{ वाचस्सामानित्रीणि}{814}{section*.1587}%
+\contentsline {subsubsection}{ कौन्मलबर्हिषाणिप शंकुतृतीयंसीदन्तीयंवा}{815}{section*.1589}%
+\contentsline {subsubsection}{ दीघ्रेचे}{817}{section*.1591}%
+\contentsline {subsubsection}{ सोमसानितृणि}{818}{section*.1593}%
+\contentsline {subsubsection}{ शैतेष्याणिचत्वारि}{819}{section*.1595}%
+\contentsline {subsubsection}{ सोमसामानित्रीणि}{820}{section*.1597}%
+\contentsline {subsubsection}{ गायत्रपाश्पर}{821}{section*.1599}%
+\contentsline {subsubsection}{ सन्तनिच}{822}{section*.1601}%

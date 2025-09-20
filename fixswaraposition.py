@@ -24,7 +24,7 @@ for i, supersection in enumerate(supersections):
                 img_src=mantra_set.get('image-ref', '')
                 img_path = os.path.join(output_base_dir, img_src)
                 mantra_words=mantra_set.get("mantra-words", "")
-                swara_list = mantra_set.get("swara", []).split()
+                swara_list = mantra_set.get("swara", "").split()
                 number_of_columns = len(mantra_words)
                 number_of_swaras = len(swara_list)
                 mantra_word_length=[]

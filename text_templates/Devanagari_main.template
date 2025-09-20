@@ -1,7 +1,7 @@
 
 जैमिनीय  साम  प्रकृति  गानम्
 
-Version 0.9 15th September 2025
+Version 0.10 21st September 2025
 
 \BLOCK{ for i, supersection in supersections.items() }
     %- set super_id = "super_" ~ i 

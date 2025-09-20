@@ -71,6 +71,9 @@ def extract_words_from_image(image_path, output_dir, mantra_word_lengths=[], swa
     base_name = os.path.basename(image_path)
     directory_name = os.path.dirname(image_path)
     img_names=base_name.split('_')
+    if len(img_names) < 3:
+        print(f"Skipping {image_path} as it does not have 2 images.")
+        return
     first_image=os.path.join(directory_name, "line_" + img_names[1].split('.')[0]+ ".png")
     second_image=os.path.join(directory_name, "line_" + img_names[2].split('.')[0]+ ".png")
     if not os.path.exists(first_image) or not os.path.exists(second_image):
