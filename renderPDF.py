@@ -29,8 +29,12 @@ def combine_ardhaksharas(text):
     while i < len(grapheme_list):
         current_grapheme = grapheme_list[i]
         
-        # Check if current grapheme ends with halant (virama) - indicating an ardhakshara
-        if current_grapheme.endswith('\u094D'):  # \u094D is the halant/virama character
+        # Check if current grapheme ends with halant or common ardhakshara combinations
+        if (current_grapheme.endswith('\u094D') or  # halant/virama character
+            current_grapheme.endswith('र्') or  # र् (ra halant)
+            current_grapheme.endswith('य्') or  # य् (ya halant) 
+            current_grapheme.endswith('व्') or  # व् (va halant)
+            current_grapheme.endswith('ल्')):   # ल् (la halant)
             # Combine with next grapheme if it exists
             if i + 1 < len(grapheme_list):
                 combined_grapheme = current_grapheme + grapheme_list[i + 1]
