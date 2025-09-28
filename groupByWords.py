@@ -249,7 +249,16 @@ def reg_test():
         #"output_text/lines/page_5/combined_03_04.png",
         #"output_text/lines/page_5/combined_05_06.png",
         #"output_text/lines/page_5/combined_10_11.png", # Is an error 
-        "output_text/lines/page_5/combined_18_19.png",
+        "output_text/lines/page_243/combined_03_04.png",
+        "output_text/lines/page_243/combined_05_06.png",
+        "output_text/lines/page_243/combined_07_08.png",
+        "output_text/lines/page_243/combined_09_10.png",
+        "output_text/lines/page_243/combined_11_12.png",
+        "output_text/lines/page_243/combined_13_14.png",
+        "output_text/lines/page_243/combined_15_16.png",
+        "output_text/lines/page_243/combined_17_18.png",
+        "output_text/lines/page_243/combined_19_20.png",
+        "output_text/lines/page_243/combined_21_22.png",
     ]
     for image_path in test_images:
         test_specific_image(image_path)
@@ -263,9 +272,15 @@ def test_specific_image(image_path):
     print(json.dumps(result, indent=4, ensure_ascii=False))
 def main():
     # Find all files under output_text/lines/* that start with the pattern combined_*.png
+    # Only include files under page_243 to page_307
     base_path = "output_text/lines"
     pattern = os.path.join(base_path, "*", "combined_*.png")
     combined_files = glob.glob(pattern)
+    #combined_files = []
+    #for page_num in range(241, 329):
+    #    page_dir = os.path.join(base_path, f"page_{page_num}")
+    #    pattern = os.path.join(page_dir, "combined_*.png")
+    #    combined_files.extend(glob.glob(pattern))
 
     # Sort files by page_nn numerically and then by xx
     def extract_page_and_combined(file_path):
