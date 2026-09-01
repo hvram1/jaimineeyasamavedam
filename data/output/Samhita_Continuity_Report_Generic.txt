@@ -1,0 +1,29 @@
+CONTINUITY CHECK REPORT
+File: Samhita_with_Rishi_Devata_Chandas_out.json
+============================================================
+
+Patha/Parva: आग्नेयपाठः (supersection_1)
+--------------------------------------------------
+
+Patha/Parva: तद्वपाठः (supersection_2)
+--------------------------------------------------
+
+Patha/Parva: बृहतिपाठः (supersection_3)
+--------------------------------------------------
+
+Patha/Parva: असाविपाठः (supersection_4)
+--------------------------------------------------
+
+Patha/Parva: ऐन्द्रपाठः (supersection_5)
+--------------------------------------------------
+
+Patha/Parva: पवमानपाठः (supersection_6)
+--------------------------------------------------
+
+SUCCESS: All Khandas have contiguous Samam numbering starting from 1.
+
+SUMMARY STATISTICS
+==================
+Total Parvas/Pathas: 6
+Total Khandas: 59
+Total Samams Detected: 1226

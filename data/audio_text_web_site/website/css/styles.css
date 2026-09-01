@@ -1,0 +1,838 @@
+/* Jaimineeya Samavedam Website Styles */
+/* Design inspired by rigveda.sanatana.in */
+
+:root {
+    /* Color Palette - Clean, Sacred */
+    --primary-maroon: #8B0000;
+    --primary-gold: #DAA520;
+    --accent-orange: #FF6B35;
+    --sacred-saffron: #FF9933;
+    
+    /* Light Theme (like Rig Veda site) */
+    --bg-main: #FEFEFE;
+    --bg-sidebar: #F8F5F0;
+    --bg-hover: #F0EBE3;
+    --bg-card: #FFFFFF;
+    --bg-verse: #FFFEF5;
+    
+    --text-primary: #2D2D2D;
+    --text-secondary: #555555;
+    --text-muted: #888888;
+    --text-link: #8B0000;
+    --text-link-hover: #B22222;
+    
+    --border-color: #E0DCD5;
+    --border-light: #F0EBE3;
+    
+    /* Typography */
+    --font-heading: 'Noto Serif Devanagari', 'Noto Sans Devanagari', serif;
+    --font-body: 'Noto Sans Devanagari', 'Inter', sans-serif;
+    --font-sanskrit: 'Noto Serif Devanagari', 'Siddhanta', serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Layout */
+    --sidebar-width: 280px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-maroon);
+}
+
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+
+.sanskrit-text {
+    font-family: var(--font-sanskrit);
+    font-size: 1.2rem;
+    line-height: 2;
+    letter-spacing: 0.02em;
+}
+
+.sanskrit-large {
+    font-size: 1.4rem;
+    line-height: 2.2;
+}
+
+/* Links */
+a {
+    color: var(--text-link);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--text-link-hover);
+    text-decoration: underline;
+}
+
+/* Main Layout - 3 Column */
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left Sidebar */
+.sidebar-left {
+    width: var(--sidebar-width);
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    padding: var(--spacing-lg);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-left::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-left::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.logo {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--primary-maroon);
+    font-weight: 600;
+}
+
+.logo-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.nav-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.nav-section h3 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: var(--primary-maroon);
+    color: white;
+    border-color: var(--primary-maroon);
+    text-decoration: none;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-list li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.nav-list a {
+    display: block;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.nav-list a:hover {
+    background: var(--bg-hover);
+    text-decoration: none;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: var(--spacing-xl) var(--spacing-2xl);
+    max-width: 900px;
+}
+
+/* Right Sidebar (Jump Navigation) */
+.sidebar-right {
+    width: 220px;
+    padding: var(--spacing-lg);
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    overflow-y: auto;
+    border-left: 1px solid var(--border-color);
+}
+
+.sidebar-right h3 {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-md);
+}
+
+.jump-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.jump-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--bg-sidebar);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.jump-links a:hover {
+    background: var(--primary-maroon);
+    color: white;
+    border-color: var(--primary-maroon);
+    text-decoration: none;
+}
+
+/* Page Header */
+.page-header {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--primary-maroon);
+}
+
+.page-header h1 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.page-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.sama-count {
+    display: inline-block;
+    background: var(--bg-sidebar);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-sm);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--text-link);
+}
+
+.breadcrumb-separator {
+    color: var(--text-muted);
+}
+
+/* Table of Contents */
+.toc {
+    background: var(--bg-sidebar);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.toc h4 {
+    margin-bottom: var(--spacing-md);
+    font-size: 1rem;
+}
+
+.toc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    list-style: none;
+}
+
+.toc-list li a {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.toc-list li a:hover {
+    background: var(--primary-maroon);
+    color: white;
+    border-color: var(--primary-maroon);
+    text-decoration: none;
+}
+
+/* Sama Entry (Verse) - Rig Veda Style */
+.sama-entry {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.sama-entry:last-child {
+    border-bottom: none;
+}
+
+.sama-header {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.sama-id {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--primary-maroon);
+    font-weight: 600;
+    background: var(--bg-sidebar);
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.sama-id a {
+    color: var(--primary-maroon);
+}
+
+.sama-id a:hover {
+    text-decoration: none;
+}
+
+/* Metadata Links (Rishi, Devata, Chandas) */
+.metadata-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.metadata-link {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--bg-sidebar);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.metadata-link:hover {
+    background: var(--primary-gold);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.metadata-link.rishi {
+    border-left: 3px solid #8B4513;
+}
+
+.metadata-link.devata {
+    border-left: 3px solid #B22222;
+}
+
+.metadata-link.chandas {
+    border-left: 3px solid #DAA520;
+}
+
+/* Sama Title */
+.sama-title {
+    font-family: var(--font-sanskrit);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-style: italic;
+}
+
+/* Rik Metadata - displayed above Rik text in purple */
+.rik-metadata {
+    font-family: 'AdiShila Vedic', 'Adishila SanVedic', 'Noto Sans Devanagari', 'Siddhanta', var(--font-sanskrit), sans-serif;
+    font-size: 1.6rem;
+    color: #7b1fa2;
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Sama Header Text - displayed above Sama/Mantra text in green */
+.sama-header-text {
+    font-family: 'AdiShila Vedic', 'Adishila SanVedic', 'Noto Sans Devanagari', 'Siddhanta', var(--font-sanskrit), sans-serif;
+    font-size: 1.6rem;
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Rik Text Box */
+.rik-box {
+    background: #FFF8DC;
+    border-left: 4px solid var(--primary-gold);
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    border-radius: 0 8px 8px 0;
+}
+
+.rik-label {
+    font-size: 0.75rem;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.rik-text {
+    font-family: 'AdiShila Vedic', 'Adishila SanVedic', 'Noto Sans Devanagari', 'Siddhanta', var(--font-sanskrit), sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+    color: #1565c0;
+}
+
+/* Mantra Text Box */
+.mantra-box {
+    background: var(--bg-verse);
+    border-left: 4px solid var(--primary-maroon);
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    border-radius: 0 8px 8px 0;
+}
+
+.mantra-label {
+    font-size: 0.75rem;
+    color: var(--primary-maroon);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.mantra-text {
+    font-family: var(--font-sanskrit);
+    font-size: 1.2rem;
+    line-height: 2.2;
+    color: var(--text-primary);
+}
+
+/* Audio Section */
+.audio-section {
+    margin-top: var(--spacing-md);
+}
+
+.audio-player {
+    width: 100%;
+    max-width: 400px;
+}
+
+.audio-pending {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-sidebar);
+    border: 1px dashed var(--border-color);
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Footnotes */
+.footnotes {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px dashed var(--border-color);
+}
+
+.footnotes-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footnote-item {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-md);
+    border-left: 2px solid var(--border-color);
+}
+
+/* Homepage Styles */
+.home-hero {
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+    margin-bottom: var(--spacing-2xl);
+    border-bottom: 2px solid var(--primary-maroon);
+}
+
+.home-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.home-hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-xl);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-maroon);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Parva Grid */
+.parva-section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.parva-section h2 {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.kandah-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.kandah-card {
+    display: block;
+    padding: var(--spacing-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.kandah-card:hover {
+    border-color: var(--primary-maroon);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+.kandah-card .number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-maroon);
+}
+
+.kandah-card .title {
+    font-family: var(--font-sanskrit);
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin: var(--spacing-xs) 0;
+}
+
+.kandah-card .count {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .sidebar-right {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .sidebar-left {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: var(--spacing-lg);
+    }
+    
+    .page-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .kandah-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-row {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    
+    .metadata-links {
+        flex-direction: column;
+    }
+}
+
+/* Mantra/Swara Stacking Styles - Matching renderPDF.py output */
+.mantra-word {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+}
+
+.mantra-text {
+    font-family: 'AdiShila Vedic', 'Adishila SanVedic', 'Noto Sans Devanagari', 'Siddhanta', var(--font-sanskrit), sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: #000000;
+}
+
+.swara-text {
+    font-family: 'AdiShila Vedic', 'Adishila SanVedic', 'Noto Sans Devanagari', 'Siddhanta', var(--font-sanskrit), sans-serif;
+    color: #c62828;
+    font-size: 1.3rem;
+    line-height: 1;
+    text-align: center;
+    margin-top: -0.2em;
+    min-height: 1em;
+    border-right: 1px solid transparent;
+    padding-right: 2px;
+}
+
+.mantra-verse {
+    margin: 5px 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    text-align: center;
+    gap: 0;
+}
+
+.word-space {
+    width: 0.3em;
+}
+
+/* Vedic Accent Mark Styles - Zero-width positioning */
+.accent-swarita {
+    display: inline-block;
+    width: 0;
+    overflow: visible;
+    color: #1565c0;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: relative;
+    left: -0.1em;
+    top: -0.15em;
+}
+
+.accent-anudatta {
+    display: inline-block;
+    width: 0;
+    overflow: visible;
+    color: #1565c0;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: relative;
+    left: -0.1em;
+    top: -0.15em;
+}
+
+.accent-kampa {
+    display: inline-block;
+    width: 0;
+    overflow: visible;
+    color: #1565c0;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: relative;
+    left: -0.1em;
+    top: -0.15em;
+}
+
+.accent-trikampa {
+    display: inline-block;
+    width: 0;
+    overflow: visible;
+    color: #1565c0;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: relative;
+    left: -0.1em;
+    top: -0.15em;
+}
+
+.danda {
+    margin: 0 0.2em;
+}
+
+.mantra-number {
+    display: inline-block;
+    white-space: nowrap;
+    color: var(--primary-maroon);
+    font-weight: bold;
+}
+
+/* Footnote Section Styles - matching renderPDF.py */
+.footnotes {
+    margin-top: var(--spacing-lg);
+}
+
+.footnote-separator {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0 10px 0;
+    width: 40%;
+    margin-left: 0;
+}
+
+.footnote-section {
+    padding: 10px 0;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.footnote-item {
+    padding: 5px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footnote-item .footnote-ref {
+    color: #1565c0;
+    font-weight: bold;
+    margin-right: 0.5em;
+    min-width: 1.5em;
+}
+
+.footnote-item .footnote-text {
+    margin-left: 0.5em;
+}
+
+/* Inline footnote superscript references - matching renderPDF.py */
+sup.footnote-ref {
+    font-size: 0.7em;
+    vertical-align: super;
+    line-height: 0;
+    position: relative;
+    top: -0.5em;
+}
+
+sup.footnote-ref a {
+    color: #1565c0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+sup.footnote-ref a:hover {
+    text-decoration: underline;
+}
+
+/* Print Styles */
+@media print {
+    .sidebar-left, .sidebar-right {
+        display: none;
+    }
+    
+    .main-content {
+        margin: 0;
+        max-width: 100%;
+    }
+}

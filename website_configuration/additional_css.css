@@ -1,0 +1,20 @@
+/* 
+ * Custom CSS for Jaimineeya Samavedam Website (Astra Theme)
+ * 
+ * Instructions:
+ * 1. Go to Appearance > Customize > Additional CSS
+ * 2. Paste the contents of this file.
+ */
+
+/* Fix for Mobile Menu not opening */
+.ast-main-header-nav-open .ast-mobile-header-content,
+.ast-main-header-nav-open .ast-mobile-header-content .ast-builder-menu-mobile,
+.ast-main-header-nav-open .ast-mobile-header-content .main-header-bar-navigation,
+.ast-main-header-nav-open .ast-mobile-header-content .site-navigation,
+.ast-main-header-nav-open .ast-mobile-header-content .main-navigation {
+    display: block !important;
+    height: auto !important;
+    max-height: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}

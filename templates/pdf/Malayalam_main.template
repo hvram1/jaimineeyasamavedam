@@ -1,0 +1,246 @@
+\documentclass[12pt, a4paper, openany]{book}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec} 
+\titlespacing*{\chapter}{0pt}{-10pt}{10pt}
+
+% --- LANGUAGE & FONT SETUP ---
+% Noto font files are named <Family>-Regular.ttf, so they are loaded by
+% explicit filename (UprightFont=* does not resolve -Regular files).
+% The notofonts.github.io builds are script-only subsets: Latin text
+% (footer, page numbers, metadata) uses \latinfont, Devanagari headers use
+% \devafont, the mantra body uses \malayalamfont with \granthafont swaras.
+\usepackage{fontspec}
+\usepackage{etoolbox}
+\BLOCK{ if font_path }
+\setmainfont[Scale=1.0, Script=Malayalam, Ligatures=TeX, AutoFakeSlant, Path=\VAR{font_path}]{NotoSerifMalayalam-Regular.ttf}
+\newfontfamily\latinfont[Scale=1.0, Ligatures=TeX, AutoFakeSlant, Path=\VAR{font_path}]{NotoSerifDevanagari-Regular.ttf}
+\newfontfamily\devafont[Scale=1.1, Script=Devanagari, Ligatures=TeX, Path=\VAR{font_path}]{AdishilaSanVedicBold.ttf}
+\newfontfamily\malayalamfont[Scale=1.0, Script=Malayalam, Ligatures=TeX, AutoFakeSlant, Path=\VAR{font_path}]{NotoSerifMalayalam-Regular.ttf}
+\newfontfamily\granthafont[Scale=0.8, Script=Grantha, Ligatures=TeX, AutoFakeSlant, Path=\VAR{font_path}]{NotoSerifGrantha-Regular.ttf}
+\newfontfamily\swarafont[Scale=0.68, Script=Grantha, Ligatures=TeX, AutoFakeBold=2.0, AutoFakeSlant, Path=\VAR{font_path}]{JaimineeyaSwara.ttf}
+\BLOCK{ else }
+\setmainfont[Scale=1.0, Script=Malayalam, Ligatures=TeX, AutoFakeSlant]{Noto Serif Malayalam}
+\newfontfamily\latinfont[Scale=1.0, Ligatures=TeX, AutoFakeSlant]{Noto Serif Devanagari}
+\newfontfamily\devafont[Scale=1.1, Script=Devanagari, Ligatures=TeX]{AdishilaSanVedicBold}
+\newfontfamily\malayalamfont[Scale=1.0, Script=Malayalam, Ligatures=TeX, AutoFakeSlant]{Noto Serif Malayalam}
+\newfontfamily\granthafont[Scale=0.8, Script=Grantha, Ligatures=TeX, AutoFakeSlant]{Noto Serif Grantha}
+\newfontfamily\swarafont[Scale=0.68, Script=Grantha, Ligatures=TeX, AutoFakeBold=2.0, AutoFakeSlant]{JaimineeyaSwara}
+\BLOCK{ endif }
+\setcounter{tocdepth}{3}
+
+% --- COLOR SETUP ---
+\usepackage[dvipsnames]{xcolor}
+\definecolor{AccentBlue}{HTML}{1565c0}
+\definecolor{AccentPurple}{HTML}{7b1fa2}
+\definecolor{AccentGreen}{HTML}{2e7d32}
+\definecolor{AccentBrown}{HTML}{8B4513}
+\definecolor{SwaraRed}{HTML}{c62828}
+\definecolor{ModifierDarkBlue}{HTML}{0284c7}
+\definecolor{ModifierGreen}{HTML}{0284c7}
+\definecolor{ModifierSkyBlue}{HTML}{0284c7}
+
+% --- PACKAGES ---
+\usepackage{ragged2e} 
+\usepackage{stackengine} 
+\usepackage{fancyhdr}    
+\usepackage[perpage]{footmisc} % Resets footnote numbering on every page - MUST BE BEFORE hyperref
+\usepackage{hyperref}    
+\usepackage{imakeidx}    
+\usepackage{needspace}
+\usepackage{longtable}
+\usepackage{titlesec}
+\titleformat{\chapter}[block]{\normalfont\huge\bfseries\centering}{}{0pt}{\malayalamfont}
+\titlespacing*{\chapter}{0pt}{-25pt}{12pt}
+\titleformat{\section}[block]{\normalfont\Large\bfseries\centering}{}{0pt}{\malayalamfont}
+\titlespacing*{\section}{0pt}{8pt}{14pt}
+\usepackage{setspace}
+\setstretch{2.15}
+% --- CRITICAL: MICROTYPE FOR SPACING ---
+\usepackage[stretch=20, shrink=20]{microtype}
+% --- SPACING & BREAKING RULES ---
+\hyphenpenalty=10
+\exhyphenpenalty=10
+\lefthyphenmin=3
+\righthyphenmin=3
+\tolerance=500
+\pretolerance=100
+\setlength{\emergencystretch}{1em}
+\setlength{\hfuzz}{2pt}
+\setlength{\parindent}{0pt}
+
+% --- STACKING COMMANDS: Uniform Baseline Swara ABOVE the syllable ---
+% Absolute baseline-relative overlay ensuring 100% constant horizontal swara baseline
+\newlength{\swarabasew}
+\newlength{\swaratopw}
+\newcommand{\swarastack}[2]{%
+  \settowidth{\swarabasew}{#1}%
+  \settowidth{\swaratopw}{#2}%
+  \ifdim\swaratopw>\swarabasew
+    \mbox{#1\hspace{-\swarabasew}\makebox[\swaratopw][l]{\raisebox{2.35ex}[0pt][0pt]{#2}}\hspace{\dimexpr\swaratopw-\swarabasew+1.5pt\relax}}%
+  \else
+    \mbox{#1\hspace{-\swarabasew}\makebox[\swarabasew][c]{\raisebox{2.35ex}[0pt][0pt]{#2}}}%
+  \fi
+}
+\newcommand{\stackcenter}[2]{\swarastack{#1}{#2}}
+\newcommand{\stackleft}[2]{\swarastack{#1}{#2}}
+
+% --- STACK CONFIG ---
+\def\stackalignment{c}
+\def\stacktype{L}
+\setstackgap{L}{0.7\baselineskip}
+
+% --- VEDIC ACCENT STACKING MACROS FOR MALAYALAM ---
+% Uses AdishilaSanVedicBold for authentic Vedic accents with exact bottom-alignment
+\newlength{\rikbasew}
+\newlength{\riktopw}
+\newcommand{\rikstack}[2]{%
+  \settowidth{\rikbasew}{#1}%
+  \settowidth{\riktopw}{#2}%
+  \ifdim\riktopw>\rikbasew
+    \stackengine{0pt}{\vphantom{ത}#1}{#2}{O}{l}{F}{T}{S}\hspace{\dimexpr\riktopw-\rikbasew+0.5pt\relax}%
+  \else
+    \stackengine{0pt}{\vphantom{ത}#1}{#2}{O}{c}{F}{T}{S}%
+  \fi
+}
+\newcommand{\rikSwarita}[1]{\rikstack{#1}{{\devafont\fontsize{15pt}{15pt}\selectfont\char"0951}}}
+\newcommand{\rikAnudatta}[1]{\rikstack{#1}{{\devafont\fontsize{15pt}{15pt}\selectfont\raisebox{0.67pt}{\char"1CD2}}}}
+\newcommand{\rikKampa}[1]{\rikstack{#1}{{\devafont\fontsize{15pt}{15pt}\selectfont\raisebox{-0.1pt}{\char"1CF8}}}}
+\newcommand{\rikTrikampa}[1]{\rikstack{#1}{{\devafont\fontsize{15pt}{15pt}\selectfont\raisebox{-0.1pt}{\char"1CF9}}}}
+\newcommand{\accentmark}[2]{{\devafont\fontsize{#1pt}{#1pt}\selectfont #2}}
+
+% --- INDEX INITIALIZATION ---
+\makeindex[columns=2, title={\malayalamfont അനുക്രമണിക}, intoc]
+\apptocmd{\theindex}{\malayalamfont}{}{}
+
+% --- HYPERREF ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Jaimineeya Samaveda (Malayalam)},
+    pdfpagemode=UseOutlines,
+}
+
+% --- HEADER CONFIG ---
+\setlength{\headheight}{22pt}
+\addtolength{\topmargin}{-10pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{{\latinfont\thepage}}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% --- FOOTER CONFIG ---
+\fancyfoot[C]{\footnotesize {\latinfont jaimineeyasamavedam.org (v\VAR{version})}}
+\renewcommand{\footrulewidth}{0.4pt}
+% Jinja helpers
+\newcommand{\VAR}[1]{}
+\newcommand{\BLOCK}[1]{}
+
+% --- DANDA SPACING ---
+\usepackage{newunicodechar}
+
+% --- CUSTOM FOOTNOTE STYLE: English Numerals & Proper Position ---
+\makeatletter
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\renewcommand\@makefnmark{\hbox{\textsuperscript{\raisebox{1.0ex}{\latinfont\@thefnmark}}}}
+\makeatother
+
+\begin{document}
+
+\renewcommand{\contentsname}{{\malayalamfont അനുക്രമണിക}}
+
+\begin{titlepage}
+    \begin{center}
+            { \Huge {\malayalamfont \VAR{doc_title_sa}} }
+        \vfill
+        \large {\latinfont v\VAR{version}} \\
+        {\latinfont Generated: \VAR{generated_at}} \\
+        \date{\today}
+    \end{center}
+\end{titlepage}
+
+% --- TOC ---
+{
+  \RaggedRight
+  \tableofcontents
+}
+\newpage
+
+% ==========================================
+% JINJA2 LOOP STRUCTURE (Samam only)
+% ==========================================
+
+\BLOCK{ for key, supersection in supersections.items() }
+
+    % --- SUPERSECTION ---
+    \cleardoublepage
+    \phantomsection
+    \BLOCK{ if supersection.supersection_title }
+    \chapter*{\centering {\malayalamfont \VAR{supersection.supersection_title}}}
+    \addcontentsline{toc}{chapter}{{\malayalamfont \VAR{supersection.supersection_title}}}
+    \markboth{{\malayalamfont \VAR{supersection.supersection_title}}}{{\malayalamfont \VAR{supersection.supersection_title}}}
+    \BLOCK{ endif }
+
+    % GLUE FIX: Prevent page break between Chapter and First Section
+    \nopagebreak
+
+    \BLOCK{ set ns_sec = namespace(first_section=true) }
+    \BLOCK{ for section_key, section in supersection.sections.items() }
+        \BLOCK{ if section_key != 'count' }
+
+            \BLOCK{ if not ns_sec.first_section }
+            \clearpage
+            \BLOCK{ endif }
+            \BLOCK{ set ns_sec.first_section = false }
+
+            % --- SECTION ---
+            \phantomsection
+
+            \BLOCK{ if section.section_title }
+            \section*{\centering {\malayalamfont \VAR{section.section_title}}}
+            \BLOCK{ if toc_level == 'section' or toc_level == 'both' }
+            \addcontentsline{toc}{section}{{\malayalamfont \VAR{section.section_title}}}
+            \BLOCK{ endif }
+            \markright{{\malayalamfont \VAR{section.section_title}}}
+            \nopagebreak % Keep section title with first mantra
+            \BLOCK{ endif }
+
+            \BLOCK{ set ns = namespace(prev_rik_id=none) }
+            \BLOCK{ for subsection_key, subsection in section.subsections.items() }
+                % --- SUBSECTIONS (Mantras) ---
+                %- set subsection_title = subsection.get('header', {}).get('header', 'Untitled Header')
+                \BLOCK{ if output_mode == 'rik' }
+                \VAR{subsection | format_malayalam_rik_only(none, none, subsection_title, ns.prev_rik_id, toc_level)}
+                \BLOCK{ elif output_mode == 'samam' }
+                \VAR{subsection | format_malayalam_samam_only(none, none, subsection_title, toc_level)}
+                \BLOCK{ elif output_mode == 'rik_nometa' }
+                \VAR{subsection | format_malayalam_rik_nometa(none, none, subsection_title, ns.prev_rik_id, toc_level)}
+                \BLOCK{ elif output_mode == 'samam_nometa' }
+                \VAR{subsection | format_malayalam_samam_nometa(none, none, subsection_title, toc_level)}
+                \BLOCK{ else }
+                \VAR{subsection | format_malayalam_combined(none, none, subsection_title, ns.prev_rik_id, toc_level)}
+                \BLOCK{ endif }
+                \BLOCK{ set ns.prev_rik_id = subsection.rik_id }
+            \BLOCK{ endfor }
+        \BLOCK{ endif }
+    \BLOCK{ endfor }
+
+\BLOCK{ endfor }
+
+\BLOCK{ if closing_mantras }
+% --- Closing Mantras ---
+\vspace{1.5cm}
+\begin{center}
+\BLOCK{ for line in closing_mantras }
+{\normalsize \bfseries {\malayalamfont \VAR{line}}}\\[0.3em]
+\BLOCK{ endfor }
+\end{center}
+\BLOCK{ endif }
+\clearpage
+
+  \printindex
+
+\end{document}

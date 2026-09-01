@@ -1,2 +1,158 @@
-myenv
-output_text/lines/*
+# Virtual environments
+myenv/
+.venv/
+venv/
+ENV/
+env/
+
+# Samhita main project - not tracked in format-mantras branch
+Samhita main project/
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Generated Documents & Output Files
+*.pdf
+*.html
+*.mhtml
+*.docx
+*.xlsx
+*.doc
+*.xls
+*.json
+*.csv
+
+# Generated outputs
+data/output/*.html
+data/output/*.pdf
+data/output/*.json
+data/output/*.csv
+data/output/html/
+data/output/txt/
+data/output/pdf/
+Malayalam_JSV/malayalam/*.json
+Malayalam_JSV/stage_output/*.json
+Malayalam_JSV/*.json
+output_text/
+vedavms/.cache/
+vedavms/build/
+scratch/
+deprecated/
+
+# Allow templates, mockups, and docs static assets
+!templates/**
+!html_templates/**
+!pdf_templates/**
+!text_templates/**
+!vedavms/mockup/**
+!docs/**/*.html
+!docs/**/*.css
+!docs/**/*.js
+!.vscode/*.json
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+
+# LaTeX files
+*.tex
+*.aux
+*.log
+*.out
+*.toc
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.lyx
+
+# Template files
+*.template
+!templates/**/*.template
+!templates/*.template
+!html_templates/Devanagari_main_html.template
+!Devanagari_standalone/working_baseline/Devanagari_main.template
+!Devanagari_standalone/Devanagari_main.template
+!pdf_templates/Devanagari_main.template
+!text_templates/Devanagari_main.template
+# Windows/macOS
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Logs
+logs/
+
+# Allow access to generated tex files
+!output_text/**/*.tex
+
+# --- NEW ADDITIONS TO CLEAN UP YOUR VIEW ---
+
+# Ignore the entire Scratch folder (temporary work)
+**/Scratch/
+
+# Ignore OCR outputs (assuming these are generated/raw data)
+**/OCR/
+
+# Ignore MHTML files (seen in your OCR folder)
+*.mhtml
+
+# Ignore test outputs specifically
+test_output.txt
+out_1.txt
+
+# If you want to ignore all those date-stamped text files:
+# This ignores any txt file with a dash (common in your date-stamped files)
+*-*.txt
+!rishi_devata_chandas_for_rik.txt
+!corrections_003.txt
+!pdf_templates/Devanagari_main.template
+!sama_rishi_chandas_out.txt
+!vedic_text.txt
+!html_templates/Devanagari_main_html.template
+output_text/pdf/Devanagari/Devanagari_Devanagari_Unicode_for_Lyx.tex
+output_text/pdf/Devanagari/Devanagari_Devanagari_Unicode_for_OLF.tex
+output_text/pdf/Devanagari/Agneyam_to_Pavamanam_latest.tex
+output_text/Corrections/Aindram Unicode.txt
+output_text/Corrections/correction_004.txt
+output_text/Corrections/corrections_001.txt
+output_text/Corrections/corrections_002.txt
+output_text/Corrections/corrections_004.txt
+output_text/Corrections/corrections_005.txt
+output_text/Corrections/corrections_006_.txt
+output_text/Corrections/corrections_006.txt
+output_text/Corrections/corrections/corrections_001.txt
+output_text/Corrections/corrections/corrections_002.txt
+output_text/Corrections/corrections/corrections_003.txt
+output_text/Corrections/corrections/README.txt
+check_json_debug.py
+!vedic_text.txt
+debug_output.txt
+debug_rik_id_alignment.py
+test_regex_output.txt
+test_regex.py
+test_rik_parser.py
+test_strip_output.txt
+test_strip.py
+# Allow GitHub Pages website folder
+!docs/

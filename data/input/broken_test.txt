@@ -1,0 +1,23 @@
+# [JSV METADATA]
+# Version: 3.28
+# Generated At: 2026-04-19 11:35:29
+# [END METADATA]
+
+﻿
+जैमिनीय  साम  आरण्यक  गानम्
+
+Version 3.1 23rd February 2026
+
+# Start of SuperSection Title -- supersection_7 ## DO NOT EDIT
+व्रत पर्व  
+# End of SuperSection Title -- supersection_7 ## DO NOT EDIT
+       
+# Start of Section Title -- section_1 ## DO NOT EDIT
+प्रथम खण्डः  
+# End of Section Title -- section_1 ## DO NOT EDIT
+
+# Start of Rik Metadata -- subsection_1 ## DO NOT EDIT
+# End of Rik Metadata -- subsection_1 ## DO NOT EDIT
+
+# Start of Mantra Sets -- subsection_1 ## DO NOT EDIT
+Content here

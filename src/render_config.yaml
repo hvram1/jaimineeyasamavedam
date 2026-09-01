@@ -1,0 +1,56 @@
+# ----------------------------------------------------
+# Jaimineeya Samavedam Render Configuration
+# ----------------------------------------------------
+# This file allows you to manage common settings without 
+# passing multiple command-line arguments to render_pdf.py.
+
+# GLOBAL DEFAULTS
+# These will be used unless overridden by CLI arguments or type-specific settings.
+defaults:
+  output_mode: "combined"    # Options: 'combined' (both Rik/Samam), 'separate', 'nometa'
+  pdf_font: "AdishilaVedic"   # Primary font for PDF (must be installed on the system)
+  html_font: "'AdishilaVedic', 'AdishilaSanVedic'" # CSS font-family string for HTML
+  pdf_color_mode: "bw"       # Options: 'bw' (Black & White), 'color'
+  toc_level: "section"       # Headers in TOC: 'section', 'subsection', or 'both'
+
+# TEXT TYPE CONFIGURATIONS
+# Configuration specific to the type of text being rendered (--type).
+types:
+  samhita:
+    input_file: "data/output/Agneyam-Pavamanam_latest_out.json"
+    doc_title: "जैमिनीय साम संहिता भागम्"
+    summary_title: "संहिता सङ्ख्या"
+    file_prefix: "Samhita"
+  
+  aaranam:
+    input_file: "data/output/Aaranam_latest_out.json"
+    doc_title: "जैमिनीय साम आरण्य गानम्"
+    summary_title: "आरण्यम् सङ्ख्या"
+    file_prefix: "Aaranam"
+  
+  collection:
+    input_file: "data/output/Collection_latest_out.json"
+    doc_title: "ऋतु शान्ति जपम्"
+    summary_title: "ऋतु शान्ति जपम् सङ्ख्या"
+    file_prefix: "Collection"
+
+# PATHS AND DIRECTORIES
+# Centralized management of template and output locations.
+paths:
+  templates:
+    pdf: "templates/pdf"
+    html: "templates/html"
+    text: "templates/text"
+  output_root: "data/output"
+  logs: "data/output/logs"
+
+# ADVANCED OPTIONS
+# Fine-tuning the rendering behavior.
+advanced:
+  # Enable/Disable specific rendering features
+  generate_summary_table: true
+  enable_footnote_consolidation: true
+  
+  # Character normalization settings
+  replace_colons_with_visarga: true
+  sanitize_invisible_chars: true

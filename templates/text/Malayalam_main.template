@@ -1,0 +1,102 @@
+\VAR{doc_title_sa}
+
+Version \VAR{version} \VAR{generated_at}
+
+\BLOCK{ for i, supersection in supersections.items() }
+%- set supersection_title = supersection.get("supersection_title", "") 
+# Start of SuperSection Title -- \VAR{i} ## DO NOT EDIT
+\VAR{ supersection_title }
+# End of SuperSection Title -- \VAR{i} ## DO NOT EDIT
+
+\BLOCK{ for j, section in supersection.get('sections', {}).items() }
+\BLOCK{ if j.startswith('section_') }
+%- set section_title = section.get('section_title', "") 
+# Start of Section Title -- \VAR{j} ## DO NOT EDIT
+\VAR{ section_title }
+# End of Section Title -- \VAR{j} ## DO NOT EDIT
+\BLOCK{ set ns = namespace(prev_rik_id=none) }
+\BLOCK{ for k, subsection in section.get('subsections', {}).items() }
+%- set header = subsection.get('header', {}).get('header', 'Untitled Header') | replace('൪', 'ർ') 
+%- set rik_metadata = subsection.get('rik_metadata', '') 
+%- set rik_text = subsection.get('rik_text', '') 
+%- set saman_metadata = subsection.get('saman_metadata', '') 
+%- set footnotes = subsection.get('footnotes', {}) 
+%- set rik_ids = subsection.get('rik_ids', [subsection.rik_id] if subsection.rik_id else [])
+%- set max_rik_id = rik_ids|max if rik_ids else none
+\BLOCK{ if output_mode == 'rik' }
+\VAR{subsection|format_rik_only_text(j,k,ns.prev_rik_id)}
+\BLOCK{ elif output_mode == 'samam' }
+# Start of SubSection Title -- \VAR{k} ## DO NOT EDIT
+\VAR{ header }
+# End of SubSection Title -- \VAR{k} ## DO NOT EDIT
+\BLOCK{ if saman_metadata }
+# Start of Samam Metadata -- \VAR{k} ## DO NOT EDIT
+\VAR{ saman_metadata }
+# End of Samam Metadata -- \VAR{k} ## DO NOT EDIT
+\BLOCK{ endif }
+#Start of Mantra Sets -- \VAR{k} ## DO NOT EDIT
+\VAR{subsection|format_malayalam_samam_text(j,k)}
+#End of Mantra Sets -- \VAR{k} ## DO NOT EDIT
+
+\BLOCK{ elif output_mode == 'rik_nometa' }
+\BLOCK{ set show_rik = (ns.prev_rik_id is none) or (subsection.rik_id != ns.prev_rik_id) or (rik_ids|length > 1 and max_rik_id != ns.prev_rik_id) }
+\BLOCK{ if show_rik and rik_text }
+%- set current_rik_id = subsection.get('rik_id', 1) 
+# Start of Rik Text -- rik_\VAR{current_rik_id} ## DO NOT EDIT
+\VAR{ rik_text | replace_footnotes(footnotes) | split_rik_lines }
+# End of Rik Text -- rik_\VAR{current_rik_id} ## DO NOT EDIT
+
+\BLOCK{ endif }
+
+\BLOCK{ elif output_mode == 'samam_nometa' }
+# Start of SubSection Title -- \VAR{k} ## DO NOT EDIT
+\VAR{ header }
+# End of SubSection Title -- \VAR{k} ## DO NOT EDIT
+#Start of Mantra Sets -- \VAR{k} ## DO NOT EDIT
+\VAR{subsection|format_malayalam_samam_text(j,k)}
+#End of Mantra Sets -- \VAR{k} ## DO NOT EDIT
+
+\BLOCK{ else }
+\BLOCK{ set show_rik = (ns.prev_rik_id is none) or (subsection.rik_id != ns.prev_rik_id) or (rik_ids|length > 1 and max_rik_id != ns.prev_rik_id) }
+\BLOCK{ if show_rik and rik_metadata }
+# Start of Rik Metadata -- \VAR{k} ## DO NOT EDIT
+\VAR{ rik_metadata }
+# End of Rik Metadata -- \VAR{k} ## DO NOT EDIT
+\BLOCK{ endif }
+\BLOCK{ if show_rik and rik_text }
+# Start of Rik Text -- \VAR{k} ## DO NOT EDIT
+\VAR{ rik_text | replace_footnotes(footnotes) | split_rik_lines }
+# End of Rik Text -- \VAR{k} ## DO NOT EDIT
+\BLOCK{ endif }
+# Start of SubSection Title -- \VAR{k} ## DO NOT EDIT
+\VAR{ header }
+# End of SubSection Title -- \VAR{k} ## DO NOT EDIT
+\BLOCK{ if saman_metadata }
+# Start of Samam Metadata -- \VAR{k} ## DO NOT EDIT
+\VAR{ saman_metadata }
+# End of Samam Metadata -- \VAR{k} ## DO NOT EDIT
+\BLOCK{ endif }
+#Start of Mantra Sets -- \VAR{k} ## DO NOT EDIT
+\VAR{subsection|format_malayalam_samam_text(j,k)}
+#End of Mantra Sets -- \VAR{k} ## DO NOT EDIT
+\BLOCK{ if footnotes }
+# Start of Footnote -- \VAR{k} ## DO NOT EDIT
+\BLOCK{ for fn_key, fn_text in footnotes.items() }
+\VAR{fn_key} - \VAR{fn_text}
+\BLOCK{ endfor }
+# End of Footnote -- \VAR{k} ## DO NOT EDIT
+\BLOCK{ endif }
+
+\BLOCK{ endif }
+\BLOCK{ set ns.prev_rik_id = subsection.rik_id }
+\BLOCK{ endfor }
+\BLOCK{ endif }
+\BLOCK{ endfor }
+\BLOCK{ endfor }
+\BLOCK{ if closing_mantras }
+# Closing Mantras
+\BLOCK{ for line in closing_mantras }
+\VAR{line}
+\BLOCK{ endfor }
+# End of Closing Mantras
+\BLOCK{ endif }

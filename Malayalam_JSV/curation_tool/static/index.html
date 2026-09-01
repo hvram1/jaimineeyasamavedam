@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSV Visual Curation & Benchmarking Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Serif+Malayalam:wght@400;600;700&family=Noto+Serif+Grantha&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/malayalam-fonts@latest/fonts.min.css">
+  <link rel="stylesheet" href="style.css?v=3.1">
+</head>
+<body class="dark-theme">
+  <!-- Top Navigation & Global Header -->
+  <header class="app-header">
+    <div class="brand-area">
+      <div class="logo-badge">JSV</div>
+      <div class="brand-text">
+        <h1>Jaimineeya Samavedam</h1>
+        <span class="sub-badge">Visual Curation & Manuscript Benchmarking</span>
+      </div>
+    </div>
+
+      <!-- Section / Kandah Selector -->
+    <div class="navigator-controls">
+      <select id="sectionSelect" aria-label="Select Kandah / Parva"></select>
+      <select id="subsectionSelect" aria-label="Select Subsection"></select>
+      <select id="samamSelect" aria-label="Select Samam"></select>
+      
+      <!-- Direct Subsection Jump -->
+      <div class="direct-jump-box" title="Directly jump to any subsection number (e.g. 252, 348)">
+        <span class="jump-prefix">Sub #</span>
+        <input type="number" id="directSubInput" placeholder="252" min="1" max="1517" aria-label="Direct Subsection Number">
+        <button id="directSubBtn" class="btn btn-secondary btn-sm" title="Jump to Subsection">Go</button>
+      </div>
+      
+      <div class="nav-buttons">
+        <button id="prevBtn" class="btn btn-secondary" title="Previous Samam (Alt + Left)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Prev
+        </button>
+        <button id="nextBtn" class="btn btn-secondary" title="Next Samam (Alt + Right)">
+          Next
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- Layout Toggle: Side-by-Side vs Stacked -->
+      <button id="layoutToggleBtn" class="btn btn-secondary" title="Toggle Layout (Side-by-Side / Stacked Top-Bottom)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="12" x2="21" y2="12"></line></svg>
+        <span id="layoutLabel">Stacked Layout</span>
+      </button>
+
+      <!-- Font Toggle: Noto Serif vs RIT Rachana -->
+      <button id="fontToggleBtn" class="btn btn-secondary" title="Toggle Malayalam Font (Noto Serif / RIT Rachana)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+        <span id="fontLabel">Font: Noto Serif</span>
+      </button>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="header-actions">
+      <button id="saveBtn" class="btn btn-primary" title="Save changes directly to Samam_Malayalam_Unicode.txt (Ctrl + S)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+        Save to Master
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Split-Screen Workspace -->
+  <main class="workspace-grid">
+    
+    <!-- LEFT PANE: Manuscript Scan Viewer -->
+    <section class="pane manuscript-pane">
+      <div class="pane-header">
+        <div class="pane-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+          <span>Handwritten Manuscript Scan</span>
+        </div>
+        
+        <div class="scan-toolbar">
+          <div class="page-switcher">
+            <button id="prevPageBtn" class="tool-btn" title="Previous Page">◀</button>
+            <span id="pageLabel">Page 1</span>
+            <button id="nextPageBtn" class="tool-btn" title="Next Page">▶</button>
+          </div>
+          <div class="zoom-tools">
+            <button id="zoomOutBtn" class="tool-btn" title="Zoom Out (-)">−</button>
+            <span id="zoomLevel">100%</span>
+            <button id="zoomInBtn" class="tool-btn" title="Zoom In (+)">+</button>
+            <button id="fitWidthBtn" class="tool-btn" title="Fit to Width">Fit</button>
+            <button id="invertBtn" class="tool-btn" title="Toggle Invert/Contrast">🌓</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Canvas/Image Viewport -->
+      <div class="canvas-viewport" id="viewport">
+        <div class="pan-container" id="panContainer">
+          <img id="manuscriptImg" src="" alt="Manuscript Page Scan" draggable="false">
+        </div>
+        <div class="viewport-hints">Mouse Wheel: Zoom | Click & Drag: Pan</div>
+      </div>
+    </section>
+
+    <!-- RIGHT PANE: Live Curation & Akshara Matrix -->
+    <section class="pane curation-pane">
+      <div class="pane-header">
+        <div class="pane-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+          <span id="curationTitle">Kandah 1, Subsection 1, Samam 1</span>
+        </div>
+        <div class="curation-status" id="curationStatus">Ready</div>
+      </div>
+
+      <div class="curation-body">
+        
+        <!-- Compact Swara Modifiers & Phrasing Toolbar -->
+        <div class="card toolbar-palette-card">
+          <div class="palette-header-row">
+            <span class="card-label">Swara Modifiers & Phrasing Marks (Blue Rendered)</span>
+            <div class="modifier-palette">
+              <button class="mod-chip" data-mod="(H)" title="Overhead Swarita Bar (Hotkey: Alt+H)">
+                <span class="mod-icon">|</span>
+                <span class="mod-name">Swarita <kbd>(H)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(G)" title="Low Descending Slash (Hotkey: Alt+G)">
+                <span class="mod-icon">\</span>
+                <span class="mod-name">Slash <kbd>(G)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(C)" title="Pause Shoulder Dot (Hotkey: Alt+C)">
+                <span class="mod-icon">.</span>
+                <span class="mod-name">Dot <kbd>(C)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(A)" title="Syllable Arc (Hotkey: Alt+A)">
+                <span class="mod-icon">⌒</span>
+                <span class="mod-name">Arc <kbd>(A)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(A1)" title="Danda Arc (Hotkey: Alt+1)">
+                <span class="mod-icon">⌒|</span>
+                <span class="mod-name">Danda Arc <kbd>(A1)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(B)" title="Peak Caret (Hotkey: Alt+B)">
+                <span class="mod-icon">^</span>
+                <span class="mod-name">Caret <kbd>(B)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(B1)" title="Bridging Slash">
+                <span class="mod-icon">/</span>
+                <span class="mod-name">Slash <kbd>(B1)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(D)" title="Chevron Roof (Hotkey: Alt+D)">
+                <span class="mod-icon">∧</span>
+                <span class="mod-name">Roof <kbd>(D)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(D1)" title="Asymmetrical Inverted-V / Hooked Rise">
+                <span class="mod-icon">⋀</span>
+                <span class="mod-name">Rise <kbd>(D1)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(D2)" title="Check Tick">
+                <span class="mod-icon">✓</span>
+                <span class="mod-name">Tick <kbd>(D2)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(I)" title="Two Stacked Parallel Shoulder Dashes">
+                <span class="mod-icon">═</span>
+                <span class="mod-name">Dash <kbd>(I)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(J)" title="Horizontal Shoulder Bar">
+                <span class="mod-icon">—</span>
+                <span class="mod-name">Bar <kbd>(J)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(K)" title="Shoulder Cross Mark">
+                <span class="mod-icon">⨯</span>
+                <span class="mod-name">Cross <kbd>(K)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(E)" title="Heavy Tone Column (Hotkey: Alt+E)">
+                <span class="mod-icon">┃</span>
+                <span class="mod-name">Col <kbd>(E)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="(F)" title="Danda with Overhead Dot">
+                <span class="mod-icon">&#x2577;</span>
+                <span class="mod-name">Danda+Dot <kbd>(F)</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="_" title="Connector Underbar (Hotkey: Alt+U or Alt+_)">
+                <span class="mod-icon">_</span>
+                <span class="mod-name">Bar <kbd>_</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="." title="Pause Period (Hotkey: .)">
+                <span class="mod-icon">.</span>
+                <span class="mod-name">Dot <kbd>.</kbd></span>
+              </button>
+              <button class="mod-chip" data-mod="," title="Cadence Comma (Hotkey: ,)">
+                <span class="mod-icon">,</span>
+                <span class="mod-name">Comma <kbd>,</kbd></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Vedic Accent Editor -->
+        <div class="card editor-card">
+          <div class="card-header-bar">
+            <div class="card-label">Live Vedic Accent Editor</div>
+            <div class="editor-hints">Type or click modifiers above to insert at cursor • <kbd>Ctrl+S</kbd> to save</div>
+          </div>
+          <textarea id="mainVedicEditor" rows="4" spellcheck="false" placeholder="Enter Malayalam Vedic text with Grantha swaras and modifiers..."></textarea>
+        </div>
+
+        <!-- Live Rendered Vedic Preview Display -->
+        <div class="card render-card">
+          <div class="card-label">Live Rendered Chanting Display (<span style="color:#ef4444;">Red Swara Letter</span>, <span style="color:#38bdf8;">Blue Modifiers</span>)</div>
+          <div class="rendered-vedic-preview" id="renderedVedicDisplay">
+            <!-- Dynamically formatted preview -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js?v=2.4"></script>
+</body>
+</html>

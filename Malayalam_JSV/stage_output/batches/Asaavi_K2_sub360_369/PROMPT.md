@@ -1,0 +1,70 @@
+# Visual Swara Extraction Prompt — Batch: Asaavi_K2_sub360_369
+
+You are an expert Vedic epigraphist and Sanskrit/Malayalam manuscript transcriber specializing in Jaimineeya Samavedam (JSV) musical notations.
+
+## TASK
+Inspect the attached scanned manuscript page(s) and insert the visual swara modifiers into the provided Malayalam master text block.
+
+## STRICT RULES
+1. **COLOR RULE (CRITICAL)**: **IGNORE RED INK completely.**
+   - Red ink marks are Grantha swara letters (e.g. തി, ത്ത്, ഖ, ടു) which are **already present** as Unicode Grantha tokens (like `(𑌤𑌿)`) in the text.
+   - Look **ONLY for non-base BLACK INK marks** (slashes, dots, vertical bars, arcs, roofs, underbars, commas).
+2. **ZERO-REGRESSION ON BASE TEXT**:
+   - Do **NOT** alter base Malayalam letters, Grantha tokens, punctuation (`।`, `॥`), verse numbers, or spacing.
+   - You **ONLY** insert visual modifier tokens into the text.
+3. **TOKEN LEXICON**:
+   - `(G)` : Descending slash attached below bottom-right of an akshara (e.g., `അ(G)ഗ്നേ`)
+   - `(C)` : Raised shoulder dot at top-right of an akshara (e.g., `ദേ(C)വാ`)
+   - `(H)` : Vertical swarita bar centered directly above an akshara (e.g., `മാ(H)നോ`)
+   - `(A)` : Syllable-spanning arc above the line
+   - `(A1)`: Arc over danda `।`
+   - `(B)` : Peak caret roof `^` above syllable
+   - `(D)` : Wide chevron roof `Ʌ` above line spanning 2+ syllables
+   - `_`   : Sustain underbar connector between words at baseline
+   - `.`   : Pause dot inline at baseline
+   - `,`   : Low comma inline at baseline
+
+## ATTACHED MANUSCRIPT IMAGES
+page_0137.png, page_0138.png, page_0139.png, page_0140.png, page_0141.png
+
+---
+
+## MASTER TEXT TO ANNOTATE:
+
+```text
+#Start of Mantra Sets -- subsection_360 ## DO NOT EDIT
+ആവാദ്രാ(𑌖𑌿) പ്സോ(𑌶) അംശൂമാ(𑌖𑌿) തീം(𑌣) । ആതാ(𑌕𑌾) ഷ്ഠാ(𑌖) ദീയാനാഃ(𑌖𑌿) കാ(𑌶) ഷ്ണോദാശാ(𑌖𑌿) ഭീഃ(𑌣) । സാഹാ(𑌕𑌾) സ്രാ(𑌖) ഇരാ(𑌶𑌾) വാ൪ക്താ(𑌖𑌾) മീ(𑌶) ന്ദ്രാശ്ശാചീ(𑌖𑌿) യാ(𑌣) । ധാമാ(𑌕𑌾) ന്താ(𑌖) മാപാസ്നീ(𑌖𑌿) ഹീ(𑌶) തിന്നൃമാ(𑌖𑌿) ണാഃ(𑌣) । അധാ(𑌟𑌾) ദ്രാ(𑌖) ഔഹോവാ(𑌶𑌿) । ആ(𑌚) ധദ്രാഃ(𑌟𑌾𑌖𑍍) ॥1॥ അവദ്രപ്സാ(𑌤𑍀) ഏ(𑌤) । അംശുമതി(𑌕𑍀) മതിഷ്ഠാ(𑌟𑌿) ദീയാനാഃ(𑌚𑌿) കാ൪ഷ്ണാഃ(𑌚𑌾)। ദാശാഭീ(𑌕𑌿) സാഹാസ്രായേ(𑌟𑍀) ആവക്താമീ(𑌚𑍀) ന്ദ്രാഃ(𑌕)। ശ്ശാച്യാധാമ(𑌕) ന്താ(𑌟) മപാസ്നീഹീതീ(𑌕𑍁𑌚𑍍) നൃ(𑌕) മണാ(𑌪𑌾) അധാദ്രാഃ(𑌪𑍍𑌲𑌿) । ഹോ(𑌪𑍍𑌲) ഇഴാ(𑌶𑌾)॥2॥
+#End of Mantra Sets -- subsection_360 ## DO NOT EDIT
+#Start of Mantra Sets -- subsection_361 ## DO NOT EDIT
+അവദ്രപ്സോ(𑌷𑍀) അംശുമതീ(𑌚𑍀) മൗ(𑌟) ഹോ(𑌖) ഔഹോ(𑌤𑌾) । ആതീ(𑌕𑌾) ഷ്ഠാദൗ(𑌟𑌾) ഹോ(𑌖) ഔഹോ(𑌤𑌾) । ഇയാനഃകൃഷ്ണാ(𑌚𑍁) ഔ(𑌟) ഹോ(𑌖) ഔഹോ(𑌤𑌾) ।ദാശാഭീസ്സാ(𑌕𑍀) ഹസ്രൈ(𑌥𑌾) രൗ(𑌟) ഹോ(𑌖) ഔഹോ(𑌤𑌾) । ആവാക്താ(𑌚𑌿) മിന്ദ്രാ(𑌚𑌾) ഔ(𑌟) ഹോ(𑌖) ഔഹോ(𑌤𑌾) । ശാച്യാധാമന്താ(𑌚𑍁) മൗ(𑌟) ഹോ(𑌖) ഔഹോ(𑌤𑌾) ।അപാസ്നിഹീതി(𑌚𑍁) നൗ(𑌟) ഹോ(𑌖) ഔഹോ(𑌤𑌾) । നൃമാ(𑌟𑌾𑌟𑍍) ണാ(𑌖) ഔഹോവാ(𑌶𑌿) । ആ(𑌚) ധദ്രാഃ(𑌟𑌾𑌖𑍍) ॥3॥ അവദ്രപ്സോ(𑌷𑍀) അംശുമതീമേ(𑌤𑍁) ഔഹോ(𑌖𑌾) വാ(𑌤𑍍𑌰) । ആതാ(𑌪) ഇഷ്ഠാ(𑌤𑍍𑌰𑌾) ത്। ഇയാനാഃ(𑌚𑌿) കൃഷ്ണോ(𑌚𑌾) ദാശാഭീ(𑌚𑌿) സ്സാഹസ്രൈ(𑌚𑌿) രാ(𑌕) വാ(𑌚) ക്താമാ(𑌕𑌾) ഇന്ദ്രോ(𑌟𑌾) ശാചീയാ(𑌕𑌿) ധമാ(𑌖𑌾) ന്തമപാസ്നിഹീതി(𑌷𑍂) നൃമാണാഓവാ(𑌶𑍁) । അധദ്രാഃ(𑌤𑌿𑌚𑍍) ॥4॥
+#End of Mantra Sets -- subsection_361 ## DO NOT EDIT
+#Start of Mantra Sets -- subsection_362 ## DO NOT EDIT
+ഹാ(𑌕) ഓ(𑌟𑌚𑍍) ഹാ(𑌕) ഓ(𑌚) ഹാ(𑌤) ഹാ(𑌤𑌚𑍍) ഇ(𑌶) വൃത്രസ്യത്വാ(𑌕𑍀) ശ്വാസഥാദീ(𑌕𑍀) ഷമാ(𑌖𑌾) ണാഃ(𑌪𑍍𑌲) । വിശ്വേദേവാ(𑌟𑍀) ആജാ(𑌕𑌾) ഹു൪യേസഖാ(𑌖𑍀) യാഃ(𑌪𑍍𑌲) । മാരൂത്ഭിരാഇന്ദ്രാ(𑌟𑍂) സാഖീയ(𑌕𑌿) ന്തേ(𑌖) സ്തു(𑌶) । ആഥേമാവാഇഷ്വാഃ(𑌟𑍂) പാ൪ക്താനാ(𑌕𑌿) ജയാ(𑌖𑌾) സി(𑌶) । ഹാ(𑌕) ഓ(𑌟𑌚𑍍) ഹാ(𑌕) ഓ(𑌟) ഹാ(𑌤) ഹാ(𑌖) ഔഹോവാ(𑌶𑌿) । ഓഔ(𑌕𑌾) ഹോ(𑌟𑌚𑍍) ഔ(𑌕) ഹോ(𑌖) ॥5॥ ഹോയേ(𑌟𑌾𑌚𑍍) ഹായാ(𑌕𑌾) യേ(𑌟) ഹയാഔ(𑌚𑌿) ഹോ(𑌕) വാ(𑌫) ഹാ(𑌤) ഇ(𑌶) വൃത്രസ്യത്വാ(𑌚𑍀) ശ്വാസഥാദീ(𑌕𑍀) ഷമാ(𑌖𑌾) ണാഃ(𑌪𑍍𑌲) । വിശ്വേദേവാ(𑌟𑌿) ആജാഹു൪യേ(𑌕𑍀) സഖാ(𑌖𑌾) യാഃ(𑌪𑍍𑌲) । മാരൂത്ഭിരാഇന്ദ്രാ(𑌟𑍂) സാഖിയ(𑌕𑌿) ന്തേ(𑌖) സ്തു(𑌶) । ആഥേമാവാഇശ്വാഃ(𑌟𑍂) പാ൪ക്താനാ(𑌕𑌿) ജയാ(𑌖𑌾) സി(𑌶) । ഹോയേ(𑌟𑌾𑌚𑍍) ഹായാ(𑌕𑌾) യേ(𑌟) ഹയാഔ(𑌚𑌿) ഹോ(𑌕) വാ(𑌫) ഹാ(𑌖) ഔഹോവാ(𑌶𑌿) ।ഓഔ(𑌕𑌾) ഹോ(𑌖) ॥6॥
+#End of Mantra Sets -- subsection_362 ## DO NOT EDIT
+#Start of Mantra Sets -- subsection_363 ## DO NOT EDIT
+വീധൂം(𑌤𑌾) । ദദ്രാദദ്രാണാം(𑌟𑍁) സാമാനാ(𑌕𑌿) ഇബഹൂ(𑌖𑌿) നാംയുവാ(𑌶𑌿) । നംസാനംസാന്താ(𑌟𑍁) പാലീതോ(𑌕𑌿) ജഗാ(𑌖𑌾) രാദേവാ(𑌶𑌿) । സ്യപാസ്യപാശ്യാ(𑌟𑍁) കാവീയ(𑌕𑌿) മ്മഹീ(𑌖𑌾) ത്വാദ്യാ(𑌶𑌾) । മമാമമാരാ(𑌟𑍁) സഹ്യാ(𑌪𑌾) സ്സാമാ(𑌖𑌾) ।നാ(𑌤𑍍𑌰) ॥7॥ ആ(𑌤) ആ(𑌖) ഹാ(𑌪𑍍𑌲) ഹാ(𑌤) ഇ(𑌶) വീ(𑌕) ധുന്ദദ്രാണാം(𑌟𑍀) സാമാനാ(𑌕𑌿) ഇബഹൂ(𑌖𑌿) നാം(𑌶) । യൂവാനംസാന്താ(𑌟𑍁) പാലീതോ(𑌕𑌿) ജഗാ(𑌖𑌾) രാ(𑌶) । ദേ(𑌕) വസ്യപാശ്യാ(𑌟𑍀) കാവീയ(𑌕𑌿) മ്മഹീ(𑌖𑌾) ത്വാ(𑌶) । ആ(𑌤) ആ(𑌖) ഹാ(𑌪𑍍𑌲) ഹാ(𑌤) ।അദ്യാമമാരാ(𑌟𑍂) സഹീയാ(𑌪𑌿) സ്സാമാ(𑌖𑌾) ।നാ(𑌤𑍍𑌰) ॥8॥
+#End of Mantra Sets -- subsection_363 ## DO NOT EDIT
+#Start of Mantra Sets -- subsection_364 ## DO NOT EDIT
+ഔഹോഇത്വം(𑌤𑍀) । ഹത്യാ(𑌚𑌾) സ്സപ്തഭ്യോ(𑌕𑌿) ജായമാ(𑌕𑌿) നാഃ(𑌖) । ഔഹോഅശാ(𑌤𑍀) । ത്രഭ്യോ(𑌕𑌾) അഭാ(𑌕𑌾) വശ്ശത്രൂരി(𑌕𑍀) ന്ദ്രാ(𑌖) । ഔഹോഇഗൂഢേ(𑌤𑍁) । ദ്യാവാപ്രഥിവീ(𑌕𑍁) അന്വവി(𑌕𑌿) ന്ദാഃ(𑌖) । ഔഹോഇവിഭൂ(𑌤𑍁) । മത്ഭ്യോ(𑌕𑌾) ഭുവനേഭ്യോ(𑌕𑍀) രണ(𑌕𑌾) ന്ധാഃ(𑌖) ॥9॥ ത്വോ(𑌤) ഹാഇഹത്യൗ(𑌶𑍀) വാഉവോ(𑌖𑌿) വാ(𑌣) । സപ്തഭ്യോ(𑌕𑌿) ജായമാ(𑌕𑌿) നാഉവാ(𑌕𑌿) ഓവാ(𑌪𑌾) അശോ(𑌶𑌾) ഹാ(𑌙) ഇ(𑌶) । ത്രഭ്യൗവാഉവോ(𑌖𑍁) വാ(𑌣) । അഭാവ(𑌕𑌿) ശ്ശത്രൂരി(𑌕𑌿) ന്ദ്രാഉവാ(𑌕𑌿) ഓവാ(𑌪𑌾) ഗൂഢേ(𑌶𑌾) ഹാ(𑌙) ഇ(𑌶) । ദ്യൗവാഉവോ(𑌖𑍁) വാ(𑌣) । പൃഥിവീ(𑌕𑌿) അന്വവി(𑌕𑌿) ന്ദാഉവാ(𑌕𑌿) ഓവാ(𑌪𑌾) വിഭൂ(𑌶𑌾) ഹാ(𑌙) ഇ(𑌶) । മത്ഭ്യൗവാഉവോ(𑌖𑍁) വാ(𑌣) । ഭുവനേ(𑌕𑌿) ഭ്യാഉവാ(𑌕𑌿) ഓവാ(𑌪𑌾) രണാന്ധാഃ(𑌪𑍍𑌲𑌿) । ഹോ(𑌪𑍍𑌲) ഇഴാ(𑌶𑌾) ॥10॥
+#End of Mantra Sets -- subsection_364 ## DO NOT EDIT
+#Start of Mantra Sets -- subsection_365 ## DO NOT EDIT
+മേഴീം(𑌤𑌾) । നത്വാവജ്രിണംഭൃ(𑌕𑍂) ഷ്ടീമാ(𑌟𑌾) ന്താം(𑌤) । പൂരൂ(𑌚𑌾) ധാ(𑌕) സ്മാനംവൃഷഭം(𑌕𑍁) സ്ഥീരാ(𑌟𑌾) പ്സൂനൂം(𑌤𑌾) । കാരോ(𑌚𑌾) ഷ്യ൪യസ്തരൂഷീ(𑌟𑍁) ൪ദൂവാ(𑌟𑌾) സ്യൂഃ(𑌤) । ആഇന്ദ്ര(𑌕𑌿) ന്ദ്യുക്ഷംവൃത്രാഹാ(𑌟𑍁𑌟𑍍) ണാ(𑌖) ഔഹോവാ(𑌶𑌿) । ഗൃണീ(𑌕𑌾) ഷേ(𑌟𑌖𑍍) ॥11॥ മേഴിന്നത്വാവാ(𑌖𑍁) ഔഹോ(𑌤𑌾) । ജ്രാഇണം(𑌕𑍀) ഭൃഷ്ടാഇമൗ(𑌕𑍀) വാ(𑌤) ന്തം(𑌖) । പുരൂ(𑌖𑌾) ഔഹോ(𑌤𑌾) । ധസ്മാനംവൃഷഭം(𑌕𑍂) സ്ഥാഇരൗ(𑌕𑌿) വാ(𑌤) പ്സു(𑌖) നും(𑌶) । കാരോ(𑌖𑌾) ഔഹോ(𑌤𑌾) । ഷ്യ൪യസ്തരുഷാഇ(𑌷𑍂) ൪ദൂവൗ(𑌕𑌾) വാ(𑌖) സ്യൂഃ(𑌪𑍍𑌲) । ഇന്ദ്രാ(𑌖𑌾) ഔഹോ(𑌤𑌾) । ദ്യുക്ഷംവൃത്രാഹാ(𑌟𑍁𑌟𑍍) ണാ(𑌖) ഔഹോവാ(𑌶𑌿) । ഗൃണീഷേ(𑌖𑌿) ॥12॥
+#End of Mantra Sets -- subsection_365 ## DO NOT EDIT
+#Start of Mantra Sets -- subsection_366 ## DO NOT EDIT
+പ്രവാഃ(𑌤𑌾) । മാഹേ(𑌕𑌾) മാ(𑌕) ഹേവൃധേ(𑌚𑌿) ഭാരാധൂ(𑌭𑌿) വാം(𑌤) । പ്രാചാതസാ(𑌷𑍀)ഇപ്രാസൂ(𑌕𑌿) മാ(𑌖) തീം(𑌣) । കൃണൂധ്വാ(𑌚𑌿) മീഹാവാ(𑌖𑌿) ഇശാഃ(𑌣𑌾) । പൂ(𑌟) ൪വീഃ(𑌤) പ്രചാരാ(𑌭𑌿) ചാ(𑌤) ൪ഷാണാ(𑌕𑌾) ഇപ്രാഔ(𑌟𑌿) ഹോ(𑌖) ബാ(𑌪𑍍𑌲) । ഹോ(𑌪𑍍𑌲) ഇഴാ(𑌶𑌾) ॥13॥ ഹാ(𑌖) । പ്രവോമഹാഇമാ(𑌖𑍂) ഹേ(𑌶) വൃധാ(𑌣𑌾𑌫𑍍) ഇഭരാ(𑌖𑌿) ധ്വം(𑌶) । ഹാ(𑌖) । പ്രാചേതസാഇപ്രാ(𑌖𑍂) സൂ(𑌶) । മാതാ(𑌣𑌾𑌫𑍍) ഇങ്കൃണു(𑌖𑌿) ധ്വം(𑌶) । ഹാ(𑌖) । വിശഃപൂ൪വാഇപ്രാ(𑌖𑍂) ചാ(𑌶) । രാചാ(𑌣𑌾𑌫𑍍) ൪ഷാണാ(𑌖𑌾) ഇപ്രാഃ(𑌪𑍍𑌲𑌾) । ഹാ(𑌖) ബുഹൗഹോവാഹാ(𑌪𑍍𑌲𑍁) ഉവാ(𑌶𑌾) । ഈ(𑌖) ॥14॥
+#End of Mantra Sets -- subsection_366 ## DO NOT EDIT
+#Start of Mantra Sets -- subsection_367 ## DO NOT EDIT
+ശുനംഹുവേ(𑌷𑍀) മഘവാനമിന്ദ്രാം(𑌤𑍂) । അസ്മിൻഭരേ(𑌷𑍀) നൃതമംവാ(𑌕𑍀) ജസാ(𑌟𑌾) തൗ(𑌤) । ശ്രണ്വന്തമുഗ്ര(𑌷𑍁) മൂതയേ(𑌕𑌿) സാമാ(𑌟𑌾) ത്സൂ(𑌤) । ഘ്നന്താംവാ(𑌭𑌿) ൪ത്രാ(𑌤) ഹോവാ(𑌟𑌾) ഹാ(𑌤) ഇ(𑌶) । നീസ(𑌕𑌾) ന്ജീതന്ധനാ(𑌕𑍀) നീ(𑌤) ഹോവാ(𑌟𑌾) ഹാ(𑌖𑌣𑍍) ഇ(𑌶) । ഓ(𑌪) ഇഴാ(𑌶𑌾)॥15॥
+#End of Mantra Sets -- subsection_367 ## DO NOT EDIT
+#Start of Mantra Sets -- subsection_368 ## DO NOT EDIT
+ദീവയാ(𑌕𑌿) ഹോവാ(𑌕𑌾) ഔ(𑌟) ഹോ(𑌤) വാ(𑌕𑌥𑍍) ഊദുബ്രഹ്മാണീ(𑌟𑍂) ഐരാതശ്രവാ(𑌖𑍁) സ്യാ(𑌶) । ഇ(𑌕) ന്ദ്രംസമാ൪യേ(𑌟𑍀) മാഹായാ(𑌕𑌿) വസീ(𑌖𑌾) ഷ്ഠ(𑌶) । ആ(𑌕) യോ൪വിശ്വാനീ(𑌟𑍀) ശ്രാവാസാ(𑌕𑌿) തതാ(𑌖𑌾) നാ(𑌶) ।ദീവയാ(𑌕𑌿) ഹോവാ(𑌕𑌾) ഔ(𑌟) ഹോ(𑌤) വാ(𑌕𑌥𑍍) ഊപശ്രോതാമാ(𑌟𑍁) ഇവതോ(𑌪𑌿) വാചാം(𑌖𑌾) ।സാ(𑌤𑍍𑌰) ഇ(𑌶) ॥16॥
+#End of Mantra Sets -- subsection_368 ## DO NOT EDIT
+#Start of Mantra Sets -- subsection_369 ## DO NOT EDIT
+ചക്രംയദസ്യപ്സൂ(𑌷𑍂) ആനിനിഷക്താം(𑌤𑍁) । ഊതോതദസ്മൈ(𑌷𑍁) മധ്വീചച്ഛാ(𑌟𑍀) ദ്യാ(𑌤) ത്। പൃഥിവ്യാമ(𑌷𑍀) തിഷീതം(𑌕𑌿) യാദൂ(𑌟𑌾) ധാഃ(𑌤) । പായോഗോ(𑌟𑌿) ഷൂ(𑌤) ആദധാ(𑌟𑌿) ഓ(𑌚) ഷാധീ(𑌥𑌾) ഷൂഇഴാ(𑌟𑌿) ഭാ(𑌖𑌣𑍍) । ഓ(𑌪) ഇഴാ(𑌶𑌾) ॥17॥
+#End of Mantra Sets -- subsection_369 ## DO NOT EDIT
+```
+
+---
+
+## OUTPUT FORMAT:
+Return **ONLY** the fully annotated text preserving the `#Start of Mantra Sets` and `#End of Mantra Sets` tags. Do not wrap in conversational fluff or additional markdown tags.

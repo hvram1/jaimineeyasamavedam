@@ -1,0 +1,82 @@
+﻿Loading source: data\output\Vargeekaran.json
+Source loaded.
+Reading filter: data\input\Ritu_shanti-1.txt
+Found 37 identifiers in filter file.
+Building Samam index...
+Samam index built.
+Processing ID: 2.9.2
+  Samam 2 -> subsection_218 (contains Samams [2])
+Processing ID: 1.8.7
+  Samam 7 -> subsection_87 (contains Samams [7, 8])
+Processing ID: 1.8.8
+  Samam 8 -> subsection_87 (already added, skipping duplicate)
+Processing ID: 3.7.7
+  Samam 7 -> subsection_333 (contains Samams [7])
+Processing ID: 1.9.1
+  Samam 1 -> subsection_89 (contains Samams [1, 2])
+Processing ID: 1.3.5
+  Samam 5 -> subsection_26 (contains Samams [4, 5])
+Processing ID: 1.3.6
+  Samam 6 -> subsection_27 (contains Samams [6])
+Processing ID: 1.6.7
+  Samam 7 -> subsection_70 (contains Samams [7, 8, 9])
+Processing ID: 4.3.18
+  Samam 18 -> subsection_379 (contains Samams [18])
+Processing ID: 1.6.2
+  Samam 2 -> subsection_65 (contains Samams [2])
+Processing ID: 1.3.16
+  Samam 16 -> subsection_34 (contains Samams [15, 16])
+Processing ID: 1.2.15
+  Samam 15 -> subsection_24 (contains Samams [15])
+Processing ID: 1.11.8
+  Samam 8 -> subsection_108 (contains Samams [8, 9])
+Processing ID: 1.11.10
+  Samam 10 -> subsection_109 (contains Samams [10, 11, 12])
+Processing ID: 2.4.11
+  Samam 11 -> subsection_169 (contains Samams [11])
+Processing ID: 2.4.13
+  Samam 13 -> subsection_171 (contains Samams [13])
+Processing ID: 3.1.9
+  Samam 9 -> subsection_257 (contains Samams [9])
+Processing ID: 3.4.9
+  Samam 9 -> subsection_302 (contains Samams [8, 9, 10])
+Processing ID: 3.6.16
+  Samam 16 -> subsection_325 (contains Samams [15, 16])
+Processing ID: 1.1.18
+  Samam 18 -> subsection_12 (contains Samams [18])
+Processing ID: 1.2.12
+  Samam 12 -> subsection_22 (contains Samams [12, 13])
+Processing ID: 1.4.4
+  Samam 4 -> subsection_40 (contains Samams [4])
+Processing ID: 1.4.18
+  Samam 18 -> subsection_50 (contains Samams [18])
+Processing ID: 1.4.20
+  Samam 20 -> subsection_51 (contains Samams [19, 20])
+Processing ID: 1.5.1
+  Samam 1 -> subsection_53 (contains Samams [1, 2])
+Processing ID: 1.6.1
+  Samam 1 -> subsection_64 (contains Samams [1])
+Processing ID: 1.9.5
+  Samam 5 -> subsection_92 (contains Samams [5])
+Processing ID: 1.9.8
+  Samam 8 -> subsection_94 (contains Samams [7, 8])
+Processing ID: 1.11.17
+  Samam 17 -> subsection_114 (contains Samams [17])
+Processing ID: 1.6.3
+  Samam 3 -> subsection_66 (contains Samams [3])
+Processing ID: 1.6.7
+  Samam 7 -> subsection_70 (already added, skipping duplicate)
+Processing ID: 2.11.5
+  Samam 5 -> subsection_239 (contains Samams [5])
+Processing ID: 2.11.7
+  Samam 7 -> subsection_241 (contains Samams [7])
+Processing ID: 3.3.7
+  Samam 7 -> subsection_286 (contains Samams [7, 8, 9])
+Processing ID: 3.3.8
+  Samam 8 -> subsection_286 (already added, skipping duplicate)
+Processing ID: 3.3.9
+  Samam 9 -> subsection_286 (already added, skipping duplicate)
+Processing ID: 4.6.9
+  Samam 9 -> subsection_408 (contains Samams [9])
+
+Successfully created curated file with 33 Arsheyams at data\output\Ritu_shanti_curated.json

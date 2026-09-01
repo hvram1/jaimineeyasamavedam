@@ -1,0 +1,24 @@
+# Sama Sangraha (Collection) Configuration
+# Add new collections here to have them appear on the gateway homepage
+
+collections:
+  - id: "sooktamala"
+    title_sa: "साम सूक्तमाला"
+    title_en: "Sama Sooktamala"
+    description: "Collection of Sama Sooktas for various rituals and ceremonies."
+    path: "collection/sooktamala/index.html"
+    icon: "📗"
+
+  - id: "prayogamala-purva"
+    title_sa: "साम प्रयोगमाला - पूर्वभागः"
+    title_en: "Sama Prayogamala - Purva Bhagam"
+    description: "Procedural mantras for various rituals - First part."
+    path: "collection/prayogamala-purva/index.html"
+    icon: "📘"
+
+  - id: "prayogamala-uttara"
+    title_sa: "साम प्रयोगमाला - उत्तरभागः"
+    title_en: "Sama Prayogamala - Uttara Bhagam"
+    description: "Procedural mantras for various rituals - Second part."
+    path: "collection/prayogamala-uttara/index.html"
+    icon: "📙"

@@ -1,0 +1,374 @@
+\documentclass[12pt, a4paper, openany]{book}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec} 
+\titlespacing*{\chapter}{0pt}{-10pt}{10pt}
+
+% --- LANGUAGE & FONT SETUP ---
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{sanskrit}
+
+% --- COLOR SETUP ---
+\usepackage[dvipsnames]{xcolor} % <--- ADDED for \textcolor support
+
+% --- CUSTOM COLORS (Matching HTML color scheme conditionally) ---
+\BLOCK{ if pdf_color_mode == 'color' or pdf_color_mode is not defined or not pdf_color_mode }
+\definecolor{AccentBlue}{HTML}{1565c0}      % Rik text - matches HTML --accent-blue
+\definecolor{AccentPurple}{HTML}{7b1fa2}    % Metadata - matches HTML --accent-purple
+\definecolor{AccentGreen}{HTML}{2e7d32}     % Headers - matches HTML --accent-green
+\definecolor{AccentBrown}{HTML}{8B4513}     % Samam Metadata - matches HTML
+\definecolor{SwaraRed}{HTML}{C62828}
+\definecolor{ModifierDarkBlue}{HTML}{006699}
+\definecolor{ModifierGreen}{HTML}{00994C}
+\definecolor{ModifierSkyBlue}{HTML}{0284C7}
+\BLOCK{ else }
+\definecolor{AccentBlue}{HTML}{000000}      
+\definecolor{AccentPurple}{HTML}{000000}    
+\definecolor{AccentGreen}{HTML}{000000}     
+\definecolor{AccentBrown}{HTML}{000000}     
+\definecolor{SwaraRed}{HTML}{000000}        
+\definecolor{ModifierDarkBlue}{HTML}{000000}
+\definecolor{ModifierGreen}{HTML}{000000}
+\definecolor{ModifierSkyBlue}{HTML}{000000}
+\BLOCK{ endif }
+
+\setmainfont[
+    Scale=1.5, 
+    Script=Devanagari,
+    Ligatures=TeX,
+    AutoFakeSlant\BLOCK{ if font_path },
+    Path = \VAR{font_path},
+    Extension = .ttf,
+    UprightFont = *\BLOCK{ endif }
+]{\VAR{font_family}}
+
+\newfontfamily\smallredfont[
+    Scale=1.12,  
+    Script=Devanagari,
+    Ligatures=TeX,
+    Color=SwaraRed,
+    AutoFakeBold=2.0,
+    AutoFakeSlant\BLOCK{ if font_path },
+    Path = \VAR{font_path},
+    Extension = .ttf,
+    UprightFont = *\BLOCK{ endif }
+]{\VAR{font_family}}
+
+\BLOCK{ if font_path }
+\newfontfamily\swarafont[Scale=0.92, Script=Grantha, Ligatures=TeX, AutoFakeBold=2.5, AutoFakeSlant, Path=\VAR{font_path}]{JaimineeyaSwara.ttf}
+\BLOCK{ else }
+\newfontfamily\swarafont[Scale=0.92, Script=Grantha, Ligatures=TeX, AutoFakeBold=2.5, AutoFakeSlant]{JaimineeyaSwara}
+\BLOCK{ endif }
+
+\setcounter{tocdepth}{3}
+
+% --- PACKAGES ---
+\usepackage{ragged2e} 
+\usepackage{stackengine} 
+\usepackage{fancyhdr}    
+\usepackage[perpage]{footmisc} % Resets footnote numbering on every page - MUST BE BEFORE hyperref
+\usepackage{hyperref}    
+\usepackage{imakeidx}    
+\usepackage{needspace}
+\usepackage{longtable}
+% --- CRITICAL: MICROTYPE FOR SPACING ---
+% This allows LaTeX to stretch letters by 20% to avoid gaps between words 
+\usepackage[stretch=20, shrink=20]{microtype}  % <--- THE MAGIC FIX for spacing
+% --- SPACING & BREAKING RULES ---
+% 1. Reduce the "Cost" of breaking a word.
+%    Default is 50. Lower means "Please break here instead of stretching spaces."
+\hyphenpenalty=10     
+\exhyphenpenalty=10
+
+% --- HYPHENATION & SPACING RULES (CRITICAL) ---
+\lefthyphenmin=3      % Never split first 2 letters (e.g., prevents "ha-")
+\righthyphenmin=3     % Never split last 2 letters (e.g., prevents "-ih")
+\tolerance=500       % Lower tolerance forces better breaks (standard is 200)
+\pretolerance=100     % Tries to break without hyphens first
+\setlength{\emergencystretch}{1em} % Reduced stretch (forces breaks over gaps)
+\setlength{\hfuzz}{2pt}
+\setlength{\parindent}{0pt} 
+
+% --- STACKING COMMANDS (Strictly No Phantom Spaces) ---
+
+\BLOCK{ if kpully }
+% 1. KPULLY (Kodunthirapully Paddhati): Swara markings ABOVE the mantra text
+\newcommand{\stackcenter}[2]{%
+  \begingroup%
+  \def\stackalignment{c}%
+  \stackon{#1}{#2}%
+  \endgroup%
+}
+
+\newcommand{\stackleft}[2]{%
+  \begingroup%
+  \def\stackalignment{c}%
+  \stackon{#1}{#2}%
+  \endgroup%
+}
+\BLOCK{ else }
+% 1. STANDARD: Swara markings BELOW the mantra text
+\newcommand{\stackcenter}[2]{%
+  \begingroup%
+  \def\stackalignment{c}%
+  \stackunder{#1}{#2}%
+  \endgroup%
+}
+
+\newcommand{\stackleft}[2]{%
+  \begingroup%
+  \def\stackalignment{c}%
+  \stackunder{#1}{#2}%
+  \endgroup%
+}
+\BLOCK{ endif }
+
+% --- INDEX INITIALIZATION ---
+\makeindex[columns=2, title=Alphabetical Index, intoc]
+
+% --- HYPERREF ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,     
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Vedic Text},
+    pdfpagemode=UseOutlines, 
+}
+
+
+
+% --- STACK CONFIG ---
+\def\stackalignment{c} 
+\def\stacktype{L}     
+\setstackgap{L}{0.9\baselineskip} 
+
+% --- HEADER CONFIG ---
+\setlength{\headheight}{22pt} 
+\addtolength{\topmargin}{-10pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\rightmark}   
+\fancyhead[RE]{\leftmark}    
+\renewcommand{\headrulewidth}{0.4pt}
+
+% --- FOOTER CONFIG ---
+\fancyfoot[C]{\footnotesize jaimineeyasamavedam.org (v\VAR{version})}
+\renewcommand{\footrulewidth}{0.4pt}
+% Jinja helpers
+\newcommand{\VAR}[1]{}
+\newcommand{\BLOCK}[1]{}
+
+% Command to format accent marks with larger size and bold
+\newcommand{\accentmark}[2]{%
+    {\fontsize{#1pt}{#1pt}\selectfont\bfseries\addfontfeature{FakeBold=3}#2}%
+}
+
+% --- ACCENT OVERLAP ADJUSTMENT ---
+% Defines a small negative space (kerning) to pull the next character closer
+% Used when two "danger" accents (Anudatta/Kampa) appear consecutively.
+\newcommand{\accentadj}{\kern0.15ex}
+
+% --- ADD THIS SECTION ---
+\usepackage{newunicodechar}
+\newunicodechar{।}{\hspace{0.6em}।} % Adds space before Single Danda
+\newunicodechar{॥}{\hspace{0.3em}॥\hspace{0.3em}}
+% ------------------------
+% --- CUSTOM FOOTNOTE STYLE: Devanagari Numerals & Higher Position ---
+\makeatletter
+\def\devanagarinumeral#1{\expandafter\dodevanagari\number#1\relax}
+\def\dodevanagari#1{\ifx#1\relax\else\ifcase#1०\or१\or२\or३\or४\or५\or६\or७\or८\or९\fi\expandafter\dodevanagari\fi}
+\renewcommand{\thefootnote}{\devanagarinumeral{\value{footnote}}}
+\renewcommand\@makefnmark{\hbox{\textsuperscript{\raisebox{1.2ex}{\normalfont\@thefnmark}}}}
+\makeatother
+% ------------------------
+
+\begin{document}
+
+\renewcommand{\contentsname}{॥ अनुक्रमणिका ॥}
+
+\begin{titlepage}
+    \begin{center}
+        \begin{sanskrit}
+            { \Huge \VAR{doc_title_sa} }
+        \end{sanskrit}
+        \vfill
+        \large v\VAR{version} \\
+        Generated: \VAR{generated_at} \\
+        \date{\today}
+    \end{center}
+\end{titlepage}
+
+% --- TOC ---
+{
+  \RaggedRight 
+  \tableofcontents
+}
+\newpage
+
+% ==========================================
+% JINJA2 LOOP STRUCTURE
+% ==========================================
+
+\BLOCK{ for key, supersection in supersections.items() }
+
+    % --- SUPERSECTION ---
+    \cleardoublepage           
+    \phantomsection              
+    \BLOCK{ if supersection.supersection_title }
+    \chapter*{\centering \VAR{supersection.supersection_title}}
+    \addcontentsline{toc}{chapter}{\VAR{supersection.supersection_title}}
+    \markboth{\VAR{supersection.supersection_title}}{\VAR{supersection.supersection_title}}
+    \BLOCK{ endif }
+    
+    % GLUE FIX: Prevent page break between Chapter and First Section
+    \nopagebreak
+
+    \BLOCK{ set ns_sec = namespace(first_section=true) }
+    \BLOCK{ for section_key, section in supersection.sections.items() }
+        \BLOCK{ if section_key != 'count' }
+        
+            \BLOCK{ if not ns_sec.first_section }
+            \clearpage
+            \BLOCK{ endif }
+            \BLOCK{ set ns_sec.first_section = false }
+
+            % --- SECTION ---
+            
+            \phantomsection  
+
+            \BLOCK{ if section.section_title }
+            \section*{\centering \VAR{section.section_title.replace(':', 'ः')} \quad (\VAR{section.Count})}
+            \BLOCK{ if toc_level == 'section' or toc_level == 'both' }
+            \addcontentsline{toc}{section}{\VAR{section.section_title.replace(':', 'ः')} \quad (\VAR{section.Count})} 
+            \BLOCK{ endif }
+            \markright{\VAR{section.section_title.replace(':', 'ः')}}
+            \nopagebreak % Keep section title with first mantra
+            \BLOCK{ endif }
+            
+            % --- SECTION-LEVEL PROCEDURE LINK ---
+            \BLOCK{ set section_procedure = none }
+            \BLOCK{ for sub_key, sub in section.subsections.items() }
+                \BLOCK{ if sub.procedure_ref and sub.procedure_ref.get('scope') == 'section' }
+                    \BLOCK{ set section_procedure = sub.procedure_ref }
+                    \BLOCK{ break }
+                \BLOCK{ endif }
+            \BLOCK{ endfor }
+            \BLOCK{ if section_procedure }
+            \footnote{\VAR{section_procedure.get('title', 'विधिः')} - \hyperref[app:\VAR{section_procedure.get('file', '').rsplit('.', 1)[0]}]{परिशिष्टम् पश्यतु (See Appendix)}}
+            \BLOCK{ endif }
+
+            \BLOCK{ set ns = namespace(prev_rik_id=none) }
+            \BLOCK{ for subsection_key, subsection in section.subsections.items() }
+                % --- SUBSECTIONS (Mantras) ---
+                
+                % Conditional rendering based on output_mode
+                \BLOCK{ if output_mode == 'rik' }
+                \VAR{subsection | format_rik_only(none, none, subsection.header.header, footnote_dict, ns.prev_rik_id, key ~ '_' ~ section_key ~ '_' ~ subsection_key, toc_level)}
+                \BLOCK{ elif output_mode == 'samam' }
+                \VAR{subsection | format_samam_only(none, none, subsection.header.header, footnote_dict, ns.prev_rik_id, key ~ '_' ~ section_key ~ '_' ~ subsection_key, toc_level)}
+                \BLOCK{ elif output_mode == 'rik_nometa' }
+                \VAR{subsection | format_rik_nometa(none, none, subsection.header.header, footnote_dict, ns.prev_rik_id, key ~ '_' ~ section_key ~ '_' ~ subsection_key, toc_level)}
+                \BLOCK{ elif output_mode == 'samam_nometa' }
+                \VAR{subsection | format_samam_nometa(none, none, subsection.header.header, footnote_dict, ns.prev_rik_id, key ~ '_' ~ section_key ~ '_' ~ subsection_key, toc_level)}
+                \BLOCK{ else }
+                \VAR{subsection | format_mantra_sets(none, none, subsection.header.header, footnote_dict, ns.prev_rik_id, key ~ '_' ~ section_key ~ '_' ~ subsection_key, toc_level)}
+                \BLOCK{ endif }
+                \BLOCK{ set ns.prev_rik_id = subsection.rik_id }
+               
+                                
+            \BLOCK{ endfor }
+        \BLOCK{ endif }
+    \BLOCK{ endfor }
+
+\BLOCK{ endfor }
+
+\BLOCK{ if summary_table }
+% --- Summary Table ---
+\cleardoublepage
+\phantomsection
+\markboth{\VAR{summary_title}}{\VAR{summary_title}}
+\fancyhead[LO]{\VAR{summary_title}}
+\fancyhead[RE]{\VAR{summary_title}}
+\chapter*{\centering ॥ \VAR{summary_title} ॥}
+\addcontentsline{toc}{chapter}{\VAR{summary_title}}
+
+\BLOCK{ set show_rik = ('rik' in output_mode or 'combined' in output_mode) and has_riks }
+\BLOCK{ set show_samam = ('samam' in output_mode or 'combined' in output_mode) and has_samams }
+\begin{center}
+{\small % Reduce font size for the table
+\renewcommand{\arraystretch}{1.3} % Increase vertical spacing between rows
+\begin{longtable}{|p{6cm}|\BLOCK{if show_rik}c|\BLOCK{endif}\BLOCK{if show_samam}c|\BLOCK{endif}}
+\hline
+\textbf{खण्डः} \BLOCK{if show_rik} & \textbf{ऋक् सङ्ख्या} \BLOCK{endif} \BLOCK{if show_samam} & \textbf{साम सङ्ख्या} \BLOCK{endif} \\
+\hline\hline
+\endfirsthead
+
+\hline
+\textbf{खण्डः} \BLOCK{if show_rik} & \textbf{ऋक् सङ्ख्या} \BLOCK{endif} \BLOCK{if show_samam} & \textbf{साम सङ्ख्या} \BLOCK{endif} \\
+\hline\hline
+\endhead
+
+\hline
+\endfoot
+
+\BLOCK{ for patha_data in summary_table }
+\textbf{\textcolor{AccentBlue}{\VAR{patha_data.patha}}} \BLOCK{if show_rik} & \textbf{\textcolor{AccentBlue}{\VAR{patha_data.patha_riks}}} \BLOCK{endif} \BLOCK{if show_samam} & \textbf{\textcolor{AccentBlue}{\VAR{patha_data.patha_samams}}} \BLOCK{endif} \\
+\hline
+\BLOCK{ for row in patha_data.khandas }
+\VAR{row.khanda} \BLOCK{if show_rik} & \VAR{row.riks} \BLOCK{endif} \BLOCK{if show_samam} & \VAR{row.samams} \BLOCK{endif} \\
+\BLOCK{ endfor }
+\hline
+\BLOCK{ endfor }
+\textbf{आहत्य} \BLOCK{if show_rik} & \textbf{\VAR{total_riks}} \BLOCK{endif} \BLOCK{if show_samam} & \textbf{\VAR{total_samams}} \BLOCK{endif} \\
+\hline
+\end{longtable}
+}
+\end{center}
+\clearpage
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\BLOCK{ endif }
+
+\BLOCK{ if closing_mantras }
+% --- Closing Mantras ---
+\vspace{1.5cm}
+\begin{center}
+\BLOCK{ for line in closing_mantras }
+{\normalsize \bfseries \VAR{line}}\\[0.3em]
+\BLOCK{ endfor }
+\end{center}
+\BLOCK{ endif }
+\BLOCK{ if prayogas }
+% --- PRAYOGA APPENDIX ---
+\cleardoublepage
+\phantomsection
+\markboth{परिशिष्टम्}{परिशिष्टम्}
+\fancyhead[LO]{परिशिष्टम्}
+\fancyhead[RE]{परिशिष्टम्}
+\chapter*{\centering ॥ परिशिष्टम् (Appendix) ॥}
+\addcontentsline{toc}{chapter}{परिशिष्टम् (Appendix)}
+
+\BLOCK{ for proc in prayogas }
+\phantomsection
+\label{app:\VAR{proc.slug}}
+% The markdown converter already injects section* or subsection* headings
+% However, we title the block securely here if needed
+\vspace{1em}
+{
+  \large \bfseries \textcolor{AccentGreen}{\VAR{proc.title}}
+}
+\vspace{0.5em}
+
+{\normalsize
+\VAR{proc.latex_content}
+}
+\vspace{2em}
+\BLOCK{ endfor }
+\BLOCK{ endif }
+\clearpage
+
+  \printindex
+
+\end{document}

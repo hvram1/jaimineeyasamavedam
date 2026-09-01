@@ -1,0 +1,11 @@
+======================================================================
+SAMAM NUMERAL MIGRATION REPORT
+======================================================================
+File                      : C:\Users\sekha\OneDrive\Documents\GitHub\jaimineeyasamavedam\data\input\Malayalam\Samam_Malayalam_Unicode.txt
+File chars                : 456,732
+Danda-numeral markers     : 1226 (after: 1226)
+Devanagari digit chars    : 1923 (after: 0)
+Non-digit text preserved  : YES
+Idempotent                : YES
+RESULT                    : SUCCESS — master file updated
+======================================================================

@@ -1,0 +1,959 @@
+/* ==========================================================================
+   JSV Visual Curation & Benchmarking Workspace - Design System
+   ========================================================================== */
+
+@font-face {
+  font-family: 'RIT Rachana';
+  src: url('/fonts/RIT-Rachana-Regular.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/malayalam-fonts@latest/fonts/RIT-Rachana/RIT-Rachana-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RIT Rachana';
+  src: url('/fonts/RIT-Rachana-Bold.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/malayalam-fonts@latest/fonts/RIT-Rachana/RIT-Rachana-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JaimineeyaSwara';
+  src: url('/fonts/JaimineeyaSwara.ttf?v=3.5') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  --bg-primary: #0a0d14;
+  --bg-secondary: #121824;
+  --bg-card: #182234;
+  --bg-hover: #223048;
+  --border-color: #2a3b5c;
+  --border-focus: #f59e0b;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent-gold: #f59e0b;
+  --accent-gold-glow: rgba(245, 158, 11, 0.25);
+  --accent-cyan: #38bdf8;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif-title: 'Cinzel', serif;
+  --font-malayalam: 'Noto Serif Malayalam', serif;
+  --font-swara: 'JaimineeyaSwara', 'Noto Serif Grantha', serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+body.font-rachana {
+  --font-malayalam: 'RIT Rachana', 'Rachana', 'Noto Serif Malayalam', serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ==========================================================================
+   App Header & Toolbar
+   ========================================================================== */
+.app-header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 60px;
+  z-index: 100;
+  flex-wrap: nowrap;
+}
+
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo-badge {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  font-weight: 800;
+  font-family: var(--font-serif-title);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.brand-text h1 {
+  font-family: var(--font-serif-title);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #f8fafc;
+  white-space: nowrap;
+}
+
+.sub-badge {
+  font-size: 11px;
+  color: var(--accent-cyan);
+  display: block;
+  white-space: nowrap;
+}
+
+.navigator-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
+}
+
+select {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-width: 90px;
+  max-width: 220px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#sectionSelect {
+  max-width: 260px;
+  font-weight: 500;
+}
+
+#sectionSelect optgroup {
+  background-color: #0f172a;
+  color: #38bdf8;
+  font-weight: 700;
+  font-style: normal;
+  padding: 4px;
+}
+
+#sectionSelect option {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  font-weight: 400;
+  padding: 3px 6px;
+}
+
+#subsectionSelect {
+  max-width: 240px;
+}
+
+#samamSelect {
+  max-width: 140px;
+}
+
+.direct-jump-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 2px 4px 2px 8px;
+  transition: all 0.15s ease;
+}
+
+.direct-jump-box:focus-within {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+.jump-prefix {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.direct-jump-box input {
+  width: 54px;
+  background: transparent;
+  border: none;
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  outline: none;
+  padding: 3px 0;
+  text-align: center;
+}
+
+.direct-jump-box input::-webkit-inner-spin-button,
+.direct-jump-box input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.direct-jump-box .btn-sm {
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  height: 24px;
+  border-radius: 4px;
+  background: #334155;
+  color: #f8fafc;
+}
+
+.direct-jump-box .btn-sm:hover {
+  background: #38bdf8;
+  color: #000;
+}
+
+select:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 2px var(--accent-gold-glow);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-secondary {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--accent-cyan);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  box-shadow: 0 0 12px var(--accent-gold-glow);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.btn-outline:hover {
+  background-color: rgba(56, 189, 248, 0.1);
+}
+
+/* ==========================================================================
+   Split Workspace Grid & Layouts
+   ========================================================================== */
+.workspace-grid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 60px);
+  transition: all 0.2s ease;
+}
+
+/* Stacked Layout Mode (Top: Manuscript, Bottom: Editor/Preview) */
+.workspace-grid.stacked {
+  grid-template-columns: 100%;
+  grid-template-rows: 44vh calc(56vh - 60px);
+}
+
+.workspace-grid.stacked .manuscript-pane {
+  border-right: none;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.pane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.manuscript-pane {
+  border-right: 1px solid var(--border-color);
+  background-color: #07090e;
+}
+
+.pane-header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 46px;
+}
+
+.pane-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.scan-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-switcher,
+.zoom-tools {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--bg-card);
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.tool-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tool-btn:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+#pageLabel,
+#zoomLevel {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  padding: 0 4px;
+  color: var(--accent-gold);
+}
+
+/* Canvas Viewport */
+.canvas-viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: #05070a;
+  cursor: grab;
+}
+
+.canvas-viewport:active {
+  cursor: grabbing;
+}
+
+.pan-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.pan-container img {
+  display: block;
+  max-width: none;
+  filter: contrast(110%) brightness(100%);
+  transition: filter 0.2s ease;
+}
+
+.pan-container img.inverted {
+  filter: invert(90%) hue-rotate(180deg) contrast(140%);
+}
+
+.viewport-hints {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Curation Workspace
+   ========================================================================== */
+.curation-pane {
+  background-color: var(--bg-primary);
+}
+
+.curation-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.toolbar-palette-card {
+  padding: 8px 14px;
+  background-color: #0f1522;
+}
+
+.palette-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.card-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--accent-gold);
+}
+
+.editor-hints {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* Main Unified Vedic Editor */
+#mainVedicEditor {
+  width: 100%;
+  background-color: #07090e;
+  color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-family: var(--font-malayalam), var(--font-mono);
+  font-size: 22px;
+  line-height: 2.0;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s ease;
+  user-select: text;
+}
+
+#mainVedicEditor:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px var(--accent-gold-glow);
+}
+
+/* Rendered Vedic Preview - Stacked Chanting Notation */
+.rendered-vedic-preview {
+  font-family: var(--font-malayalam);
+  font-size: 26px;
+  line-height: 2.6;
+  color: #ffffff;
+  padding: 16px 20px;
+  background-color: var(--bg-card);
+  border-radius: 6px;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+  word-break: break-word;
+  user-select: text;
+  min-height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px 4px;
+}
+
+.rendered-vedic-preview .mantra-word {
+  display: inline-flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  margin: 0 3px;
+}
+
+/* 1. Ruby Container for Stacking Above Mantrakshara */
+.rendered-vedic-preview ruby.vedic-ruby {
+  display: inline-flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  vertical-align: bottom;
+  ruby-position: over;
+  margin: 0 2px;
+  position: relative;
+}
+
+/* 2. Red Swara Letter Bottom-Aligned on Uniform Baseline (Clear of All Modifiers) */
+.rendered-vedic-preview rt.swara-above {
+  font-family: var(--font-swara);
+  font-size: 0.50em;
+  color: #ff4d4f !important;
+  /* Clean Vivid Red */
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  min-height: 1.1em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 9px;
+  user-select: text;
+  white-space: nowrap;
+  text-shadow: 0 0 5px rgba(255, 77, 79, 0.45);
+}
+
+/* 3. Base Akshara with Relative Positioning for Centered Overlays */
+.rendered-vedic-preview rb.akshara-base,
+.rendered-vedic-preview .akshara-base {
+  font-family: var(--font-malayalam);
+  font-size: 1.0em;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  line-height: 1.2;
+  text-align: center;
+  position: relative;
+}
+
+/* 4. Swara Modifiers & Marks: BLUE with JaimineeyaSwara font */
+.rendered-vedic-preview .swara-mod {
+  font-family: var(--font-swara);
+  color: #38bdf8;
+  /* Sky Blue */
+  font-weight: bold;
+  line-height: 1;
+  display: inline-block;
+}
+
+/* MOD-A: Melodic Arc (⁀) */
+.rendered-vedic-preview .swara-mod.mod-a {
+  position: absolute;
+  top: -0.15em;
+  left: 100%;
+  transform: translateX(-40%);
+  font-size: 0.90rem;
+  pointer-events: none;
+}
+
+/* MOD-A1: Arc over Danda */
+.rendered-vedic-preview .swara-mod.mod-a1 {
+  position: absolute;
+  top: -0.28em;
+  left: 100%;
+  transform: translateX(5%);
+  font-size: 1.15rem;
+  pointer-events: none;
+}
+
+/* MOD-B: Peak Caret Roof (/\ / ^) with Embedded Swara on Peak */
+.rendered-vedic-preview .swara-mod.mod-b {
+  position: absolute;
+  top: -0.22em;
+  left: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+
+.rendered-vedic-preview .swara-mod.mod-b .caret-glyph {
+  display: block;
+  color: #38bdf8;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.rendered-vedic-preview .swara-mod.mod-b .swara-on-caret {
+  position: absolute;
+  top: -1.70em;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ff4d4f !important;
+  font-size: 0.70rem;
+  font-weight: bold;
+  font-family: var(--font-swara);
+  line-height: 1;
+  white-space: nowrap;
+  text-shadow: 0 0 6px rgba(255, 77, 79, 0.45);
+}
+
+/* MOD-C: Upper Shoulder Dot */
+.rendered-vedic-preview .swara-mod.mod-c {
+  font-family: var(--font-swara);
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #38bdf8;
+  position: absolute;
+  top: -0.12em;
+  right: -0.18em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* MOD-D: Chevron Roof (∧) */
+.rendered-vedic-preview .swara-mod.mod-d {
+  position: absolute;
+  top: -0.15em;
+  left: 100%;
+  transform: translateX(-40%);
+  font-size: 0.90rem;
+  pointer-events: none;
+}
+
+/* MOD-D1: Asymmetrical Inverted-V / Hooked Rise (⋀) */
+.rendered-vedic-preview .swara-mod.mod-d1 {
+  font-family: var(--font-swara);
+  font-size: 1.45rem;
+  font-weight: bold;
+  color: #38bdf8;
+  position: absolute;
+  top: -0.05em;
+  left: 100%;
+  transform: translateX(-15%);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* MOD-D2: Shoulder Check Tick (✓) */
+.rendered-vedic-preview .swara-mod.mod-d2 {
+  font-family: var(--font-swara);
+  font-size: 1.45rem;
+  font-weight: bold;
+  color: #38bdf8;
+  position: absolute;
+  top: 0.05em;
+  right: -0.50em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* MOD-I: Double Shoulder Dash (═) */
+.rendered-vedic-preview .swara-mod.mod-i {
+  font-family: var(--font-swara);
+  font-size: 1.45rem;
+  font-weight: bold;
+  color: #38bdf8;
+  position: absolute;
+  top: -0.25em;
+  right: -0.25em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* MOD-J: Horizontal Shoulder Bar (—) */
+.rendered-vedic-preview .swara-mod.mod-j {
+  font-family: var(--font-swara);
+  font-size: 1.45rem;
+  font-weight: bold;
+  color: #38bdf8;
+  position: absolute;
+  top: -0.28em;
+  right: -0.20em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* MOD-B1: Diagonal Bridging Slash (/) */
+.rendered-vedic-preview .swara-mod.mod-b1 {
+  position: absolute;
+  top: -0.35em;
+  left: 100%;
+  transform: translateX(-20%);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+/* MOD-K: Shoulder Cross Mark (⨯) */
+.rendered-vedic-preview .swara-mod.mod-k {
+  font-family: var(--font-swara);
+  font-size: 1.45rem;
+  font-weight: bold;
+  color: #38bdf8;
+  position: absolute;
+  top: -0.25em;
+  right: -0.50em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* MOD-E: Bold Tone Column (┃) - Inline */
+.rendered-vedic-preview .swara-mod.mod-e {
+  font-family: var(--font-swara) !important;
+  position: relative;
+  margin-left: 0.25em;
+  font-size: 1.15rem;
+  top: -0.1em;
+  right: 0.1em;
+  vertical-align: -0.05em;
+  color: #38bdf8;
+}
+
+/* MOD-F: Thin Accent Dash / Tick (╷) - Inline */
+.rendered-vedic-preview .swara-mod.mod-f {
+  font-family: var(--font-swara) !important;
+  position: relative;
+  margin-left: 0.30em;
+  margin-right: 0.10em;
+  font-size: 1.15rem;
+  vertical-align: 0.10em;
+  color: #38bdf8;
+}
+
+/* MOD-G: Lower Under-Slash (\ / ⟍) - Stacked Below */
+.rendered-vedic-preview .swara-mod.mod-g {
+  position: absolute;
+  bottom: 0.30em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.05rem;
+  color: #38bdf8;
+  pointer-events: none;
+}
+
+/* MOD-H: High Pitch Swarita / Tick (|) - Shoulder Positioned */
+.rendered-vedic-preview .swara-mod.mod-h {
+  position: absolute;
+  top: 0.05em;
+  right: -0.40em;
+  left: auto;
+  transform: none;
+  font-size: 0.95rem;
+  color: #38bdf8;
+  pointer-events: none;
+}
+
+/* Inline Punctuation Marks */
+.rendered-vedic-preview .mod-under {
+  font-family: var(--font-swara);
+  position: relative;
+  vertical-align: baseline;
+  bottom: 0.2em;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #38bdf8;
+  margin-left: 0.01em;
+}
+
+.rendered-vedic-preview .mod-comma {
+  font-family: var(--font-swara);
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #38bdf8;
+  margin-left: 0.1em;
+}
+
+.rendered-vedic-preview .mod-dot {
+  font-family: var(--font-swara);
+  position: relative;
+  vertical-align: baseline;
+  bottom: 0.02em;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #38bdf8;
+  margin-left: 0.02em;
+  line-height: 1;
+}
+
+.rendered-vedic-preview .danda {
+  font-family: var(--font-malayalam);
+  color: var(--accent-gold);
+  margin: 0 8px;
+  font-weight: 600;
+  font-size: 1.0em;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: flex-end;
+  vertical-align: bottom;
+}
+
+/* Grantha Swara Palette */
+.swara-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.swara-btn {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: #ef4444;
+  /* Red Swara text */
+  border-radius: 5px;
+  padding: 4px 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: var(--font-malayalam);
+}
+
+.swara-btn span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.swara-btn small {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.swara-btn:hover {
+  background-color: var(--bg-hover);
+  border-color: #ef4444;
+  transform: translateY(-1px);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.25);
+}
+
+/* Modifier Quick Palette */
+.modifier-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.mod-chip {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: #38bdf8;
+  /* Blue modifier text */
+  border-radius: 5px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 11px;
+}
+
+.mod-chip:hover {
+  background-color: var(--bg-hover);
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
+}
+
+.mod-icon {
+  font-size: 12px;
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+kbd {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-cyan);
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--accent-gold);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  font-size: 13px;
+  font-weight: 500;
+  display: none;
+  z-index: 1000;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

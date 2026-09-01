@@ -1,0 +1,27 @@
+जैमिनीय  साम  प्रकृति  गानम्
+
+Version 0.15 1st January 2026
+
+# Start of SuperSection Title -- supersection_1 ## DO NOT EDIT
+Test Supersection
+# End of SuperSection Title -- supersection_1 ## DO NOT EDIT
+
+# Start of Section Title -- section_1 ## DO NOT EDIT
+Test Section
+# End of Section Title -- section_1 ## DO NOT EDIT
+# Start of Rik Metadata -- subsection_1 ## DO NOT EDIT
+Rik Meta
+# End of Rik Metadata -- subsection_1 ## DO NOT EDIT
+# Start of Rik Text -- subsection_1 ## DO NOT EDIT
+Rik Text
+# End of Rik Text -- subsection_1 ## DO NOT EDIT
+
+# Start of SubSection Title -- subsection_1 ## DO NOT EDIT
+Test Header  Saman Meta
+# End of SubSection Title -- subsection_1 ## DO NOT EDIT
+MANTRA SETS
+# Start of Footnote -- subsection_1 ## DO NOT EDIT
+s1 - Footnote 1
+s2 - Footnote 2
+# End of Footnote -- subsection_1 ## DO NOT EDIT
+

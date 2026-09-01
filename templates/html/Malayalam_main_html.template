@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>॥ \VAR{doc_title_sa} ॥</title>
+    <!-- Web fonts for mobile & standalone browser rendering -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Grantha&family=Noto+Serif+Malayalam:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'JaimineeyaSwara';
+            \BLOCK{ if jaimineeya_swara_b64 }
+            src: url('data:font/truetype;charset=utf-8;base64,\VAR{jaimineeya_swara_b64}') format('truetype');
+            \BLOCK{ else }
+            src: url('../../fonts/JaimineeyaSwara.ttf') format('truetype'),
+                 url('../../../fonts/JaimineeyaSwara.ttf') format('truetype');
+            \BLOCK{ endif }
+            font-weight: normal;
+            font-style: normal;
+        }
+        :root {
+            --font-doc: 'Noto Serif Malayalam', 'Noto Sans Malayalam', serif, sans-serif;
+            --font-swara: 'JaimineeyaSwara', 'Noto Serif Grantha', serif;
+            --swara-size: 0.90rem;
+            --primary-color: #000000;
+            --accent-blue: #0d47a1;
+            --accent-green: #1b5e20;
+            --accent-purple: #4a148c;
+            --accent-brown: #4e342e;
+            --swara-red: #c62828;
+            --modifier-color: #0284c7; /* Sky Blue for all swara modifiers */
+            --bg-light: #f8f9fa;
+            --bg-card: #EFE6D5;
+            --border-color: #dee2e6;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: var(--font-doc);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--primary-color);
+            background: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        .title-page h1 {
+            color: var(--accent-blue);
+            font-size: 2.2rem;
+            margin: 0;
+        }
+        .toc {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .toc h2 {
+            text-align: center;
+            color: var(--accent-green);
+            margin-top: 0;
+        }
+        .toc-chapter a {
+            font-weight: bold;
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        .toc-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .chapter-title {
+            text-align: center;
+            color: var(--accent-blue);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        .section-title {
+            text-align: center;
+            color: var(--accent-purple);
+            margin-top: 30px;
+        }
+        .subsection {
+            margin: 25px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .subsection-header {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+        .subsection-header .header-title {
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+        .mantra-verse {
+            margin: 24px 0;
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: center;
+            row-gap: 24px;
+            line-height: 2.2;
+            text-align: center;
+        }
+        .mantra-word {
+            display: inline-flex;
+            align-items: flex-end;
+            flex-wrap: nowrap;
+            margin: 0 3px;
+        }
+        ruby.vedic-ruby {
+            display: inline-flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: flex-end;
+            vertical-align: bottom;
+            ruby-position: over;
+            margin: 0 2px;
+            position: relative;
+        }
+        rt.swara-above {
+            font-family: var(--font-swara);
+            font-size: 0.85rem;
+            color: var(--swara-red) !important;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            min-height: 1.1em;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin-bottom: 6px;
+            user-select: text;
+            white-space: nowrap;
+        }
+        rb.akshara-base,
+        .akshara-base {
+            font-family: var(--font-doc);
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: flex-end;
+            justify-content: center;
+            line-height: 1.2;
+            text-align: center;
+            position: relative;
+        }
+        .swara-mod {
+            font-family: var(--font-swara);
+            color: var(--modifier-color);
+            font-weight: bold;
+            line-height: 1;
+            display: inline-block;
+        }
+        .swara-mod.mod-a {
+            position: absolute;
+            top: -0.15em;
+            left: 100%;
+            transform: translateX(-40%);
+            font-size: 0.90rem;
+            pointer-events: none;
+        }
+        .swara-mod.mod-a1 {
+            position: absolute;
+            top: -0.28em;
+            left: 100%;
+            transform: translateX(5%);
+            font-size: 1.15rem;
+            pointer-events: none;
+        }
+        .swara-mod.mod-b {
+            position: absolute;
+            top: -0.22em;
+            left: 100%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 5;
+        }
+        .swara-mod.mod-b .caret-glyph {
+            display: block;
+            color: var(--modifier-color);
+            font-size: 0.95rem;
+            line-height: 1;
+        }
+        .swara-mod.mod-b .swara-on-caret {
+            position: absolute;
+            top: -1.70em;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--swara-red) !important;
+            font-size: 0.70rem;
+            font-weight: bold;
+            font-family: var(--font-swara);
+            line-height: 1;
+            white-space: nowrap;
+        }
+        .swara-mod.mod-c {
+            font-family: var(--font-swara);
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--modifier-color);
+            position: absolute;
+            top: -0.12em;
+            right: -0.18em;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .swara-mod.mod-d {
+            position: absolute;
+            top: -0.15em;
+            left: 100%;
+            transform: translateX(-40%);
+            font-size: 0.90rem;
+            pointer-events: none;
+        }
+        .swara-mod.mod-d1 {
+            font-family: var(--font-swara);
+            font-size: 1.45rem;
+            font-weight: bold;
+            color: var(--modifier-color);
+            position: absolute;
+            top: -0.05em;
+            left: 100%;
+            transform: translateX(-15%);
+            line-height: 1;
+            pointer-events: none;
+        }
+        .swara-mod.mod-d2 {
+            font-family: var(--font-swara);
+            font-size: 1.45rem;
+            font-weight: bold;
+            color: var(--modifier-color);
+            position: absolute;
+            top: 0.05em;
+            right: -0.50em;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .swara-mod.mod-i {
+            font-family: var(--font-swara);
+            font-size: 1.45rem;
+            font-weight: bold;
+            color: var(--modifier-color);
+            position: absolute;
+            top: -0.25em;
+            right: -0.25em;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .swara-mod.mod-j {
+            font-family: var(--font-swara);
+            font-size: 1.45rem;
+            font-weight: bold;
+            color: var(--modifier-color);
+            position: absolute;
+            top: -0.28em;
+            right: -0.20em;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .swara-mod.mod-b1 {
+            position: absolute;
+            top: -0.35em;
+            left: 100%;
+            transform: translateX(-20%);
+            font-size: 0.95rem;
+            pointer-events: none;
+        }
+        .swara-mod.mod-k {
+            font-family: var(--font-swara);
+            font-size: 1.45rem;
+            font-weight: bold;
+            color: var(--modifier-color);
+            position: absolute;
+            top: -0.25em;
+            right: -0.50em;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .swara-mod.mod-e {
+            font-family: var(--font-swara) !important;
+            position: relative;
+            margin-left: 0.25em;
+            font-size: 1.15rem;
+            top: -0.1em;
+            right: 0.1em;
+            vertical-align: -0.05em;
+            color: var(--modifier-color);
+        }
+        .swara-mod.mod-f {
+            font-family: var(--font-swara) !important;
+            position: relative;
+            margin-left: 0.30em;
+            margin-right: 0.10em;
+            font-size: 1.15rem;
+            vertical-align: 0.10em;
+            color: var(--modifier-color);
+        }
+        .swara-mod.mod-g {
+            position: absolute;
+            bottom: 0.30em;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.05rem;
+            color: var(--modifier-color);
+            pointer-events: none;
+        }
+        .swara-mod.mod-h {
+            position: absolute;
+            top: 0.05em;
+            right: -0.40em;
+            left: auto;
+            transform: none;
+            font-size: 0.95rem;
+            color: var(--modifier-color);
+            pointer-events: none;
+        }
+        .swara-mod.mod-under,
+        .swara-mod.mod-comma,
+        .swara-mod.mod-dot {
+            font-family: var(--font-doc);
+            color: var(--modifier-color);
+            display: inline-block;
+            margin: 0 1px;
+        }
+        .mantra-punct {
+            font-family: var(--font-doc);
+            font-size: 1.4rem;
+            line-height: 1.2;
+            color: var(--modifier-color);
+            margin-right: 0.05em;
+        }
+        .word-space {
+            display: inline-block;
+            width: 0.35em;
+        }
+        .danda {
+            margin: 0 0.25em;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            line-height: 1.2;
+        }
+        .verse-num-marker {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            margin-left: 0.65em;
+            vertical-align: baseline;
+        }
+        .verse-num-marker .danda {
+            margin: 0;
+        }
+        .verse-num-marker .verse-num {
+            font-family: var(--font-doc);
+            font-size: 1.35rem;
+            line-height: 1.2;
+            padding: 0 0.1em;
+            color: var(--primary-color);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-page">
+            <h1>॥ \VAR{doc_title_sa} ॥</h1>
+            <p style="font-size: 1.1rem; color: var(--accent-blue); margin-top: 10px;">
+                പതിപ്പ്: \VAR{jsv_version} | നിർമ്മിതം: \VAR{generated_at}
+            </p>
+        </div>
+
+        <div class="toc" id="toc">
+            <h2>॥ അനുക്രമണിക ॥</h2>
+            <div class="toc-content">
+                \BLOCK{ for super_key, supersection in supersections.items() }
+                <div class="toc-group">
+                    <div class="toc-chapter">
+                        <a href="#\VAR{super_key}">\VAR{supersection.get('supersection_title', '')}</a>
+                    </div>
+                    <ul>
+                        \BLOCK{ for section_key, section in supersection.get('sections', {}).items() }
+                        \BLOCK{ if section_key.startswith('section_') }
+                        <li class="toc-section">
+                            <a href="#\VAR{super_key}-\VAR{section_key}">\VAR{section.get('section_title', '')}</a>
+                        </li>
+                        \BLOCK{ endif }
+                        \BLOCK{ endfor }
+                    </ul>
+                </div>
+                \BLOCK{ endfor }
+            </div>
+        </div>
+
+        \BLOCK{ for super_key, supersection in supersections.items() }
+        <div class="chapter" id="\VAR{super_key}">
+            <h1 class="chapter-title">\VAR{supersection.get('supersection_title', '')}</h1>
+
+            \BLOCK{ for section_key, section in supersection.get('sections', {}).items() }
+            \BLOCK{ if section_key.startswith('section_') }
+            <div class="section" id="\VAR{super_key}-\VAR{section_key}">
+                <h2 class="section-title">\VAR{section.get('section_title', '')}</h2>
+
+                \BLOCK{ for sub_html in section.get('html_subsections', []) }
+                <div class="subsection" id="\VAR{sub_html['id']}">
+                    \VAR{sub_html['content']}
+                </div>
+                \BLOCK{ endfor }
+            </div>
+            \BLOCK{ endif }
+            \BLOCK{ endfor }
+        </div>
+        \BLOCK{ endfor }
+
+        <div class="footer">
+            <p>ജൈമിനീയ സാമവേദ സംഹിതാ — മലയാളം സംസ്‍കരണം</p>
+        </div>
+    </div>
+</body>
+</html>

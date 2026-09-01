@@ -1,0 +1,34 @@
+# ----------------------------------------------------
+# Prayoga (Procedure) Linking Index
+# ----------------------------------------------------
+# Maps procedure description files to mantra text sections.
+#
+# Scope levels (resolved in priority order: subsection > section > supersection):
+#   - supersection: All sections/subsections within that supersection share this procedure
+#   - section:      All subsections within that section share this procedure
+#   - subsection:   Only that specific subsection is linked
+#
+# The 'id' field refers to the marker ID used in the structured text files
+# (e.g., supersection_21, section_1, subsection_5).
+#
+# The 'file' field is relative to this directory (data/input/prayoga/).
+# The 'title' field is the display title shown in navigation links.
+# ----------------------------------------------------
+
+procedures:
+  # -- Prayogamala Purvabhagam (supersection_21) --
+  - scope: section
+    id: section_1
+    file: aupasanam.md
+    title: औपासनम् - विधिः
+
+  - scope: section
+    id: section_2
+    file: atmaropanam.md
+    title: आत्मारोपणम् - विधिः
+
+  # -- Udakashanti (supersection_22) --
+  - scope: supersection
+    id: supersection_22
+    file: udakashanti.md
+    title: उदकशान्ति - विधिः

@@ -1,0 +1,13 @@
+# Jaimineeya Samavedam Project Rules
+
+## 1. Documentation Maintenance
+- **Always Update Docs**: Whenever you modify code logic, add new features, or change CLI arguments, you MUST check `DEVELOPER_GUIDE.md` and update it immediately.
+- **No "Recent Memory" Bias**: When updating documentation, place the information in the appropriate logical section (e.g., "Workflows", "CLI Reference"), rather than appending it to a "Recent Changes" log.
+- **Verify Consistency**: Ensure that examples in the documentation match the actual code implementation.
+
+## 2. Code Architecture & Style
+- **Centralize Logic**: Do not duplicate logic across `render_pdf.py`, `generate_website.py`, etc. Use `src/utils.py` for shared business logic (e.g., text normalization, accent handling).
+- **Preserve Data Integrity**: `src/generate_json.py` should be treated as a parser/preserver of input data. Visual corrections (like Visarga-Accent swaps) belong in the rendering layer (`render_pdf.py`, `generate_website.py`), not the data layer, unless the data itself is factually incorrect.
+
+## 3. Workflow Awareness
+- **Correction Cycle**: Respect the metadata correction workflow. Metadata (Rishi, Devata, Chandas) should primarily be edited in the CSV/Excel files and imported, rather than hardcoded in scripts.

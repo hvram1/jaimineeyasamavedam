@@ -1,0 +1,237 @@
+# ----------------------------------------------------
+# Jaimineeya Samavedam Pipeline Master Configuration
+# ----------------------------------------------------
+# This file centralizes all paths and settings for the JSV processing pipeline.
+
+# --- GLOBAL SETTINGS ---
+project:
+  name: "Jaimineeya Samavedam"
+  version: "3.12"
+  output_root: "data/output"
+  input_root: "data/input"
+
+# --- RENUMBERING (src/tools/renumber_sooktam.py) ---
+# CLI Options:
+#   input_file              Target .txt or .json file
+#   --output                Optional specific output path
+#   --type / -t             Type of text (loads presets: samhita, aaranam, collection)
+#   --jsv-version           Manual version override (e.g. 5.0). Updates src/VERSION.
+#   --no-increment          Use current version from src/VERSION without bumping.
+#   --no-renumber           Inject-Only mode: update metadata header but skip renumbering content.
+#   --preserve-super        Keep existing SuperSection IDs.
+#   --preserve-all          Keep all structural IDs, only renumber Samams/Riks.
+#   --reset-per-super       Reset Section/Subsection counters at each SuperSection.
+#   --contiguous-samams     Do NOT reset Samam numbering at Section boundaries.
+#
+renumber_sooktam:
+  defaults:
+    no_increment: false
+    no_renumber: false
+  samhita:
+    input: "data/input/Samhita_corrected.txt"
+    start_super: 1
+    start_section: 1
+    start_subsection: 1
+    reset_per_super: true
+    contiguous_samams: false   
+  aaranam:
+    input: "data/input/Aaranam_latest.txt"
+    start_super: 7
+    start_section: 1
+    start_subsection: 1
+    reset_per_super: false
+    contiguous_samams: false  
+
+# --- JSON GENERATION (src/generate_json.py) ---
+# CLI Options:
+#   input_file              Input text file to process
+#   --input-mode            Input mode: initial, correction (default: correction)
+#   --output                Output JSON file path
+#   --metadata-file         Optional .xlsx, .txt, or .csv file to enrich metadata (correction mode only)
+#   --initial-json          Trusted Initial JSON output to map Rik IDs correctly (correction mode only)
+#   --type                  Type of Samaveda text: samhita, aaranam (default: samhita)
+#   --procedures             Path to procedure index YAML file
+#
+# Input Modes:
+#   initial     - Reads raw text files and combines with external metadata files
+#                 (rishi_devata_chandas_for_rik.txt, sama_rishi_chandas_out.txt, vedic_text.txt)
+#   correction  - Reads processed Unicode text file with embedded metadata
+#
+# Examples:
+#   python generate_json.py --type samhita --input-mode initial
+#   python generate_json.py input.txt --input-mode correction
+#
+generate_json:
+  # Metadata source files used in INITIAL mode
+  sources:
+    rik_meta: "data/input/rishi_devata_chandas_for_rik.txt"
+    saman_meta: "data/input/sama_rishi_chandas_out.txt"
+    rik_text: "data/input/vedic_text.txt"
+  
+  # Type-specific input/output paths
+  samhita:
+    input: "data/input/Samhita_corrected.txt"
+    output: "data/output/Samhita_corrected_out.json"
+    mode: "correction"
+  aaranam:
+    input: "data/input/Aaranam_latest.txt"
+    output: "data/output/Aaranam_latest_out.json"
+    mode: "correction"
+
+# --- RIK TABLE GENERATION (src/generate_rik_table.py) ---
+# CLI Options:
+#   --type                   Mode: samhita, aaranam (default: samhita)
+#   input                    Override Input JSON file
+#   -o, --output             Override Output CSV file
+#   -e, --excel              Override Reconciliation Excel file
+#   -j, --json_out          Override Output Vargeekaran JSON file
+#   --no-enrich             Skip external Excel reconciliation; use JSON-resident metadata only.
+#
+generate_rik_table:
+  # Default type (used if no CLI --type flag specified)
+  default_type: "samhita"  # Choices: samhita, aaranam
+  
+  samhita:
+    input: "data/output/Samhita_corrected_out.json"
+    output_csv: "data/output/JSV_Rik_Table.csv"
+    recon_excel: "data/output/Rik Reconciliation table (JSV-KSV).xlsx"
+    v_json: "data/output/Vargeekaran.json"
+  aaranam:
+    input: "data/output/Aaranam_latest_out.json"
+    output_csv: "data/output/Aaranam_Rik_Table_Baseline.csv"
+    recon_excel: "data/output/Rik Reconciliation table (JSV-KSV) - Aaranam_latest.xlsx"
+    v_json: "data/output/Aaranam_vargeekaran.json"
+    no_enrich: true  # Default preference for Aaranam baseline generation
+
+# --- AARANAM RIK TABLE GENERATION (src/generate_aaranam_rik_table.py) ---
+# This script extracts Rik text and IDs directly from raw Unicode text (data/input/Aaranam_rik.txt)
+# to produce a baseline CSV table for analysis or initial reconciliation. 
+# This CSV file should be merged with the KSV metadata master to create the final Aaranam_vargeekaran.json
+# CLI Options:
+#   input                    Override path to the input .txt file
+#   -o, --output             Override path to the output .csv file
+#
+generate_aaranam_rik_table:
+  input: "data/input/Aaranam_rik.txt"
+  output_csv: "data/output/Aaranam_Rik_Table.csv"
+
+# --- JSV CURATION (src/curate_jsv.py) ---
+curate_jsv:
+  sources:
+    - "data/output/Vargeekaran.json"
+    - "data/output/Aaranam_vargeekaran.json"
+  filter: "data/input/Ashirvachana_samani.txt"
+  output: "data/output/Ashirvachana_samani_out.json"
+  title: "जैमिनीय साम सङ्ग्रहः"
+
+# --- COLLECTION BUILDING (src/tools/build_collection.py) ---
+build_collection:
+  source: "data/output/Vargeekaran.json"
+  output: "data/output/Collection_latest_out.json"
+  title: "जैमिनीय साम सङ्ग्रहः"
+
+# --- WEBSITE GENERATION (src/generate_website.py) ---
+# CLI Options:
+#   --source-file, -s    Path to the source text file
+#   --output_dir, -o     Output directory for generated website
+#   --audio-dir, -d      Directory for audio placeholder folders
+#   --samhita, -m        Generate for Samhita (mutually exclusive with -a, -c)
+#   --aaranam, -a        Generate for Aaranam (default, mutually exclusive)
+#   --collection, -c     Generate for Collection (mutually exclusive)
+#   --title              Custom title for collection mode
+#   --font               Primary font for the website (default: AdishilaVedic)
+#
+# Examples:
+#   python generate_website.py --samhita
+#   python generate_website.py -a --source-file aranam.json
+#
+generate_website:
+  # Default mode (used if no CLI flag specified)
+  default_type: "aaranam"  # Choices: samhita, aaranam, collection
+  
+  # General website settings (fallbacks if not overridden by type-specific config)
+  output_dir: "docs"
+  audio_dir: "data/input/Audio_Placeholders"
+  font: "AdishilaVedic"
+  
+  # Type-specific sources
+  samhita:
+    source: "data/output/Vargeekaran.json"
+    output_dir: "docs/samhita"
+  aaranam:
+    source: "data/output/Aaranam_vargeekaran.json"
+    output_dir: "docs/aaranam"
+  collection:
+    source: "data/output/Collection_latest_out.json"
+    output_dir: "docs/collection"
+    title: "जैमिनीय साम सङ्ग्रहः"
+
+# --- PDF & HTML RENDERING (src/render_pdf.py) ---
+# CLI Options:
+#   input_file              Input JSON file (auto-selected based on --type if not specified)
+#   --output, -o            Override the default output basename or specify a full output path
+#   --output-mode           Output mode: combined, separate, nometa (default: combined)
+#   --pdf-font              Font for PDF output (default: AdishilaVedic)
+#   --html-font             Font for HTML output
+#   --type                  Type of Samaveda text: samhita, aaranam, collection (default: samhita)
+#   --pdf-color-mode        Color mode for PDF: bw, color (default: bw)
+#   --toc-level             TOC headers: section, subsection, both (default: section)
+#   --title                 Custom Sanskrit title for the document
+#   -kpully, --kpully       Render Devanagari with swara markings above mantra text (Kodunthirapully paddhati)
+#
+# Output Modes:
+#   combined   - Single output with both Rik and Samam content (default)
+#   separate   - Two separate outputs: Rik-only and Samam-only (with metadata)
+#   nometa     - Two separate outputs: Rik-only and Samam-only (without metadata)
+#
+# Examples:
+#   python render_pdf.py input.json
+#   python render_pdf.py input.json --output-mode separate
+#   python render_pdf.py input.json --output-mode nometa
+#   python render_pdf.py input.json -kpully
+#
+render:
+  defaults:
+    output_mode: "combined"
+    pdf_font: "AdishilaVedic"
+    html_font: "'AdishilaVedic', 'AdishilaSanVedic'"
+    pdf_color_mode: "bw"
+    toc_level: "section"
+    kpully: false
+  
+  types:
+    samhita:
+      input_file: "data/output/Vargeekaran.json"
+      doc_title: "जैमिनीय साम संहिता"
+      summary_title: "संहिता सङ्ख्या"
+      file_prefix: "Samhita"
+    aaranam:
+      input_file: "data/output/Aaranam_vargeekaran.json"
+      doc_title: "जैमिनीय साम आरण्य गानम्"
+      summary_title: "आरण्यम् सङ्ख्या"
+      file_prefix: "Aaranam"
+    collection:
+      input_file: "data/output/Collection_latest_out.json"
+      doc_title: "जैमिनीय साम सङ्ग्रहः"
+      summary_title: "जैमिनीय साम सङ्ग्रहः सङ्ख्या"
+      file_prefix: "Collection"
+
+  paths:
+    templates:
+      pdf: "templates/pdf"
+      html: "templates/html"
+      text: "templates/text"
+    output_root: "data/output"
+    logs: "data/output/logs"
+
+  advanced:
+    generate_summary_table: true
+    enable_footnote_consolidation: true
+    replace_colons_with_visarga: true
+    sanitize_invisible_chars: true
+
+# --- PROCEDURE LINKING (Prayoga Descriptions) ---
+procedures:
+  enabled: true
+  input_dir: "data/input/prayoga"
+  index_file: "data/input/prayoga/prayoga_index.yaml"

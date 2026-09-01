@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>॥ जैमिनीयसामप्रकृतिगानम् ॥</title>
+    <style>
+        :root {
+            --primary-color: #2d3a4a;
+            --accent-blue: #1565c0;
+            --accent-green: #2e7d32;
+            --accent-purple: #7b1fa2;
+            --swara-red: #c62828;
+            --bg-light: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'AdiShila Vedic', 'Adishila SanVedic', 'Noto Sans Devanagari', 'Siddhanta', 'Arial Unicode MS', sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--primary-color);
+            background: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Header Styles */
+        .title-page {
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 40px;
+        }
+        
+        .title-page h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .toc h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            padding: 5px 0;
+        }
+        
+        .toc a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        .toc-chapter {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 15px;
+        }
+        
+        .toc-section {
+            padding-left: 20px;
+        }
+        
+        .toc-subsection {
+            padding-left: 40px;
+            font-size: 0.95em;
+        }
+        
+        /* Chapter/Section Styles */
+        .chapter {
+            page-break-before: always;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 3px solid var(--accent-purple);
+        }
+        
+        .chapter-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--accent-green);
+            margin-bottom: 20px;
+        }
+        
+        /* Mantra Styles */
+        .subsection {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-left: 4px solid var(--accent-blue);
+            text-align: center;
+        }
+        
+        .rik-metadata {
+            text-align: center;
+            color: var(--accent-purple);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .rik-text {
+            text-align: center;
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .subsection-header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .subsection-header .header-title {
+            color: var(--accent-green);
+        }
+        
+        .subsection-header .header-meta {
+            color: var(--accent-purple);
+        }
+        
+        /* Mantra display - flexbox for no whitespace and natural wrapping */
+        .mantra-verse {
+            margin: 5px 0;
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            text-align: center;
+            gap: 0;
+        }
+        
+        /* Wrapper to center the inline-flex mantra-verse */
+        .subsection {
+            text-align: center;
+        }
+        
+        .mantra-word {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: stretch;
+            vertical-align: top;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .mantra-text {
+            font-family: 'AdiShila Vedic', 'Adishila SanVedic', 'Noto Sans Devanagari', 'Siddhanta', sans-serif;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .swara-text {
+            font-family: 'AdiShila Vedic', 'Adishila SanVedic', 'Noto Sans Devanagari', 'Siddhanta', sans-serif;
+            color: var(--swara-red);
+            font-size: 1.25rem;
+            line-height: 1;
+            text-align: center;
+            margin-top: -0.3em;
+            min-height: 1em;
+            border-right: 1px solid transparent;
+            padding-right: 2px;
+        }
+        
+        .word-space {
+            width: 0.3em;
+        }
+        
+        /* Danda and Mantra Number */
+        .danda {
+            margin: 0 0.2em;
+        }
+        
+        .mantra-number {
+            display: inline-block;
+            white-space: nowrap;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        /* Accent marks - zero-width positioning for fonts without native Vedic support */
+        .accent-swarita {
+            display: inline-block;
+            width: 0;
+            overflow: visible;
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 1.2em;
+            position: relative;
+            left: -0.1em;
+            top: -0.15em;
+        }
+        
+        .accent-anudatta {
+            display: inline-block;
+            width: 0;
+            overflow: visible;
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 1.2em;
+            position: relative;
+            left: -0.1em;
+            top: -0.15em;
+        }
+        
+        .accent-kampa {
+            display: inline-block;
+            width: 0;
+            overflow: visible;
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 1.2em;
+            position: relative;
+            left: -0.1em;
+            top: -0.15em;
+        }
+        
+        .accent-trikampa {
+            display: inline-block;
+            width: 0;
+            overflow: visible;
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 1.2em;
+            position: relative;
+            left: -0.1em;
+            top: -0.15em;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            border-top: 2px solid var(--border-color);
+            background: white;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+        
+        .footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                font-size: 1.1rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .title-page h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subsection {
+                padding: 10px;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .chapter {
+                page-break-before: always;
+            }
+            
+            .subsection {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-bar a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        
+        .nav-bar a:hover {
+            background: var(--bg-light);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <a href="#toc">॥ अनुक्रमणिका ॥</a>
+            <span>॥ जैमिनीयसामप्रकृतिगानम् ॥</span>
+        </nav>
+        
+        <!-- Title Page -->
+        <div class="title-page">
+            <h1>॥ जैमिनीयसामप्रकृतिगानम् ॥</h1>
+        </div>
+        
+        <!-- Table of Contents -->
+        <div class="toc" id="toc">
+            <h2>॥ अनुक्रमणिका ॥</h2>
+            <ul>
+                <li class="toc-chapter">
+                    <a href="#supersection_1">आग्नेयपाठः</a>
+                </li>
+                    <li class="toc-section">
+                        <a href="#supersection_1-section_1">प्रथम खण्डः</a>
+                    </li>
+                    <li class="toc-section">
+                        <a href="#supersection_1-section_2">द्वितीय खण्डः</a>
+                    </li>
+                    <li class="toc-section">
+                        <a href="#supersection_1-section_3">तृतीय खण्डः</a>
+                    </li>
+            </ul>
+        </div>
+        
+        <!-- Content -->
+        <div class="chapter" id="supersection_1">
+            <h1 class="chapter-title">आग्नेयपाठः</h1>
+            
+                <div class="section" id="supersection_1-section_1">
+                    <h2 class="section-title">प्रथम खण्डः</h2>
+                    
+                    <div class="subsection" id="supersection_1-section_1-subsection_1">
+                        <div class="rik-metadata"><span class="danda">॥</span> भारद्वाजो बार्हस्पत्यः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अग्ना<span class="accent-swarita">॑</span>आ<span class="accent-anudatta">᳒</span>याहीवी<span class="accent-anudatta">᳒</span>ता<span class="accent-anudatta">᳒</span>ये <span class="danda">।</span> गृ<span class="accent-anudatta">᳒</span>णा<span class="accent-anudatta">᳒</span>नोहव्यादा<span class="accent-swarita">॑</span>तये <span class="danda">।</span> नीहो<span class="accent-anudatta">᳒</span>ता<span class="accent-swarita">॑</span>सत्सीबर्हीषि<span class="accent-swarita">॑</span><span class="mantra-number"> <span class="danda">॥</span> १ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_2">
+                        
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_3">
+                        
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_4">
+                        <div class="rik-metadata"><span class="danda">॥</span> भारद्वाजो बार्हस्पत्यः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">त्वा<span class="accent-swarita">॑</span>माग्नेयज्ञा<span class="accent-anudatta">᳒</span>नां <span class="danda">।</span> हो<span class="accent-swarita">॑</span>ताविश्वे<span class="accent-swarita">॑</span>षांहितः <span class="danda">।</span> देवेभि<span class="accent-swarita">॑</span>र्मानूषे<span class="accent-swarita">॑</span>जने<span class="mantra-number"> <span class="danda">॥</span> २ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_5">
+                        <div class="rik-metadata"><span class="danda">॥</span> मेधातिथिः काण्वः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अग्निंदूतं<span class="accent-anudatta">᳒</span>वृ<span class="accent-swarita">॑</span>णीमहे <span class="danda">।</span> हो<span class="accent-anudatta">᳒</span>ता<span class="accent-swarita">॑</span>रंविश्वा<span class="accent-anudatta">᳒</span>वे<span class="accent-swarita">॑</span>दसं <span class="danda">।</span> अस्या<span class="accent-trikampa">᳹</span>यज्ञास्या<span class="accent-swarita">॑</span>सुक्रा<span class="accent-swarita">॑</span>तुम्<span class="mantra-number"> <span class="danda">॥</span> ३ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_6">
+                        <div class="rik-metadata"><span class="danda">॥</span> भारद्वाजो बार्हस्पत्यः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अग्निर्वृ<span class="accent-swarita">॑</span>णि<span class="accent-swarita">॑</span>जङ्घनात् <span class="danda">।</span> द्रविणास्यु<span class="accent-trikampa">᳹</span>र्वीपन्या<span class="accent-anudatta">᳒</span>या <span class="danda">।</span> सामी<span class="accent-anudatta">᳒</span>द्धश्शुक्रा<span class="accent-anudatta">᳒</span>आहूतः<span class="mantra-number"> <span class="danda">॥</span> ४ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_7">
+                        <div class="rik-metadata"><span class="danda">॥</span> उशनाः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">प्रेष्ठं<span class="accent-kampa">᳸</span>वोआतीथिं <span class="danda">।</span> स्तू<span class="accent-anudatta">᳒</span>षे<span class="accent-anudatta">᳒</span>मित्रामीवाप्रीयं <span class="danda">।</span> अ<span class="accent-anudatta">᳒</span>ग्नेराथन्ना<span class="accent-anudatta">᳒</span>वेद्यम्<span class="mantra-number"> <span class="danda">॥</span> ५ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_8">
+                        
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_9">
+                        <div class="rik-metadata"><span class="danda">॥</span> सुदीतिपुरुमीढा-वांगिरसौ तयोर्वाऽन्यतरः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">त्वन्नोआग्नेमा<span class="accent-anudatta">᳒</span>हो<span class="accent-swarita">॑</span>भिः <span class="danda">।</span> पाहीविश्वा<span class="accent-swarita">॑</span>स्याआ<span class="accent-anudatta">᳒</span>रा<span class="accent-swarita">॑</span>तेः <span class="danda">।</span> ऊत<span class="accent-anudatta">᳒</span>द्वीषोमर्क्त्या<span class="accent-swarita">॑</span>स्या<span class="mantra-number"> <span class="danda">॥</span> ६ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_10">
+                        <div class="rik-metadata"><span class="danda">॥</span> भारद्वाजो बार्हस्पत्यः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">एह्यू<span class="accent-anudatta">᳒</span>षुब्रा<span class="accent-anudatta">᳒</span>वा<span class="accent-swarita">॑</span>णिते <span class="danda">।</span> अग्नाइत्थे<span class="accent-trikampa">᳹</span>ता<span class="accent-swarita">॑</span>रा<span class="accent-swarita">॑</span>गीराः <span class="danda">।</span> ए<span class="accent-anudatta">᳒</span>भिर्वार्धा<span class="accent-swarita">॑</span>साइ<span class="accent-anudatta">᳒</span>न्दू<span class="accent-swarita">॑</span>भिः<span class="mantra-number"> <span class="danda">॥</span> ७ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_11">
+                        <div class="rik-metadata"><span class="danda">॥</span> वत्सः काण्वः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">आ<span class="accent-kampa">᳸</span>तेवात्सो<span class="accent-anudatta">᳒</span>मानोयमात् <span class="danda">।</span> परामा<span class="accent-trikampa">᳹</span>ञ्चित्साधास्थात् <span class="danda">।</span> अ<span class="accent-anudatta">᳒</span>ग्ने<span class="accent-anudatta">᳒</span>त्वांकामयोगी<span class="accent-anudatta">᳒</span>रा<span class="accent-swarita">॑</span><span class="mantra-number"> <span class="danda">॥</span> ८ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_12">
+                        <div class="rik-metadata"><span class="danda">॥</span> भारद्वाजो बार्हस्पत्यः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">त्वामाग्नेपु<span class="accent-trikampa">᳹</span>ष्काराद<span class="accent-anudatta">᳒</span>धी<span class="accent-swarita">॑</span> <span class="danda">।</span> आ<span class="accent-kampa">᳸</span>थ<span class="accent-swarita">॑</span>र्वाणीरा<span class="accent-swarita">॑</span>मन्धत <span class="danda">।</span> मूर्ध्नो<span class="accent-anudatta">᳒</span>विश्वास्यावाघा<span class="accent-anudatta">᳒</span>ता<span class="accent-swarita">॑</span>:<span class="mantra-number"> <span class="danda">॥</span> ९ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_1-subsection_13">
+                        <div class="rik-metadata"><span class="danda">॥</span> वामदेवः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अग्नेवी<span class="accent-kampa">᳸</span>वा<span class="accent-anudatta">᳒</span>स्वादा<span class="accent-anudatta">᳒</span>भारा <span class="danda">।</span> अस्मभ्यामू<span class="accent-anudatta">᳒</span>ता<span class="accent-trikampa">᳹</span>ये<span class="accent-swarita">॑</span>माहे<span class="accent-anudatta">᳒</span> <span class="danda">।</span> देवोह्यासी<span class="accent-swarita">॑</span>नोदृशे<span class="mantra-number"> <span class="danda">॥</span> १० <span class="danda">॥</span> </span></div>
+                    </div>
+                </div>
+                <div class="section" id="supersection_1-section_2">
+                    <h2 class="section-title">द्वितीय खण्डः</h2>
+                    
+                    <div class="subsection" id="supersection_1-section_2-subsection_14">
+                        <div class="rik-metadata"><span class="danda">॥</span> आयुन्ङ्क्श्वाहि: (ऋ विरूपांगिरसः) <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">नामास्ते<span class="accent-anudatta">᳒</span>अग्ना<span class="accent-anudatta">᳒</span>ओज<span class="accent-swarita">॑</span>से <span class="danda">।</span> गृणन्तीदे<span class="accent-anudatta">᳒</span>वा<span class="accent-swarita">॑</span>कृष्टायाः <span class="danda">।</span> आमै<span class="accent-anudatta">᳒</span>रामित्रा<span class="accent-anudatta">᳒</span>मर्दया<span class="mantra-number"> <span class="danda">॥</span> १ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_2-subsection_15">
+                        <div class="rik-metadata"><span class="danda">॥</span> वामदेवो गौतमः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">दूतंवो<span class="accent-swarita">॑</span>विश्वावे<span class="accent-swarita">॑</span>दसम् <span class="danda">।</span> हव्यावाहामामा<span class="accent-anudatta">᳒</span>र्क्त्यम्<span class="accent-swarita">॑</span> <span class="danda">।</span> याजीष्ठमृन्जसे<span class="accent-anudatta">᳒</span>गीरा<span class="mantra-number"> <span class="danda">॥</span> २ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_2-subsection_16">
+                        <div class="rik-metadata"><span class="danda">॥</span> प्रयोगो भागर्वः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">ऊपात्वाजामायो<span class="accent-anudatta">᳒</span>गीराः<span class="accent-swarita">॑</span> <span class="danda">।</span> देदीशतिर्हा<span class="accent-swarita">॑</span>विष्कृताः <span class="danda">।</span> वायोरा<span class="accent-swarita">॑</span>नीकेअस्थिरन्<span class="mantra-number"> <span class="danda">॥</span> ३ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_2-subsection_17">
+                        <div class="rik-metadata"><span class="danda">॥</span> मधछु न्दा वैश्वामित्रः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">ऊ<span class="accent-swarita">॑</span>पात्वाग्नेदीवे<span class="accent-anudatta">᳒</span>दीवे <span class="danda">।</span> दो<span class="accent-anudatta">᳒</span>षा<span class="accent-swarita">॑</span>वस्तार्धीयावायम्<span class="accent-anudatta">᳒</span> <span class="danda">।</span> ना<span class="accent-anudatta">᳒</span>मोभा<span class="accent-trikampa">᳹</span>र<span class="accent-swarita">॑</span>न्ताएमा<span class="accent-swarita">॑</span>सि<span class="mantra-number"> <span class="danda">॥</span> ४ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_2-subsection_18">
+                        <div class="rik-metadata"><span class="danda">॥</span> शुनः शेप आजीर्गितः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">जरा<span class="accent-swarita">॑</span>बोधाताव्दीविड्ढी <span class="danda">।</span> वीशेवी<span class="accent-anudatta">᳒</span>शेय<span class="accent-swarita">॑</span>ज्ञीयाया <span class="danda">।</span> स्तो<span class="accent-kampa">᳸</span>मंरुद्रायादृशीक<span class="accent-anudatta">᳒</span>म्<span class="mantra-number"> <span class="danda">॥</span> ५ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_2-subsection_19">
+                        <div class="rik-metadata"><span class="danda">॥</span> मेधातिथिः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">प्रातित्यञ्चा<span class="accent-anudatta">᳒</span>रुमाध्वारं<span class="accent-anudatta">᳒</span> <span class="danda">।</span> गो<span class="accent-kampa">᳸</span>पी<span class="accent-swarita">॑</span>था<span class="accent-anudatta">᳒</span>यप्रा<span class="accent-anudatta">᳒</span>हू<span class="accent-swarita">॑</span>यसे <span class="danda">।</span> मा<span class="accent-anudatta">᳒</span>रुद्भीरग्नाआग<span class="accent-swarita">॑</span>हि<span class="mantra-number"> <span class="danda">॥</span> ६ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_2-subsection_20">
+                        <div class="rik-metadata"><span class="danda">॥</span> शुनः शेप आजीर्गितः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अ<span class="accent-swarita">॑</span>श्वन्न<span class="accent-anudatta">᳒</span>त्वावारा<span class="accent-swarita">॑</span>व<span class="accent-anudatta">᳒</span>न्तम् <span class="danda">।</span> व<span class="accent-kampa">᳸</span>न्द<span class="accent-trikampa">᳹</span>ध्याआग्नि<span class="accent-anudatta">᳒</span>न्नामोभिः <span class="danda">।</span> स<span class="accent-anudatta">᳒</span>म्म्रा<span class="accent-anudatta">᳒</span>जन्तमाध्वाराणा<span class="accent-swarita">॑</span>म्<span class="mantra-number"> <span class="danda">॥</span> ७ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_2-subsection_21">
+                        
+                    </div>
+                    <div class="subsection" id="supersection_1-section_2-subsection_22">
+                        <div class="rik-metadata"><span class="danda">॥</span> प्रयोगो भागर्वः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">और्वा<span class="accent-anudatta">᳒</span>भृगूवच्छूचिम् <span class="danda">।</span> आप्नावा<span class="accent-anudatta">᳒</span>नावादाहु<span class="accent-swarita">॑</span>वे <span class="danda">।</span> अग्निं<span class="accent-trikampa">᳹</span>सामुद्रावाससम्<span class="mantra-number"> <span class="danda">॥</span> ८ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_2-subsection_23">
+                        <div class="rik-metadata"><span class="danda">॥</span> प्रयोगो भागर्वः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अ<span class="accent-anudatta">᳒</span>ग्नी<span class="accent-anudatta">᳒</span>मिन्धानो<span class="accent-swarita">॑</span>माना<span class="accent-swarita">॑</span>सा <span class="danda">।</span> धी<span class="accent-swarita">॑</span>यंसचेतामा<span class="accent-anudatta">᳒</span>र्त्याः<span class="accent-swarita">॑</span> <span class="danda">।</span> अ<span class="accent-anudatta">᳒</span>ग्नी<span class="accent-anudatta">᳒</span>मिन्धेवीवा<span class="accent-anudatta">᳒</span>स्वा<span class="accent-swarita">॑</span>भिः<span class="mantra-number"> <span class="danda">॥</span> ९ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_2-subsection_24">
+                        <div class="rik-metadata"><span class="danda">॥</span> वत्सः काण्वः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">आदी<span class="accent-anudatta">᳒</span>त्प्रत्ना<span class="accent-anudatta">᳒</span>स्यारे<span class="accent-anudatta">᳒</span>ता<span class="accent-swarita">॑</span>सः <span class="danda">।</span> ज्योतिःपश्यन्तीवासा<span class="accent-anudatta">᳒</span>रम् <span class="danda">।</span> पा<span class="accent-anudatta">᳒</span>रोयातिध्या<span class="accent-trikampa">᳹</span>तेदीवि<span class="accent-anudatta">᳒</span><span class="mantra-number"> <span class="danda">॥</span> १० <span class="danda">॥</span> </span></div>
+                    </div>
+                </div>
+                <div class="section" id="supersection_1-section_3">
+                    <h2 class="section-title">तृतीय खण्डः</h2>
+                    
+                    <div class="subsection" id="supersection_1-section_3-subsection_25">
+                        <div class="rik-metadata"><span class="danda">॥</span> प्रयोगो भागर्वः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अग्निंवोवृधन्तं <span class="danda">।</span> अध्वाराणांपुरूतामं <span class="danda">।</span> अच्छानाप्नेसाहा<span class="accent-anudatta">᳒</span>स्वते<span class="mantra-number"> <span class="danda">॥</span> १ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_26">
+                        <div class="rik-metadata"><span class="danda">॥</span> भाद्वाजो बार्हस्पत्यः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अग्निस्तिग्मे<span class="accent-trikampa">᳹</span>ना<span class="accent-swarita">॑</span>शोचीषा<span class="accent-swarita">॑</span> <span class="danda">।</span> यंसद्वि<span class="accent-anudatta">᳒</span>श्वंन्याटट्यत्रीणं <span class="danda">।</span> अ<span class="accent-anudatta">᳒</span>ग्नि<span class="accent-anudatta">᳒</span>र्नो<span class="accent-swarita">॑</span>वंसतेरायिम्<span class="accent-kampa">᳸</span><span class="mantra-number"> <span class="danda">॥</span> २ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_27">
+                        
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_28">
+                        <div class="rik-metadata"><span class="danda">॥</span> वामदेवो गौतमः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अग्नेमृ<span class="accent-trikampa">᳹</span>ळामाहंआ<span class="accent-swarita">॑</span>सि<span class="accent-swarita">॑</span> <span class="danda">।</span> आ<span class="accent-anudatta">᳒</span>याआ<span class="accent-trikampa">᳹</span>दे<span class="accent-swarita">॑</span>वायुन्ज<span class="accent-swarita">॑</span>नम् <span class="danda">।</span> ईये<span class="accent-kampa">᳸</span>थाबर्ही<span class="accent-swarita">॑</span>रासादम्<span class="mantra-number"> <span class="danda">॥</span> ३ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_29">
+                        <div class="rik-metadata"><span class="danda">॥</span> वसिष्ठो मैत्रावरुणिः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अ<span class="accent-anudatta">᳒</span>ग्नेर<span class="accent-trikampa">᳹</span>क्षाणोअं<span class="accent-anudatta">᳒</span>हा<span class="accent-swarita">॑</span>सः <span class="danda">।</span> प्रा<span class="accent-anudatta">᳒</span>तीस्मदेवरिषाताः <span class="danda">।</span> ता<span class="accent-anudatta">᳒</span>पीष्ठैराज<span class="accent-anudatta">᳒</span>रोदहा<span class="mantra-number"> <span class="danda">॥</span> ४ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_30">
+                        <div class="rik-metadata"><span class="danda">॥</span> वसिष्ठो मैत्रावरुणिः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">नित्वा<span class="accent-swarita">॑</span>नक्ष्यविस्पते <span class="danda">।</span> धू<span class="accent-anudatta">᳒</span>म<span class="accent-swarita">॑</span>न्त<span class="accent-anudatta">᳒</span>न्धीमहेवायम् <span class="danda">।</span> सु<span class="accent-anudatta">᳒</span>वी<span class="accent-anudatta">᳒</span>रामग्नआ<span class="accent-kampa">᳸</span>हुतः<span class="mantra-number"> <span class="danda">॥</span> ६ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_31">
+                        <div class="rik-metadata"><span class="danda">॥</span> विरूप आंगिरसः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">अ<span class="accent-anudatta">᳒</span>ग्नि<span class="accent-anudatta">᳒</span>र्मूर्द्धादीवाःकाकू<span class="accent-anudatta">᳒</span>त् <span class="danda">।</span> पा<span class="accent-anudatta">᳒</span>तीःपृथिव्या<span class="accent-anudatta">᳒</span>आ<span class="accent-anudatta">᳒</span>यम् <span class="danda">।</span> आपांरेतांसिजिन्वति<span class="mantra-number"> <span class="danda">॥</span> ७ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_32">
+                        <div class="rik-metadata"><span class="danda">॥</span> शुनः शेप आजीर्गितः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">ई<span class="accent-anudatta">᳒</span>मामू<span class="accent-swarita">॑</span>षुत्वाम<span class="accent-anudatta">᳒</span>स्मा<span class="accent-swarita">॑</span>कम् <span class="danda">।</span> सा<span class="accent-anudatta">᳒</span>नि<span class="accent-trikampa">᳹</span>ङ्गा<span class="accent-swarita">॑</span>यात्र<span class="accent-anudatta">᳒</span>न्नव्या<span class="accent-swarita">॑</span>सम् <span class="danda">।</span> अग्ने<span class="accent-swarita">॑</span>दे<span class="accent-anudatta">᳒</span>वे<span class="accent-anudatta">᳒</span>षुप्रा<span class="accent-anudatta">᳒</span>वोचः<span class="mantra-number"> <span class="danda">॥</span> ८ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_33">
+                        <div class="rik-metadata"><span class="danda">॥</span> गोपवन अत्रयेः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">तन्त्वा<span class="accent-swarita">॑</span>गोपा<span class="accent-anudatta">᳒</span>वा<span class="accent-swarita">॑</span>नोगिरा <span class="danda">।</span> जा<span class="accent-anudatta">᳒</span>नि<span class="accent-swarita">॑</span>ष्ठदग्नेअङ्गिरः <span class="danda">।</span> सा<span class="accent-anudatta">᳒</span>पा<span class="accent-swarita">॑</span>वकाश्रू<span class="accent-swarita">॑</span>धीहा<span class="accent-anudatta">᳒</span>व<span class="accent-swarita">॑</span>म्<span class="mantra-number"> <span class="danda">॥</span> ९ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_34">
+                        <div class="rik-metadata"><span class="danda">॥</span> वामदेवो गौतमः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">पा<span class="accent-anudatta">᳒</span>रिवा<span class="accent-anudatta">᳒</span>जपतीःकाविः<span class="accent-anudatta">᳒</span> <span class="danda">।</span> अ<span class="accent-anudatta">᳒</span>ग्नि<span class="accent-anudatta">᳒</span>ऋ<span class="accent-anudatta">᳒</span>हव्या<span class="accent-anudatta">᳒</span>न्या<span class="accent-swarita">॑</span>क्रमीत् <span class="danda">।</span> दध<span class="accent-anudatta">᳒</span>द्रत्ना<span class="accent-anudatta">᳒</span>नीदाशू<span class="accent-anudatta">᳒</span>षे<span class="accent-anudatta">᳒</span><span class="mantra-number"> <span class="danda">॥</span> १० <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_35">
+                        <div class="rik-metadata"><span class="danda">॥</span> मेधातिथिः काण्वः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">का<span class="accent-anudatta">᳒</span>वी<span class="accent-anudatta">᳒</span>माग्नी<span class="accent-anudatta">᳒</span>मू<span class="accent-anudatta">᳒</span>पा<span class="accent-swarita">॑</span>स्तुहि <span class="danda">।</span> स<span class="accent-anudatta">᳒</span>त्या<span class="accent-anudatta">᳒</span>धर्मा<span class="accent-swarita">॑</span>णमाध्वारे <span class="danda">।</span> दे<span class="accent-anudatta">᳒</span>वा<span class="accent-anudatta">᳒</span>मा<span class="accent-swarita">॑</span>मीवाचा<span class="accent-anudatta">᳒</span>ता<span class="accent-swarita">॑</span>नम्<span class="mantra-number"> <span class="danda">॥</span> १२ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_36">
+                        <div class="rik-metadata"><span class="danda">॥</span> सिन्धुद्वीप आम्बरीषः त्रित आत्यो वा <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">श<span class="accent-kampa">᳸</span>न्नो<span class="accent-swarita">॑</span>देवी<span class="accent-anudatta">᳒</span>राभीष्टा<span class="accent-swarita">॑</span>ये <span class="danda">।</span> श<span class="accent-anudatta">᳒</span>न्नो<span class="accent-swarita">॑</span>भूवन्तूपीता<span class="accent-anudatta">᳒</span>ये<span class="accent-swarita">॑</span> <span class="danda">।</span> श<span class="accent-anudatta">᳒</span>य्योराभि<span class="accent-anudatta">᳒</span>स्रावन्तूनः<span class="mantra-number"> <span class="danda">॥</span> १३ <span class="danda">॥</span> </span></div>
+                    </div>
+                    <div class="subsection" id="supersection_1-section_3-subsection_37">
+                        <div class="rik-metadata"><span class="danda">॥</span> उशना काव्यः <span class="danda">॥</span> अग्निः <span class="danda">॥</span> गायत्री <span class="danda">॥</span></div>
+<div class="rik-text">कस्यानू<span class="accent-anudatta">᳒</span>नम्पारी<span class="accent-swarita">॑</span>णसि <span class="danda">।</span> धीयो<span class="accent-swarita">॑</span>जिन्वसिसत्पते <span class="danda">।</span> गो<span class="accent-anudatta">᳒</span>षा<span class="accent-anudatta">᳒</span>तायस्यातागी<span class="accent-anudatta">᳒</span>राः<span class="accent-anudatta">᳒</span><span class="mantra-number"> <span class="danda">॥</span> १४ <span class="danda">॥</span> </span></div>
+                    </div>
+                </div>
+        </div>
+        
+    </div>
+    
+    <footer class="footer">
+        <p>Visit us at <a href="https://jaimineeyasamavedam.org" target="_blank">jaimineeyasamavedam.org</a></p>
+    </footer>
+</body>
+</html>

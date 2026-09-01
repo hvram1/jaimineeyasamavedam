@@ -1,0 +1,38 @@
+
+जैमिनीय  साम  प्रकृति  गानम्
+
+Version 0.14 18th October 2025
+
+# Start of SuperSection Title -- supersection_1 ## DO NOT EDIT
+अथआग्नेयम्
+# End of SuperSection Title -- supersection_1 ## DO NOT EDIT
+
+        
+# Start of Section Title -- count ## DO NOT EDIT
+Section count (01)
+# End of Section Title -- count ## DO NOT EDIT
+        
+# Start of Section Title -- section_1 ## DO NOT EDIT
+Section section_1 (01)
+# End of Section Title -- section_1 ## DO NOT EDIT
+               
+# Start of SubSection Title -- subsection_1 ## DO NOT EDIT
+गौतमस्यपर्क:
+# End of SubSection Title -- subsection_1 ## DO NOT EDIT
+
+
+
+            
+
+#Start of Mantra Sets -- subsection_1 ## DO NOT EDIT
+ओ(त) ग्ना(त) इ(श) ।आ या(थाच्) ही वा(चा) इ(श) । ता या(टा) इता या(टि) इ।(श)
+गृ णा(चा) नो(श) हव्या दा(चि) ।ता या(टा) इता या(टि) इ(श) ।
+नाइ हो(कि) ता(च) । सा(ट) त्सा(ट) इ बा(खा) औहो वा(शि) ।
+ही(ख) षि(श) ॥1॥
+
+#End of Mantra Sets -- subsection_1 ## DO NOT EDIT
+           
+
+\end{document}
+                
+            

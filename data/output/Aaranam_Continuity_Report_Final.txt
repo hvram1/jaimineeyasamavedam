@@ -1,0 +1,29 @@
+CONTINUITY CHECK REPORT
+File: Aaranam_latest_out.json
+============================================================
+
+Patha/Parva: ॥ व्रत पर्व ॥ (supersection_1)
+--------------------------------------------------
+
+Patha/Parva: || अर्काणि पाठ: || (supersection_2)
+--------------------------------------------------
+
+Patha/Parva: ॥ द्वन्द्व – पर्व ॥ (supersection_4)
+--------------------------------------------------
+
+Patha/Parva: ॥  शुक्रिय पर्व ॥ (supersection_5)
+--------------------------------------------------
+
+Patha/Parva: ॥ शाक्वर्र्यः ॥ (supersection_6)
+--------------------------------------------------
+
+Patha/Parva: ॥ औपनिषद पर्व ॥ (supersection_7)
+--------------------------------------------------
+
+SUCCESS: All Khandas have contiguous Samam numbering starting from 1.
+
+SUMMARY STATISTICS
+==================
+Total Parvas/Pathas: 6
+Total Khandas: 25
+Total Samams Detected: 292

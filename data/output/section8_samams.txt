@@ -1,0 +1,7 @@
+[1] subsection_82 rik_id=1 samam_nums=[]
+[2] subsection_83 rik_id=2 samam_nums=['२']
+[3] subsection_84 rik_id=3 samam_nums=['३']
+[4] subsection_85 rik_id=4 samam_nums=['४']
+[5] subsection_86 rik_id=5 samam_nums=['५', '६']
+[6] subsection_87 rik_id=6 samam_nums=['७', '८']
+[7] subsection_88 rik_id=8 samam_nums=['९']

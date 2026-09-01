@@ -1,0 +1,113 @@
+================================================================================
+JAIMINEEYA SAMAVEDA SAMHITA - DATA RECONCILIATION REPORT
+================================================================================
+
+Generated: 2026-02-02 (Updated)
+
+================================================================================
+EXECUTIVE SUMMARY
+================================================================================
+
+Overall Structure:
+  - Pathas (SuperSections):  6
+  - Khandas (Sections):      59
+  - Arsheyams (Subsections): 722
+  - Samams:                  1,224
+
+Data Status: RECONCILED (Count updated)
+
+================================================================================
+SECTION 1: PATHA-WISE BREAKDOWN
+================================================================================
+
+Patha               Khandas  Arsheyams  Samams
+--------------------------------------------------------------------------------
+आग्नेयपाठः              12       125       181
+तद्वपाठः               12       124       199
+बृहतिपाठः               8        95       152
+असाविपाठः               6        64       106
+ऐन्द्रपाठः              10       105       186
+पवमानपाठः              11       209       400
+--------------------------------------------------------------------------------
+TOTAL                  59       722     1,224
+
+Notes:
+  - Arsheyam = Named sub-unit (e.g., गौतमस्यपर्कः), may contain multiple Samams
+  - Samam = Individual chant/verse, identified by ||N|| markers in mantra text
+
+================================================================================
+SECTION 2: COUNTING METHODOLOGY
+================================================================================
+
+The Samam count uses a unified pattern implemented in src/samam_utils.py:
+
+  Pattern: (?:॥|\|\|)\s*[\d०-९]+\s*(?:॥|\|\|)
+
+This matches:
+  - Devanagari danda (॥) or ASCII pipes (||)
+  - Arabic digits (0-9) or Devanagari digits (०-९)
+
+This ensures consistency between:
+  - Website homepage statistics
+  - Summary table generation
+  - Granular table generation
+
+================================================================================
+SECTION 3: DATA SOURCE COMPARISON
+================================================================================
+
+Metric       Website  JSON Summary  Granular Table  Status
+--------------------------------------------------------------------------------
+Khandas         59          59           59         MATCH
+Arsheyams      722         722           -          MATCH
+Samams       1,224       1,224        1,224         MATCH
+
+================================================================================
+SECTION 4: OUTPUT FILES GENERATED
+================================================================================
+
+File                            Description                         Records
+--------------------------------------------------------------------------------
+JSV_Structure_Summary.csv       Sama counts by Patha/Khanda        59 rows
+JSV_Structure_Summary.txt       Human-readable summary             -
+JSV_Samam_Granular_Table.csv    Row-per-Samam with all details     1,224 rows
+samam_numbering_errors.txt      Numbering issues (if any)          -
+
+================================================================================
+SECTION 5: TERMINOLOGY REFERENCE
+================================================================================
+
+Term        Also Known As    Description
+--------------------------------------------------------------------------------
+Patha       SuperSection     6 major divisions (आग्नेय, तद्व, etc.)
+Khanda      Section          Chapters within each Patha
+Arsheyam    Subsection       Named sub-unit with multiple Samams
+Samam       Sama             Individual chant/verse (||N|| markers)
+
+================================================================================
+SECTION 6: SCRIPTS REFERENCE
+================================================================================
+
+Script                        Purpose
+--------------------------------------------------------------------------------
+src/samam_utils.py            Shared utility for consistent Samam counting
+src/generate_website.py       Generates static website with correct counts
+src/generate_json_summary.py  Generates structure summary CSV/TXT
+src/generate_granular_table.py Generates row-per-Samam CSV
+
+================================================================================
+CONCLUSION
+================================================================================
+
+Check               Status
+--------------------------------------------------------------------------------
+Data Integrity      OK - Source text extraction is accurate and complete
+Khandas             OK - All 59 Khandas across 6 Pathas correctly identified
+Arsheyams           OK - All 722 Arsheyams correctly counted
+Samams              OK - 1,224 Samams confirmed (unified counting method)
+Website             OK - Homepage displays correct statistics
+Consistency         OK - All outputs use same counting methodology
+
+================================================================================
+
+Report generated as part of the Jaimineeya Samaveda digitization project.

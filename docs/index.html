@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="sa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>जैमिनीय सामवेदः | Jaimineeya Samavedam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #fdfaf3;
+            --accent-saffron: #ff6b35;
+            --deep-maroon: #852a2a;
+            --text-main: #2c2c2c;
+            --text-muted: #6b6b6b;
+            --card-bg: #ffffff;
+            --border-soft: #e5e0d1;
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Micro-animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        header {
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--deep-maroon);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--accent-saffron);
+            transform: scaleX(0);
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(133, 42, 42, 0.08);
+            border-color: var(--accent-saffron);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .card-title-sa {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title-en {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            max-width: 250px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-saffron);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .card:hover .btn {
+            background-color: var(--deep-maroon);
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .ornament {
+            color: var(--accent-saffron);
+            margin: 0 10px;
+        }
+
+        /* Collections Section */
+        .collections-section {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .collection-card {
+            display: block;
+            background: var(--card-bg);
+            border: 2px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .collection-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-saffron);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .col-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .col-title-sa {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        .col-title-en {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>जैमिनीय सामवेदः</h1>
+            <p class="subtitle">Digital Repository</p>
+        </header>
+
+        <main class="grid">
+            <a href="samhita/index.html" class="card">
+                <span class="card-icon">📖</span>
+                <h2 class="card-title-sa">साम संहिता</h2>
+                <p class="card-title-en">Sama Samhita (Devanagari)</p>
+                <p class="card-desc">Comprehensive digital archive of the Jaimineeya Sama Samhita text with Rishi,
+                    Devata, and Chandas metadata.</p>
+                <span class="btn">Explore Samhita</span>
+            </a>
+
+            <a href="malayalam/index.html" class="card">
+                <span class="card-icon">🌴</span>
+                <h2 class="card-title-sa" style="font-family: 'Noto Serif Malayalam', serif; font-size: 1.9rem;">സാമ സംഹിതാ</h2>
+                <p class="card-title-en">Sama Samhita (Malayalam)</p>
+                <p class="card-desc">Complete Jaimineeya Sama Samhita in Malayalam script with Grantha swara notations & modifiers.</p>
+                <span class="btn">Explore Malayalam</span>
+            </a>
+
+            <a href="aaranam/index.html" class="card">
+                <span class="card-icon">🌿</span>
+                <h2 class="card-title-sa">आरण्य गानम्</h2>
+                <p class="card-title-en">Aranya Ganam</p>
+                <p class="card-desc">Detailed repository of the Jaimineeya Aranya Ganam including structural
+                    classifications and audio guides.</p>
+                <span class="btn">Explore Aaranam</span>
+            </a>
+        </main>
+
+        <!-- Sama Sangraha Collections -->
+        <section class="collections-section">
+            <h2 class="section-title">साम सङ्ग्रहः</h2>
+            <p class="section-subtitle">Curated Collections</p>
+            
+            <div class="collections-grid">
+                <a href="collection/sooktamala/index.html" class="collection-card">
+                    <span class="col-icon">📗</span>
+                    <h3 class="col-title-sa">साम सूक्तमाला</h3>
+                    <p class="col-title-en">Sama Sooktamala</p>
+                </a>
+                
+                <a href="collection/prayogamala-purva/index.html" class="collection-card">
+                    <span class="col-icon">📘</span>
+                    <h3 class="col-title-sa">साम प्रयोगमाला - पूर्वभागः</h3>
+                    <p class="col-title-en">Sama Prayogamala - Purva Bhagam</p>
+                </a>
+                
+                <a href="collection/prayogamala-uttara/index.html" class="collection-card">
+                    <span class="col-icon">📙</span>
+                    <h3 class="col-title-sa">साम प्रयोगमाला - उत्तरभागः</h3>
+                    <p class="col-title-en">Sama Prayogamala - Uttara Bhagam</p>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <span class="ornament">ॐ</span> <a href="https://jaimineeyasamavedam.org"
+                style="color: inherit; text-decoration: none;">jaimineeyasamavedam.org</a> <span
+                class="ornament">ॐ</span>
+        </footer>
+    </div>
+
+</body>
+
+</html>

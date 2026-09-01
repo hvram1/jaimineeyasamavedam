@@ -1,0 +1,36 @@
+CONTINUITY CHECK REPORT
+File: Aaranam_latest_out.json
+============================================================
+
+Patha/Parva: ॥ व्रत पर्व ॥ (supersection_1)
+--------------------------------------------------
+
+Patha/Parva: || अर्काणि पाठ: || (supersection_2)
+--------------------------------------------------
+  ॥ त्रयोदश खण्डः ॥: Duplicates found: [1, 2, 3, 4, 5, 6]
+  ॥ चतुर्दशः खण्डः ॥: Starts at 7 (Expected 1)
+  ॥ चतुर्दशः खण्डः ॥: Gaps found! Missing: [1, 2, 3, 4, 5, 6]
+
+Patha/Parva: ॥ द्वन्द्व – पर्व ॥ (supersection_4)
+--------------------------------------------------
+  ॥ अष्टादशः खण्डः ॥: Gaps found! Missing: [2]
+
+Patha/Parva: ॥  शुक्रिय पर्व ॥ (supersection_5)
+--------------------------------------------------
+
+Patha/Parva: ॥ शाक्वर्र्यः ॥ (supersection_6)
+--------------------------------------------------
+  ॥ चतुर्विंशः खण्डः ॥: Duplicates found: [1]
+
+Patha/Parva: ॥ औपनिषद पर्व ॥ (supersection_7)
+--------------------------------------------------
+  ॥ प्रथम खण्डः ॥: Starts at 2 (Expected 1)
+  ॥ प्रथम खण्डः ॥: Gaps found! Missing: [1]
+
+ISSUES FOUND: Please review the list above.
+
+SUMMARY STATISTICS
+==================
+Total Parvas/Pathas: 6
+Total Khandas: 25
+Total Samams Detected: 291
