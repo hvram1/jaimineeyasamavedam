@@ -22,6 +22,20 @@
             font-style: normal;
         }
 
+        @font-face {
+            font-family: 'AdishilaVedic';
+            \BLOCK{ if adishila_vedic_b64 }
+            src: url('data:font/truetype;charset=utf-8;base64,\VAR{adishila_vedic_b64}') format('truetype');
+            \BLOCK{ else }
+            src: url('../../../fonts/AdishilaVedic.ttf') format('truetype'),
+                 url('../../fonts/AdishilaVedic.ttf') format('truetype'),
+                 url('../fonts/AdishilaVedic.ttf') format('truetype'),
+                 url('fonts/AdishilaVedic.ttf') format('truetype');
+            \BLOCK{ endif }
+            font-weight: normal;
+            font-style: normal;
+        }
+
         :root {
             --font-doc: 'Noto Serif Devanagari', 'Tiro Devanagari Sanskrit', serif;
             --font-swara: 'JaimineeyaSwara', 'Noto Serif Grantha', sans-serif;
@@ -414,11 +428,11 @@
             color: white;
             padding: 0.85rem 1.5rem;
             border-radius: 8px;
+            text-align: center;
             font-size: 1.45rem;
             margin-bottom: 1.75rem;
             font-family: 'Noto Serif Devanagari', serif;
             box-shadow: 0 3px 8px rgba(123,17,19,0.25);
-            text-align: center;
         }
 
         .section {
@@ -453,7 +467,7 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.03);
             text-align: center;
             content-visibility: auto;
-            contain-intrinsic-size: auto 220px;
+            contain-intrinsic-size: auto 360px;
         }
 
         .subsection-header {
@@ -1020,7 +1034,7 @@
                 size: auto;
                 margin: 12mm 15mm 12mm 15mm;
             }
-            .header, .toc-sidebar, .footer, .modal-overlay, #print-modal, .back-to-top {
+            .header, .toc-sidebar, .footer, .modal-overlay, #print-modal, .back-to-top, .btn-heading-print {
                 display: none !important;
             }
             *, *::before, *::after {
@@ -1281,7 +1295,7 @@
                         <tbody>
                             \BLOCK{ for patha_data in summary_table }
                                 <tr style="background-color: var(--accent-bg); font-weight: bold;">
-                                    <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--maroon);">\VAR{patha_data.patha}</td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--maroon);"><a href="#\VAR{patha_data.id}" style="color: inherit; text-decoration: none; display: block;">\VAR{patha_data.patha}</a></td>
                                     \BLOCK{ if show_rik }
                                     <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--maroon);">\VAR{patha_data.patha_riks}</td>
                                     \BLOCK{ endif }
@@ -1291,7 +1305,7 @@
                                 </tr>
                                 \BLOCK{ for row in patha_data.khandas }
                                 <tr>
-                                    <td style="padding: 6px; border: 1px solid var(--border-color); text-align: left; padding-left: 20px;">\VAR{row.khanda}</td>
+                                    <td style="padding: 6px; border: 1px solid var(--border-color); text-align: left; padding-left: 20px;"><a href="#\VAR{row.id}" style="color: #153E75; text-decoration: none; font-weight: 500;">\VAR{row.khanda}</a></td>
                                     \BLOCK{ if show_rik }
                                     <td style="padding: 6px; border: 1px solid var(--border-color);">\VAR{row.riks}</td>
                                     \BLOCK{ endif }
@@ -1342,40 +1356,64 @@
 
     <!-- Print Options Modal -->
     <div id="print-modal" class="modal-overlay" style="display: none;" onclick="if(event.target === this) closePrintModal();">
-        <div class="modal-card">
+        <div class="modal-card" style="max-width: 580px;">
             <div class="modal-header">
-                <h3>Print Options</h3>
+                <h3>Print Options (मुद्रणम्)</h3>
                 <button class="close-modal-btn" onclick="closePrintModal()">✕</button>
             </div>
             <div class="modal-body">
-                <p style="margin-bottom: 1rem; color: #555; font-size: 0.92rem; line-height: 1.5;">
-                    Large documents take time to paginate. Choose your print scope below:
+                <p style="margin-bottom: 1.1rem; color: #555; font-size: 0.92rem; line-height: 1.5;">
+                    Select your print scope below. Fast cached printing generates optimized printer layouts:
                 </p>
                 <div class="print-options">
-                    <button class="btn-print-opt primary" onclick="printActiveSection()">
-                        <span class="btn-opt-icon">⚡</span>
-                        <div class="btn-opt-text">
-                            <strong>Print Current Section</strong>
-                            <span id="current-section-print-name">Print active Kandah (~1-3 pages)</span>
-                        </div>
-                    </button>
+                    <!-- Quick Print Active Scope -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;">
+                        <button class="btn-print-opt primary" onclick="printActiveKandah()" style="margin: 0; padding: 0.75rem 0.85rem;">
+                            <span class="btn-opt-icon" style="font-size: 1.4rem;">⚡</span>
+                            <div class="btn-opt-text">
+                                <strong style="font-size: 0.92rem;">Print Current Kandah</strong>
+                                <span id="current-kandah-print-name" style="font-size: 0.78rem;">Active Kandah (~1-3 pages)</span>
+                            </div>
+                        </button>
+                        <button class="btn-print-opt" onclick="printActiveParva()" style="margin: 0; padding: 0.75rem 0.85rem; border-color: #C68A1E; background: #FFFBF2;">
+                            <span class="btn-opt-icon" style="font-size: 1.4rem;">📑</span>
+                            <div class="btn-opt-text">
+                                <strong style="font-size: 0.92rem;">Print Current Parva</strong>
+                                <span id="current-parva-print-name" style="font-size: 0.78rem;">Active Parva / Chapter</span>
+                            </div>
+                        </button>
+                    </div>
                     
+                    <!-- Specific Parva (Supersection) Selection -->
                     <div style="background: #FFFDF9; border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem 1rem; box-sizing: border-box; max-width: 100%; overflow: hidden;">
-                        <label style="font-weight: 600; font-size: 0.92rem; color: var(--dark-brown); display: block; margin-bottom: 0.35rem;">
-                            Select Specific Section (Kandah):
+                        <label style="font-weight: 600; font-size: 0.90rem; color: var(--maroon); display: block; margin-bottom: 0.35rem;">
+                            Print Specific Supersection (Parva / प्रपाठकः):
                         </label>
                         <div style="display: flex; gap: 0.5rem; align-items: center; width: 100%; max-width: 100%; box-sizing: border-box;">
-                            <select id="kandah-select-dropdown" style="flex: 1; min-width: 0; width: 0; padding: 0.4rem; border: 1px solid #CCC; border-radius: 6px; font-family: var(--font-doc); font-size: 0.92rem; box-sizing: border-box;">
+                            <select id="parva-select-dropdown" style="flex: 1; min-width: 0; width: 0; padding: 0.45rem; border: 1px solid #CCC; border-radius: 6px; font-family: var(--font-doc); font-size: 0.90rem; box-sizing: border-box;">
                             </select>
-                            <button type="button" class="btn-ctrl" style="background: var(--saffron); color: white; border: none; padding: 0.45rem 0.85rem; cursor: pointer; white-space: nowrap; flex-shrink: 0;" onclick="printSelectedKandah()">Print</button>
+                            <button type="button" class="btn-ctrl" style="background: #153E75; color: white; border: none; padding: 0.45rem 0.85rem; cursor: pointer; white-space: nowrap; flex-shrink: 0;" onclick="printSelectedParva()">Print Parva</button>
                         </div>
                     </div>
 
+                    <!-- Specific Kandah (Section) Selection -->
+                    <div style="background: #FFFDF9; border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem 1rem; box-sizing: border-box; max-width: 100%; overflow: hidden;">
+                        <label style="font-weight: 600; font-size: 0.90rem; color: var(--dark-brown); display: block; margin-bottom: 0.35rem;">
+                            Select Specific Section (Kandah / काण्डम्):
+                        </label>
+                        <div style="display: flex; gap: 0.5rem; align-items: center; width: 100%; max-width: 100%; box-sizing: border-box;">
+                            <select id="kandah-select-dropdown" style="flex: 1; min-width: 0; width: 0; padding: 0.45rem; border: 1px solid #CCC; border-radius: 6px; font-family: var(--font-doc); font-size: 0.90rem; box-sizing: border-box;">
+                            </select>
+                            <button type="button" class="btn-ctrl" style="background: var(--saffron); color: white; border: none; padding: 0.45rem 0.85rem; cursor: pointer; white-space: nowrap; flex-shrink: 0;" onclick="printSelectedKandah()">Print Kandah</button>
+                        </div>
+                    </div>
+
+                    <!-- Entire Document -->
                     <button class="btn-print-opt" onclick="printEntireDocument()">
                         <span class="btn-opt-icon">📖</span>
                         <div class="btn-opt-text">
                             <strong>Print Entire Document</strong>
-                            <span>All sections (full text print)</span>
+                            <span>All Parvas and Kandahs (full text print)</span>
                         </div>
                     </button>
                 </div>
@@ -1385,6 +1423,7 @@
 
     <script>
         const fontList = [
+            { label: "AdiShila Vedic", font: "'AdishilaVedic', 'Noto Serif Devanagari', serif" },
             { label: "Noto Serif", font: "'Noto Serif Devanagari', 'Tiro Devanagari Sanskrit', serif" },
             { label: "Tiro Sanskrit", font: "'Tiro Devanagari Sanskrit', 'Noto Serif Devanagari', serif" },
             { label: "Noto Sans", font: "'Noto Sans Devanagari', sans-serif" }
@@ -1462,17 +1501,62 @@
         }
 
         /* Print Modal & High Performance Cached Printing */
+        let currentActiveChapterId = null;
+        let currentActiveChapterTitle = "";
         let currentActiveSectionId = null;
         let currentActiveSectionTitle = "";
-        const printSectionCache = new Map();
+        const printCache = new Map();
+
+        function populateParvaDropdown() {
+            const select = document.getElementById('parva-select-dropdown');
+            if (!select) return;
+            select.innerHTML = '';
+            document.querySelectorAll('.chapter-container').forEach(ch => {
+                const titleNode = ch.querySelector('.chapter-heading-text') || ch.querySelector('.chapter-heading');
+                if (titleNode) {
+                    const opt = document.createElement('option');
+                    opt.value = ch.id;
+                    opt.textContent = titleNode.textContent.trim();
+                    select.appendChild(opt);
+                }
+            });
+        }
+
+        function populateKandahDropdown() {
+            const select = document.getElementById('kandah-select-dropdown');
+            if (!select) return;
+            select.innerHTML = '';
+            document.querySelectorAll('.chapter-container').forEach(ch => {
+                const chTitle = ch.querySelector('.chapter-heading-text')?.textContent.trim() || ch.querySelector('.chapter-heading')?.textContent.trim() || '';
+                ch.querySelectorAll('.section').forEach(sec => {
+                    const titleNode = sec.querySelector('.section-title-text') || sec.querySelector('.section-title');
+                    if (titleNode) {
+                        const clone = titleNode.cloneNode(true);
+                        const countNode = clone.querySelector('.section-samam-count');
+                        if (countNode) clone.removeChild(countNode);
+                        const btnNode = clone.querySelector('.btn-heading-print');
+                        if (btnNode) clone.removeChild(btnNode);
+                        const secTitle = clone.textContent.trim();
+                        const opt = document.createElement('option');
+                        opt.value = sec.id;
+                        opt.textContent = (chTitle ? chTitle + ' — ' : '') + secTitle;
+                        select.appendChild(opt);
+                    }
+                });
+            });
+        }
 
         function openPrintModal() {
             const modal = document.getElementById('print-modal');
-            const label = document.getElementById('current-section-print-name');
-            if (currentActiveSectionTitle && label) {
-                label.innerText = currentActiveSectionTitle + ' (~1-3 pages)';
-            } else if (label) {
-                label.innerText = 'Print active Kandah (~1-3 pages)';
+            populateParvaDropdown();
+            populateKandahDropdown();
+            const kandahLabel = document.getElementById('current-kandah-print-name');
+            if (kandahLabel) {
+                kandahLabel.innerText = currentActiveSectionTitle ? currentActiveSectionTitle + ' (~1-3 pages)' : 'Active Kandah (~1-3 pages)';
+            }
+            const parvaLabel = document.getElementById('current-parva-print-name');
+            if (parvaLabel) {
+                parvaLabel.innerText = currentActiveChapterTitle ? currentActiveChapterTitle : 'Active Parva / Chapter';
             }
             if (modal) modal.style.display = 'flex';
         }
@@ -1530,6 +1614,9 @@
                         width: 100% !important;
                         max-width: 100% !important;
                     }
+                    .btn-heading-print {
+                        display: none !important;
+                    }
                     .print-container {
                         width: 100% !important;
                         max-width: 100% !important;
@@ -1545,7 +1632,7 @@
                         max-width: 100% !important;
                         box-sizing: border-box !important;
                     }
-                    .section {
+                    .chapter-container, .section {
                         margin-bottom: 2rem !important;
                         width: 100% !important;
                         max-width: 100% !important;
@@ -1599,30 +1686,47 @@
         function getSectionPrintableHtml(target) {
             if (!target) return "";
             const targetId = target.id;
-            if (printSectionCache.has(targetId)) {
-                return printSectionCache.get(targetId);
+            if (printCache.has(targetId)) {
+                return printCache.get(targetId);
             }
             const parentChapter = target.closest('.chapter-container');
-            const chTitleNode = parentChapter ? parentChapter.querySelector('.chapter-heading') : null;
+            const chTitleNode = parentChapter ? (parentChapter.querySelector('.chapter-heading-text') || parentChapter.querySelector('.chapter-heading')) : null;
             const chapterHeaderHtml = chTitleNode ? `<h2 class="chapter-heading" style="text-align:center;font-size:1.35rem;margin-bottom:1.2rem;color:#7B1113;border-bottom:2px solid #7B1113;padding-bottom:0.4rem;">${chTitleNode.textContent.trim()}</h2>` : '';
             const docTitleHtml = `<div style="text-align:center;margin-bottom:1rem;"><h1 style="font-size:1.55rem;color:#7B1113;margin-bottom:0.3rem;">॥ ${document.title} ॥</h1></div>`;
             const fullHtml = docTitleHtml + chapterHeaderHtml + target.outerHTML;
-            printSectionCache.set(targetId, fullHtml);
+            printCache.set(targetId, fullHtml);
             return fullHtml;
         }
 
-        function printActiveSection() {
+        function getSupersectionPrintableHtml(target) {
+            if (!target) return "";
+            const targetId = 'supersection-' + target.id;
+            if (printCache.has(targetId)) {
+                return printCache.get(targetId);
+            }
+            const docTitleHtml = `<div style="text-align:center;margin-bottom:1rem;"><h1 style="font-size:1.55rem;color:#7B1113;margin-bottom:0.3rem;">॥ ${document.title} ॥</h1></div>`;
+            const fullHtml = docTitleHtml + target.outerHTML;
+            printCache.set(targetId, fullHtml);
+            return fullHtml;
+        }
+
+        function printActiveKandah() {
             closePrintModal();
-            let target = null;
-            if (currentActiveSectionId) {
-                target = document.getElementById(currentActiveSectionId);
-            }
-            if (!target) {
-                target = document.querySelector('.section') || document.querySelector('.chapter-container');
-            }
+            let target = currentActiveSectionId ? document.getElementById(currentActiveSectionId) : null;
+            if (!target) target = document.querySelector('.section');
             if (!target) return;
             const printableHtml = getSectionPrintableHtml(target);
             const title = currentActiveSectionTitle || document.title;
+            printHtmlContent(title, printableHtml);
+        }
+
+        function printActiveParva() {
+            closePrintModal();
+            let target = currentActiveChapterId ? document.getElementById(currentActiveChapterId) : null;
+            if (!target) target = document.querySelector('.chapter-container');
+            if (!target) return;
+            const printableHtml = getSupersectionPrintableHtml(target);
+            const title = currentActiveChapterTitle || document.title;
             printHtmlContent(title, printableHtml);
         }
 
@@ -1637,35 +1741,40 @@
             printHtmlContent(title, printableHtml);
         }
 
+        function printSelectedParva() {
+            const select = document.getElementById('parva-select-dropdown');
+            if (!select || !select.value) return;
+            const target = document.getElementById(select.value);
+            if (!target) return;
+            closePrintModal();
+            const printableHtml = getSupersectionPrintableHtml(target);
+            const title = select.options[select.selectedIndex]?.text || document.title;
+            printHtmlContent(title, printableHtml);
+        }
+
+        function printSupersectionById(id) {
+            const target = document.getElementById(id);
+            if (!target) return;
+            const printableHtml = getSupersectionPrintableHtml(target);
+            const titleNode = target.querySelector('.chapter-heading-text') || target.querySelector('.chapter-heading');
+            const title = titleNode ? titleNode.textContent.trim() : document.title;
+            printHtmlContent(title, printableHtml);
+        }
+
+        function printSectionById(id) {
+            const target = document.getElementById(id);
+            if (!target) return;
+            const printableHtml = getSectionPrintableHtml(target);
+            const titleNode = target.querySelector('.section-title-text') || target.querySelector('.section-title');
+            const title = titleNode ? titleNode.textContent.trim() : document.title;
+            printHtmlContent(title, printableHtml);
+        }
+
         function printEntireDocument() {
             closePrintModal();
-            document.body.classList.remove('print-only-active');
-            document.querySelectorAll('.print-active-target').forEach(el => el.classList.remove('print-active-target'));
             setTimeout(function() {
                 window.print();
             }, 50);
-        }
-
-        function populateKandahDropdown() {
-            const select = document.getElementById('kandah-select-dropdown');
-            if (!select) return;
-            select.innerHTML = '';
-            document.querySelectorAll('.chapter-container').forEach(ch => {
-                const chTitle = ch.querySelector('.chapter-heading')?.textContent.trim() || '';
-                ch.querySelectorAll('.section').forEach(sec => {
-                    const titleNode = sec.querySelector('.section-title');
-                    if (titleNode) {
-                        const clone = titleNode.cloneNode(true);
-                        const countNode = clone.querySelector('.section-samam-count');
-                        if (countNode) clone.removeChild(countNode);
-                        const secTitle = clone.textContent.trim();
-                        const opt = document.createElement('option');
-                        opt.value = sec.id;
-                        opt.textContent = (chTitle ? chTitle + ' — ' : '') + secTitle;
-                        select.appendChild(opt);
-                    }
-                });
-            });
         }
 
         /* Context-aware Suchi / Index Scroll Synchronization */
@@ -1732,6 +1841,7 @@
 
         // IntersectionObserver for tracking current section during scroll
         document.addEventListener('DOMContentLoaded', function() {
+            populateParvaDropdown();
             populateKandahDropdown();
 
             // Track active Samam during scroll and sync Suchi / Index
@@ -1785,18 +1895,62 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const titleNode = entry.target.querySelector('.section-title') || entry.target.querySelector('.chapter-heading');
-                        if (titleNode) {
-                            const clone = titleNode.cloneNode(true);
-                            const countNode = clone.querySelector('.section-samam-count');
-                            if (countNode) clone.removeChild(countNode);
-                            currentActiveSectionTitle = clone.textContent.trim();
+                        const ch = entry.target.closest('.chapter-container');
+                        if (ch) {
+                            currentActiveChapterId = ch.id;
+                            const chTitle = ch.querySelector('.chapter-heading-text') || ch.querySelector('.chapter-heading');
+                            if (chTitle) currentActiveChapterTitle = chTitle.textContent.trim();
+                        }
+                        const sec = entry.target.classList.contains('section') ? entry.target : entry.target.querySelector('.section');
+                        if (sec) {
+                            currentActiveSectionId = sec.id;
+                            const titleNode = sec.querySelector('.section-title-text') || sec.querySelector('.section-title');
+                            if (titleNode) {
+                                const clone = titleNode.cloneNode(true);
+                                const countNode = clone.querySelector('.section-samam-count');
+                                if (countNode) clone.removeChild(countNode);
+                                const btnNode = clone.querySelector('.btn-heading-print');
+                                if (btnNode) clone.removeChild(btnNode);
+                                currentActiveSectionTitle = clone.textContent.trim();
+                            }
                         }
                     }
                 });
             }, { rootMargin: '-60px 0px -65% 0px' });
 
             document.querySelectorAll('.chapter-container, .section').forEach(el => observer.observe(el));
+
+            // Smooth scrolling for anchors that prevents no-op hash collision and verifies arrival
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('a[href^="#"]');
+                if (!link) return;
+                const href = link.getAttribute('href');
+                if (!href || href === '#') return;
+                const targetId = href.slice(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    history.pushState(null, '', '#' + targetId);
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Verify arrival after layout rendering
+                    setTimeout(() => {
+                        const rect = target.getBoundingClientRect();
+                        if (Math.abs(rect.top - 80) > 40) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 350);
+                }
+            });
+
+            // Initial hash arrival check
+            if (window.location.hash) {
+                const hashTarget = document.getElementById(window.location.hash.slice(1));
+                if (hashTarget) {
+                    setTimeout(() => {
+                        hashTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 150);
+                }
+            }
 
             // Restore saved states
             const collapsed = localStorage.getItem('jsv-sidebar-collapsed') === 'true';

@@ -3934,6 +3934,12 @@ def CreateHtmlFile(templateFileName, name, DocfamilyName, data, html_font="'Adis
         with open(font_file, "rb") as f_font:
             jaimineeya_swara_b64 = base64.b64encode(f_font.read()).decode("ascii")
     
+    adishila_vedic_b64 = ""
+    adishila_file = Path("fonts/AdishilaVedic.ttf")
+    if adishila_file.exists():
+        with open(adishila_file, "rb") as f_font:
+            adishila_vedic_b64 = base64.b64encode(f_font.read()).decode("ascii")
+    
     document = template.render(
         supersections=data, 
         html_font=html_font, 
@@ -3951,6 +3957,7 @@ def CreateHtmlFile(templateFileName, name, DocfamilyName, data, html_font="'Adis
         has_riks=has_riks,
         has_samams=has_samams,
         jaimineeya_swara_b64=jaimineeya_swara_b64,
+        adishila_vedic_b64=adishila_vedic_b64,
         kpully=kpully
     )
     
@@ -4317,6 +4324,7 @@ Examples:
                 if khanda_name:
                     khanda_rows.append({
                         'khanda': khanda_name,
+                        'id': f"{ss_key}-{sec_key}",
                         'riks': to_devanagari_numeral(sec_riks),
                         'samams': to_devanagari_numeral(samam_count)
                     })
@@ -4373,6 +4381,7 @@ Examples:
         if khanda_rows:
             summary_table.append({
                 'patha': patha_name,
+                'id': ss_key,
                 'patha_riks': to_devanagari_numeral(patha_riks),
                 'patha_samams': to_devanagari_numeral(patha_samams),
                 'khandas': khanda_rows
