@@ -1,0 +1,31 @@
+{
+  "books": {
+    "taittiriya_upanishad": {
+      "title": "तैत्तिरीयोपनिषत्, अरुणप्रश्नम्, तृणाचिकेतम्",
+      "subtitle": "कृष्ण यजुर्वेदीय तैत्तिरीय आरण्यकम् (वेदमन्त्राः सस्वराः)",
+      "input_docx": "vedavms_html/tu_baraha.docx",
+      "output_html": "vedavms_html/taittiriya_upanishad_sanskrit.html",
+      "back_link": "documents.html",
+      "back_label": "← Documents Index",
+      "chapter_regex": "^([1-6])(?!\\.)\\s*(.*(?:vall[iI]|nArAyaN|aruNa|triNAcikE).*)$"
+    }
+  },
+  "fonts": [
+    {
+      "label": "Noto Serif",
+      "font": "'Noto Serif Devanagari', 'Tiro Devanagari Sanskrit', serif",
+      "weight": "500"
+    },
+    {
+      "label": "Tiro Sanskrit",
+      "font": "'Tiro Devanagari Sanskrit', 'Noto Serif Devanagari', serif",
+      "weight": "400"
+    },
+    {
+      "label": "Noto Sans",
+      "font": "'Noto Sans Devanagari', sans-serif",
+      "weight": "500"
+    }
+  ],
+  "default_font_size_rem": 1.35
+}

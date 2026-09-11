@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>॥ \VAR{doc_title_sa} ॥</title>
+    <title>॥ \VAR{doc_title_sa} ॥ - Jaimineeya Samavedam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'JaimineeyaSwara';
@@ -20,267 +23,493 @@
         }
 
         :root {
-            --font-doc: \VAR{html_font}, 'Noto Sans Devanagari', 'Siddhanta', 'AdishilaVedic', 'Arial Unicode MS', sans-serif;
+            --font-doc: 'Noto Serif Devanagari', 'Tiro Devanagari Sanskrit', serif;
             --font-swara: 'JaimineeyaSwara', 'Noto Serif Grantha', sans-serif;
-            
-            \BLOCK{ if 'Noto' in html_font }
-            /* Noto Sans specific accent offsets */
-            --swarita-bottom: 0.15em;
-            --anudatta-bottom: -0.15em;
-            --swara-size: 1.1rem;
-            \BLOCK{ else }
-            /* Default accent offsets (Adishila-optimized) */
-            --swarita-bottom: 0.05em;
-            --anudatta-bottom: 0.1em;
-            --swara-size: 1.3rem;
-            \BLOCK{ endif }
+            --font-size: 1.3rem;
+            --mantra-size: calc(var(--font-size) * 1.25);
+            --swara-size: var(--font-size);
 
-            --primary-color:  #000000;
+            /* VedaVMS Palette */
+            --saffron: #D84315;
+            --maroon: #7B1113;
+            --cream: #FFFDF9;
+            --gold: #C68A1E;
+            --dark-brown: #2D1E18;
+            --white: #FFFFFF;
+            --border-color: #EADDC9;
+            --accent-bg: #FFF3E0;
+
+            /* JSV Semantic Palette */
+            --primary-color: #000000;
             --accent-blue: #0d47a1;
             --accent-green: #1b5e20;
             --accent-purple: #4a148c;
             --accent-brown: #4e342e;
             --swara-red: #c62828;
             --modifier-color: #0284c7;
-            --bg-light: #f8f9fa;
-            --bg-card: #EFE6D5;
-            --border-color: #dee2e6;
+            --bg-light: #FBF8F2;
+            --bg-card: #FFFFFF;
+
+            /* Accent offsets */
+            --swarita-bottom: 0.15em;
+            --anudatta-bottom: -0.15em;
+            --swara-size: var(--font-size);
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+        }
+
+        .chapter-container, .section, .subsection, .closing-mantras-section, #summary-table, #index, [id] {
+            scroll-margin-top: 5rem;
+        }
+
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        /* Custom Superscript for footnotes - Lift it up! */
         sup {
             vertical-align: top;
             position: relative;
-            top: -0.6em; /* Adjust this to move it higher */
+            top: -0.6em;
             font-size: 0.75em;
         }
-        
+
         body {
             font-family: var(--font-doc);
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: var(--primary-color);
-            background-color: var(--bg-light);
-            margin: 0;
-            padding: 0;
-        }
-        
-        .sanskrit-text {
-            font-family: var(--font-doc);
-            font-size: 1.2rem;
-            line-height: 2;
-            letter-spacing: 0.02em;
-            font-feature-settings: "kern", "liga", "clig", "calt";
+            background: var(--bg-light);
+            color: var(--dark-brown);
+            line-height: 1.9;
+            font-size: var(--font-size);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        .sanskrit-large {
-            font-size: 1.4rem;
-            line-height: 2.2;
+        /* Sticky VedaVMS Header Bar */
+        .header {
+            background: linear-gradient(135deg, #153E75 0%, #1D5296 50%, #2563A8 100%);
+            color: white;
+            padding: 0.85rem 1.25rem;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.18);
         }
-        
-        .container {
-            max-width: 1200px;
+
+        .header-content {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
-            background: white;
-            min-height: 100vh;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        
-        /* Title Page */
-        .title-page {
-            text-align: center;
-            padding: 60px 20px;
-            border-bottom: 3px double var(--accent-purple);
-            margin-bottom: 40px;
-        }
-        
-        .title-page h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .title-page .subtitle {
-            font-size: 1.5rem;
-            color: var(--accent-purple);
-            margin-bottom: 15px;
-        }
-        
-        .title-page .version-info {
-            font-size: 1rem;
-            color: #666;
-        }
-        
-        /* Table of Contents */
-        .toc {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 40px;
-        }
-        
-        .toc h2 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        .toc-content {
-            columns: 2;
-            column-gap: 40px;
-        }
-        
-        @media (max-width: 768px) {
-            .toc-content {
-                columns: 1;
-            }
-        }
-        
-        .toc-group {
-            break-inside: avoid;
-            margin-bottom: 20px;
-        }
-        
-        .toc-chapter {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--accent-purple);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-        
-        .toc-chapter a {
-            color: var(--accent-purple);
-            text-decoration: none;
-        }
-        
-        .toc-chapter a:hover {
-            text-decoration: underline;
-        }
-        
-        .toc ul {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-        }
-        
-        .toc li {
-            padding: 4px 0;
-        }
-        
-        .toc li a {
-            color: var(--primary-color);
-            text-decoration: none;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
-        
-        .toc li a:hover {
-            color: var(--accent-blue);
+
+        .logo {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
-        .toc .samam-count {
-            color: #888;
-            font-size: 0.9rem;
+
+        .om-symbol {
+            color: #FFD54F;
+            font-size: 1.7rem;
         }
-        
-        /* Content Sections */
-        .chapter {
-            margin-bottom: 50px;
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            flex-wrap: wrap;
         }
-        
-        .chapter-title {
+
+        .btn-ctrl, .toggle-sidebar-btn {
+            background: rgba(255,255,255,0.18);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 6px;
+            padding: 0.35rem 0.75rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: all 0.2s;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            white-space: nowrap;
+        }
+
+        .btn-ctrl:hover, .toggle-sidebar-btn:hover {
+            background: rgba(255,255,255,0.32);
+            transform: translateY(-1px);
+        }
+
+        /* 2-Column Responsive Layout */
+        .layout {
+            max-width: 1400px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 1.75rem;
+            align-items: flex-start;
+            transition: grid-template-columns 0.25s ease;
+        }
+
+        .layout.sidebar-collapsed {
+            grid-template-columns: 0 1fr;
+            gap: 0;
+        }
+
+        .layout.sidebar-collapsed .toc-sidebar {
+            width: 0;
+            min-width: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Sticky Collapsible TOC Sidebar */
+        .toc-sidebar {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.25rem 1rem;
+            position: sticky;
+            top: 5rem;
+            max-height: calc(100vh - 6.5rem);
+            overflow-y: auto;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            transition: opacity 0.2s ease, width 0.25s ease, padding 0.25s ease;
+        }
+
+        .toc-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--maroon);
+            margin-bottom: 0.85rem;
+            border-bottom: 2px solid var(--saffron);
+            padding-bottom: 0.4rem;
+            font-family: 'Noto Serif Devanagari', serif;
             text-align: center;
-            font-size: 2rem;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-purple);
-            padding-bottom: 10px;
-            margin-bottom: 30px;
         }
-        
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-chapter {
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid #F0E6D8;
+            padding-bottom: 0.5rem;
+        }
+        .toc-chapter:last-child {
+            border-bottom: none;
+        }
+
+        .toc-ch-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+            padding: 0.4rem 0.5rem;
+            border-radius: 6px;
+            background: #FAF6F0;
+            transition: background 0.15s;
+        }
+
+        .toc-ch-header:hover {
+            background: var(--accent-bg);
+        }
+
+        .toc-ch-title {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 1.0rem;
+            flex: 1;
+        }
+
+        .toc-ch-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .toc-ch-toggle {
+            font-size: 0.7rem;
+            color: #888;
+            transition: transform 0.2s;
+        }
+
+        .toc-chapter.collapsed .toc-ch-toggle {
+            transform: rotate(-90deg);
+        }
+
+        .toc-sub-list {
+            list-style: none;
+            padding-left: 0.5rem;
+            margin-top: 0.35rem;
+            overflow: hidden;
+            max-height: 5000px;
+            transition: max-height 0.3s ease;
+        }
+
+        .toc-chapter.collapsed .toc-sub-list {
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        /* Section (Kandah) Block in Sidebar */
+        .toc-section-block {
+            margin-bottom: 0.45rem;
+            border-left: 2px solid #E8D9C8;
+            padding-left: 0.5rem;
+        }
+
+        .toc-sec-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.25rem 0.4rem;
+            border-radius: 4px;
+            transition: background 0.15s;
+        }
+
+        .toc-sec-header:hover {
+            background: var(--accent-bg);
+        }
+
+        .toc-sec-title {
+            font-weight: 600;
+            color: var(--accent-brown);
+            font-size: 0.92rem;
+            text-decoration: none;
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toc-sec-toggle {
+            font-size: 0.65rem;
+            color: #999;
+            margin-left: 0.3rem;
+            transition: transform 0.2s;
+        }
+
+        .toc-section-block.collapsed .toc-sec-toggle {
+            transform: rotate(-90deg);
+        }
+
+        .toc-subsection-list {
+            list-style: none;
+            padding-left: 0.6rem;
+            max-height: 2500px;
+            overflow: hidden;
+            transition: max-height 0.25s ease;
+        }
+
+        .toc-section-block.collapsed .toc-subsection-list {
+            max-height: 0;
+        }
+
+        .toc-sub-item {
+            margin-bottom: 0.2rem;
+        }
+
+        .toc-sub-item a {
+            color: #4A4A4A;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.35rem;
+            display: block;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: all 0.15s;
+            line-height: 1.35;
+        }
+
+        .toc-sub-item a:hover {
+            background: var(--accent-bg);
+            color: var(--saffron);
+            font-weight: 600;
+            padding-left: 0.5rem;
+        }
+
+        .toc-sub-item a.active {
+            background: #FFE8D1 !important;
+            color: #B23600 !important;
+            font-weight: 700 !important;
+            border-left: 3.5px solid var(--saffron);
+            padding-left: 0.6rem;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 1px 3px rgba(216, 67, 21, 0.12);
+        }
+
+        .toc-sec-header.active {
+            background: #FFF3E0;
+            border-left: 2px solid var(--saffron);
+            font-weight: 700;
+        }
+
+        .toc-count {
+            color: #888;
+            font-size: 0.80rem;
+            font-weight: normal;
+        }
+
+        /* Main Reading Area */
+        .main-content {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2.25rem 2.75rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            min-width: 0;
+            --font-size: 1.3rem;
+            --mantra-size: calc(var(--font-size) * 1.25);
+            --swara-size: var(--font-size);
+            font-size: var(--font-size);
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .main-title h1 {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 2.25rem;
+            color: var(--maroon);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .main-title .sub-heading {
+            font-size: 1.05rem;
+            color: var(--saffron);
+            font-weight: 600;
+        }
+
+        .chapter-container {
+            margin-bottom: 3.5rem;
+        }
+
+        .chapter-heading {
+            background: linear-gradient(90deg, #7B1113 0%, #A52A2A 100%);
+            color: white;
+            padding: 0.85rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1.45rem;
+            margin-bottom: 1.75rem;
+            font-family: 'Noto Serif Devanagari', serif;
+            box-shadow: 0 3px 8px rgba(123,17,19,0.25);
+            text-align: center;
+        }
+
         .section {
-            margin-bottom: 35px;
+            margin-bottom: 2.25rem;
         }
-        
+
         .section-title {
             text-align: center;
-            font-size: 1.85rem;
+            font-size: 1.65rem;
             font-weight: bold;
-            color: var(--accent-purple);
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed var(--border-color);
+            color: var(--maroon);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px dashed #E0D0C0;
+            font-family: 'Noto Serif Devanagari', serif;
         }
-        
+
+        .section-samam-count {
+            color: #777;
+            font-size: 0.85em;
+            font-weight: normal;
+        }
+
+        /* Subsection Mantra Card */
         .subsection {
-            background: var(--bg-card);
-            border-radius: 6px;
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            background: #FFFAF5;
+            border: 1px solid #F0E6D8;
+            border-left: 5px solid var(--saffron);
+            border-radius: 8px;
+            padding: 1.25rem 1.6rem;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
             text-align: center;
+            content-visibility: auto;
+            contain-intrinsic-size: auto 220px;
         }
-        
+
         .subsection-header {
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 0.85rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px dotted #E0D0C0;
         }
-        
+
         .subsection-header .header-title {
             color: var(--accent-green);
             font-weight: bold;
-            font-size: 1.65rem;
+            font-size: 1.55rem;
             line-height: 1.4;
             display: inline-block;
         }
-        
+
         .subsection-header .header-meta {
             color: var(--accent-brown);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-left: 10px;
         }
-        
+
         /* Rik-Samam Separate Layout */
         .rik-metadata {
             color: var(--accent-purple);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
             line-height: 1.6;
         }
-        
+
         .rik-text {
             color: var(--accent-blue);
-            font-size: 1.5rem;
+            font-size: var(--mantra-size);
             line-height: 2;
             letter-spacing: 0.02em;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
             border-bottom: 1px dotted var(--border-color);
         }
-        
+
         .samam-metadata {
             color: var(--accent-brown);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
             line-height: 1.6;
         }
-        
+
         .samam-text {
-            font-size: 1.5rem;
+            font-size: var(--mantra-size);
             line-height: 2;
             letter-spacing: 0.02em;
             margin-bottom: 0;
         }
-        /* Mantra display - flexbox for no whitespace and natural wrapping */
+
+        /* Mantra Display - Flexbox for authentic alignment and wrapping */
         .mantra-verse {
             margin: 6px 0;
             display: inline-flex;
@@ -291,11 +520,7 @@
             gap: 0;
             width: 100%;
         }
-        
-        .subsection {
-            text-align: center;
-        }
-        
+
         .mantra-connected-group {
             display: inline-flex;
             flex-wrap: nowrap;
@@ -313,9 +538,9 @@
             margin: 0;
             padding: 0;
         }
-        
+
         \BLOCK{ if kpully }
-        /* KPULLY (Kodunthirapully Paddhati): Swara text rendered ABOVE the mantra text */
+        /* KPULLY (Kodunthirapully Paddhati): Swara text rendered ABOVE mantra text */
         .mantra-verse {
             align-items: flex-end;
         }
@@ -327,60 +552,60 @@
             align-items: flex-end;
         }
         \BLOCK{ endif }
-        
+
         .mantra-text {
             font-family: var(--font-doc);
-            font-size: 1.75rem;
-            line-height: 1.2;
+            font-size: var(--mantra-size);
+            line-height: 1.25;
             white-space: nowrap;
             position: relative;
         }
-        
+
         .swara-text {
             font-family: var(--font-doc);
             color: var(--swara-red);
-            font-size: 1.35rem;
-            line-height: 1.2;
+            font-size: var(--swara-size);
+            line-height: 1.25;
             text-align: center;
             min-height: 1.2em;
             white-space: nowrap;
         }
-        
+
         .word-space {
             width: 0.35em;
         }
-        
-        /* Danda and Mantra Number */
+
         .danda {
             font-family: var(--font-doc);
-            font-size: 1.75rem;
-            line-height: 1.2;
+            font-size: var(--mantra-size);
+            line-height: 1.25;
             margin: 0 0.05em;
             vertical-align: baseline;
             display: inline;
         }
-        
+
         .verse-num-marker {
             display: inline;
             margin-left: 0.35em;
             white-space: nowrap;
             font-family: var(--font-doc);
-            font-size: 1.75rem;
-            line-height: 1.2;
+            font-size: var(--mantra-size);
+            line-height: 1.25;
             vertical-align: baseline;
         }
+
         .verse-num {
             font-family: var(--font-doc);
-            font-size: 1.75rem;
+            font-size: var(--mantra-size);
             font-weight: bold;
             color: var(--primary-color);
             margin: 0 0.15em;
-            line-height: 1.2;
+            line-height: 1.25;
             vertical-align: baseline;
             display: inline;
         }
-        
-        /* Swara Modifiers - Proportionate and delicate in Sky Blue */
+
+        /* Swara Modifiers */
         .swara-mod {
             font-family: var(--font-swara), var(--font-doc);
             color: var(--modifier-color);
@@ -389,8 +614,7 @@
             display: inline-block;
             vertical-align: baseline;
         }
-        
-        /* Spanning Modifiers positioned between syllables */
+
         .swara-mod.mod-a {
             position: absolute;
             top: -0.32em;
@@ -400,7 +624,7 @@
             pointer-events: none;
             z-index: 2;
         }
-        \BLOCK{ if 'Noto' in html_font }
+
         .danda-word-a1,
         .mantra-word:has(.danda-with-arc),
         .danda.danda-with-arc:not(.danda-word-a1 *) {
@@ -421,28 +645,7 @@
             pointer-events: none;
             z-index: 2;
         }
-        \BLOCK{ else }
-        .danda-word-a1,
-        .mantra-word:has(.danda-with-arc),
-        .danda.danda-with-arc:not(.danda-word-a1 *) {
-            margin-left: 0;
-            margin-right: 0;
-        }
-        .danda-with-arc {
-            position: relative;
-            display: inline-block;
-        }
-        .danda-with-arc .swara-mod.mod-a1,
-        .swara-mod.mod-a1 {
-            position: absolute;
-            top: -0.22em;
-            left: 80.2%;
-            transform: translateX(-50%);
-            font-size: 1.0em;
-            pointer-events: none;
-            z-index: 2;
-        }
-        \BLOCK{ endif }
+
         .swara-mod.mod-a2 {
             position: absolute;
             top: -0.32em;
@@ -583,7 +786,7 @@
             font-weight: bold;
             vertical-align: baseline;
         }
-        
+
         .mantra-connected-group .danda {
             margin: 0;
         }
@@ -591,8 +794,8 @@
             margin-left: -0.28em !important;
             margin-right: 2px !important;
         }
-        
-        /* Accent marks - zero-width positioning for fonts without native Vedic support */
+
+        /* Combining Accent Fallback */
         .accent-swarita {
             display: inline-block;
             width: 0;
@@ -605,7 +808,6 @@
             bottom: var(--swarita-bottom);
             isolation: isolate;
         }
-        
         .accent-anudatta {
             display: inline-block;
             width: 0;
@@ -618,8 +820,7 @@
             bottom: var(--anudatta-bottom);
             isolation: isolate;
         }
-        
-        .accent-kampa {
+        .accent-kampa, .accent-trikampa {
             display: inline-block;
             width: 0;
             overflow: visible;
@@ -630,402 +831,1023 @@
             left: 0;
             bottom: var(--swarita-bottom);
         }
-        
-        .accent-trikampa {
-            display: inline-block;
-            width: 0;
-            overflow: visible;
-            color: inherit;
-            font-weight: bold;
-            font-size: 1.2em;
-            position: relative;
-            left: 0;
-            bottom: var(--swarita-bottom);
-        }
-        
-        /* Footnote Section Styles */
+
+        /* Footnotes */
         .footnote-separator {
             border: none;
             border-top: 1px solid var(--border-color);
-            margin: 20px 0 10px 0;
+            margin: 18px 0 10px 0;
             width: 40%;
             margin-left: 0;
         }
-        
         .footnote-section {
-            padding: 10px 0;
+            padding: 8px 0;
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             line-height: 1.5;
         }
-        
         .footnote-item {
-            padding: 5px 0;
+            padding: 4px 0;
             display: flex;
             align-items: flex-start;
         }
-        
         .footnote-item .footnote-ref {
             color: var(--accent-blue);
             font-weight: bold;
             margin-right: 0.5em;
             min-width: 1.5em;
         }
-        
+
         /* Footer */
         .footer {
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
             border-top: 2px solid var(--border-color);
-            background: white;
-            color: var(--primary-color);
-            font-size: 1rem;
+            color: var(--dark-brown);
+            font-size: 0.95rem;
         }
-        
         .footer a {
             color: var(--accent-blue);
             text-decoration: none;
             font-weight: bold;
         }
-        
         .footer a:hover {
             text-decoration: underline;
         }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            body {
-                font-size: 1.3rem;
-            }
-            
-            .container {
-                padding: 10px;
-            }
-            
-            .title-page h1 {
-                font-size: 1.8rem;
-            }
-            
-            .subsection {
-                padding: 10px;
-            }
-        }
-        
-        /* Print styles */
-        @media print {
-            .container {
-                box-shadow: none;
-                max-width: 100%;
-            }
-            
-            .chapter {
-                page-break-before: always;
-            }
-            
-            .subsection {
-                page-break-inside: avoid;
-            }
-        }
-        
-        /* Navigation */
-        .nav-bar {
-            position: sticky;
+
+        /* Print Modal Styles */
+        .modal-overlay {
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(2px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-card {
             background: white;
-            padding: 10px 20px;
-            border-bottom: 1px solid var(--border-color);
-            z-index: 100;
+            border-radius: 12px;
+            padding: 1.5rem;
+            max-width: 520px;
+            width: 92%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-color);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
-        
-        .nav-bar a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            padding: 5px 10px;
-            font-size: 1.3rem;
+        .modal-header h3 {
+            color: var(--maroon);
+            font-size: 1.25rem;
+            font-family: 'Noto Serif Devanagari', serif;
         }
-        
-        .nav-bar a:hover {
-            background: var(--bg-light);
-            border-radius: 4px;
+        .close-modal-btn {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: #888;
         }
-        
-        .nav-titles {
+        .close-modal-btn:hover {
+            color: var(--maroon);
+        }
+        .print-options {
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
-            text-align: right;
+            gap: 0.75rem;
         }
-        
-        .nav-main-title {
-            font-weight: bold;
-            font-size: 1.3rem;
+        .btn-print-opt {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: #FFFDF9;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
-        
-        .nav-section-title {
-            font-size: 1.3rem;
-            color: var(--accent-green);
+        .btn-print-opt:hover {
+            background: var(--accent-bg);
+            border-color: var(--gold);
+            transform: translateY(-1px);
+        }
+        .btn-print-opt.primary {
+            border-color: var(--saffron);
+            background: #FFF8EE;
+        }
+        .btn-opt-icon {
+            font-size: 1.6rem;
+        }
+        .btn-opt-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .btn-opt-text strong {
+            font-size: 1rem;
+            color: var(--dark-brown);
+        }
+        .btn-opt-text span {
+            font-size: 0.82rem;
+            color: #666;
+        }
+
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+            .toc-sidebar {
+                display: none;
+            }
+            .main-content {
+                padding: 1.35rem;
+            }
+            .main-title h1 {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Floating Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #153E75 0%, #2563A8 100%);
+            color: white;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            width: 46px;
+            height: 46px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            z-index: 1000;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: var(--maroon);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(123,17,19,0.35);
+        }
+
+        /* High Performance Print Optimization */
+        @media print {
+            @page {
+                size: auto;
+                margin: 12mm 15mm 12mm 15mm;
+            }
+            .header, .toc-sidebar, .footer, .modal-overlay, #print-modal, .back-to-top {
+                display: none !important;
+            }
+            *, *::before, *::after {
+                box-shadow: none !important;
+                text-shadow: none !important;
+                filter: none !important;
+                box-sizing: border-box !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 12pt !important;
+                line-height: 1.5 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .layout {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .main-content {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .chapter-heading {
+                background: none !important;
+                color: black !important;
+                border-bottom: 2pt solid black !important;
+                box-shadow: none !important;
+                padding: 0.5rem 0 !important;
+                font-size: 15pt !important;
+                width: 100% !important;
+            }
+            .section-title {
+                color: black !important;
+                border-bottom: 1pt dashed #666 !important;
+                padding: 0.3rem 0 !important;
+                font-size: 13pt !important;
+                width: 100% !important;
+            }
+            .subsection {
+                background: none !important;
+                border: 1px solid #CCC !important;
+                border-left: 4px solid var(--saffron) !important;
+                border-radius: 6px !important;
+                box-shadow: none !important;
+                padding: 10px 14px !important;
+                margin-bottom: 1rem !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                break-inside: auto !important;
+                page-break-inside: auto !important;
+                content-visibility: visible !important;
+            }
+            .mantra-verse {
+                break-inside: auto !important;
+                page-break-inside: auto !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                flex-wrap: wrap !important;
+                box-sizing: border-box !important;
+            }
+            .mantra-connected-group {
+                max-width: 100% !important;
+                flex-wrap: wrap !important;
+            }
+            .chapter-container {
+                break-before: page !important;
+                page-break-before: always !important;
+            }
+            .chapter-container:first-of-type {
+                break-before: auto !important;
+                page-break-before: auto !important;
+            }
+
+            /* Single section print filter */
+            body.print-only-active .chapter-container:not(.print-active-target),
+            body.print-only-active .section:not(.print-active-target),
+            body.print-only-active .main-title:not(.print-active-target),
+            body.print-only-active #summary-table:not(.print-active-target),
+            body.print-only-active #index:not(.print-active-target),
+            body.print-only-active .closing-mantras-section:not(.print-active-target) {
+                display: none !important;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Navigation -->
-        <nav class="nav-bar">
-            <div class="nav-left-links" style="display: flex; flex-direction: column; align-items: flex-start;">
-                <a href="#toc">॥ अनुक्रमणिका ॥</a>
-                \BLOCK{ if html_index }
-                <a href="#index">॥ वर्णानुक्रमणिका ॥</a>
+    <!-- Sticky Navigation Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" title="Go to top of page">
+                <span class="om-symbol">ॐ</span>
+                <span class="logo-title">॥ \VAR{doc_title_sa} ॥</span>
+            </a>
+            <div class="controls">
+                <button class="toggle-sidebar-btn" onclick="toggleSidebar()" title="Toggle Contents Panel" id="sidebar-toggle-btn">☰ सूची</button>
+                \BLOCK{ if summary_table }
+                <a href="#summary-table" class="btn-ctrl" title="View Counts Summary">॥ सङ्ख्या ॥</a>
                 \BLOCK{ endif }
+                \BLOCK{ if html_index }
+                <a href="#index" class="btn-ctrl" title="Alphabetical Index">॥ वर्णानुक्रमणिका ॥</a>
+                \BLOCK{ endif }
+                <button class="btn-ctrl" id="font-toggle-btn" onclick="toggleFont()" title="Toggle Sanskrit Font">Font: Noto Serif</button>
+                <button class="btn-ctrl" onclick="adjustFont(-1)" title="Decrease Font Size (A-)">A-</button>
+                <span id="font-size-val" onclick="resetFontSize()" style="font-size: 0.85rem; padding: 0.15rem 0.45rem; color: #FFF; font-family: monospace; font-weight: 600; min-width: 44px; text-align: center; display: inline-block; cursor: pointer; border-radius: 4px; background: rgba(255,255,255,0.14); transition: transform 0.15s ease;" title="Click to reset font size to 100%">100%</span>
+                <button class="btn-ctrl" onclick="adjustFont(1)" title="Increase Font Size (A+)">A+</button>
+                <button class="btn-ctrl" onclick="openPrintModal()" title="Print Options">🖨️ Print</button>
+                <button class="btn-ctrl" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Go to top of page">▲ Top</button>
             </div>
-            <div class="nav-titles">
-                <span class="nav-main-title">॥ \VAR{doc_title_sa} ॥</span>
-                <span id="nav-title" class="nav-section-title"></span>
-            </div>
-        </nav>
-        
-        <script>
-        // Dynamic nav bar title based on scroll position
-        document.addEventListener('DOMContentLoaded', function() {
-            const navTitle = document.getElementById('nav-title');
-            const defaultTitle = '॥ \VAR{doc_title_sa} ॥';
-            
-            // Build section data for tracking
-            const sections = [];
-            document.querySelectorAll('.chapter, .section').forEach(el => {
-                if (el.classList.contains('section')) {
-                    const chapter = el.closest('.chapter');
-                    const chapterTitle = chapter ? chapter.querySelector('.chapter-title')?.textContent : '';
-                    
-                    let sectionTitle = '';
-                    const sectionTitleNode = el.querySelector('.section-title');
-                    if (sectionTitleNode) {
-                        const clone = sectionTitleNode.cloneNode(true);
-                        const countNode = clone.querySelector('.section-samam-count');
-                        if (countNode) clone.removeChild(countNode);
-                        sectionTitle = clone.textContent.trim();
-                    }
-                    
-                    sections.push({
-                        element: el,
-                        chapterTitle: chapterTitle,
-                        sectionTitle: sectionTitle
-                    });
-                } else if (el.classList.contains('chapter') && !el.querySelector('.section')) {
-                    // Standalone chapter without sections (like summary table, index)
-                    const chapterTitle = el.querySelector('.chapter-title')?.textContent || '';
-                    sections.push({
-                        element: el,
-                        chapterTitle: chapterTitle,
-                        sectionTitle: ''
-                    });
-                }
-            });
-            
-            // Use IntersectionObserver for efficient scroll tracking
-            const observerOptions = {
-                root: null,
-                rootMargin: '-80px 0px -70% 0px', // Trigger when section is near top of viewport
-                threshold: 0
-            };
-            
-            let currentSection = null;
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const sectionData = sections.find(s => s.element === entry.target);
-                        if (sectionData) {
-                            currentSection = sectionData;
-                            if (sectionData.sectionTitle && sectionData.chapterTitle) {
-                                navTitle.textContent = sectionData.chapterTitle + ' › ' + sectionData.sectionTitle;
-                            } else if (sectionData.sectionTitle) {
-                                navTitle.textContent = sectionData.sectionTitle;
-                            } else if (sectionData.chapterTitle) {
-                                navTitle.textContent = sectionData.chapterTitle;
-                            } else {
-                                navTitle.textContent = '';
-                            }
-                        }
-                    }
-                });
-            }, observerOptions);
-            
-            sections.forEach(s => observer.observe(s.element));
-            
-            // Clear section title when scrolled to top
-            window.addEventListener('scroll', function() {
-                if (window.scrollY < 200) {
-                    navTitle.textContent = '';
-                }
-            });
-        });
-        </script>
-        
-        <!-- Title Page -->
-        <div class="title-page">
-            <h1>॥ \VAR{doc_title_sa} ॥</h1>
-            <p style="font-size: 1.2rem; margin-top: 10px; color: var(--accent-blue);">
-                संस्करणम्: \VAR{version} | निर्मितम्: \VAR{generated_at}
-            </p>
         </div>
-        
-        <!-- Table of Contents -->
-        <div class="toc" id="toc">
-            <h2>॥ अनुक्रमणिका ॥</h2>
-            <div class="toc-content">
+    </header>
+
+    <!-- 2-Column Responsive Layout -->
+    <div class="layout">
+        <!-- Sticky TOC Sidebar -->
+        <aside class="toc-sidebar" id="toc-sidebar">
+            <div class="toc-title">॥ अनुक्रमणिका (Contents) ॥</div>
+            <ul class="toc-list">
             \BLOCK{ for key, supersection in supersections.items() }
-                <div class="toc-group">
-                    \BLOCK{ if supersection.supersection_title }
-                    <div class="toc-chapter">
-                        <a href="#\VAR{key}">\VAR{supersection.supersection_title}</a>
+                \BLOCK{ if key != 'count' }
+                <li class="toc-chapter collapsed" id="toc-ss-\VAR{key}">
+                    <div class="toc-ch-header" onclick="toggleTocChapter('toc-ss-\VAR{key}')">
+                        \BLOCK{ if supersection.supersection_title }
+                        <div class="toc-ch-title"><a href="#\VAR{key}">\VAR{supersection.supersection_title}</a></div>
+                        \BLOCK{ else }
+                        <div class="toc-ch-title"><a href="#\VAR{key}">\VAR{key}</a></div>
+                        \BLOCK{ endif }
+                        <span class="toc-ch-toggle">▼</span>
                     </div>
-                    \BLOCK{ endif }
-                    <ul>
+                    <ul class="toc-sub-list">
                     \BLOCK{ for section_key, section in supersection.sections.items() }
                         \BLOCK{ if section_key != 'count' }
-                        \BLOCK{ if (toc_level == 'section' or toc_level == 'both') and section.section_title }
-                        <li class="toc-section">
-                            <a href="#\VAR{key}-\VAR{section_key}">\VAR{section.section_title | replace(':', 'ः')} <span class="section-samam-count">(\VAR{section.Count})</span></a>
+                        <li class="toc-section-block collapsed" id="toc-sec-\VAR{key}-\VAR{section_key}">
+                            \BLOCK{ if section.section_title }
+                            <div class="toc-sec-header" onclick="toggleTocSection('toc-sec-\VAR{key}-\VAR{section_key}')">
+                                <a href="#\VAR{key}-\VAR{section_key}" class="toc-sec-title">
+                                    <span>\VAR{section.section_title | replace(':', 'ः')}</span>
+                                    <span class="toc-count">(\VAR{section.Count})</span>
+                                </a>
+                                <span class="toc-sec-toggle">▾</span>
+                            </div>
+                            \BLOCK{ endif }
+                            <ul class="toc-subsection-list">
+                            \BLOCK{ for subsection_key, subsection in section.subsections.items() }
+                                \BLOCK{ if subsection_key != 'count' and subsection.header }
+                                \BLOCK{ set sub_title = subsection.header.header if subsection.header is mapping else subsection.header }
+                                \BLOCK{ if sub_title }
+                                <li class="toc-sub-item">
+                                    <a href="#\VAR{key}-\VAR{section_key}-\VAR{subsection_key}">\VAR{sub_title | clean_toc_title | replace(':', 'ः') | replace('|', '') | replace('॥', '')}</a>
+                                </li>
+                                \BLOCK{ endif }
+                                \BLOCK{ endif }
+                            \BLOCK{ endfor }
+                            </ul>
                         </li>
-                        \BLOCK{ endif }
-                    \BLOCK{ if toc_level == 'subsection' or toc_level == 'both' }
-                        \BLOCK{ for subsection_key, subsection in section.subsections.items() }
-                        <li class="toc-section" \VAR{'style="margin-left: 20px;"' if toc_level == 'both' else ''}>
-                            <a href="#\VAR{key}-\VAR{section_key}-\VAR{subsection_key}">\VAR{subsection.header.header | clean_toc_title | replace(':', 'ः') | replace('|', '') | replace('॥', '')}</a>
-                        </li>
-                        \BLOCK{ endfor }
-                    \BLOCK{ endif }
                         \BLOCK{ endif }
                     \BLOCK{ endfor }
                     </ul>
-                </div>
-            \BLOCK{ endfor }
-            </div>
-        </div>
-        
-        <!-- Content -->
-        \BLOCK{ for key, supersection in supersections.items() }
-        <div class="chapter" id="\VAR{key}">
-            \BLOCK{ if supersection.supersection_title }
-            <h1 class="chapter-title">\VAR{supersection.supersection_title}</h1>
-            \BLOCK{ endif }
-            
-            \BLOCK{ for section_key, section in supersection.sections.items() }
-                \BLOCK{ if section_key != 'count' }
-                <div class="section" id="\VAR{key}-\VAR{section_key}">
-                    \BLOCK{ if section.section_title }
-                    <h2 class="section-title">\VAR{section.section_title | replace(':', 'ः')} <span class="section-samam-count">(\VAR{section.Count})</span></h2>
-                    \BLOCK{ endif }
-                    
-                    <!-- Pre-rendered Subsections -->
-                    \BLOCK{ for sub_html in section.html_subsections }
-                    <div class="subsection" id="\VAR{sub_html.id}">
-                        \VAR{sub_html.content}
-                    </div>
-                    \BLOCK{ endfor }
-
-                    <!-- Pre-rendered Footnotes -->
-                    \VAR{section.html_footer}
-                </div>
+                </li>
                 \BLOCK{ endif }
             \BLOCK{ endfor }
-        </div>
-        \BLOCK{ endfor }
-        
-        \BLOCK{ if closing_mantras }
-        <!-- Closing Mantras -->
-        <div class="section" id="closing-mantras">
-            <div class="subsection" style="padding: 30px 20px; margin: 20px 0;">
-                \BLOCK{ for line in closing_mantras }
-                <p style="font-size: 1.5rem; margin: 8px 0; text-align: center;">\VAR{line}</p>
-                \BLOCK{ endfor }
+            \BLOCK{ if summary_table }
+                <li class="toc-chapter" style="margin-top: 0.75rem;">
+                    <div class="toc-ch-header" style="background: var(--accent-bg);">
+                        <div class="toc-ch-title"><a href="#summary-table">॥ \VAR{summary_title} ॥</a></div>
+                    </div>
+                </li>
+            \BLOCK{ endif }
+            \BLOCK{ if html_index }
+                <li class="toc-chapter">
+                    <div class="toc-ch-header" style="background: var(--accent-bg);">
+                        <div class="toc-ch-title"><a href="#index">॥ वर्णानुक्रमणिका ॥</a></div>
+                    </div>
+                </li>
+            \BLOCK{ endif }
+            </ul>
+        </aside>
+
+        <!-- Main Reading Content -->
+        <main class="main-content">
+            <!-- Title Header Card -->
+            <div class="main-title">
+                <h1>॥ \VAR{doc_title_sa} ॥</h1>
+                <div class="sub-heading">संस्करणम्: \VAR{version} | निर्मितम्: \VAR{generated_at}</div>
             </div>
-        </div>
-        \BLOCK{ endif }
-        
-        \BLOCK{ if summary_table }
-        <!-- Summary Table -->
-        \BLOCK{ set show_rik = ('rik' in output_mode or 'combined' in output_mode) and has_riks }
-        \BLOCK{ set show_samam = ('samam' in output_mode or 'combined' in output_mode) and has_samams }
-        <div class="chapter" id="summary-table">
-            <h1 class="chapter-title">॥ \VAR{summary_title} ॥</h1>
-            <div style="overflow-x: auto; padding: 10px; display: flex; justify-content: center;">
-                <table style="width: 80%; max-width: 800px; border-collapse: collapse; margin-bottom: 20px; text-align: center; border: 1px solid var(--border-color);">
-                    <thead>
-                        <tr style="background-color: var(--bg-card); border-bottom: 2px solid var(--accent-purple);">
-                            <th style="padding: 8px; border: 1px solid var(--border-color);">खण्डः</th>
-                            \BLOCK{ if show_rik }
-                            <th style="padding: 8px; border: 1px solid var(--border-color);">ऋक् सङ्ख्या</th>
-                            \BLOCK{ endif }
-                            \BLOCK{ if show_samam }
-                            <th style="padding: 8px; border: 1px solid var(--border-color);">साम सङ्ख्या</th>
-                            \BLOCK{ endif }
-                        </tr>
-                    </thead>
-                    <tbody>
-                        \BLOCK{ for patha_data in summary_table }
-                            <tr style="background-color: var(--bg-light); font-weight: bold;">
-                                <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--accent-blue);">\VAR{patha_data.patha}</td>
-                                \BLOCK{ if show_rik }
-                                <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--accent-blue);">\VAR{patha_data.patha_riks}</td>
-                                \BLOCK{ endif }
-                                \BLOCK{ if show_samam }
-                                <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--accent-blue);">\VAR{patha_data.patha_samams}</td>
-                                \BLOCK{ endif }
-                            </tr>
-                            \BLOCK{ for row in patha_data.khandas }
-                            <tr>
-                                <td style="padding: 6px; border: 1px solid var(--border-color); text-align: left; padding-left: 20px;">\VAR{row.khanda}</td>
-                                \BLOCK{ if show_rik }
-                                <td style="padding: 6px; border: 1px solid var(--border-color);">\VAR{row.riks}</td>
-                                \BLOCK{ endif }
-                                \BLOCK{ if show_samam }
-                                <td style="padding: 6px; border: 1px solid var(--border-color);">\VAR{row.samams}</td>
-                                \BLOCK{ endif }
-                            </tr>
-                            \BLOCK{ endfor }
+
+            <!-- Chapters / Sections / Mantras -->
+            \BLOCK{ for key, supersection in supersections.items() }
+            \BLOCK{ if key != 'count' }
+            <section class="chapter-container" id="\VAR{key}">
+                \BLOCK{ if supersection.supersection_title }
+                <h2 class="chapter-heading">\VAR{supersection.supersection_title}</h2>
+                \BLOCK{ endif }
+                
+                \BLOCK{ for section_key, section in supersection.sections.items() }
+                    \BLOCK{ if section_key != 'count' }
+                    <div class="section" id="\VAR{key}-\VAR{section_key}">
+                        \BLOCK{ if section.section_title }
+                        <h3 class="section-title">\VAR{section.section_title | replace(':', 'ः')} <span class="section-samam-count">(\VAR{section.Count})</span></h3>
+                        \BLOCK{ endif }
+                        
+                        <!-- Pre-rendered Subsections -->
+                        \BLOCK{ for sub_html in section.html_subsections }
+                        <div class="subsection" id="\VAR{sub_html.id}">
+                            \VAR{sub_html.content}
+                        </div>
                         \BLOCK{ endfor }
-                    </tbody>
-                    <tfoot>
-                        <tr style="background-color: var(--bg-light); font-weight: bold; border-top: 2px solid var(--accent-blue);">
-                            <td style="padding: 8px; border: 1px solid var(--border-color); text-align: center;">आहत्य (Total)</td>
-                            \BLOCK{ if show_rik }
-                            <td style="padding: 8px; border: 1px solid var(--border-color);">\VAR{total_riks}</td>
-                            \BLOCK{ endif }
-                            \BLOCK{ if show_samam }
-                            <td style="padding: 8px; border: 1px solid var(--border-color);">\VAR{total_samams}</td>
-                            \BLOCK{ endif }
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-        \BLOCK{ endif }
-        
-        \BLOCK{ if html_index }
-        <!-- Index -->
-        <div class="chapter" id="index">
-            <h1 class="chapter-title">॥ वर्णानुक्रमणिका ॥</h1>
-            <div class="toc-content" style="display: block; columns: 3 200px; padding: 0 20px;">
-                <ul style="list-style: none; padding-left: 0; margin: 0;">
-                \BLOCK{ for entry in html_index }
-                    <li style="margin-bottom: 5px; text-align: left;">
-                        <a href="#\VAR{entry.anchor}" style="text-decoration: none; color: var(--accent-blue); font-size: 1.1rem; word-break: break-word; display: inline-block;">\VAR{entry.title}</a>
-                    </li>
+
+                        <!-- Pre-rendered Footnotes -->
+                        \VAR{section.html_footer}
+                    </div>
+                    \BLOCK{ endif }
                 \BLOCK{ endfor }
-                </ul>
+            </section>
+            \BLOCK{ endif }
+            \BLOCK{ endfor }
+            
+            \BLOCK{ if closing_mantras }
+            <!-- Closing Mantras -->
+            <div class="section closing-mantras-section" id="closing-mantras">
+                <div class="subsection" style="padding: 25px 20px; margin: 20px 0; background: #FFF8EE; border-left-color: var(--maroon);">
+                    \BLOCK{ for line in closing_mantras }
+                    <p style="font-size: 1.45rem; margin: 8px 0; text-align: center; color: var(--maroon); font-weight: 600;">\VAR{line}</p>
+                    \BLOCK{ endfor }
+                </div>
+            </div>
+            \BLOCK{ endif }
+            
+            \BLOCK{ if summary_table }
+            <!-- Summary Table Card -->
+            \BLOCK{ set show_rik = ('rik' in output_mode or 'combined' in output_mode) and has_riks }
+            \BLOCK{ set show_samam = ('samam' in output_mode or 'combined' in output_mode) and has_samams }
+            <div class="section" id="summary-table" style="margin-top: 3rem;">
+                <h2 class="chapter-heading">॥ \VAR{summary_title} ॥</h2>
+                <div style="overflow-x: auto; padding: 10px; display: flex; justify-content: center;">
+                    <table style="width: 100%; max-width: 850px; border-collapse: collapse; margin: 15px 0; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                        <thead>
+                            <tr style="background: linear-gradient(90deg, #7B1113 0%, #A52A2A 100%); color: white;">
+                                <th style="padding: 10px; border: 1px solid var(--border-color);">खण्डः</th>
+                                \BLOCK{ if show_rik }
+                                <th style="padding: 10px; border: 1px solid var(--border-color);">ऋक् सङ्ख्या</th>
+                                \BLOCK{ endif }
+                                \BLOCK{ if show_samam }
+                                <th style="padding: 10px; border: 1px solid var(--border-color);">साम सङ्ख्या</th>
+                                \BLOCK{ endif }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            \BLOCK{ for patha_data in summary_table }
+                                <tr style="background-color: var(--accent-bg); font-weight: bold;">
+                                    <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--maroon);">\VAR{patha_data.patha}</td>
+                                    \BLOCK{ if show_rik }
+                                    <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--maroon);">\VAR{patha_data.patha_riks}</td>
+                                    \BLOCK{ endif }
+                                    \BLOCK{ if show_samam }
+                                    <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--maroon);">\VAR{patha_data.patha_samams}</td>
+                                    \BLOCK{ endif }
+                                </tr>
+                                \BLOCK{ for row in patha_data.khandas }
+                                <tr>
+                                    <td style="padding: 6px; border: 1px solid var(--border-color); text-align: left; padding-left: 20px;">\VAR{row.khanda}</td>
+                                    \BLOCK{ if show_rik }
+                                    <td style="padding: 6px; border: 1px solid var(--border-color);">\VAR{row.riks}</td>
+                                    \BLOCK{ endif }
+                                    \BLOCK{ if show_samam }
+                                    <td style="padding: 6px; border: 1px solid var(--border-color);">\VAR{row.samams}</td>
+                                    \BLOCK{ endif }
+                                </tr>
+                                \BLOCK{ endfor }
+                            \BLOCK{ endfor }
+                        </tbody>
+                        <tfoot>
+                            <tr style="background-color: var(--accent-bg); font-weight: bold; border-top: 2px solid var(--maroon);">
+                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">आहत्य (Total)</td>
+                                \BLOCK{ if show_rik }
+                                <td style="padding: 10px; border: 1px solid var(--border-color);">\VAR{total_riks}</td>
+                                \BLOCK{ endif }
+                                \BLOCK{ if show_samam }
+                                <td style="padding: 10px; border: 1px solid var(--border-color);">\VAR{total_samams}</td>
+                                \BLOCK{ endif }
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            \BLOCK{ endif }
+            
+            \BLOCK{ if html_index }
+            <!-- Alphabetical Index -->
+            <div class="section" id="index" style="margin-top: 3rem;">
+                <h2 class="chapter-heading">॥ वर्णानुक्रमणिका ॥</h2>
+                <div class="toc-content" style="display: block; columns: 3 220px; padding: 15px 20px;">
+                    <ul style="list-style: none; padding-left: 0; margin: 0;">
+                    \BLOCK{ for entry in html_index }
+                        <li style="margin-bottom: 6px; text-align: left;">
+                            <a href="#\VAR{entry.anchor}" style="text-decoration: none; color: var(--accent-blue); font-size: 1.05rem; word-break: break-word; display: inline-block;">\VAR{entry.title}</a>
+                        </li>
+                    \BLOCK{ endfor }
+                    </ul>
+                </div>
+            </div>
+            \BLOCK{ endif }
+
+            <footer class="footer">
+                <p>Visit us at <a href="https://jaimineeyasamavedam.org" target="_blank">jaimineeyasamavedam.org</a></p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Print Options Modal -->
+    <div id="print-modal" class="modal-overlay" style="display: none;" onclick="if(event.target === this) closePrintModal();">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Print Options</h3>
+                <button class="close-modal-btn" onclick="closePrintModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 1rem; color: #555; font-size: 0.92rem; line-height: 1.5;">
+                    Large documents take time to paginate. Choose your print scope below:
+                </p>
+                <div class="print-options">
+                    <button class="btn-print-opt primary" onclick="printActiveSection()">
+                        <span class="btn-opt-icon">⚡</span>
+                        <div class="btn-opt-text">
+                            <strong>Print Current Section</strong>
+                            <span id="current-section-print-name">Print active Kandah (~1-3 pages)</span>
+                        </div>
+                    </button>
+                    
+                    <div style="background: #FFFDF9; border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem 1rem; box-sizing: border-box; max-width: 100%; overflow: hidden;">
+                        <label style="font-weight: 600; font-size: 0.92rem; color: var(--dark-brown); display: block; margin-bottom: 0.35rem;">
+                            Select Specific Section (Kandah):
+                        </label>
+                        <div style="display: flex; gap: 0.5rem; align-items: center; width: 100%; max-width: 100%; box-sizing: border-box;">
+                            <select id="kandah-select-dropdown" style="flex: 1; min-width: 0; width: 0; padding: 0.4rem; border: 1px solid #CCC; border-radius: 6px; font-family: var(--font-doc); font-size: 0.92rem; box-sizing: border-box;">
+                            </select>
+                            <button type="button" class="btn-ctrl" style="background: var(--saffron); color: white; border: none; padding: 0.45rem 0.85rem; cursor: pointer; white-space: nowrap; flex-shrink: 0;" onclick="printSelectedKandah()">Print</button>
+                        </div>
+                    </div>
+
+                    <button class="btn-print-opt" onclick="printEntireDocument()">
+                        <span class="btn-opt-icon">📖</span>
+                        <div class="btn-opt-text">
+                            <strong>Print Entire Document</strong>
+                            <span>All sections (full text print)</span>
+                        </div>
+                    </button>
+                </div>
             </div>
         </div>
-        \BLOCK{ endif }
-        
     </div>
-    
-    <footer class="footer">
-        <p>Visit us at <a href="https://jaimineeyasamavedam.org" target="_blank">jaimineeyasamavedam.org</a></p>
-    </footer>
+
+    <script>
+        const fontList = [
+            { label: "Noto Serif", font: "'Noto Serif Devanagari', 'Tiro Devanagari Sanskrit', serif" },
+            { label: "Tiro Sanskrit", font: "'Tiro Devanagari Sanskrit', 'Noto Serif Devanagari', serif" },
+            { label: "Noto Sans", font: "'Noto Sans Devanagari', sans-serif" }
+        ];
+        let currentFontIndex = 0;
+        function setFont(idx) {
+            currentFontIndex = ((idx % fontList.length) + fontList.length) % fontList.length;
+            const chosen = fontList[currentFontIndex];
+            document.documentElement.style.setProperty('--font-doc', chosen.font);
+            const btn = document.getElementById('font-toggle-btn');
+            if (btn) btn.innerText = 'Font: ' + chosen.label;
+            localStorage.setItem('jsv-reader-font-idx', currentFontIndex);
+        }
+        function toggleFont() {
+            setFont(currentFontIndex + 1);
+        }
+
+        let currentSize = 1.3;
+        function updateFontSizeDisplay() {
+            const pct = Math.round((currentSize / 1.3) * 100);
+            const valEl = document.getElementById('font-size-val');
+            if (valEl) {
+                valEl.textContent = pct + '%';
+                valEl.style.transform = 'scale(1.18)';
+                setTimeout(() => { valEl.style.transform = 'scale(1)'; }, 150);
+            }
+        }
+
+        function applyFontSize() {
+            const mainEl = document.querySelector('.main-content');
+            if (mainEl) mainEl.style.setProperty('--font-size', currentSize + 'rem');
+            document.documentElement.style.setProperty('--font-size', currentSize + 'rem');
+            updateFontSizeDisplay();
+            localStorage.setItem('jsv-reader-font-size', currentSize);
+        }
+
+        function adjustFont(delta) {
+            currentSize = Math.max(0.9, Math.min(2.4, +(currentSize + (delta * 0.15)).toFixed(2)));
+            applyFontSize();
+        }
+
+        function resetFontSize() {
+            currentSize = 1.3;
+            applyFontSize();
+        }
+
+        function toggleTocChapter(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.classList.toggle('collapsed');
+            const collapsed = el.classList.contains('collapsed');
+            const state = JSON.parse(localStorage.getItem('jsv-toc-chapters') || '{}');
+            state[id] = collapsed;
+            localStorage.setItem('jsv-toc-chapters', JSON.stringify(state));
+        }
+
+        function toggleTocSection(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.classList.toggle('collapsed');
+            const collapsed = el.classList.contains('collapsed');
+            const state = JSON.parse(localStorage.getItem('jsv-toc-sections') || '{}');
+            state[id] = collapsed;
+            localStorage.setItem('jsv-toc-sections', JSON.stringify(state));
+        }
+
+        function toggleSidebar() {
+            const layout = document.querySelector('.layout');
+            const btn = document.getElementById('sidebar-toggle-btn');
+            if (!layout) return;
+            layout.classList.toggle('sidebar-collapsed');
+            const collapsed = layout.classList.contains('sidebar-collapsed');
+            localStorage.setItem('jsv-sidebar-collapsed', collapsed);
+            if (btn) btn.textContent = collapsed ? '☰' : '☰ सूची';
+        }
+
+        /* Print Modal & High Performance Cached Printing */
+        let currentActiveSectionId = null;
+        let currentActiveSectionTitle = "";
+        const printSectionCache = new Map();
+
+        function openPrintModal() {
+            const modal = document.getElementById('print-modal');
+            const label = document.getElementById('current-section-print-name');
+            if (currentActiveSectionTitle && label) {
+                label.innerText = currentActiveSectionTitle + ' (~1-3 pages)';
+            } else if (label) {
+                label.innerText = 'Print active Kandah (~1-3 pages)';
+            }
+            if (modal) modal.style.display = 'flex';
+        }
+
+        function closePrintModal() {
+            const modal = document.getElementById('print-modal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        // Intercept Ctrl+P / Cmd+P to open fast print modal instead of freezing
+        window.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') {
+                e.preventDefault();
+                openPrintModal();
+            }
+        });
+
+        function printHtmlContent(title, contentHtml) {
+            let iframe = document.getElementById('jsv-print-frame');
+            if (!iframe) {
+                iframe = document.createElement('iframe');
+                iframe.id = 'jsv-print-frame';
+                iframe.style.position = 'fixed';
+                iframe.style.right = '0';
+                iframe.style.bottom = '0';
+                iframe.style.width = '0';
+                iframe.style.height = '0';
+                iframe.style.border = 'none';
+                iframe.style.visibility = 'hidden';
+                document.body.appendChild(iframe);
+            }
+            const doc = iframe.contentWindow.document;
+            const mainStyle = document.querySelector('style') ? document.querySelector('style').innerHTML : '';
+            doc.open();
+            doc.write(`<!DOCTYPE html>
+            <html lang="sa">
+            <head>
+                <meta charset="UTF-8">
+                <title>${title || document.title}</title>
+                <style>
+                    ${mainStyle}
+                    @page {
+                        size: auto;
+                        margin: 12mm 15mm 12mm 15mm;
+                    }
+                    *, *::before, *::after {
+                        box-sizing: border-box !important;
+                    }
+                    html, body {
+                        background: white !important;
+                        color: black !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        font-size: 13pt !important;
+                        width: 100% !important;
+                        max-width: 100% !important;
+                    }
+                    .print-container {
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        box-sizing: border-box !important;
+                    }
+                    .main-content {
+                        border: none !important;
+                        box-shadow: none !important;
+                        padding: 0 !important;
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        box-sizing: border-box !important;
+                    }
+                    .section {
+                        margin-bottom: 2rem !important;
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        box-sizing: border-box !important;
+                    }
+                    .subsection {
+                        background: none !important;
+                        box-shadow: none !important;
+                        border: 1px solid #CCC !important;
+                        border-left: 4px solid #D84315 !important;
+                        border-radius: 6px !important;
+                        padding: 10px 14px !important;
+                        margin-bottom: 1.2rem !important;
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        box-sizing: border-box !important;
+                        break-inside: auto !important;
+                        page-break-inside: auto !important;
+                    }
+                    .mantra-verse {
+                        break-inside: auto !important;
+                        page-break-inside: auto !important;
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        flex-wrap: wrap !important;
+                        box-sizing: border-box !important;
+                    }
+                    .mantra-connected-group {
+                        max-width: 100% !important;
+                        flex-wrap: wrap !important;
+                    }
+                    @media print {
+                        body { margin: 0 !important; padding: 0 !important; }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="print-container">
+                    ${contentHtml}
+                </div>
+            </body>
+            </html>`);
+            doc.close();
+
+            setTimeout(() => {
+                iframe.contentWindow.focus();
+                iframe.contentWindow.print();
+            }, 100);
+        }
+
+        function getSectionPrintableHtml(target) {
+            if (!target) return "";
+            const targetId = target.id;
+            if (printSectionCache.has(targetId)) {
+                return printSectionCache.get(targetId);
+            }
+            const parentChapter = target.closest('.chapter-container');
+            const chTitleNode = parentChapter ? parentChapter.querySelector('.chapter-heading') : null;
+            const chapterHeaderHtml = chTitleNode ? `<h2 class="chapter-heading" style="text-align:center;font-size:1.35rem;margin-bottom:1.2rem;color:#7B1113;border-bottom:2px solid #7B1113;padding-bottom:0.4rem;">${chTitleNode.textContent.trim()}</h2>` : '';
+            const docTitleHtml = `<div style="text-align:center;margin-bottom:1rem;"><h1 style="font-size:1.55rem;color:#7B1113;margin-bottom:0.3rem;">॥ ${document.title} ॥</h1></div>`;
+            const fullHtml = docTitleHtml + chapterHeaderHtml + target.outerHTML;
+            printSectionCache.set(targetId, fullHtml);
+            return fullHtml;
+        }
+
+        function printActiveSection() {
+            closePrintModal();
+            let target = null;
+            if (currentActiveSectionId) {
+                target = document.getElementById(currentActiveSectionId);
+            }
+            if (!target) {
+                target = document.querySelector('.section') || document.querySelector('.chapter-container');
+            }
+            if (!target) return;
+            const printableHtml = getSectionPrintableHtml(target);
+            const title = currentActiveSectionTitle || document.title;
+            printHtmlContent(title, printableHtml);
+        }
+
+        function printSelectedKandah() {
+            const select = document.getElementById('kandah-select-dropdown');
+            if (!select || !select.value) return;
+            const target = document.getElementById(select.value);
+            if (!target) return;
+            closePrintModal();
+            const printableHtml = getSectionPrintableHtml(target);
+            const title = select.options[select.selectedIndex]?.text || document.title;
+            printHtmlContent(title, printableHtml);
+        }
+
+        function printEntireDocument() {
+            closePrintModal();
+            document.body.classList.remove('print-only-active');
+            document.querySelectorAll('.print-active-target').forEach(el => el.classList.remove('print-active-target'));
+            setTimeout(function() {
+                window.print();
+            }, 50);
+        }
+
+        function populateKandahDropdown() {
+            const select = document.getElementById('kandah-select-dropdown');
+            if (!select) return;
+            select.innerHTML = '';
+            document.querySelectorAll('.chapter-container').forEach(ch => {
+                const chTitle = ch.querySelector('.chapter-heading')?.textContent.trim() || '';
+                ch.querySelectorAll('.section').forEach(sec => {
+                    const titleNode = sec.querySelector('.section-title');
+                    if (titleNode) {
+                        const clone = titleNode.cloneNode(true);
+                        const countNode = clone.querySelector('.section-samam-count');
+                        if (countNode) clone.removeChild(countNode);
+                        const secTitle = clone.textContent.trim();
+                        const opt = document.createElement('option');
+                        opt.value = sec.id;
+                        opt.textContent = (chTitle ? chTitle + ' — ' : '') + secTitle;
+                        select.appendChild(opt);
+                    }
+                });
+            });
+        }
+
+        /* Context-aware Suchi / Index Scroll Synchronization */
+        let activeSamamId = null;
+        let isUserInteractingWithToc = false;
+
+        function scrollSidebarToTarget(targetLink) {
+            const sidebar = document.getElementById('toc-sidebar');
+            if (!sidebar || isUserInteractingWithToc) return;
+            const linkRect = targetLink.getBoundingClientRect();
+            const sideRect = sidebar.getBoundingClientRect();
+            const margin = Math.min(70, sideRect.height * 0.2);
+            if (linkRect.top < sideRect.top + margin || linkRect.bottom > sideRect.bottom - margin) {
+                const currentScroll = sidebar.scrollTop;
+                const offset = (linkRect.top - sideRect.top) - (sideRect.height / 2) + (linkRect.height / 2);
+                sidebar.scrollTo({
+                    top: Math.max(0, currentScroll + offset),
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function highlightSamamInToc(samamId) {
+            if (!samamId || samamId === activeSamamId) return;
+            activeSamamId = samamId;
+
+            const targetLink = document.querySelector(`.toc-sub-item a[href="#${samamId}"]`);
+            if (!targetLink) return;
+
+            // Remove previous active highlights
+            document.querySelectorAll('.toc-sub-item a.active').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.toc-sec-header.active').forEach(el => el.classList.remove('active'));
+
+            // Highlight the active Samam link
+            targetLink.classList.add('active');
+
+            let wasCollapsed = false;
+
+            // Uncollapse parent Kandah and mark active
+            const parentSec = targetLink.closest('.toc-section-block');
+            if (parentSec) {
+                if (parentSec.classList.contains('collapsed')) {
+                    parentSec.classList.remove('collapsed');
+                    wasCollapsed = true;
+                }
+                const secHeader = parentSec.querySelector('.toc-sec-header');
+                if (secHeader) secHeader.classList.add('active');
+            }
+
+            // Uncollapse parent Chapter
+            const parentCh = targetLink.closest('.toc-chapter');
+            if (parentCh && parentCh.classList.contains('collapsed')) {
+                parentCh.classList.remove('collapsed');
+                wasCollapsed = true;
+            }
+
+            // Smoothly scroll the sidebar to keep active Samam centered in view
+            if (wasCollapsed) {
+                setTimeout(() => scrollSidebarToTarget(targetLink), 150);
+            } else {
+                scrollSidebarToTarget(targetLink);
+            }
+        }
+
+        // IntersectionObserver for tracking current section during scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            populateKandahDropdown();
+
+            // Track active Samam during scroll and sync Suchi / Index
+            const samamObserver = new IntersectionObserver((entries) => {
+                let bestEntry = null;
+                let minDistance = Infinity;
+
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const dist = Math.abs(entry.boundingClientRect.top - 85);
+                        if (dist < minDistance) {
+                            minDistance = dist;
+                            bestEntry = entry;
+                        }
+                    }
+                });
+
+                if (bestEntry) {
+                    highlightSamamInToc(bestEntry.target.id);
+                    currentActiveSectionId = bestEntry.target.id;
+                    const headerNode = bestEntry.target.querySelector('.header-title') || bestEntry.target.querySelector('.subsection-header');
+                    if (headerNode) {
+                        currentActiveSectionTitle = headerNode.textContent.trim();
+                    }
+                }
+            }, { rootMargin: '-75px 0px -75% 0px', threshold: 0 });
+
+            document.querySelectorAll('.subsection').forEach(el => samamObserver.observe(el));
+
+            // Direct click on Suchi item immediately highlights without waiting
+            document.querySelectorAll('.toc-sub-item a').forEach(link => {
+                link.addEventListener('click', function() {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        highlightSamamInToc(href.slice(1));
+                    }
+                });
+            });
+
+            // Wheel detection on sidebar so manual browsing isn't fought by scroll-spy
+            const sidebar = document.getElementById('toc-sidebar');
+            if (sidebar) {
+                let tocTimeout;
+                sidebar.addEventListener('wheel', () => {
+                    isUserInteractingWithToc = true;
+                    clearTimeout(tocTimeout);
+                    tocTimeout = setTimeout(() => { isUserInteractingWithToc = false; }, 1500);
+                }, { passive: true });
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const titleNode = entry.target.querySelector('.section-title') || entry.target.querySelector('.chapter-heading');
+                        if (titleNode) {
+                            const clone = titleNode.cloneNode(true);
+                            const countNode = clone.querySelector('.section-samam-count');
+                            if (countNode) clone.removeChild(countNode);
+                            currentActiveSectionTitle = clone.textContent.trim();
+                        }
+                    }
+                });
+            }, { rootMargin: '-60px 0px -65% 0px' });
+
+            document.querySelectorAll('.chapter-container, .section').forEach(el => observer.observe(el));
+
+            // Restore saved states
+            const collapsed = localStorage.getItem('jsv-sidebar-collapsed') === 'true';
+            if (collapsed) {
+                const layout = document.querySelector('.layout');
+                if (layout) layout.classList.add('sidebar-collapsed');
+                const btn = document.getElementById('sidebar-toggle-btn');
+                if (btn) btn.textContent = '☰';
+            }
+            const tocState = JSON.parse(localStorage.getItem('jsv-toc-chapters') || '{}');
+            for (const [id, isCollapsed] of Object.entries(tocState)) {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (isCollapsed) el.classList.add('collapsed');
+                    else el.classList.remove('collapsed');
+                }
+            }
+            const secState = JSON.parse(localStorage.getItem('jsv-toc-sections') || '{}');
+            for (const [id, isCollapsed] of Object.entries(secState)) {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (isCollapsed) el.classList.add('collapsed');
+                    else el.classList.remove('collapsed');
+                }
+            }
+            const savedFont = localStorage.getItem('jsv-reader-font-idx');
+            if (savedFont !== null) {
+                setFont(parseInt(savedFont, 10) || 0);
+            }
+            const savedSize = localStorage.getItem('jsv-reader-font-size');
+            if (savedSize !== null) {
+                currentSize = parseFloat(savedSize) || 1.3;
+                applyFontSize();
+            } else {
+                updateFontSizeDisplay();
+            }
+        });
+
+        // Back to top button visibility on scroll
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('back-to-top');
+            if (btn) {
+                if (window.scrollY > 350) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+            }
+        });
+    </script>
+    <!-- Floating Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Go to top of page">▲</button>
 </body>
 </html>

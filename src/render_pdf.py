@@ -867,6 +867,15 @@ def _render_devanagari_mantra_body(subsection, subsection_key=None, seen_markers
         
     from malayalam.ml_text import tokenize_mantra_line
     
+    content_lines = subsection.get('content_lines') or subsection.get('content')
+    if content_lines:
+        paras = []
+        for line in content_lines:
+            # content_lines are already escaped by the top-level escape_for_latex(data) in CreatePdf
+            line_fmt = format_dandas(line)
+            paras.append(f"{{\\sloppy {line_fmt} \\par}}")
+        return paras
+
     mantra_sets = subsection.get('corrected-mantra_sets', [])
     if not mantra_sets:
         mantra_sets = subsection.get('mantra_sets', [])
@@ -3074,10 +3083,13 @@ def format_mantra_sets_html(subsection, supersection_title, section_title, subse
 
     # 3. Combined Header
     header_parts = []
-    if display_sub_title:
+    if display_sub_title and display_sub_title != section_title:
         header_title = escape_for_html(display_sub_title)
         header_title = format_dandas_html(header_title)
         header_parts.append(f'<span class="header-title">{header_title}</span>')
+    ta_code = subsection.get('ta_code')
+    if ta_code:
+        header_parts.append(f'<span class="anuvaka-code">{escape_for_html(ta_code)}</span>')
     if string_3:
         meta = escape_for_html(string_3)
         meta = format_dandas_html(meta, preserve_spaces=True)
@@ -3087,6 +3099,14 @@ def format_mantra_sets_html(subsection, supersection_title, section_title, subse
     
     if header_parts:
         formatted_output.append(f'<div class="subsection-header">{" &nbsp; ".join(header_parts)}</div>')
+
+    # 4. Baraha / Prose / Verse content lines
+    content_lines = subsection.get('content_lines') or subsection.get('content')
+    if content_lines:
+        for line in content_lines:
+            s_line = escape_for_html(line)
+            s_line = format_dandas_html(s_line, preserve_spaces=True)
+            formatted_output.append(f'<p class="sanskrit-text verse-p">{s_line}</p>')
 
     # --- MANTRA CONTENT RENDERING ---
     mantra_sets = subsection.get('corrected-mantra_sets', [])
@@ -3854,7 +3874,10 @@ def CreateHtmlFile(templateFileName, name, DocfamilyName, data, html_font="'Adis
     name = name_override or name
     outputdir = output_dir_override or f"{outputdir}/html/{DocfamilyName}"
     
-    HtmlFileName = f"{name}_{DocfamilyName}.html"
+    if name.endswith('.html'):
+        HtmlFileName = name
+    else:
+        HtmlFileName = f"{name}_{DocfamilyName}.html"
     template = templateFileName
     Path(outputdir).mkdir(parents=True, exist_ok=True)
     
@@ -3862,6 +3885,40 @@ def CreateHtmlFile(templateFileName, name, DocfamilyName, data, html_font="'Adis
     HTML_FOOTNOTE_COUNTER = 0 # Not used in pre-process mode but kept for safety
     
     # PRE-PROCESS DATA
+    is_baraha = any(
+        'content_lines' in sub
+        for ss in data.values() if isinstance(ss, dict)
+        for s in ss.get('sections', {}).values() if isinstance(s, dict)
+        for sub in s.get('subsections', {}).values() if isinstance(sub, dict)
+    )
+    if is_baraha:
+        try:
+            try:
+                from build_reader import ast_to_chapters, generate_reader_html
+            except ImportError:
+                sys.path.insert(0, str(Path(__file__).resolve().parent))
+                from build_reader import ast_to_chapters, generate_reader_html
+            chapters = ast_to_chapters({'supersections': data})
+            fonts = [
+                {"label": "Noto Serif", "font": "'Noto Serif Devanagari', 'Tiro Devanagari Sanskrit', serif", "weight": "500"},
+                {"label": "Tiro Sanskrit", "font": "'Tiro Devanagari Sanskrit', 'Noto Serif Devanagari', serif", "weight": "400"},
+                {"label": "Noto Sans", "font": "'Noto Sans Devanagari', sans-serif", "weight": "500"}
+            ]
+            book_meta = {
+                "title": doc_title_sa,
+                "subtitle": "कृष्ण यजुर्वेदीय तैत्तिरीय आरण्यकम् (वेदमन्त्राः सस्वराः)" if "तैत्तिरीय" in doc_title_sa else doc_title_sa,
+                "back_link": "documents.html",
+                "back_label": "← Documents Index"
+            }
+            document = generate_reader_html(book_meta, chapters, fonts)
+            output_path = Path(f"{outputdir}/{HtmlFileName}")
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(document)
+            print(f"[INFO] Generated VedaVMS Reader HTML: {output_path} ({os.path.getsize(output_path):,} bytes)")
+            return
+        except Exception as e:
+            print(f"[WARN] Failed to render VedaVMS reader HTML, falling back: {e}")
+
     html_index = preprocess_html_data(data, output_mode, script=script, with_modifiers=with_modifiers)
     
     if not jsv_version or not generated_at:
@@ -3914,6 +3971,15 @@ def CreateHtmlFile(templateFileName, name, DocfamilyName, data, html_font="'Adis
         clean_name = HtmlFileName.replace('_Devanagari.html', '.html').replace('_Malayalam.html', '.html')
         if clean_name != HtmlFileName:
             shutil.copy2(output_path, sync_dir / clean_name)
+        # If this is tu_baraha or taittiriya, also keep vedavms html in sync if present
+        if "tu_baraha" in str(name).lower() or "taittiriya" in str(name).lower():
+            v_dir = Path("vedavms html")
+            if v_dir.exists():
+                v_target = v_dir / "taittiriya_upanishad_sanskrit.html"
+                if output_path.resolve() != v_target.resolve():
+                    shutil.copy2(output_path, v_target)
+    except Exception:
+        pass
     except Exception:
         pass
 
@@ -3976,6 +4042,8 @@ Examples:
     parser.add_argument('-kpully', '--kpully', dest='kpully', action='store_true', default=False,
                         help='Render Devanagari with swara markings stacked below the mantra text (Kodunthirapully paddhati)')
     
+
+    
     # Color Mode Option (Defaults to color for rich Vedic rendering)
     parser.add_argument('--pdf-color-mode', dest='pdf_color_mode',
                         choices=['bw', 'color'], default='color',
@@ -3994,6 +4062,8 @@ Examples:
     # Target format filters
     parser.add_argument('--html-only', dest='html_only', action='store_true', default=False,
                         help='Generate only HTML output (skips PDF and text generation)')
+    parser.add_argument('--legacy-html', dest='legacy_html', action='store_true', default=False,
+                        help='Use legacy single-page HTML layout instead of modern VedaVMS reader layout')
     parser.add_argument('--pdf-only', dest='pdf_only', action='store_true', default=False,
                         help='Generate only PDF output (skips HTML and text generation)')
     parser.add_argument('--txt-only', dest='txt_only', action='store_true', default=False,
@@ -4035,6 +4105,8 @@ Examples:
     # Handle output path overrides
     out_dir = None
     out_name = None
+    html_out_dir = None
+    html_out_name = None
     if args.output:
         out_path = Path(args.output)
         if args.output.endswith('/') or args.output.endswith('\\') or out_path.is_dir():
@@ -4072,7 +4144,10 @@ Examples:
     templateFile_Malayalam = f"{template_dir}/Malayalam_main.template"
     
     text_templateFile_Devanagari = f"{text_template_dir}/Devanagari_main.template"
-    html_templateFile_Devanagari = f"{html_template_dir}/Devanagari_main_html.template"
+    if getattr(args, 'legacy_html', False):
+        html_templateFile_Devanagari = f"{html_template_dir}/Devanagari_main_html_legacy.template"
+    else:
+        html_templateFile_Devanagari = f"{html_template_dir}/Devanagari_main_html.template"
 
     outputdir = cfg_paths.get('output_root', "data/output")
     logdir = cfg_paths.get('logs', "data/output/logs")
@@ -4144,14 +4219,11 @@ Examples:
     html_jinja_env.filters["render_section_footnotes"] = render_section_footnotes
     html_jinja_env.filters["clean_toc_title"] = clean_toc_title
 
-    # Load input JSON data
+    # Load input data (JSON only)
     ts_string_Devanagari = Path(input_file).read_text(encoding="utf-8")
     data_Devanagari = json.loads(ts_string_Devanagari)
-    
-    # Extract metadata for cascading versioning
     meta = data_Devanagari.get('meta', {})
     jsv_version = meta.get('version')
-    # Use actual generation time instead of cascading from JSON
     generated_at = get_generated_metadata()['generated_at']
     if jsv_version:
         print(f"[INFO] Using cascading Version {jsv_version} (Final Generation: {generated_at})")
@@ -4201,7 +4273,10 @@ Examples:
             samam_count = 0
             
             # Smart count: only count if displayable text exists
+            baraha_verse_count = 0
             for sub_key, sub_data in sec_data.get('subsections', {}).items():
+                if 'content_lines' in sub_data:
+                    baraha_verse_count += len(sub_data['content_lines'])
                 rik_text = sub_data.get('rik_text', '').strip()
                 rik_ids = sub_data.get('rik_ids', [])
                 
@@ -4234,6 +4309,8 @@ Examples:
                     
             # Total aggregation format for section headers
             sec_riks = len(seen_riks)
+            if baraha_verse_count > 0:
+                samam_count = baraha_verse_count
             
             # Summary table row generation
             if sec_riks > 0 or samam_count > 0:
@@ -4305,11 +4382,15 @@ Examples:
     total_samams_dev = to_devanagari_numeral(total_samams)
     
     # Define Sanskrit title based on type (for PDF/html generation)
-    # Priority: CLI > Config Type > JSON Meta > Default
-    doc_title_sa = args.title or type_settings.get('doc_title')
-    
+    # Priority: CLI > JSON Meta title (if Sanskrit/Devanagari) > Config Type default > Hardcoded default
+    doc_title_sa = args.title
     if not doc_title_sa:
-        doc_title_sa = data_Devanagari.get('meta', {}).get('title')
+        meta_title = data_Devanagari.get('meta', {}).get('title', '')
+        # Use meta.title only if it contains Devanagari script (i.e., a proper Sanskrit title)
+        if meta_title and any('\u0900' <= ch <= '\u097F' for ch in meta_title):
+            doc_title_sa = meta_title
+    if not doc_title_sa:
+        doc_title_sa = type_settings.get('doc_title')
         
     summary_title_sa = type_settings.get('summary_title')
     
@@ -4409,7 +4490,7 @@ Examples:
                 deva_supersections = convert_malayalam_data_to_devanagari(supersections)
                 CreateTextFile(deva_text_template_file, f"{file_prefix}", 'Devanagari', deva_supersections, output_mode='combined', doc_title_sa=deva_doc_title_sa, closing_mantras=closing_mantras, toc_level=toc_level, output_dir_override=out_dir, name_override=out_name, jsv_version=jsv_version, generated_at=generated_at)
         if gen_html:
-            CreateHtmlFile(html_template_file, f"{file_prefix}", doc_family, supersections, html_font=html_font, output_mode='combined', doc_title_sa=doc_title_sa, closing_mantras=closing_mantras, summary_table=summary_table, total_riks=total_riks_dev, total_samams=total_samams_dev, summary_title=summary_title_sa, toc_level=toc_level, has_riks=total_riks > 0, has_samams=total_samams > 0, output_dir_override=out_dir, name_override=out_name, jsv_version=jsv_version, generated_at=generated_at, script=script, with_modifiers=args.swara_modifiers, kpully=kpully_mode)
+            CreateHtmlFile(html_template_file, f"{file_prefix}", doc_family, supersections, html_font=html_font, output_mode='combined', doc_title_sa=doc_title_sa, closing_mantras=closing_mantras, summary_table=summary_table, total_riks=total_riks_dev, total_samams=total_samams_dev, summary_title=summary_title_sa, toc_level=toc_level, has_riks=total_riks > 0, has_samams=total_samams > 0, output_dir_override=html_out_dir or out_dir, name_override=html_out_name or out_name, jsv_version=jsv_version, generated_at=generated_at, script=script, with_modifiers=args.swara_modifiers, kpully=kpully_mode)
         print("Success! Generated combined output files.")
         
     elif output_mode == 'separate':
@@ -4430,7 +4511,7 @@ Examples:
                     deva_supersections = convert_malayalam_data_to_devanagari(supersections)
                     CreateTextFile(deva_text_template_file, f"Rik", 'Devanagari', deva_supersections, output_mode='rik', doc_title_sa=deva_doc_title_sa, closing_mantras=closing_mantras, toc_level=toc_level, output_dir_override=out_dir, name_override=final_out_name, jsv_version=jsv_version, generated_at=generated_at)
             if gen_html:
-                CreateHtmlFile(html_template_file, f"Rik", doc_family, supersections, html_font=html_font, output_mode='rik', doc_title_sa=doc_title_sa, closing_mantras=closing_mantras, summary_table=summary_table, total_riks=total_riks_dev, total_samams=total_samams_dev, summary_title=summary_title_sa, toc_level=toc_level, has_riks=total_riks > 0, has_samams=total_samams > 0, output_dir_override=out_dir, name_override=final_out_name, jsv_version=jsv_version, generated_at=generated_at, script=script, with_modifiers=args.swara_modifiers, kpully=kpully_mode)
+                CreateHtmlFile(html_template_file, f"Rik", doc_family, supersections, html_font=html_font, output_mode='rik', doc_title_sa=doc_title_sa, closing_mantras=closing_mantras, summary_table=summary_table, total_riks=total_riks_dev, total_samams=total_samams_dev, summary_title=summary_title_sa, toc_level=toc_level, has_riks=total_riks > 0, has_samams=total_samams > 0, output_dir_override=html_out_dir or out_dir, name_override=html_out_name or final_out_name, jsv_version=jsv_version, generated_at=generated_at, script=script, with_modifiers=args.swara_modifiers, kpully=kpully_mode)
         
         # Samam-only output: Pass output_mode='samam' to template
         if gen_samam:
@@ -4444,7 +4525,7 @@ Examples:
                     deva_supersections = convert_malayalam_data_to_devanagari(supersections)
                     CreateTextFile(deva_text_template_file, f"Samam", 'Devanagari', deva_supersections, output_mode='samam', doc_title_sa=deva_doc_title_sa, closing_mantras=closing_mantras, toc_level=toc_level, output_dir_override=out_dir, name_override=final_out_name, jsv_version=jsv_version, generated_at=generated_at)
             if gen_html:
-                CreateHtmlFile(html_template_file, f"Samam", doc_family, supersections, html_font=html_font, output_mode='samam', doc_title_sa=doc_title_sa, closing_mantras=closing_mantras, summary_table=summary_table, total_riks=total_riks_dev, total_samams=total_samams_dev, summary_title=summary_title_sa, toc_level=toc_level, has_riks=total_riks > 0, has_samams=total_samams > 0, output_dir_override=out_dir, name_override=final_out_name, jsv_version=jsv_version, generated_at=generated_at, script=script, with_modifiers=args.swara_modifiers, kpully=kpully_mode)
+                CreateHtmlFile(html_template_file, f"Samam", doc_family, supersections, html_font=html_font, output_mode='samam', doc_title_sa=doc_title_sa, closing_mantras=closing_mantras, summary_table=summary_table, total_riks=total_riks_dev, total_samams=total_samams_dev, summary_title=summary_title_sa, toc_level=toc_level, has_riks=total_riks > 0, has_samams=total_samams > 0, output_dir_override=html_out_dir or out_dir, name_override=html_out_name or final_out_name, jsv_version=jsv_version, generated_at=generated_at, script=script, with_modifiers=args.swara_modifiers, kpully=kpully_mode)
         
         print("Success! Generated separate Rik and Samam output files.")
         
@@ -4466,7 +4547,7 @@ Examples:
                     deva_supersections = convert_malayalam_data_to_devanagari(supersections)
                     CreateTextFile(deva_text_template_file, f"Rik_NoMeta", 'Devanagari', deva_supersections, output_mode='rik_nometa', doc_title_sa=deva_doc_title_sa, closing_mantras=closing_mantras, toc_level=toc_level, output_dir_override=out_dir, name_override=final_out_name, jsv_version=jsv_version, generated_at=generated_at)
             if gen_html:
-                CreateHtmlFile(html_template_file, f"Rik_NoMeta", doc_family, supersections, html_font=html_font, output_mode='rik_nometa', doc_title_sa=doc_title_sa, closing_mantras=closing_mantras, summary_table=summary_table, total_riks=total_riks_dev, total_samams=total_samams_dev, summary_title=summary_title_sa, toc_level=toc_level, has_riks=total_riks > 0, has_samams=total_samams > 0, output_dir_override=out_dir, name_override=final_out_name, jsv_version=jsv_version, generated_at=generated_at, script=script, with_modifiers=args.swara_modifiers, kpully=kpully_mode)
+                CreateHtmlFile(html_template_file, f"Rik_NoMeta", doc_family, supersections, html_font=html_font, output_mode='rik_nometa', doc_title_sa=doc_title_sa, closing_mantras=closing_mantras, summary_table=summary_table, total_riks=total_riks_dev, total_samams=total_samams_dev, summary_title=summary_title_sa, toc_level=toc_level, has_riks=total_riks > 0, has_samams=total_samams > 0, output_dir_override=html_out_dir or out_dir, name_override=html_out_name or final_out_name, jsv_version=jsv_version, generated_at=generated_at, script=script, with_modifiers=args.swara_modifiers, kpully=kpully_mode)
         
         # Samam-only output (no metadata, jsv_version=jsv_version, generated_at=generated_at): Pass output_mode='samam_nometa' to template
         if gen_samam:
@@ -4480,7 +4561,7 @@ Examples:
                     deva_supersections = convert_malayalam_data_to_devanagari(supersections)
                     CreateTextFile(deva_text_template_file, f"Samam_NoMeta", 'Devanagari', deva_supersections, output_mode='samam_nometa', doc_title_sa=deva_doc_title_sa, closing_mantras=closing_mantras, toc_level=toc_level, output_dir_override=out_dir, name_override=final_out_name, jsv_version=jsv_version, generated_at=generated_at)
             if gen_html:
-                CreateHtmlFile(html_template_file, f"Samam_NoMeta", doc_family, supersections, html_font=html_font, output_mode='samam_nometa', doc_title_sa=doc_title_sa, closing_mantras=closing_mantras, summary_table=summary_table, total_riks=total_riks_dev, total_samams=total_samams_dev, summary_title=summary_title_sa, toc_level=toc_level, has_riks=total_riks > 0, has_samams=total_samams > 0, output_dir_override=out_dir, name_override=final_out_name, jsv_version=jsv_version, generated_at=generated_at, script=script, with_modifiers=args.swara_modifiers, kpully=kpully_mode)
+                CreateHtmlFile(html_template_file, f"Samam_NoMeta", doc_family, supersections, html_font=html_font, output_mode='samam_nometa', doc_title_sa=doc_title_sa, closing_mantras=closing_mantras, summary_table=summary_table, total_riks=total_riks_dev, total_samams=total_samams_dev, summary_title=summary_title_sa, toc_level=toc_level, has_riks=total_riks > 0, has_samams=total_samams > 0, output_dir_override=html_out_dir or out_dir, name_override=html_out_name or final_out_name, jsv_version=jsv_version, generated_at=generated_at, script=script, with_modifiers=args.swara_modifiers, kpully=kpully_mode)
         
         print("Success! Generated separate Rik and Samam output files without metadata.")
 

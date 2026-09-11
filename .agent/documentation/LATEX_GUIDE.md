@@ -30,14 +30,16 @@ The project uses custom commands to handle the unique requirements of Vedic type
 ## 3. Recommended Workflow
 
 ### Step A: Generation
-*   **Devanagari:**
-    ```bash
-    python src/render_pdf.py data/output/Vargeekaran.json --type samhita
-    ```
-*   **Malayalam:**
-    ```bash
-    python src/render_pdf.py data/output/malayalam/Samhita_Malayalam.json --script malayalam
-    ```
+
+**Devanagari:**
+
+python src/render_pdf.py data/output/Vargeekaran.json --type samhita
+
+
+**Malayalam:**
+
+python src/render_pdf.py data/output/malayalam/Samhita_Malayalam.json --script malayalam
+
 
 ### Step B: AI-Driven Refinement
 Instead of hunting through 20,000+ lines of LaTeX, ask Antigravity to perform targeted shifts:

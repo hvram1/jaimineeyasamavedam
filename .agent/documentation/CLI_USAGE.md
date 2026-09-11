@@ -77,11 +77,12 @@ python src/render_pdf.py [INPUT_FILE] [OPTIONS]
 
 | Argument | Description | Default |
 | :--- | :--- | :--- |
-| `input_file` | The input JSON file path (Positional). | `data/output/Agneyam-Pavamanam_corrected_out.json` |
+| `input_file` | The input JSON file or Baraha `.docx` file path (Positional). | `data/output/Agneyam-Pavamanam_corrected_out.json` |
 | `--output`, `-o` | Override the default output basename or specify a full output path. | Auto-generated based on input |
 | `--output-mode` | Output style: `combined`, `separate`, or `nometa`. | `combined` |
 | `--pdf-font` | Font name to use for PDF generation. | `AdiShila Vedic` |
 | `--html-font` | Font family string for HTML output. | `'AdiShila Vedic', 'Adishila SanVedic'` |
+| `--baraha` | Process input as Baraha source document (`.docx` or transliterated text) and generate Devanagari HTML/PDF. Automatically inferred if input ends in `.docx`. | `False` |
 | `--pdf-color-mode` | Color mode for PDF: `bw` or `color`. | `bw` |
 | `--toc-level` | TOC headers: `section`, `subsection`, or `both`. | `section` |
 | `--title` | Custom Sanskrit title for the document. | From `pipeline_config.yaml` or input JSON metadata. |
@@ -99,6 +100,11 @@ python src/render_pdf.py [INPUT_FILE] [OPTIONS]
 **Generate Combined Output (Standard):**
 ```bash
 python src/render_pdf.py
+```
+
+**Generate Devanagari HTML from Baraha `.docx` Source:**
+```bash
+python src/render_pdf.py "vedavms html/tu_baraha.docx" --html-only
 ```
 
 **Custom Document Title:**

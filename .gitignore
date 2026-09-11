@@ -63,6 +63,10 @@ deprecated/
 !docs/**/*.pdf
 !docs/*.pdf
 !.vscode/*.json
+!src/config.json
+!vedavms_html/config.json
+!vedavms_html/*.html
+!vedavms_html/*.docx
 
 # Images
 *.png

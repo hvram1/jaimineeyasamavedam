@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>॥ \VAR{doc_title_sa} ॥</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'JaimineeyaSwara';
+            \BLOCK{ if jaimineeya_swara_b64 }
+            src: url('data:font/truetype;charset=utf-8;base64,\VAR{jaimineeya_swara_b64}') format('truetype');
+            \BLOCK{ else }
+            src: url('../../../fonts/JaimineeyaSwara.ttf') format('truetype'),
+                 url('../../fonts/JaimineeyaSwara.ttf') format('truetype'),
+                 url('../fonts/JaimineeyaSwara.ttf') format('truetype'),
+                 url('fonts/JaimineeyaSwara.ttf') format('truetype');
+            \BLOCK{ endif }
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --font-doc: \VAR{html_font}, 'Noto Sans Devanagari', 'Noto Serif Devanagari', 'Tiro Devanagari Sanskrit', 'Siddhanta', 'AdishilaVedic', 'Arial Unicode MS', sans-serif;
+            --font-swara: 'JaimineeyaSwara', 'Noto Serif Grantha', sans-serif;
+            
+            \BLOCK{ if 'Noto' in html_font }
+            /* Noto Sans specific accent offsets */
+            --swarita-bottom: 0.15em;
+            --anudatta-bottom: -0.15em;
+            --swara-size: 1.1rem;
+            \BLOCK{ else }
+            /* Default accent offsets (Adishila-optimized) */
+            --swarita-bottom: 0.05em;
+            --anudatta-bottom: 0.1em;
+            --swara-size: 1.3rem;
+            \BLOCK{ endif }
+
+            --primary-color:  #000000;
+            --accent-blue: #0d47a1;
+            --accent-green: #1b5e20;
+            --accent-purple: #4a148c;
+            --accent-brown: #4e342e;
+            --swara-red: #c62828;
+            --modifier-color: #0284c7;
+            --bg-light: #f8f9fa;
+            --bg-card: #EFE6D5;
+            --border-color: #dee2e6;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Custom Superscript for footnotes - Lift it up! */
+        sup {
+            vertical-align: top;
+            position: relative;
+            top: -0.6em; /* Adjust this to move it higher */
+            font-size: 0.75em;
+        }
+        
+        body {
+            font-family: var(--font-doc);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--primary-color);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .sanskrit-text {
+            font-family: var(--font-doc);
+            font-size: 1.2rem;
+            line-height: 2;
+            letter-spacing: 0.02em;
+            font-feature-settings: "kern", "liga", "clig", "calt";
+        }
+
+        .sanskrit-large {
+            font-size: 1.4rem;
+            line-height: 2.2;
+        }
+
+        .verse-p {
+            margin-bottom: 1.25rem;
+            text-align: justify;
+            line-height: 2.2;
+        }
+
+        .verse-p:last-child {
+            margin-bottom: 0;
+        }
+
+        .anuvaka-code {
+            font-size: 0.85rem;
+            color: #555;
+            background: #EFEFEF;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: normal;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Title Page */
+        .title-page {
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 3px double var(--accent-purple);
+            margin-bottom: 40px;
+        }
+        
+        .title-page h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .title-page .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent-purple);
+            margin-bottom: 15px;
+        }
+        
+        .title-page .version-info {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .toc h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .toc-content {
+            columns: 2;
+            column-gap: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .toc-content {
+                columns: 1;
+            }
+        }
+        
+        .toc-group {
+            break-inside: avoid;
+            margin-bottom: 20px;
+        }
+        
+        .toc-chapter {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent-purple);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .toc-chapter a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+        
+        .toc-chapter a:hover {
+            text-decoration: underline;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .toc li {
+            padding: 4px 0;
+        }
+        
+        .toc li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .toc li a:hover {
+            color: var(--accent-blue);
+        }
+        
+        .toc .samam-count {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* Content Sections */
+        .chapter {
+            margin-bottom: 50px;
+        }
+        
+        .chapter-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-purple);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 1.85rem;
+            font-weight: bold;
+            color: var(--accent-purple);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        
+        .subsection {
+            background: var(--bg-card);
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .subsection-header {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        
+        .subsection-header .header-title {
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.65rem;
+            line-height: 1.4;
+            display: inline-block;
+        }
+        
+        .subsection-header .header-meta {
+            color: var(--accent-brown);
+            font-size: 1.2rem;
+            margin-left: 10px;
+        }
+        
+        /* Rik-Samam Separate Layout */
+        .rik-metadata {
+            color: var(--accent-purple);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .rik-text {
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+            line-height: 2;
+            letter-spacing: 0.02em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted var(--border-color);
+        }
+        
+        .samam-metadata {
+            color: var(--accent-brown);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .samam-text {
+            font-size: 1.5rem;
+            line-height: 2;
+            letter-spacing: 0.02em;
+            margin-bottom: 0;
+        }
+        /* Mantra display - flexbox for no whitespace and natural wrapping */
+        .mantra-verse {
+            margin: 6px 0;
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+            gap: 0;
+            width: 100%;
+        }
+        
+        .subsection {
+            text-align: center;
+        }
+        
+        .mantra-connected-group {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mantra-word {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            vertical-align: top;
+            margin: 0;
+            padding: 0;
+        }
+        
+        \BLOCK{ if kpully }
+        /* KPULLY (Kodunthirapully Paddhati): Swara text rendered ABOVE the mantra text */
+        .mantra-verse {
+            align-items: flex-end;
+        }
+        .mantra-word {
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+        }
+        .mantra-connected-group {
+            align-items: flex-end;
+        }
+        \BLOCK{ endif }
+        
+        .mantra-text {
+            font-family: var(--font-doc);
+            font-size: 1.75rem;
+            line-height: 1.2;
+            white-space: nowrap;
+            position: relative;
+        }
+        
+        .swara-text {
+            font-family: var(--font-doc);
+            color: var(--swara-red);
+            font-size: 1.35rem;
+            line-height: 1.2;
+            text-align: center;
+            min-height: 1.2em;
+            white-space: nowrap;
+        }
+        
+        .word-space {
+            width: 0.35em;
+        }
+        
+        /* Danda and Mantra Number */
+        .danda {
+            font-family: var(--font-doc);
+            font-size: 1.75rem;
+            line-height: 1.2;
+            margin: 0 0.05em;
+            vertical-align: baseline;
+            display: inline;
+        }
+        
+        .verse-num-marker {
+            display: inline;
+            margin-left: 0.35em;
+            white-space: nowrap;
+            font-family: var(--font-doc);
+            font-size: 1.75rem;
+            line-height: 1.2;
+            vertical-align: baseline;
+        }
+        .verse-num {
+            font-family: var(--font-doc);
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0 0.15em;
+            line-height: 1.2;
+            vertical-align: baseline;
+            display: inline;
+        }
+        
+        /* Swara Modifiers - Proportionate and delicate in Sky Blue */
+        .swara-mod {
+            font-family: var(--font-swara), var(--font-doc);
+            color: var(--modifier-color);
+            font-weight: bold;
+            line-height: 1;
+            display: inline-block;
+            vertical-align: baseline;
+        }
+        
+        /* Spanning Modifiers positioned between syllables */
+        .swara-mod.mod-a {
+            position: absolute;
+            top: -0.32em;
+            left: 100%;
+            transform: translateX(-40%);
+            font-size: 0.60em;
+            pointer-events: none;
+            z-index: 2;
+        }
+        \BLOCK{ if 'Noto' in html_font }
+        .danda-word-a1,
+        .mantra-word:has(.danda-with-arc),
+        .danda.danda-with-arc:not(.danda-word-a1 *) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .danda-with-arc {
+            position: relative;
+            display: inline-block;
+        }
+        .danda-with-arc .swara-mod.mod-a1,
+        .swara-mod.mod-a1 {
+            position: absolute;
+            top: -0.22em;
+            left: 62%;
+            transform: translateX(-50%);
+            font-size: 1.0em;
+            pointer-events: none;
+            z-index: 2;
+        }
+        \BLOCK{ else }
+        .danda-word-a1,
+        .mantra-word:has(.danda-with-arc),
+        .danda.danda-with-arc:not(.danda-word-a1 *) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .danda-with-arc {
+            position: relative;
+            display: inline-block;
+        }
+        .danda-with-arc .swara-mod.mod-a1,
+        .swara-mod.mod-a1 {
+            position: absolute;
+            top: -0.22em;
+            left: 80.2%;
+            transform: translateX(-50%);
+            font-size: 1.0em;
+            pointer-events: none;
+            z-index: 2;
+        }
+        \BLOCK{ endif }
+        .swara-mod.mod-a2 {
+            position: absolute;
+            top: -0.32em;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.60em;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .swara-mod.mod-b {
+            position: absolute;
+            top: -0.28em;
+            left: 100%;
+            transform: translateX(-45%);
+            font-size: 0.50em;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .swara-mod.mod-c {
+            position: absolute;
+            top: -0.15em;
+            left: 100%;
+            transform: translateX(-0.15em);
+            font-size: 0.60em;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .swara-mod.mod-d {
+            position: absolute;
+            top: -0.28em;
+            left: 100%;
+            transform: translateX(-45%);
+            font-size: 0.60em;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .swara-mod.mod-d1 {
+            position: absolute;
+            top: -0.24em;
+            left: 100%;
+            transform: translateX(-35%);
+            font-size: 0.85em;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .swara-mod.mod-d2 {
+            font-size: 0.48em;
+            margin-left: 1px;
+            vertical-align: 0.35em;
+        }
+        .swara-mod.mod-e {
+            font-size: 0.50em;
+            margin-left: 1px;
+            vertical-align: -0.15em;
+        }
+        .swara-mod.mod-f {
+            font-size: 0.50em;
+            margin-left: 1px;
+            vertical-align: 0.15em;
+        }
+        .syl-mod-g-wrap {
+            position: relative;
+            display: inline-flex;
+            align-items: flex-end;
+        }
+        .swara-mod.mod-g,
+        .syl-mod-g-wrap .swara-mod.mod-g {
+            position: absolute;
+            bottom: -0.32em;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.50em;
+            pointer-events: none;
+        }
+        .swara-mod.mod-h {
+            font-size: 0.50em;
+            margin-left: -0.3em;
+            vertical-align: 0.75em;
+        }
+        .swara-mod.mod-i {
+            font-family: var(--font-swara);
+            font-size: 1.45rem;
+            font-weight: bold;
+            color: var(--modifier-color);
+            position: absolute;
+            top: -0.25em;
+            right: -0.25em;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .swara-mod.mod-j {
+            font-family: var(--font-swara);
+            font-size: 1.45rem;
+            font-weight: bold;
+            color: var(--modifier-color);
+            position: absolute;
+            top: -0.28em;
+            right: -0.20em;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .swara-mod.mod-b1 {
+            position: absolute;
+            top: -0.35em;
+            left: 100%;
+            transform: translateX(-20%);
+            font-size: 0.95rem;
+            pointer-events: none;
+        }
+        .swara-mod.mod-k {
+            font-family: var(--font-swara);
+            font-size: 1.45rem;
+            font-weight: bold;
+            color: var(--modifier-color);
+            position: absolute;
+            top: -0.25em;
+            right: -0.50em;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .swara-mod.mod-under {
+            font-family: var(--font-doc);
+            font-size: 1.0em;
+            color: var(--modifier-color);
+            display: inline;
+            margin: 0;
+            font-weight: bold;
+            vertical-align: baseline;
+            line-height: 1;
+        }
+        .swara-mod.mod-comma,
+        .swara-mod.mod-dot {
+            font-family: var(--font-doc);
+            color: var(--modifier-color);
+            display: inline-block;
+            margin: 0;
+            font-size: 0.80em;
+            font-weight: bold;
+            vertical-align: baseline;
+        }
+        
+        .mantra-connected-group .danda {
+            margin: 0;
+        }
+        .danda.danda-adjacent {
+            margin-left: -0.28em !important;
+            margin-right: 2px !important;
+        }
+        
+        /* Accent marks - zero-width positioning for fonts without native Vedic support */
+        .accent-swarita {
+            display: inline-block;
+            width: 0;
+            overflow: visible;
+            color: inherit;
+            font-weight: bold;
+            font-size: 1.2em;
+            position: relative;
+            left: 0;
+            bottom: var(--swarita-bottom);
+            isolation: isolate;
+        }
+        
+        .accent-anudatta {
+            display: inline-block;
+            width: 0;
+            overflow: visible;
+            color: inherit;
+            font-weight: bold;
+            font-size: 1.2em;
+            position: relative;
+            left: 0;
+            bottom: var(--anudatta-bottom);
+            isolation: isolate;
+        }
+        
+        .accent-kampa {
+            display: inline-block;
+            width: 0;
+            overflow: visible;
+            color: inherit;
+            font-weight: bold;
+            font-size: 1.2em;
+            position: relative;
+            left: 0;
+            bottom: var(--swarita-bottom);
+        }
+        
+        .accent-trikampa {
+            display: inline-block;
+            width: 0;
+            overflow: visible;
+            color: inherit;
+            font-weight: bold;
+            font-size: 1.2em;
+            position: relative;
+            left: 0;
+            bottom: var(--swarita-bottom);
+        }
+        
+        /* Footnote Section Styles */
+        .footnote-separator {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0 10px 0;
+            width: 40%;
+            margin-left: 0;
+        }
+        
+        .footnote-section {
+            padding: 10px 0;
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .footnote-item {
+            padding: 5px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footnote-item .footnote-ref {
+            color: var(--accent-blue);
+            font-weight: bold;
+            margin-right: 0.5em;
+            min-width: 1.5em;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            border-top: 2px solid var(--border-color);
+            background: white;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+        
+        .footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                font-size: 1.3rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .title-page h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subsection {
+                padding: 10px;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .chapter {
+                page-break-before: always;
+            }
+            
+            .subsection {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-bar a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            padding: 5px 10px;
+            font-size: 1.3rem;
+        }
+        
+        .nav-bar a:hover {
+            background: var(--bg-light);
+            border-radius: 4px;
+        }
+        
+        .nav-titles {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+        }
+        
+        .nav-main-title {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .nav-section-title {
+            font-size: 1.3rem;
+            color: var(--accent-green);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <div class="nav-left-links" style="display: flex; flex-direction: column; align-items: flex-start;">
+                <a href="#toc">॥ अनुक्रमणिका ॥</a>
+                \BLOCK{ if html_index }
+                <a href="#index">॥ वर्णानुक्रमणिका ॥</a>
+                \BLOCK{ endif }
+            </div>
+            <div class="nav-titles">
+                <span class="nav-main-title">॥ \VAR{doc_title_sa} ॥</span>
+                <span id="nav-title" class="nav-section-title"></span>
+            </div>
+        </nav>
+        
+        <script>
+        // Dynamic nav bar title based on scroll position
+        document.addEventListener('DOMContentLoaded', function() {
+            const navTitle = document.getElementById('nav-title');
+            const defaultTitle = '॥ \VAR{doc_title_sa} ॥';
+            
+            // Build section data for tracking
+            const sections = [];
+            document.querySelectorAll('.chapter, .section').forEach(el => {
+                if (el.classList.contains('section')) {
+                    const chapter = el.closest('.chapter');
+                    const chapterTitle = chapter ? chapter.querySelector('.chapter-title')?.textContent : '';
+                    
+                    let sectionTitle = '';
+                    const sectionTitleNode = el.querySelector('.section-title');
+                    if (sectionTitleNode) {
+                        const clone = sectionTitleNode.cloneNode(true);
+                        const countNode = clone.querySelector('.section-samam-count');
+                        if (countNode) clone.removeChild(countNode);
+                        sectionTitle = clone.textContent.trim();
+                    }
+                    
+                    sections.push({
+                        element: el,
+                        chapterTitle: chapterTitle,
+                        sectionTitle: sectionTitle
+                    });
+                } else if (el.classList.contains('chapter') && !el.querySelector('.section')) {
+                    // Standalone chapter without sections (like summary table, index)
+                    const chapterTitle = el.querySelector('.chapter-title')?.textContent || '';
+                    sections.push({
+                        element: el,
+                        chapterTitle: chapterTitle,
+                        sectionTitle: ''
+                    });
+                }
+            });
+            
+            // Use IntersectionObserver for efficient scroll tracking
+            const observerOptions = {
+                root: null,
+                rootMargin: '-80px 0px -70% 0px', // Trigger when section is near top of viewport
+                threshold: 0
+            };
+            
+            let currentSection = null;
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionData = sections.find(s => s.element === entry.target);
+                        if (sectionData) {
+                            currentSection = sectionData;
+                            if (sectionData.sectionTitle && sectionData.chapterTitle) {
+                                navTitle.textContent = sectionData.chapterTitle + ' › ' + sectionData.sectionTitle;
+                            } else if (sectionData.sectionTitle) {
+                                navTitle.textContent = sectionData.sectionTitle;
+                            } else if (sectionData.chapterTitle) {
+                                navTitle.textContent = sectionData.chapterTitle;
+                            } else {
+                                navTitle.textContent = '';
+                            }
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(s => observer.observe(s.element));
+            
+            // Clear section title when scrolled to top
+            window.addEventListener('scroll', function() {
+                if (window.scrollY < 200) {
+                    navTitle.textContent = '';
+                }
+            });
+        });
+        </script>
+        
+        <!-- Title Page -->
+        <div class="title-page">
+            <h1>॥ \VAR{doc_title_sa} ॥</h1>
+            <p style="font-size: 1.2rem; margin-top: 10px; color: var(--accent-blue);">
+                संस्करणम्: \VAR{version} | निर्मितम्: \VAR{generated_at}
+            </p>
+        </div>
+        
+        <!-- Table of Contents -->
+        <div class="toc" id="toc">
+            <h2>॥ अनुक्रमणिका ॥</h2>
+            <div class="toc-content">
+            \BLOCK{ for key, supersection in supersections.items() }
+                <div class="toc-group">
+                    \BLOCK{ if supersection.supersection_title }
+                    <div class="toc-chapter">
+                        <a href="#\VAR{key}">\VAR{supersection.supersection_title}</a>
+                    </div>
+                    \BLOCK{ endif }
+                    <ul>
+                    \BLOCK{ for section_key, section in supersection.sections.items() }
+                        \BLOCK{ if section_key != 'count' }
+                        \BLOCK{ if (toc_level == 'section' or toc_level == 'both') and section.section_title }
+                        <li class="toc-section">
+                            <a href="#\VAR{key}-\VAR{section_key}">\VAR{section.section_title | replace(':', 'ः')} <span class="section-samam-count">(\VAR{section.Count})</span></a>
+                        </li>
+                        \BLOCK{ endif }
+                    \BLOCK{ if toc_level == 'subsection' or toc_level == 'both' }
+                        \BLOCK{ for subsection_key, subsection in section.subsections.items() }
+                        <li class="toc-section" \VAR{'style="margin-left: 20px;"' if toc_level == 'both' else ''}>
+                            <a href="#\VAR{key}-\VAR{section_key}-\VAR{subsection_key}">\VAR{subsection.header.header | clean_toc_title | replace(':', 'ः') | replace('|', '') | replace('॥', '')}</a>
+                        </li>
+                        \BLOCK{ endfor }
+                    \BLOCK{ endif }
+                        \BLOCK{ endif }
+                    \BLOCK{ endfor }
+                    </ul>
+                </div>
+            \BLOCK{ endfor }
+            </div>
+        </div>
+        
+        <!-- Content -->
+        \BLOCK{ for key, supersection in supersections.items() }
+        <div class="chapter" id="\VAR{key}">
+            \BLOCK{ if supersection.supersection_title }
+            <h1 class="chapter-title">\VAR{supersection.supersection_title}</h1>
+            \BLOCK{ endif }
+            
+            \BLOCK{ for section_key, section in supersection.sections.items() }
+                \BLOCK{ if section_key != 'count' }
+                <div class="section" id="\VAR{key}-\VAR{section_key}">
+                    \BLOCK{ if section.section_title }
+                    <h2 class="section-title">\VAR{section.section_title | replace(':', 'ः')} <span class="section-samam-count">(\VAR{section.Count})</span></h2>
+                    \BLOCK{ endif }
+                    
+                    <!-- Pre-rendered Subsections -->
+                    \BLOCK{ for sub_html in section.html_subsections }
+                    <div class="subsection" id="\VAR{sub_html.id}">
+                        \VAR{sub_html.content}
+                    </div>
+                    \BLOCK{ endfor }
+
+                    <!-- Pre-rendered Footnotes -->
+                    \VAR{section.html_footer}
+                </div>
+                \BLOCK{ endif }
+            \BLOCK{ endfor }
+        </div>
+        \BLOCK{ endfor }
+        
+        \BLOCK{ if closing_mantras }
+        <!-- Closing Mantras -->
+        <div class="section" id="closing-mantras">
+            <div class="subsection" style="padding: 30px 20px; margin: 20px 0;">
+                \BLOCK{ for line in closing_mantras }
+                <p style="font-size: 1.5rem; margin: 8px 0; text-align: center;">\VAR{line}</p>
+                \BLOCK{ endfor }
+            </div>
+        </div>
+        \BLOCK{ endif }
+        
+        \BLOCK{ if summary_table }
+        <!-- Summary Table -->
+        \BLOCK{ set show_rik = ('rik' in output_mode or 'combined' in output_mode) and has_riks }
+        \BLOCK{ set show_samam = ('samam' in output_mode or 'combined' in output_mode) and has_samams }
+        <div class="chapter" id="summary-table">
+            <h1 class="chapter-title">॥ \VAR{summary_title} ॥</h1>
+            <div style="overflow-x: auto; padding: 10px; display: flex; justify-content: center;">
+                <table style="width: 80%; max-width: 800px; border-collapse: collapse; margin-bottom: 20px; text-align: center; border: 1px solid var(--border-color);">
+                    <thead>
+                        <tr style="background-color: var(--bg-card); border-bottom: 2px solid var(--accent-purple);">
+                            <th style="padding: 8px; border: 1px solid var(--border-color);">खण्डः</th>
+                            \BLOCK{ if show_rik }
+                            <th style="padding: 8px; border: 1px solid var(--border-color);">ऋक् सङ्ख्या</th>
+                            \BLOCK{ endif }
+                            \BLOCK{ if show_samam }
+                            <th style="padding: 8px; border: 1px solid var(--border-color);">साम सङ्ख्या</th>
+                            \BLOCK{ endif }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        \BLOCK{ for patha_data in summary_table }
+                            <tr style="background-color: var(--bg-light); font-weight: bold;">
+                                <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--accent-blue);">\VAR{patha_data.patha}</td>
+                                \BLOCK{ if show_rik }
+                                <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--accent-blue);">\VAR{patha_data.patha_riks}</td>
+                                \BLOCK{ endif }
+                                \BLOCK{ if show_samam }
+                                <td style="padding: 8px; border: 1px solid var(--border-color); color: var(--accent-blue);">\VAR{patha_data.patha_samams}</td>
+                                \BLOCK{ endif }
+                            </tr>
+                            \BLOCK{ for row in patha_data.khandas }
+                            <tr>
+                                <td style="padding: 6px; border: 1px solid var(--border-color); text-align: left; padding-left: 20px;">\VAR{row.khanda}</td>
+                                \BLOCK{ if show_rik }
+                                <td style="padding: 6px; border: 1px solid var(--border-color);">\VAR{row.riks}</td>
+                                \BLOCK{ endif }
+                                \BLOCK{ if show_samam }
+                                <td style="padding: 6px; border: 1px solid var(--border-color);">\VAR{row.samams}</td>
+                                \BLOCK{ endif }
+                            </tr>
+                            \BLOCK{ endfor }
+                        \BLOCK{ endfor }
+                    </tbody>
+                    <tfoot>
+                        <tr style="background-color: var(--bg-light); font-weight: bold; border-top: 2px solid var(--accent-blue);">
+                            <td style="padding: 8px; border: 1px solid var(--border-color); text-align: center;">आहत्य (Total)</td>
+                            \BLOCK{ if show_rik }
+                            <td style="padding: 8px; border: 1px solid var(--border-color);">\VAR{total_riks}</td>
+                            \BLOCK{ endif }
+                            \BLOCK{ if show_samam }
+                            <td style="padding: 8px; border: 1px solid var(--border-color);">\VAR{total_samams}</td>
+                            \BLOCK{ endif }
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        \BLOCK{ endif }
+        
+        \BLOCK{ if html_index }
+        <!-- Index -->
+        <div class="chapter" id="index">
+            <h1 class="chapter-title">॥ वर्णानुक्रमणिका ॥</h1>
+            <div class="toc-content" style="display: block; columns: 3 200px; padding: 0 20px;">
+                <ul style="list-style: none; padding-left: 0; margin: 0;">
+                \BLOCK{ for entry in html_index }
+                    <li style="margin-bottom: 5px; text-align: left;">
+                        <a href="#\VAR{entry.anchor}" style="text-decoration: none; color: var(--accent-blue); font-size: 1.1rem; word-break: break-word; display: inline-block;">\VAR{entry.title}</a>
+                    </li>
+                \BLOCK{ endfor }
+                </ul>
+            </div>
+        </div>
+        \BLOCK{ endif }
+        
+    </div>
+    
+    <footer class="footer">
+        <p>Visit us at <a href="https://jaimineeyasamavedam.org" target="_blank">jaimineeyasamavedam.org</a></p>
+    </footer>
+</body>
+</html>
